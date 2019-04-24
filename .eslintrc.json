@@ -1,0 +1,26 @@
+{
+  "extends": ["react-app", "prettier"],
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "node": true,
+    "es6": true
+  },
+  "plugins": ["prettier"],
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": true,
+        "singleQuote": true,
+        "printWidth": 80
+      }
+    ],
+    "no-console": "off",
+    "strict": ["error", "global"],
+    "curly": "warn"
+  }
+}
