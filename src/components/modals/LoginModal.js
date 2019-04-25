@@ -1,11 +1,35 @@
 import React from 'react';
+import Modal from 'react-modal';
+import Button from '../buttons/Button';
+import { connect } from 'react-redux';
+import { loginModalStyle } from '../../styles/inlineStyles/modalStyles';
+import { closeModal } from '../../actions/authActions';
 
-function LoginModal() {
+Modal.setAppElement('#root');
+
+function LoginModal({ isOpen, closeModal }) {
   return (
     <div>
-      <div>LoginModal</div>
+      <Modal style={loginModalStyle()} isOpen={isOpen} onRequestClose={closeModal}>
+        <div className="login_inputs_container">
+          <label className="login_label">Username</label>
+          <input className="login_input" />
+          <label className="login_label">Password</label>
+          <input className="login_input" />
+          <Button buttonStyle="modal_login_button" buttonText="Login" />
+        </div>
+      </Modal>
     </div>
   );
 }
 
-export default LoginModal;
+const mapStateToProps = ({ authReducer: { isOpen } }) => {
+  return {
+    isOpen
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { closeModal }
+)(LoginModal);
