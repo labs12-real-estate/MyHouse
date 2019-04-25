@@ -1,7 +1,11 @@
 import React from 'react';
 
 function DesignStudioPage() {
-  return <div>DesignStudioPage</div>;
+  return (
+    <div>
+      <h1>DesignStudioPage</h1>
+    </div>
+  );
 }
 
 export default DesignStudioPage;

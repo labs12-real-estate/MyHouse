@@ -1,7 +1,11 @@
 import React from 'react';
 
 function WizardFormPage() {
-  return <div>WizardFormPage</div>;
+  return (
+    <div>
+      <h1>WizardFormPage</h1>
+    </div>
+  );
 }
 
 export default WizardFormPage;

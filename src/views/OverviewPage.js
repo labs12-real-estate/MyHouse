@@ -1,7 +1,11 @@
 import React from 'react';
 
 function OverviewPage() {
-  return <div>OverviewPage</div>;
+  return (
+    <div>
+      <h1>OverviewPage</h1>
+    </div>
+  );
 }
 
 export default OverviewPage;

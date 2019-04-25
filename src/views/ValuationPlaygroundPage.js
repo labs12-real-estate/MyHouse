@@ -1,7 +1,11 @@
 import React from 'react';
 
 function ValuationPlaygroundPage() {
-  return <div>ValuationPlaygroundPage</div>;
+  return (
+    <div>
+      <h1>ValuationPlaygroundPage</h1>
+    </div>
+  );
 }
 
 export default ValuationPlaygroundPage;
