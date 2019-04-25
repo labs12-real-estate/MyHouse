@@ -82,6 +82,7 @@ public
         form-logic-functions.js
         onClick-logic.js
 #    assets/
+        design-files
         photos/
         icons/
         illustrations/
