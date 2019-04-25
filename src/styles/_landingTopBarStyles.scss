@@ -42,10 +42,18 @@
       line-height: 1.6rem;
       border: none;
       color: white;
-      box-shadow: 3px 4px 2px -2px rgb(15, 15, 15);
+      box-shadow: 4px 5px 1px -1px RGBA(0, 0, 0, 0.1);
       border-radius: 4px;
       height: 32px;
       width: 35%;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+      &:active {
+        background: #d33200;
+      }
     }
-  }
-}
+
+  } // end of landing_nav_item_container
+} // end of landing_nav_container
