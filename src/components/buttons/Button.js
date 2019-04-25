@@ -1,7 +1,11 @@
 import React from 'react';
 
-function Button({clickEvent}) {
-  return <button onClick={clickEvent}>Button</button>;
+function Button({ clickEvent, style }) {
+  return (
+    <button onClick={clickEvent} className={`${style}`}>
+      Button
+    </button>
+  );
 }
 
 export default Button;
