@@ -87,6 +87,10 @@ public
         icons/
         illustrations/
         videos/**stretch
+#    styles/
+        _landingTopBarStyles.scss
+        _reset.scss
+        index.scss
 #   dummy-data-structures
 .eslintrc.json
 .prettierrc.json
