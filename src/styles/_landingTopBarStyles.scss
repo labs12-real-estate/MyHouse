@@ -10,17 +10,18 @@
     opacity: 0.75;
     cursor: pointer;
 
-   a {
-     text-decoration: none;
-     color: inherit;
-     opacity: inherit;
-   }
+    a {
+      text-decoration: none;
+      color: inherit;
+      opacity: inherit;
+    }
   }
 
   .landing_nav_item_container {
     width: 25%;
     justify-content: space-between;
     display: flex;
+    align-items: center;
 
     a {
       text-decoration: none;
@@ -28,8 +29,24 @@
       font-family: Roboto;
       font-style: normal;
       font-weight: 500;
-      font-size: 1.0rem;
+      font-size: 1rem;
       line-height: 1.6rem;
+    }
+
+    .landing_nav_button {
+      background:#E63700;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 1.6rem;
+      border: none;
+      color: white;
+      box-shadow: 3px 4px 2px -2px rgb(15, 15, 15);
+      border-radius: 4px;
+      height: 32px;
+      width: 35%;
+
     }
   }
 }
