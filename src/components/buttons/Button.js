@@ -1,11 +1,7 @@
 import React from 'react';
 
-function Button() {
-  return (
-    <div>
-      <button>Button</button>
-    </div>
-  );
+function Button({clickEvent}) {
+  return <button onClick={clickEvent}>Button</button>;
 }
 
 export default Button;

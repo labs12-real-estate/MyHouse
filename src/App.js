@@ -13,7 +13,7 @@ function App() {
     <div>
       <Switch>
         <Route onUpdate={window.scrollTo(0, 0)} path="/" exact component={LandingPage} />
-        <Route onUpdate={window.scrollTo(0, 0)} path="/wizardform" component={WizardFormPage} />
+        <Route onUpdate={window.scrollTo(0, 0)} path="/wizard-form" component={WizardFormPage} />
         <Route onUpdate={window.scrollTo(0, 0)} path="/overview" component={OverviewPage} />
         <Route onUpdate={window.scrollTo(0, 0)} path="/valuation-playground" component={ValuationPlaygroundPage} />
         <Route onUpdate={window.scrollTo(0, 0)} path="/mortgage-calculator" component={MortgageCalculatorPage} />
