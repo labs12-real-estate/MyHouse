@@ -13,7 +13,7 @@ function LandingTopBar() {
       <div className="landing_nav_item_container">
         <Link to="/">Home</Link>
         <Link to="#">Team</Link>
-        <Button />
+        <Button buttonText="Login" buttonStyle="landing_nav_button" />
       </div>
     </div>
   );
