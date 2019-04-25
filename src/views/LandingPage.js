@@ -6,6 +6,7 @@ function LandingPage() {
     <div>
       <LandingTopBar />
       <h1>LandingPage</h1>
+      <div className="cloud-top" />
     </div>
   );
 }
