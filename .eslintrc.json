@@ -16,7 +16,7 @@
       {
         "semi": true,
         "singleQuote": true,
-        "printWidth": 80
+        "printWidth": 160
       }
     ],
     "no-console": "off",
