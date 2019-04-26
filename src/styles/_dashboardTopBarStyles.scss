@@ -1,0 +1,62 @@
+.dashboard_nav_container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem 0;
+    background: #083691;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+  
+    .dashboard_nav_home_icon {
+      color: white;
+      opacity: 0.75;
+      cursor: pointer;
+      margin-left: 3%;
+  
+      a {
+        text-decoration: none;
+        color: inherit;
+        opacity: inherit;
+      }
+    }
+  
+    .dashboard_nav_item_container {
+      width: 25%;
+      justify-content: flex-end;
+      display: flex;
+      align-items: center;
+      margin-right: 3%;
+  
+      a {
+        text-decoration: none;
+        color: white;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.6rem;
+      }
+  
+      .dashboard_nav_button {
+        background: #e63700;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.6rem;
+        border: none;
+        color: white;
+        box-shadow: 4px 5px 1px -1px RGBA(0, 0, 0, 0.1);
+        border-radius: 4px;
+        height: 32px;
+        width: 132px;
+        padding: none;
+        cursor: pointer;
+        &:focus {
+          outline: none;
+        }
+        &:active {
+          background: #d33200;
+        }
+      }
+  
+    } // end of dashboard_nav_item_container
+  } // end of dashboard_nav_container

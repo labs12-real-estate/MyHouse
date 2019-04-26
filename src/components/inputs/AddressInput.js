@@ -78,7 +78,7 @@ class AddressInput extends Component {
     return (
       <div>
         <form onSubmit={this.getValue}>
-          <input onChange={this.handleInputChange} placeholder="address" value={this.state.address} name="address" />
+          <input onChange={this.handleInputChange} placeholder="address" value={this.state.address} name="address" autoComplete="off" />
           <button className="form-button">Search</button>
         </form>
 

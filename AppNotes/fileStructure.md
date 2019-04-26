@@ -88,10 +88,18 @@ public
         illustrations/
         videos/**stretch
 #    styles/
+        inlineStyles/
+            modalStyles.js
+        _dashboardTopBarStyles.scss
+        _landingBodyStyles.scss
+        _landingHeroStyles.scss
         _landingTopBarStyles.scss
+        _mixins.scss
         _reset.scss
         index.scss
+        _modalStyles.scss
 #   dummy-data-structures
+        dashboard-sidebar-data.js
 .eslintrc.json
 .prettierrc.json
 .gitignore

@@ -1,6 +1,5 @@
 .landing_nav_container {
   display: flex;
-
   justify-content: space-between;
   margin: 0 9rem;
   padding: 2rem 0;
@@ -45,7 +44,8 @@
       box-shadow: 4px 5px 1px -1px RGBA(0, 0, 0, 0.1);
       border-radius: 4px;
       height: 32px;
-      width: 35%;
+      width: 132px;
+      padding: none;
       cursor: pointer;
       &:focus {
         outline: none;
@@ -54,6 +54,5 @@
         background: #d33200;
       }
     }
-
   } // end of landing_nav_item_container
 } // end of landing_nav_container
