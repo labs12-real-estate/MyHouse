@@ -1,11 +1,15 @@
 import React from 'react';
 import DashboardTopBar from '../components/navigation/DashboardTopBar';
+import SideBar from '../components/navigation/SideBar';
 
 function OverviewPage() {
   return (
     <div>
       <DashboardTopBar />
-      <h1>OverviewPage</h1>
+      <div className="dashboard_page_container">
+        <SideBar />
+        <h1>OverviewPageContent</h1>
+      </div>
     </div>
   );
 }
