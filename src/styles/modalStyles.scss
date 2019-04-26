@@ -1,0 +1,9 @@
+.login_inputs_container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+    .login_input {
+        margin-bottom: 10px;
+    }
+}
