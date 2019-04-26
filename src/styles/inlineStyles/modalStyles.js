@@ -5,7 +5,7 @@ export const loginModalStyle = () => {
     },
     content: {
       position: 'relative',
-      top: '20%',
+      top: '90px',
       left: '76%',
       background: '#fff',
       outline: 'none',
