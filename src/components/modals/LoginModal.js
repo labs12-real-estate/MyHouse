@@ -5,8 +5,11 @@ import { connect } from 'react-redux';
 import { loginModalStyle } from '../../styles/inlineStyles/modalStyles';
 import { closeModal } from '../../actions/authActions';
 
+// For accessibility
 Modal.setAppElement('#root');
 
+// Modal Compoent props: isOpen T/F value
+// onRequestClose is required for closing modal when clicking anywhere besides inside the modal.
 function LoginModal({ isOpen, closeModal }) {
   return (
     <div>
