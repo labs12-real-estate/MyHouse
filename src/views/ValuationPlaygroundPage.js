@@ -1,6 +1,7 @@
 import React from 'react';
 import DashboardTopBar from '../components/navigation/DashboardTopBar';
 import SideBar from '../components/navigation/SideBar';
+import ValuationPlaygroundContent from '../components/dashboardContent/valuationPlaygroundContent/ValuationPlaygroundContent';
 
 function ValuationPlaygroundPage() {
   return (
@@ -8,7 +9,7 @@ function ValuationPlaygroundPage() {
       <DashboardTopBar />
       <div className="dashboard_page_container">
         <SideBar />
-        <h1>ValuationPlaygroundPage</h1>
+        <ValuationPlaygroundContent />
       </div>
     </div>
   );
