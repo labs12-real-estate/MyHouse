@@ -6,6 +6,13 @@ function LandingPage() {
   return (
     <div className="landing_body">
       <LandingTopBar />
+      <div className="hero">
+        <h1>MyHouse</h1>
+        <p>
+          We have the most precise home
+          <br /> valuation techniques in the industry
+        </p>
+      </div>
       <div className="cloud_top">
         <img src={housePng} alt="isometric-house" />
       </div>
