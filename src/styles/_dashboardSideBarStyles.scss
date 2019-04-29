@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   background: linear-gradient(187.99deg, rgba(229, 233, 241, 0.9) 43.6%, rgba(206, 210, 218, 0.9) 99.67%);
-  width: 170px;
+  width: 120px;
+  height: 100%;
 
   a {
     text-decoration: none;
@@ -15,24 +16,24 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 153px;
-    
+    height: 120px;
+    border-bottom: 1px solid rgba(0, 28, 84, 0.1);
 
     .dashboard_sidebar_title {
       font-family: Roboto;
       font-style: normal;
       font-weight: bold;
-      font-size: 1.0rem;
+      font-size: 1rem;
       line-height: 16px;
-      color: #94AACD;
+      color: #94aacd;
       margin-bottom: 15px;
     }
 
     .dashboard_sidebar_icon {
-        color: #94AACD;
+      color: #94aacd;
     }
   }
-  
+
   .dashboard_sidebar_active_navitem {
     display: flex;
     flex-direction: column;
@@ -40,23 +41,24 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 153px;
-    background: rgb(219, 227, 243);
-    border-left: 8px solid #e63700;
-    
+    height: 120px;
+    background: linear-gradient(270deg, rgba(170, 182, 203, 0.26) 1.58%, #ffffff 106.69%, #dbe3f1 125.2%);
+    mix-blend-mode: normal;
+    border-bottom: 1px solid rgba(0, 28, 84, 0.1);
+    border-left: 6px solid #e63700;
 
     .dashboard_sidebar_title {
       font-family: Roboto;
       font-style: normal;
       font-weight: bold;
-      font-size: 1.0rem;
+      font-size: 1rem;
       line-height: 16px;
-      color: #94AACD;
+      color: #94aacd;
       margin-bottom: 15px;
     }
 
     .dashboard_sidebar_icon {
-        color: #94AACD;
+      color: #94aacd;
     }
   } // end of dashboard_sidebar_navitem
 } // end of dashboard_sidebar_container
