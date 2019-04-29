@@ -1,4 +1,8 @@
 .dashboard_page_container {
   display: flex;
-  @include radial-gradient(#6c9de2, #79adff, #3560d0, #0038a5, #003498);
+
+  .dashboard_content_container {
+    margin-top: 70px;
+    margin-left: 8%;
+  }
 }

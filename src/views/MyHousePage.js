@@ -1,6 +1,7 @@
 import React from 'react';
 import DashboardTopBar from '../components/navigation/DashboardTopBar';
 import SideBar from '../components/navigation/SideBar';
+import MyHouseContent from '../components/dashboardContent/homeProfileContent/MyHouseContent';
 
 function MyHousePage() {
   return (
@@ -8,7 +9,7 @@ function MyHousePage() {
       <DashboardTopBar />
       <div className="dashboard_page_container">
         <SideBar />
-        <h1>MyHousePage</h1>
+        <MyHouseContent />
       </div>
     </div>
   );
