@@ -2,6 +2,7 @@ import React from 'react';
 import LandingTopBar from '../components/navigation/LandingTopBar';
 import housePng from '../assets/images/isometric-house.png';
 import AddressInput from '../components/inputs/AddressInput';
+import Footer from '../components/footer/Footer';
 
 function LandingPage() {
   return (
@@ -25,6 +26,7 @@ function LandingPage() {
           making information on the market
         </p>
       </div>
+      <Footer />
     </div>
   );
 }
