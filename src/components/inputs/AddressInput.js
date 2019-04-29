@@ -50,12 +50,13 @@ function AddressInput() {
     setAddress(address);
   };
 
-  return (
-    <div>
-      <form onSubmit={getValue}>
-        <input onChange={handleInputChange} placeholder="address" value={address} />
-        <button className="form-button">Search</button>
-      </form>
+  render() {
+    return (
+      <div>
+        <form onSubmit={this.getValue}>
+          <input onChange={this.handleInputChange} placeholder="address" value={this.state.address} name="address" autoComplete="off" />
+          <button className="form-button">Get Started</button>
+        </form>
 
       {predictions.map(prediction => (
         <button key={prediction.id} onClick={e => fillAddress(prediction.description, e)}>

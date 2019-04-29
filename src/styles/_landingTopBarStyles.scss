@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   margin: 0 9rem;
-  padding: 2rem 0;
+  padding: 2.5rem 0 2rem;
 
   .landing_nav_home_icon {
     color: white;
@@ -11,8 +11,12 @@
 
     a {
       text-decoration: none;
+      font-size: 1.4rem;
       color: inherit;
       opacity: inherit;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 
@@ -28,8 +32,12 @@
       font-family: Roboto;
       font-style: normal;
       font-weight: 500;
-      font-size: 1rem;
+      font-size: 1.4rem;
       line-height: 1.6rem;
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
     }
 
     .landing_nav_button {
@@ -37,7 +45,7 @@
       font-family: Roboto;
       font-style: normal;
       font-weight: 500;
-      font-size: 1rem;
+      font-size: 1.4rem;
       line-height: 1.6rem;
       border: none;
       color: white;
@@ -47,6 +55,9 @@
       width: 132px;
       padding: none;
       cursor: pointer;
+      &:hover {
+        background: #f13800;
+      }
       &:focus {
         outline: none;
       }
