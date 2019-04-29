@@ -18,6 +18,13 @@ function LandingPage() {
       <div className="cloud_top">
         <img src={housePng} alt="isometric-house" />
       </div>
+      <div className="landing_mid">
+        <h2>Skip the Middleman</h2>
+        <p>
+          Coupled with the best machine learning algorithms in real estate technology, MyHouse’s data provides homeowners and buyers the most accurate decision
+          making information on the market
+        </p>
+      </div>
     </div>
   );
 }
