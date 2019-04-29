@@ -1,11 +1,11 @@
 import React from 'react';
 
-function OverviewContent() {
+function MyHouseContent() {
   return (
     <div className="dashboard_content_container">
-      <h1>OverviewContent</h1>
+      <div>MyHouseContent</div>
     </div>
   );
 }
 
-export default OverviewContent;
+export default MyHouseContent;
