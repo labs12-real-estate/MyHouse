@@ -79,7 +79,7 @@ class AddressInput extends Component {
       <div>
         <form onSubmit={this.getValue}>
           <input onChange={this.handleInputChange} placeholder="address" value={this.state.address} name="address" autoComplete="off" />
-          <button className="form-button">Search</button>
+          <button className="form-button">Get Started</button>
         </form>
 
         {this.state.predictions.map(prediction => (

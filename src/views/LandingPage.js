@@ -1,6 +1,7 @@
 import React from 'react';
 import LandingTopBar from '../components/navigation/LandingTopBar';
 import housePng from '../assets/images/isometric-house.png';
+import AddressInput from '../components/inputs/AddressInput';
 
 function LandingPage() {
   return (
@@ -12,6 +13,7 @@ function LandingPage() {
           We have the most precise home
           <br /> valuation techniques in the industry
         </p>
+        <AddressInput />
       </div>
       <div className="cloud_top">
         <img src={housePng} alt="isometric-house" />
