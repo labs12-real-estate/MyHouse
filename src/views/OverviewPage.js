@@ -1,6 +1,7 @@
 import React from 'react';
 import DashboardTopBar from '../components/navigation/DashboardTopBar';
 import SideBar from '../components/navigation/SideBar';
+import OverviewContent from '../components/dashboardContent/overviewContent/OverviewContent';
 
 function OverviewPage() {
   return (
@@ -8,7 +9,7 @@ function OverviewPage() {
       <DashboardTopBar />
       <div className="dashboard_page_container">
         <SideBar />
-        <h1>OverviewPageContent</h1>
+        <OverviewContent />
       </div>
     </div>
   );
