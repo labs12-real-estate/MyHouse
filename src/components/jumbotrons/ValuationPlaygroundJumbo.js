@@ -11,16 +11,24 @@ function ValuationPlaygroundJumbo({ newValue, upgradeROI, currentValue, currentU
         <i className="fas fa-map-marker-alt" /> 48592 Jerome, Shelby Township, MI 48315
       </h2>
       <div className="valuation_playground_jumbo_prices_container">
-        <span className="valuation_playground_jumbo_upgrade_info">Valuation</span>
-        <span className="valuation_playground_jumbo_upgrade_numbers">{currentValue}</span>
-        <span className="valuation_playground_jumbo_upgrade_info">Upgrade Cost Estimate</span>
-        <span className="valuation_playground_jumbo_upgrade_numbers">{upgrade_cost}</span>
+        <div className="valuation_playground_jumbo_row">
+          <span className="valuation_playground_jumbo_upgrade_info">Valuation</span>
+          <span className="valuation_playground_jumbo_upgrade_numbers">{currentValue}</span>
+        </div>
+        <div className="valuation_playground_jumbo_row">
+          <span className="valuation_playground_jumbo_upgrade_info">Upgrade Cost Estimate</span>
+          <span className="valuation_playground_jumbo_upgrade_numbers">{upgrade_cost}</span>
+        </div>
         <span className="valuation_playground_jumbo_upgrade_type">{name}</span>
-        <span className="valuation_playground_jumbo_upgrade_info">Return on Invetsment</span>
-        <span className="valuation_playground_jumbo_upgrade_numbers">{upgradeROI}</span>
+        <div className="valuation_playground_jumbo_row">
+          <span className="valuation_playground_jumbo_upgrade_info">Return on Invetsment</span>
+          <span className="valuation_playground_jumbo_upgrade_numbers">{upgradeROI}</span>
+        </div>
         <span className="valuation_playground_jumbo_upgrade_type">{name}</span>
-        <span className="valuation_playground_jumbo_upgrade_info">New Valuation Estimate</span>
-        <span className="valuation_playground_jumbo_upgrade_numbers">{newValue}</span>
+        <div className="valuation_playground_jumbo_row">
+          <span className="valuation_playground_jumbo_upgrade_info">New Valuation Estimate</span>
+          <span className="valuation_playground_jumbo_upgrade_numbers">{newValue}</span>
+        </div>
         <span className="valuation_playground_jumbo_upgrade_type">{name}</span>
       </div>
     </div>
