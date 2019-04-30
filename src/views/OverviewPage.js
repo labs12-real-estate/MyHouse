@@ -1,9 +1,9 @@
 import React from 'react';
 import DashboardTopBar from '../components/navigation/DashboardTopBar';
 import SideBar from '../components/navigation/SideBar';
-import OverviewContent from '../components/dashboardContent/overviewContent/OverviewContent';
+// import OverviewContent from '../components/dashboardContent/overviewContent/OverviewContent';
 import { graphqlOperation } from 'aws-amplify';
-import { Authenticator, Connect, SignIn } from 'aws-amplify-react';
+import { Authenticator, Connect } from 'aws-amplify-react';
 import { listHouses } from '../graphql/queries';
 
 function OverviewPage() {
