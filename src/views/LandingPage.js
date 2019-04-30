@@ -41,6 +41,8 @@ function LandingPage() {
         <img src={macBook} alt="macbook with demo" />
       </section>
 
+      <div className="landing_cloud_2" />
+
       <section className="landing_mid_grey">
         <h2>Why MyHouse?</h2>
         <div className="marketing_cards">
@@ -61,6 +63,8 @@ function LandingPage() {
           />
         </div>
       </section>
+
+      <div className="landing_cloud_3" />
 
       <section className="landing_mid">
         <div className="reviews">
@@ -87,6 +91,7 @@ function LandingPage() {
       </section>
 
       <section className="landing_cta_bottom">
+        <div className="landing_house_bg" />
         <p>See your home's value</p>
         <Button buttonText="Get Started" buttonStyle="cta_btn_bottom" />
       </section>
