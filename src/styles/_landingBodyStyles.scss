@@ -11,8 +11,8 @@
   h2 {
     color: #e63700;
     font-size: 4.8rem;
-    padding: 100px 0 40px;
-    font-family: 'Montserrat';
+    padding: 150px 0 40px;
+    font-family: 'Montserrat', 'sans-serif';
     font-weight: 700;
     letter-spacing: -1px;
   }
@@ -21,9 +21,9 @@
     font-size: 2rem;
     font-family: 'Roboto', 'serif';
     font-weight: 300;
-    width: 500px;
+    max-width: 600px;
     margin: 0 auto;
-    padding-bottom: 60px;
+    padding-bottom: 80px;
     color: #222;
     line-height: 3rem;
   }
@@ -36,6 +36,28 @@
     display: block;
     margin: 0 auto;
     max-width: 750px;
+  }
+}
+
+.landing_mid_grey {
+  background: #f7f7f7;
+
+  h2 {
+    color: #222;
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: 3.6rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    text-align: center;
+    padding: 80px 0;
+  }
+
+  .marketing_cards {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-bottom: 80px;
   }
 }
 

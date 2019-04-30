@@ -3,6 +3,7 @@ import LandingTopBar from '../components/navigation/LandingTopBar';
 import housePng from '../assets/images/isometric-house.png';
 import macBook from '../assets/images/macbook.png';
 import AddressInput from '../components/inputs/AddressInput';
+import MarketingCard from '../components/cards/MarketingCard';
 import Footer from '../components/footer/Footer';
 
 function LandingPage() {
@@ -35,6 +36,14 @@ function LandingPage() {
         <img src={macBook} alt="macbook with demo" />
       </section>
 
+      <section className="landing_mid_grey">
+        <h2>Why MyHouse?</h2>
+        <div className="marketing_cards">
+          <MarketingCard />
+          <MarketingCard />
+          <MarketingCard />
+        </div>
+      </section>
       <Footer />
     </div>
   );
