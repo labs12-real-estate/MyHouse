@@ -5,7 +5,7 @@ import macBook from '../assets/images/macbook.png';
 import laptop from '../assets/icons/laptop.svg';
 import statistics from '../assets/icons/statistics.svg';
 import calculator from '../assets/icons/calculator.svg';
-import AddressInputArchived from '../components/inputs/AddressInputArchived';
+import AddressInput from '../components/inputs/AddressInput';
 import MarketingCard from '../components/cards/MarketingCard';
 import Button from '../components/buttons/Button';
 import Footer from '../components/footer/Footer';
@@ -22,7 +22,7 @@ function LandingPage() {
           We have the most precise home
           <br /> valuation techniques in the industry
         </p>
-        <AddressInputArchived />
+        <AddressInput />
       </div>
 
       <div className="cloud_top">
