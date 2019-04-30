@@ -89,6 +89,62 @@
   }
 }
 
+.landing_cta_bottom {
+  height: 600px;
+
+  // &::after {
+  //   background-image: url('../assets/images/house-bg.jpg');
+  //   opacity: 0.07;
+  //   background-position: center;
+  //   background-size: cover;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   bottom: 0;
+  //   right: 0;
+  //   content: '';
+  //   z-index: -1;
+  // }
+
+  p {
+    color: #fff;
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: 6.4rem;
+    font-weight: 700;
+    letter-spacing: 0px;
+    padding: 200px 0 50px;
+    text-align: center;
+    text-shadow: -2px 4px 3px rgba(0, 0, 0, 0.15);
+  }
+
+  .cta_btn_bottom {
+    background: #e63700;
+    border: none;
+    border-radius: 5px;
+    box-shadow: -2px 5px 3px rgba(0, 0, 0, 0.15);
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-family: 'Roboto', 'serif';
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 0 auto;
+    height: 70px;
+    width: 280px;
+
+    &:hover {
+      background: #f13800;
+      transition: 0.3s;
+    }
+    &:active {
+      background: #d33200;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
 .landing_footer {
   background: #002663;
   color: #fff;

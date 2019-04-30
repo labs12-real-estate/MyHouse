@@ -7,6 +7,7 @@ import statistics from '../assets/icons/statistics.svg';
 import calculator from '../assets/icons/calculator.svg';
 import AddressInput from '../components/inputs/AddressInput';
 import MarketingCard from '../components/cards/MarketingCard';
+import Button from '../components/buttons/Button';
 import Footer from '../components/footer/Footer';
 
 function LandingPage() {
@@ -58,6 +59,10 @@ function LandingPage() {
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           />
         </div>
+      </section>
+      <section className="landing_cta_bottom">
+        <p>See your home's value</p>
+        <Button buttonText="Get Started" buttonStyle="cta_btn_bottom" />
       </section>
       <Footer />
     </div>
