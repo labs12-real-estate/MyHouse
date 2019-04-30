@@ -256,6 +256,17 @@
       margin-left: 2.4rem;
       opacity: 0.8;
       font-weight: 300;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.8;
+
+        &:hover {
+          transition: 0.3s;
+          opacity: 1;
+        }
+      }
     }
   }
 
@@ -275,5 +286,9 @@
     color: #0068ff;
     margin-left: 12px;
     font-size: 2.2rem;
+
+    &:hover {
+      color: #297eff;
+    }
   }
 } // end of .landing_footer

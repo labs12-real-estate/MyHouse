@@ -10,13 +10,17 @@ function Footer() {
             MyHouse
           </h3>
           <span>Team</span>
-          <span>Repository</span>
+          <span>
+            <a href="https://github.com/labs12-real-estate">Repository</a>
+          </span>
         </div>
         <div>
           <span>Connect</span>
           <i className="fab fa-twitter" />
           <i className="fab fa-instagram" />
-          <i className="fab fa-github" />
+          <a href="https://github.com/labs12-real-estate">
+            <i className="fab fa-github" />
+          </a>
           <i className="fab fa-facebook" />
           <i className="fab fa-linkedin" />
         </div>
