@@ -27,11 +27,7 @@
     color: #222;
     line-height: 3rem;
   }
-}
-
-.landing_mid:nth-of-type(2) {
-  padding-bottom: 170px;
-}
+} // end of .landing_mid
 
 .macbook {
   background: #fff;
@@ -98,9 +94,9 @@
         font-weight: 300;
         line-height: 2.4rem;
       }
-    }
-  }
-}
+    } // end of .marketing_card
+  } // end of .marketing_cards
+} // end of .landing_mid_grey
 
 .landing_cloud_3 {
   background-image: url('../assets/images/landing-cloud-3.png');
@@ -160,6 +156,8 @@
 
 .landing_cta_bottom {
   height: 600px;
+  position: relative;
+  z-index: 1;
 
   p {
     color: #fff;
@@ -167,9 +165,24 @@
     font-size: 6.4rem;
     font-weight: 700;
     letter-spacing: 0px;
+    opacity: 1;
     padding: 200px 0 50px;
     text-align: center;
     text-shadow: -2px 4px 3px rgba(0, 0, 0, 0.15);
+    z-index: 950;
+  }
+
+  .landing_house_bg {
+    background-image: url('../assets/images/house-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    opacity: 0.07;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
   }
 
   .cta_btn_bottom {
@@ -184,8 +197,10 @@
     font-size: 3rem;
     font-weight: 300;
     margin: 0 auto;
+    opacity: 1;
     height: 70px;
     width: 280px;
+    z-index: 900;
 
     &:hover {
       background: #f13800;
@@ -198,7 +213,7 @@
       outline: none;
     }
   }
-}
+} // end of .landing_cta_bottom
 
 .landing_footer {
   background: #002663;
@@ -261,4 +276,4 @@
     margin-left: 12px;
     font-size: 2.2rem;
   }
-}
+} // end of .landing_footer
