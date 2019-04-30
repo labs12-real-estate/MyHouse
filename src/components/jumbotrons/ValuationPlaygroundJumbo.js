@@ -1,11 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import houseBG from '../../assets/images/house-bg.jpg';
+
 function ValuationPlaygroundJumbo({ newValue, upgradeROI, currentValue, currentUpgrade: { upgrade_cost, name } }) {
   return (
     <div className="valuation_playground_jumbo_container">
-      <img src="" alt="" className="valuation_playground_jumbo_img" />
-      <h2 className="valuation_playground_jumbo_title">48592 Jerome, Shelby Township, MI 48315</h2>
+      <img src={houseBG} alt="house" className="valuation_playground_jumbo_img" />
+      <h2 className="valuation_playground_jumbo_title">
+        <i className="fas fa-map-marker-alt" /> 48592 Jerome, Shelby Township, MI 48315
+      </h2>
       <div className="valuation_playground_jumbo_prices_container">
         <span className="valuation_playground_jumbo_upgrade_info">Valuation</span>
         <span className="valuation_playground_jumbo_upgrade_numbers">{currentValue}</span>

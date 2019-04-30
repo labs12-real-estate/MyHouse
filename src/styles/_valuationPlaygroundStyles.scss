@@ -16,10 +16,22 @@
   display: flex;
 
   .valuation_playground_jumbo_container {
+    background: #fff;
+    height: 800px;
     display: flex;
     flex-direction: column;
+    max-width: 35%;
 
+    .valuation_playground_jumbo_img {
+      width: 100%;
+    }
     .valuation_playground_jumbo_title {
+      text-align: right;
+      font-size: 1.8rem;
+
+      i {
+        color: #e63700;
+      }
     }
 
     .valuation_playground_jumbo_prices_container {
