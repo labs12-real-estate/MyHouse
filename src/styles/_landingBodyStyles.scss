@@ -6,12 +6,13 @@
 
 .landing_mid {
   background: #fff;
+  padding-bottom: 250px;
   text-align: center;
 
   h2 {
     color: #e63700;
     font-size: 4.8rem;
-    padding: 150px 0 40px;
+    padding: 60px 0 40px;
     font-family: 'Montserrat', 'sans-serif';
     font-weight: 700;
     letter-spacing: -1px;
@@ -23,10 +24,13 @@
     font-weight: 300;
     max-width: 600px;
     margin: 0 auto;
-    padding-bottom: 80px;
     color: #222;
     line-height: 3rem;
   }
+}
+
+.landing_mid:nth-of-type(2) {
+  padding-bottom: 170px;
 }
 
 .macbook {
@@ -50,6 +54,7 @@
 .landing_mid_grey {
   background: #f7f7f7;
   color: #222;
+  padding-top: 200px;
 
   h2 {
     color: #222;
@@ -97,13 +102,6 @@
   }
 }
 
-// .landing_cloud_2 {
-//   background-image: url('../assets/images/landing-cloud-2.png');
-//   background-position: center;
-//   height: 100px;
-//   width: 100%;
-// }
-
 .landing_cloud_3 {
   background-image: url('../assets/images/landing-cloud-3.png');
   background-position: center;
@@ -126,14 +124,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 30px;
-    padding-bottom: 150px;
 
     .review_card {
       border-radius: 15px;
       box-shadow: -6px 8px 9px rgba(0, 0, 0, 0.08);
       display: flex;
-      margin-bottom: 60px;
+      margin-top: 30px;
       max-width: 47%;
       padding: 30px 40px;
 
@@ -157,10 +153,10 @@
           font-size: 1.4rem;
           text-align: right;
         }
-      }
-    }
-  }
-}
+      } // end of .review_text
+    } // end of .review_card
+  } // end of .review_cards
+} // end of .reviews
 
 .landing_cta_bottom {
   height: 600px;
