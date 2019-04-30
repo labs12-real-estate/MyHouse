@@ -52,8 +52,8 @@ function AddressInput() {
 
   return (
     <div>
-      <form onSubmit={this.getValue}>
-        <input onChange={this.handleInputChange} placeholder="address" value={this.state.address} name="address" autoComplete="off" />
+      <form onSubmit={getValue}>
+        <input onChange={handleInputChange} placeholder="address" value={address} name="address" autoComplete="off" />
         <button className="form-button">Get Started</button>
       </form>
 

@@ -1,0 +1,32 @@
+.valuation_playground_title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 3.6rem;
+  line-height: 4.2rem;
+  margin-left: 6%;
+  margin-top: 22px;
+  color: #222222;
+}
+
+.valuation_playground_content_container {
+  width: 88%;
+  margin: 0 auto;
+  border: 1px solid green;
+  display: flex;
+
+  .valuation_playground_jumbo_container {
+    display: flex;
+    flex-direction: column;
+
+    .valuation_playground_jumbo_title {
+
+    }
+
+    .valuation_playground_jumbo_prices_container {
+      display: flex;
+      flex-direction: column;
+    }
+
+  }
+}
