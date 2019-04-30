@@ -43,7 +43,6 @@ function LandingPage() {
 
       <section className="landing_mid_grey">
         <h2>Why MyHouse?</h2>
-        <p>Hello</p>
         <div className="marketing_cards">
           <MarketingCard
             icon={laptop}
