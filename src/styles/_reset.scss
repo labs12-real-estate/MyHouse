@@ -108,9 +108,15 @@ nav,
 section {
   display: block;
 }
+html {
+  font-size: 62.5%;
+}
+* {
+  box-sizing: border-box;
+}
 body {
   line-height: 1;
-  background: #e9ebf0;
+  background: #e5e5e5;
 }
 ol,
 ul {
