@@ -62,6 +62,8 @@ function LandingPage() {
         </div>
       </section>
 
+      <div className="landing_cloud_3" />
+
       <section className="landing_mid">
         <div className="reviews">
           <h2>Reviews</h2>
