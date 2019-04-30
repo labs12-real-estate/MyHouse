@@ -1,0 +1,46 @@
+.dashboard_jumbo {
+  background-color: white;
+  margin: 0 5%;
+  margin-top: 3rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  .house_image {
+    background-image: url(../assets/images/house-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+  }
+  
+  .address_value_flex {
+    display: flex;
+    justify-content: space-between;
+
+    .address {
+      margin: 1rem 4rem;
+      display: flex;
+      align-items: center;
+      .logo {
+        height: 2rem;
+      }
+      h3 {
+        margin-left: 1rem;
+        font-size: 2rem;
+      }
+    }
+
+    .value {
+      margin: 1rem 4rem;
+      display: flex;
+      align-items: center;
+      h4 {
+        font-size: 1.5rem;
+      }
+      h1 {
+        margin-left: 2rem;
+        color: lightseagreen;
+        font-size: 3rem;
+      }
+    }
+  }
+}
