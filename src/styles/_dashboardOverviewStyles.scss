@@ -1,11 +1,10 @@
 .dashboard_jumbo {
   background-color: white;
-  margin: 0 5%;
-  margin-top: 3rem;
+  margin: 3rem 5%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   .house_image {
-    background-image: url(../assets/images/house-bg.jpg);
+    background-image: url(../assets/images/overview/house-bg.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -39,6 +38,42 @@
       h1 {
         margin-left: 2rem;
         color: lightseagreen;
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+.overview_cards_container {
+  margin: 5rem 5%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .feature_card{
+    z-index: -1;
+    position: relative;
+    margin: 1rem 1rem;
+    width: 350px;
+    height: 100px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    img {
+      display: inline-block;
+      object-fit: cover;
+      width: 40%;
+      height: 100px;
+    }
+    .text_box{
+      position: absolute;
+      margin-left: 1.5rem;
+      top: 40%;
+      display: inline-block;
+      h3 {
+        font-size: 1.5rem;
+        color:gray;
+      }
+      h1 {
         font-size: 3rem;
       }
     }

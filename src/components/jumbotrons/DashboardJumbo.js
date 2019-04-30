@@ -1,14 +1,14 @@
 import React from 'react';
 import { ReactComponent as LocationLogo } from '../../assets/icons/location.svg';
 
-function DashboardJumbo() {
+function DashboardJumbo(props) {
   return (
     <div className="dashboard_jumbo">
       <div className="house_image" />
       <div className="address_value_flex">
         <div className="address">
           <LocationLogo className="logo" />
-          <h3>48592 Jeorome, Shelby Township, MI 48315</h3>
+          <h3>{props.props.parcel_data_address}</h3>
         </div>
         <div className="value">
           <h4>Valuation</h4>
