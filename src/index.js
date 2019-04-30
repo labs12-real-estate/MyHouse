@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'now-env';
+import Amplify from 'aws-amplify';
 import { BrowserRouter } from 'react-router-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
@@ -8,6 +10,10 @@ import logger from 'redux-logger';
 import rootReducer from './reducers';
 import App from './App';
 import './styles/index.scss';
+import awsConfig from './aws-exports';
+
+// This configures Amplify module, makes it available globally throughout app
+Amplify.configure(awsConfig);
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE___ || compose;
 

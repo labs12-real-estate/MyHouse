@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Amplify from 'aws-amplify';
 import LandingPage from './views/LandingPage';
 import WizardFormPage from './views/WizardFormPage';
 import OverviewPage from './views/OverviewPage';
@@ -8,11 +7,7 @@ import MyHousePage from './views/MyHousePage';
 import ValuationPlaygroundPage from './views/ValuationPlaygroundPage';
 import MortgageCalculatorPage from './views/MortgageCalculatorPage';
 import DesignStudioPage from './views/DesignStudioPage';
-import awsConfig from './aws-exports';
 // Note: onUpdate sends the user back to the top of the page on route switch.
-
-// This configures Amplify module, makes it available globally throughout app
-Amplify.configure(awsConfig);
 
 function App() {
   return (
