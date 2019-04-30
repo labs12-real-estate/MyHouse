@@ -1,11 +1,14 @@
 import React from 'react';
+import { scrollToTop } from '../../helper-functions/display-functions';
 
 function Footer() {
   return (
     <footer className="landing_footer">
       <div className="footer_top">
         <div>
-          <h3>MyHouse</h3>
+          <h3 onClick={scrollToTop} title="Back to top">
+            MyHouse
+          </h3>
           <span>Team</span>
           <span>Repository</span>
         </div>
