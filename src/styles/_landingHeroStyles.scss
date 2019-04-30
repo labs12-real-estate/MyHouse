@@ -2,67 +2,111 @@
   text-align: center;
 
   h1 {
-    font-size: 7.2rem;
-    letter-spacing: -2px;
-    font-family: 'Montserrat', 'sans-serif';
-    font-weight: 700;
     color: #fff;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: 7.2rem;
+    font-weight: 700;
+    letter-spacing: -2px;
     margin: 80px 0 20px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   p {
-    font-family: 'Roboto', 'serif';
-    font-weight: 300;
-    font-size: 2.4rem;
     color: #fff;
-    opacity: 0.8;
+    font-family: 'Roboto', 'serif';
+    font-size: 2.4rem;
+    font-weight: 300;
     line-height: 30px;
+    opacity: 0.8;
     word-spacing: 2px;
   }
 
-  form {
-    margin: 70px 0;
+  .address_searchbar {
+    margin: 0 auto;
+    position: relative;
+    width: 650px;
 
-    input {
+    form {
+      margin: 70px 0;
+
+      input {
+        border: none;
+        color: #222;
+        font-size: 1.8rem;
+        padding: 10px 20px;
+        width: 500px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      button {
+        background: #e63700;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-family: 'Roboto', 'serif';
+        font-size: 1.8rem;
+        font-weight: 300;
+        height: 42px;
+        width: 150px;
+
+        &:hover {
+          background: #f13800;
+        }
+        &:active {
+          background: #d33200;
+        }
+        &:focus {
+          outline: none;
+        }
+      } // end of button styles
+    } // end of form styles
+
+    .search_result_dropdown {
+      background: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      padding: 0.5rem 0;
+      position: absolute;
+      top: 42px;
+      left: 0;
       width: 500px;
-      padding: 10px 20px;
-      font-size: 1.8rem;
-      border: none;
-      color: #222;
-    }
+      z-index: 1000;
 
-    button {
-      width: 150px;
-      font-family: 'Roboto', 'serif';
-      font-weight: 300;
-      font-size: 1.8rem;
-      height: 42px;
-      background: #e63700;
-      border: none;
-      color: #fff;
-      cursor: pointer;
+      button {
+        background: #f4f4f4;
+        border: none;
+        color: #888;
+        cursor: pointer;
+        font-family: 'Roboto', 'sans-serif';
+        font-size: 1.6rem;
+        margin-bottom: 2px;
+        text-align: left;
+        padding: 7px 2rem;
+        width: 100%;
 
-      &:hover {
-        background: #f13800;
+        &:hover {
+          background: #e4e4e4;
+          color: #d33200;
+        }
+        &:focus {
+          outline: none;
+        }
       }
-      &:active {
-        background: #d33200;
-      }
-      &:focus {
-        outline: none;
-      }
-    }
-  }
-}
+    } // end of .search_result_dropdown
+  } // end of .address_searchbar
+} // end of .hero styles
 
 .cloud_top {
   background-image: url('../assets/images/landing-cloud-white.png');
   background-size: cover;
   background-position: center;
-  width: 100%;
   height: 550px;
   position: relative;
+  width: 100%;
   top: 10px;
 
   img {
