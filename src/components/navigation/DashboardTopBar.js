@@ -7,7 +7,7 @@ function DashboardTopBar() {
     <div className="dashboard_nav_container">
       <div className="dashboard_nav_home_icon">
         <Link to="/">
-          <i className="fas fa-home fa-2x" />
+          <i className="fas fa-home fa-3x" />
         </Link>
       </div>
       <div className="dashboard_nav_item_container">
