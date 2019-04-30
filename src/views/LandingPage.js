@@ -9,6 +9,7 @@ import AddressInput from '../components/inputs/AddressInput';
 import MarketingCard from '../components/cards/MarketingCard';
 import Button from '../components/buttons/Button';
 import Footer from '../components/footer/Footer';
+import ReviewCard from '../components/cards/ReviewCard';
 
 function LandingPage() {
   return (
@@ -60,6 +61,31 @@ function LandingPage() {
           />
         </div>
       </section>
+
+      <section className="landing_mid">
+        <div className="reviews">
+          <h2>Reviews</h2>
+          <div className="review_cards">
+            <ReviewCard
+              comment="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              author="Lorem Ipsum"
+            />
+            <ReviewCard
+              comment="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              author="Lorem Ipsum"
+            />
+            <ReviewCard
+              comment="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              author="Lorem Ipsum"
+            />
+            <ReviewCard
+              comment="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              author="Lorem Ipsum"
+            />
+          </div>
+        </div>
+      </section>
+
       <section className="landing_cta_bottom">
         <p>See your home's value</p>
         <Button buttonText="Get Started" buttonStyle="cta_btn_bottom" />
