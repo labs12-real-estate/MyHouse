@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-function ValuationPlaygroundJumbo({ currentValue, currentUpgrade: { upgrade_cost, ROI_percentage, name } }) {
+function ValuationPlaygroundJumbo({ newValue, upgradeROI, currentValue, currentUpgrade: { upgrade_cost, name } }) {
   return (
     <div className="valuation_playground_jumbo_container">
       <img src="" alt="" className="valuation_playground_jumbo_img" />
@@ -13,10 +13,10 @@ function ValuationPlaygroundJumbo({ currentValue, currentUpgrade: { upgrade_cost
         <span className="valuation_playground_jumbo_upgrade_numbers">{upgrade_cost}</span>
         <span className="valuation_playground_jumbo_upgrade_type">{name}</span>
         <span className="valuation_playground_jumbo_upgrade_info">Return on Invetsment</span>
-        <span className="valuation_playground_jumbo_upgrade_numbers">$3,300</span>
+        <span className="valuation_playground_jumbo_upgrade_numbers">{upgradeROI}</span>
         <span className="valuation_playground_jumbo_upgrade_type">{name}</span>
         <span className="valuation_playground_jumbo_upgrade_info">New Valuation Estimate</span>
-        <span className="valuation_playground_jumbo_upgrade_numbers">$505,777</span>
+        <span className="valuation_playground_jumbo_upgrade_numbers">{newValue}</span>
         <span className="valuation_playground_jumbo_upgrade_type">{name}</span>
       </div>
     </div>
