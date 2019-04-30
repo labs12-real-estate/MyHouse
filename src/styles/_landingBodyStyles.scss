@@ -31,11 +31,19 @@
 
 .macbook {
   background: #fff;
+  background-image: url('../assets/images/landing-cloud-2.png');
+  background-position: center;
+  height: 100px;
+  position: relative;
 
   img {
     display: block;
     margin: 0 auto;
     max-width: 750px;
+    position: absolute;
+    top: -170px;
+    left: 0;
+    right: 0;
   }
 }
 
@@ -87,6 +95,20 @@
       }
     }
   }
+}
+
+// .landing_cloud_2 {
+//   background-image: url('../assets/images/landing-cloud-2.png');
+//   background-position: center;
+//   height: 100px;
+//   width: 100%;
+// }
+
+.landing_cloud_3 {
+  background-image: url('../assets/images/landing-cloud-3.png');
+  background-position: center;
+  height: 166px;
+  width: 100%;
 }
 
 .reviews {

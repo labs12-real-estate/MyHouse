@@ -41,6 +41,8 @@ function LandingPage() {
         <img src={macBook} alt="macbook with demo" />
       </section>
 
+      <div className="landing_cloud_2" />
+
       <section className="landing_mid_grey">
         <h2>Why MyHouse?</h2>
         <div className="marketing_cards">
