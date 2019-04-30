@@ -1,0 +1,32 @@
+type House @auth(rules: [{ allow: owner }]) @model {
+  id: ID!
+  photos: [String!]!
+  address: Address!
+  parcelData: ParcelData!
+  userProvided: UserProvided!
+  valuation: Int!
+}
+
+type Address {
+  street: String!
+  city: String!
+  state: String!
+  zip: String!
+}
+
+type ParcelData {
+  squareFootage: Int
+  numBedrooms: Int
+  numBathrooms: Float
+  lotAcreage: Float
+  yearBuilt: Int
+  garageSize: Float
+  architecturalStyle: String
+  waterfront: Boolean
+}
+
+type UserProvided {
+  countertops: String!
+  acAge: Int!
+  furnaceAge: Int!
+}

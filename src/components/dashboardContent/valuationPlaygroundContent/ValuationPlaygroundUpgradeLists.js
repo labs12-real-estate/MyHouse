@@ -25,14 +25,14 @@ function ValuationPlaygroundUpgradeLists({
 }) {
   return (
     <div className="valuation_playground_upgrades_container">
-      <ValuationPlaygroundSelector upgradeList={upgradeList.counterTops} setCurrentUpgrade={setCurrentCounterTop} />
-      <ValuationPlaygroundSelector upgradeList={upgradeList.roof} setCurrentUpgrade={setCurrentRoof} />
-      <ValuationPlaygroundSelector upgradeList={upgradeList.siding} setCurrentUpgrade={setCurrentSiding} />
-      <ValuationPlaygroundSelector upgradeList={upgradeList.AC} setCurrentUpgrade={setCurrentAC} />
-      <ValuationPlaygroundSelector upgradeList={upgradeList.furnace} setCurrentUpgrade={setCurrentFurnace} />
-      <ValuationPlaygroundSelector upgradeList={upgradeList.flooring} setCurrentUpgrade={setCurrentFlooring} />
-      <ValuationPlaygroundSelector upgradeList={upgradeList.addingSqFt} setCurrentUpgrade={setCurrentAddingSqFt} />
-      <ValuationPlaygroundSelector upgradeList={upgradeList.painting} setCurrentUpgrade={setCurrentPainting} />
+      <ValuationPlaygroundSelector upgradeList={upgradeList.counterTops} setCurrentUpgrade={setCurrentCounterTop} upgradeType="Countertops" />
+      <ValuationPlaygroundSelector upgradeList={upgradeList.roof} setCurrentUpgrade={setCurrentRoof} upgradeType="New Roof" />
+      <ValuationPlaygroundSelector upgradeList={upgradeList.siding} setCurrentUpgrade={setCurrentSiding} upgradeType="New Siding" />
+      <ValuationPlaygroundSelector upgradeList={upgradeList.AC} setCurrentUpgrade={setCurrentAC} upgradeType="New A/C Unit" />
+      <ValuationPlaygroundSelector upgradeList={upgradeList.furnace} setCurrentUpgrade={setCurrentFurnace} upgradeType="New Furnace" />
+      <ValuationPlaygroundSelector upgradeList={upgradeList.flooring} setCurrentUpgrade={setCurrentFlooring} upgradeType="New Flooring" />
+      <ValuationPlaygroundSelector upgradeList={upgradeList.addingSqFt} setCurrentUpgrade={setCurrentAddingSqFt} upgradeType="Add Sq. Footage" />
+      <ValuationPlaygroundSelector upgradeList={upgradeList.painting} setCurrentUpgrade={setCurrentPainting} upgradeType="New Paint" />
     </div>
   );
 }

@@ -2,18 +2,18 @@
   @include radial-gradient(#6c9de2, #79adff, #3560d0, #0038a5, #003498);
   width: 100%;
   height: 100%;
-  // position: absolute;
 }
 
 .landing_mid {
   background: #fff;
+  padding-bottom: 250px;
   text-align: center;
 
   h2 {
     color: #e63700;
     font-size: 4.8rem;
-    padding: 100px 0 40px;
-    font-family: 'Montserrat';
+    padding: 60px 0 40px;
+    font-family: 'Montserrat', 'sans-serif';
     font-weight: 700;
     letter-spacing: -1px;
   }
@@ -22,10 +22,272 @@
     font-size: 2rem;
     font-family: 'Roboto', 'serif';
     font-weight: 300;
-    width: 500px;
+    max-width: 600px;
     margin: 0 auto;
-    padding-bottom: 60px;
     color: #222;
     line-height: 3rem;
   }
+} // end of .landing_mid
+
+.macbook {
+  background: #fff;
+  background-image: url('../assets/images/landing-cloud-2.png');
+  background-position: center;
+  height: 100px;
+  position: relative;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 750px;
+    position: absolute;
+    top: -170px;
+    left: 0;
+    right: 0;
+  }
 }
+
+.landing_mid_grey {
+  background: #f7f7f7;
+  color: #222;
+  padding-top: 200px;
+
+  h2 {
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: 3.6rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    text-align: center;
+    padding: 80px 0;
+  }
+
+  .marketing_cards {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-bottom: 110px;
+
+    .marketing_card {
+      width: 30%;
+
+      img {
+        display: block;
+        margin: 0 auto 50px;
+        width: 70px;
+      }
+
+      h3 {
+        font-size: 2.2rem;
+        text-align: center;
+        font-weight: 700;
+        font-family: 'Montserrat', 'sans-serif';
+        letter-spacing: 0px;
+        margin: 20px 0;
+      }
+
+      p {
+        text-align: center;
+        font-family: 'Roboto', 'serif';
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 2.4rem;
+      }
+    } // end of .marketing_card
+  } // end of .marketing_cards
+} // end of .landing_mid_grey
+
+.landing_cloud_3 {
+  background-image: url('../assets/images/landing-cloud-3.png');
+  background-position: center;
+  height: 166px;
+  width: 100%;
+}
+
+.reviews {
+  background: #fff;
+  margin: 0 auto;
+  max-width: 1000px;
+
+  h2 {
+    color: #333;
+    font-size: 3.6rem;
+    text-align: left;
+  }
+
+  .review_cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .review_card {
+      border-radius: 15px;
+      box-shadow: -6px 8px 9px rgba(0, 0, 0, 0.08);
+      display: flex;
+      margin-top: 30px;
+      max-width: 47%;
+      padding: 30px 40px;
+
+      img {
+        border-radius: 100%;
+        height: 6rem;
+        width: 6rem;
+      }
+
+      .review_text {
+        p {
+          font-size: 1.6rem;
+          line-height: 2rem;
+          padding: 0 0 15px 20px;
+          text-align: left;
+        }
+
+        h5 {
+          font-family: 'Roboto', 'serif';
+          font-weight: bold;
+          font-size: 1.4rem;
+          text-align: right;
+        }
+      } // end of .review_text
+    } // end of .review_card
+  } // end of .review_cards
+} // end of .reviews
+
+.landing_cta_bottom {
+  height: 600px;
+  position: relative;
+  z-index: 1;
+
+  p {
+    color: #fff;
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: 6.4rem;
+    font-weight: 700;
+    letter-spacing: 0px;
+    opacity: 1;
+    padding: 200px 0 50px;
+    text-align: center;
+    text-shadow: -2px 4px 3px rgba(0, 0, 0, 0.15);
+    z-index: 950;
+  }
+
+  .landing_house_bg {
+    background-image: url('../assets/images/house-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    opacity: 0.07;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .cta_btn_bottom {
+    background: #e63700;
+    border: none;
+    border-radius: 5px;
+    box-shadow: -2px 5px 3px rgba(0, 0, 0, 0.15);
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-family: 'Roboto', 'serif';
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 0 auto;
+    opacity: 1;
+    height: 70px;
+    width: 280px;
+    z-index: 900;
+
+    &:hover {
+      background: #f13800;
+      transition: 0.3s;
+    }
+    &:active {
+      background: #d33200;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+} // end of .landing_cta_bottom
+
+.landing_footer {
+  background: #002663;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  height: 190px;
+  justify-content: space-between;
+  padding: 30px 60px;
+
+  span {
+    font-family: 'Roboto', 'sans-serif';
+  }
+
+  .footer_top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 auto;
+    max-width: 1400px;
+    width: 100%;
+
+    div {
+      display: flex;
+      align-items: baseline;
+    }
+
+    h3 {
+      color: #0068ff;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 2.6rem;
+      font-family: 'Montserrat', 'sans-serif';
+      font-weight: 700;
+      letter-spacing: -2px;
+    }
+
+    span {
+      margin-left: 2.4rem;
+      opacity: 0.8;
+      font-weight: 300;
+
+      a {
+        color: #fff;
+        opacity: 0.8;
+
+        &:hover {
+          transition: 0.3s;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .footer_bottom {
+    display: flex;
+    font-family: 'Roboto', 'serif';
+    font-size: 1.2rem;
+    font-weight: 300;
+    justify-content: space-between;
+    opacity: 0.5;
+    margin: 0 auto;
+    min-width: 375px;
+    max-width: 500px;
+  }
+
+  .fab {
+    color: #0068ff;
+    margin-left: 12px;
+    font-size: 2.2rem;
+
+    &:hover {
+      color: #297eff;
+    }
+  }
+} // end of .landing_footer
