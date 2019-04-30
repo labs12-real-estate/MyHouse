@@ -2,6 +2,9 @@ import React from 'react';
 import LandingTopBar from '../components/navigation/LandingTopBar';
 import housePng from '../assets/images/isometric-house.png';
 import macBook from '../assets/images/macbook.png';
+import laptop from '../assets/icons/laptop.svg';
+import statistics from '../assets/icons/statistics.svg';
+import calculator from '../assets/icons/calculator.svg';
 import AddressInput from '../components/inputs/AddressInput';
 import MarketingCard from '../components/cards/MarketingCard';
 import Footer from '../components/footer/Footer';
@@ -39,9 +42,21 @@ function LandingPage() {
       <section className="landing_mid_grey">
         <h2>Why MyHouse?</h2>
         <div className="marketing_cards">
-          <MarketingCard />
-          <MarketingCard />
-          <MarketingCard />
+          <MarketingCard
+            icon={laptop}
+            title="Customized"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          />
+          <MarketingCard
+            icon={calculator}
+            title="Transparent"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          />
+          <MarketingCard
+            icon={statistics}
+            title="Simple"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          />
         </div>
       </section>
       <Footer />

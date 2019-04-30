@@ -1,9 +1,11 @@
 import React from 'react';
 
-function MarketingCard() {
+function MarketingCard(props) {
   return (
-    <div>
-      <div>MarketingCard</div>
+    <div className="marketing_card">
+      <img src={props.icon} alt={props.title} />
+      <h3>{props.title}</h3>
+      <p>{props.description}</p>
     </div>
   );
 }
