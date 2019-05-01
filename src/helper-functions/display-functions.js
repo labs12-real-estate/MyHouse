@@ -6,4 +6,7 @@ export const scrollToTop = () => {
   window.scrollTo(0, 0);
 };
 
-export const commaSeparator = num => `$ ${num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
+export const commaSeparator = num =>
+  `$ ${Math.round(num)
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
