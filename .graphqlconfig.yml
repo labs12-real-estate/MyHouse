@@ -1,0 +1,16 @@
+projects:
+  labs12realestatefe:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.js
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: src/graphql
+        graphQLApiId: cw2qzhbrm5aephw6ksu3ltlbjm
+      endpoints:
+        prod: >-
+          https://dnir3w34tjdc5nwkbxvs2uxnym.appsync-api.us-east-2.amazonaws.com/graphql

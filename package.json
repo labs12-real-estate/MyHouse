@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "aws-amplify": "^1.1.26",
+    "aws-amplify-react": "^2.3.6",
     "axios": "^0.18.0",
     "mortgage-calculator-react": "^0.1.3",
     "node-sass": "^4.11.0",
