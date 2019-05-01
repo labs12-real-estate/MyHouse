@@ -15,6 +15,9 @@ export const SIGN_UP_FETCH = 'SIGN_UP_FETCH';
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
 export const SIGN_UP_FAIL = 'SIGN_UP_FAIL';
 export const SIGN_OUT = 'SIGN_OUT';
+export const SIGN_UP_PENDING = 'SIGN_UP_PENDING';
+export const CONFIRM_FETCH = 'CONFIRM_FETCH';
+export const CONFIRM_FAIL = 'CONFIRM_FAIL';
 
 // userAction Types
 
