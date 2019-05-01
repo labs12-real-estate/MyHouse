@@ -1,28 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import DashboardTopBar from '../components/navigation/DashboardTopBar';
 import SideBar from '../components/navigation/SideBar';
-// import OverviewContent from '../components/dashboardContent/overviewContent/OverviewContent';
-import { graphqlOperation } from 'aws-amplify';
-import { Authenticator, Connect } from 'aws-amplify-react';
-import { listHouses } from '../graphql/queries';
+import OverviewContent from '../components/dashboardContent/overviewContent/OverviewContent';
+import { connect } from 'react-redux';
+import { getHouse } from '../actions/houseActions';
 
-function OverviewPage() {
+function OverviewPage({ error, house, getHouse }) {
+  useEffect(getHouse, []);
   return (
     <div>
       <DashboardTopBar />
       <div className="dashboard_page_container">
         <SideBar />
-        <div className="dashboard_content_container">
-          <Authenticator />
-          <Connect query={graphqlOperation(listHouses)}>
-            {({ loading, data, errors }) =>
-              loading ? <h3>Loading...</h3> : data ? <pre>{JSON.stringify(data, null, 2)}</pre> : <pre>{JSON.stringify(errors, null, 2)}</pre>
-            }
-          </Connect>
-        </div>
+        <OverviewContent {...house} />
       </div>
     </div>
   );
 }
 
-export default OverviewPage;
+export default connect(
+  ({ houseReducer }) => ({
+    house: houseReducer.house,
+    error: houseReducer.error
+  }),
+  { getHouse }
+)(OverviewPage);
