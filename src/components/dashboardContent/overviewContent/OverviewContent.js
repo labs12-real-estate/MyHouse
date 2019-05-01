@@ -3,12 +3,11 @@ import DashboardJumbo from '../../jumbotrons/DashboardJumbo';
 import CardsContainer from './CardsContainer';
 
 function OverviewContent(house) {
-  console.log(house);
   return (
     <div className="dashboard_content_container">
-      <h1>Overview</h1>
-      <DashboardJumbo />
-      <CardsContainer />
+      <h1 className="dashboard_content_title">Overview</h1>
+      <DashboardJumbo houseBackgroundPhoto={house.houseBackgroundPhoto} address={house.address} valuation={house.valuation} />
+      <CardsContainer countertops={house.countertops} parcelData={house.parcelData} />
     </div>
   );
 }

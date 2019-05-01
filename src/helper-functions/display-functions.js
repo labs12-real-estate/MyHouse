@@ -10,3 +10,10 @@ export const commaSeparator = num =>
   `$${Math.round(num)
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
+
+export const numberWithCommas = num => {
+  // no dollar sign added
+  return `${Math.round(num)
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
+};

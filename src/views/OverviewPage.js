@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { getHouse } from '../actions/houseActions';
 
 function OverviewPage({ error, house, getHouse }) {
-  useEffect(getHouse, []);
+  useEffect(getHouse, []); // get house data from AWS server on first render
   return (
     <div>
       <DashboardTopBar />
