@@ -5,3 +5,8 @@ export const activeNavItemStyles = (path1, path2) => {
 export const scrollToTop = () => {
   window.scrollTo(0, 0);
 };
+
+export const commaSeparator = num =>
+  `$${Math.round(num)
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;

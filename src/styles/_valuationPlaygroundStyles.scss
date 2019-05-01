@@ -16,16 +16,73 @@
   display: flex;
 
   .valuation_playground_jumbo_container {
+    background: #fff;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+    height: 800px;
     display: flex;
     flex-direction: column;
+    max-width: 35%;
 
+    .valuation_playground_jumbo_img {
+      width: 100%;
+    }
     .valuation_playground_jumbo_title {
+      text-align: right;
+      font-size: 1.8rem;
+      font-family: 'Fira Sans', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0;
+      padding: 20px 7%;
+
+      i {
+        color: #e63700;
+      }
     }
 
     .valuation_playground_jumbo_prices_container {
       display: flex;
       flex-direction: column;
-    }
+      border-top: 1px solid #d4d4d4;
+      font-size: 1.6rem;
+      padding: 30px 0;
+
+      .valuation_playground_jumbo_upgrade_type {
+        color: #222;
+        font-family: 'Fira Sans', 'sans-serif';
+        font-weight: 600;
+        font-size: 2rem;
+        margin: 30px auto 25px;
+        width: 80%;
+        text-align: right;
+        border-bottom: 1px solid #222;
+        padding-bottom: 8px;
+      }
+
+      .valuation_playground_jumbo_row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        width: 80%;
+        // min-height: 40px;
+        margin: 0 auto 25px;
+
+        .valuation_playground_jumbo_upgrade_info {
+          font-family: 'Montserrat', 'sans-serif';
+          font-size: 1.2rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: #888;
+        }
+
+        .valuation_playground_jumbo_upgrade_numbers {
+          color: #22ab00;
+          font-family: 'Roboto', 'sans-serif';
+          font-size: 2.4rem;
+          font-weight: 300;
+        }
+      } // end of .valuation_playground_jumbo_row
+    } // end of .valuation_playground_jumbo_prices_container
   } // end jumbo_container
 
   .valuation_playground_upgrades_container {
