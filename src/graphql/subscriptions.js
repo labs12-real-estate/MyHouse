@@ -4,87 +4,114 @@
 export const onCreateHouse = `subscription OnCreateHouse {
   onCreateHouse {
     id
-    photos
-    address {
-      street
-      city
-      state
-      zip
-    }
+    description
+    recentRemodel
+    upgradeStory
+    userProfilePhoto
+    houseBackgroundPhoto
+    address
     parcelData {
-      squareFootage
-      numBedrooms
-      numBathrooms
-      lotAcreage
+      latitude
+      longitude
+      taxYear
+      taxValue
       yearBuilt
-      garageSize
-      architecturalStyle
-      waterfront
-    }
-    userProvided {
-      countertops
-      acAge
-      furnaceAge
+      lotSquareFootage
+      homeSquareFootage
+      numBathrooms
+      numBedrooms
+      lastSoldDate
+      lastSoldPrice
+      zestimateAmount
+      zestimateLastUpdated
+      zestimateValueChange
+      zestimateValuationRangeHigh
+      zestimateValuationRangeLow
     }
     valuation
+    solar
+    windows
+    waterfront
+    countertops
+    acAge
+    furnaceAge
+    roofAge
   }
 }
 `;
 export const onUpdateHouse = `subscription OnUpdateHouse {
   onUpdateHouse {
     id
-    photos
-    address {
-      street
-      city
-      state
-      zip
-    }
+    description
+    recentRemodel
+    upgradeStory
+    userProfilePhoto
+    houseBackgroundPhoto
+    address
     parcelData {
-      squareFootage
-      numBedrooms
-      numBathrooms
-      lotAcreage
+      latitude
+      longitude
+      taxYear
+      taxValue
       yearBuilt
-      garageSize
-      architecturalStyle
-      waterfront
-    }
-    userProvided {
-      countertops
-      acAge
-      furnaceAge
+      lotSquareFootage
+      homeSquareFootage
+      numBathrooms
+      numBedrooms
+      lastSoldDate
+      lastSoldPrice
+      zestimateAmount
+      zestimateLastUpdated
+      zestimateValueChange
+      zestimateValuationRangeHigh
+      zestimateValuationRangeLow
     }
     valuation
+    solar
+    windows
+    waterfront
+    countertops
+    acAge
+    furnaceAge
+    roofAge
   }
 }
 `;
 export const onDeleteHouse = `subscription OnDeleteHouse {
   onDeleteHouse {
     id
-    photos
-    address {
-      street
-      city
-      state
-      zip
-    }
+    description
+    recentRemodel
+    upgradeStory
+    userProfilePhoto
+    houseBackgroundPhoto
+    address
     parcelData {
-      squareFootage
-      numBedrooms
-      numBathrooms
-      lotAcreage
+      latitude
+      longitude
+      taxYear
+      taxValue
       yearBuilt
-      garageSize
-      architecturalStyle
-      waterfront
-    }
-    userProvided {
-      countertops
-      acAge
-      furnaceAge
+      lotSquareFootage
+      homeSquareFootage
+      numBathrooms
+      numBedrooms
+      lastSoldDate
+      lastSoldPrice
+      zestimateAmount
+      zestimateLastUpdated
+      zestimateValueChange
+      zestimateValuationRangeHigh
+      zestimateValuationRangeLow
     }
     valuation
+    solar
+    windows
+    waterfront
+    countertops
+    acAge
+    furnaceAge
+    roofAge
   }
 }
 `;

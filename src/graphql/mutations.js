@@ -4,87 +4,114 @@
 export const createHouse = `mutation CreateHouse($input: CreateHouseInput!) {
   createHouse(input: $input) {
     id
-    photos
-    address {
-      street
-      city
-      state
-      zip
-    }
+    description
+    recentRemodel
+    upgradeStory
+    userProfilePhoto
+    houseBackgroundPhoto
+    address
     parcelData {
-      squareFootage
-      numBedrooms
-      numBathrooms
-      lotAcreage
+      latitude
+      longitude
+      taxYear
+      taxValue
       yearBuilt
-      garageSize
-      architecturalStyle
-      waterfront
-    }
-    userProvided {
-      countertops
-      acAge
-      furnaceAge
+      lotSquareFootage
+      homeSquareFootage
+      numBathrooms
+      numBedrooms
+      lastSoldDate
+      lastSoldPrice
+      zestimateAmount
+      zestimateLastUpdated
+      zestimateValueChange
+      zestimateValuationRangeHigh
+      zestimateValuationRangeLow
     }
     valuation
+    solar
+    windows
+    waterfront
+    countertops
+    acAge
+    furnaceAge
+    roofAge
   }
 }
 `;
 export const updateHouse = `mutation UpdateHouse($input: UpdateHouseInput!) {
   updateHouse(input: $input) {
     id
-    photos
-    address {
-      street
-      city
-      state
-      zip
-    }
+    description
+    recentRemodel
+    upgradeStory
+    userProfilePhoto
+    houseBackgroundPhoto
+    address
     parcelData {
-      squareFootage
-      numBedrooms
-      numBathrooms
-      lotAcreage
+      latitude
+      longitude
+      taxYear
+      taxValue
       yearBuilt
-      garageSize
-      architecturalStyle
-      waterfront
-    }
-    userProvided {
-      countertops
-      acAge
-      furnaceAge
+      lotSquareFootage
+      homeSquareFootage
+      numBathrooms
+      numBedrooms
+      lastSoldDate
+      lastSoldPrice
+      zestimateAmount
+      zestimateLastUpdated
+      zestimateValueChange
+      zestimateValuationRangeHigh
+      zestimateValuationRangeLow
     }
     valuation
+    solar
+    windows
+    waterfront
+    countertops
+    acAge
+    furnaceAge
+    roofAge
   }
 }
 `;
 export const deleteHouse = `mutation DeleteHouse($input: DeleteHouseInput!) {
   deleteHouse(input: $input) {
     id
-    photos
-    address {
-      street
-      city
-      state
-      zip
-    }
+    description
+    recentRemodel
+    upgradeStory
+    userProfilePhoto
+    houseBackgroundPhoto
+    address
     parcelData {
-      squareFootage
-      numBedrooms
-      numBathrooms
-      lotAcreage
+      latitude
+      longitude
+      taxYear
+      taxValue
       yearBuilt
-      garageSize
-      architecturalStyle
-      waterfront
-    }
-    userProvided {
-      countertops
-      acAge
-      furnaceAge
+      lotSquareFootage
+      homeSquareFootage
+      numBathrooms
+      numBedrooms
+      lastSoldDate
+      lastSoldPrice
+      zestimateAmount
+      zestimateLastUpdated
+      zestimateValueChange
+      zestimateValuationRangeHigh
+      zestimateValuationRangeLow
     }
     valuation
+    solar
+    windows
+    waterfront
+    countertops
+    acAge
+    furnaceAge
+    roofAge
   }
 }
 `;

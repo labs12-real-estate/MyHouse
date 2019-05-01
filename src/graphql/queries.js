@@ -4,29 +4,38 @@
 export const getHouse = `query GetHouse($id: ID!) {
   getHouse(id: $id) {
     id
-    photos
-    address {
-      street
-      city
-      state
-      zip
-    }
+    description
+    recentRemodel
+    upgradeStory
+    userProfilePhoto
+    houseBackgroundPhoto
+    address
     parcelData {
-      squareFootage
-      numBedrooms
-      numBathrooms
-      lotAcreage
+      latitude
+      longitude
+      taxYear
+      taxValue
       yearBuilt
-      garageSize
-      architecturalStyle
-      waterfront
-    }
-    userProvided {
-      countertops
-      acAge
-      furnaceAge
+      lotSquareFootage
+      homeSquareFootage
+      numBathrooms
+      numBedrooms
+      lastSoldDate
+      lastSoldPrice
+      zestimateAmount
+      zestimateLastUpdated
+      zestimateValueChange
+      zestimateValuationRangeHigh
+      zestimateValuationRangeLow
     }
     valuation
+    solar
+    windows
+    waterfront
+    countertops
+    acAge
+    furnaceAge
+    roofAge
   }
 }
 `;
@@ -38,29 +47,38 @@ export const listHouses = `query ListHouses(
   listHouses(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      photos
-      address {
-        street
-        city
-        state
-        zip
-      }
+      description
+      recentRemodel
+      upgradeStory
+      userProfilePhoto
+      houseBackgroundPhoto
+      address
       parcelData {
-        squareFootage
-        numBedrooms
-        numBathrooms
-        lotAcreage
+        latitude
+        longitude
+        taxYear
+        taxValue
         yearBuilt
-        garageSize
-        architecturalStyle
-        waterfront
-      }
-      userProvided {
-        countertops
-        acAge
-        furnaceAge
+        lotSquareFootage
+        homeSquareFootage
+        numBathrooms
+        numBedrooms
+        lastSoldDate
+        lastSoldPrice
+        zestimateAmount
+        zestimateLastUpdated
+        zestimateValueChange
+        zestimateValuationRangeHigh
+        zestimateValuationRangeLow
       }
       valuation
+      solar
+      windows
+      waterfront
+      countertops
+      acAge
+      furnaceAge
+      roofAge
     }
     nextToken
   }
