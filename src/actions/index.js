@@ -20,6 +20,10 @@ export const SIGN_OUT = 'SIGN_OUT';
 
 // houseAction Types
 
+export const GET_HOUSE_FETCH = 'GET_HOUSE_FETCH';
+export const GET_HOUSE_SUCCESS = 'GET_HOUSE_SUCCESS';
+export const GET_HOUSE_FAIL = 'GET_HOUSE_FAIL';
+
 // playgroundAction Types
 
 export const SET_CURRENT_COUNTER_TOP = 'SET_CURRENT_COUNTER_TOP';
