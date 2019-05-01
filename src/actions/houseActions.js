@@ -7,7 +7,7 @@ export const getHouse = () => dispatch => {
     type: GET_HOUSE_FETCH
   });
   API.graphql(graphqlOperation(listHouses))
-    .then(data => {
+    .then(({ data }) => {
       const house = data.listHouses.items[0];
       dispatch({
         type: GET_HOUSE_SUCCESS,
