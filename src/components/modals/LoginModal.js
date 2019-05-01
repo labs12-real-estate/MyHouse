@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import Button from '../buttons/Button';
+import LoginInput from '../inputs/LoginInput';
 import { connect } from 'react-redux';
 import { loginModalStyle } from '../../styles/inlineStyles/modalStyles';
 import { closeModal } from '../../actions/authActions';
@@ -14,13 +14,7 @@ function LoginModal({ isOpen, closeModal }) {
   return (
     <div>
       <Modal style={loginModalStyle()} isOpen={isOpen} onRequestClose={closeModal}>
-        <div className="login_inputs_container">
-          <label className="login_label">Username</label>
-          <input className="login_input" />
-          <label className="login_label">Password</label>
-          <input className="login_input" />
-          <Button buttonStyle="modal_login_button" buttonText="Login" />
-        </div>
+        <LoginInput />
       </Modal>
     </div>
   );
