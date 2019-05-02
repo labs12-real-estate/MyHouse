@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import Button from '../../components/buttons/Button';
 
+// This is necessary because we are representing "no selection" as `null`
+// but `null` is not valid as a value for a `select` element.
 const NULL = 'NULL';
 
 function WizardFormConfirmation({ questions, handleAnswer, handleSubmit }) {
@@ -15,7 +17,7 @@ function WizardFormConfirmation({ questions, handleAnswer, handleSubmit }) {
       {questions.map(({ title, options, selected }, qIx) => (
         <Fragment key={qIx}>
           <label htmlFor={title}>{title}</label>
-          <select onChange={handleChange(qIx)} value={selected || NULL} id={title}>
+          <select onChange={handleChange(qIx)} value={selected === null ? NULL : selected} id={title}>
             <option value={NULL}>Not applicable</option>
             {options.map((opt, oIx) => (
               <option key={oIx} value={oIx}>
