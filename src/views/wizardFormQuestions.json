@@ -1,0 +1,30 @@
+[
+  {
+    "questionContent": "What material are your countertops?",
+    "title": "Countertops",
+    "options": ["Laminate", "Marble/Quartz", "Granite/Concrete", "Formica/Tile"],
+    "key": "countertops",
+    "selected": null
+  },
+  {
+    "questionContent": "What material is your kitchen flooring",
+    "title": "Kitchen flooring type",
+    "options": ["Hardwood", "Engineered/Laminate", "Ceramic Tile", "Porcelain Tile/Concrete"],
+    "key": "flooring",
+    "selected": null
+  },
+  {
+    "questionContent": "How old is your roof?",
+    "title": "Roof age",
+    "options": ["0-4 years", "5-9 years", "10-14 years", "15+"],
+    "key": "roofAge",
+    "selected": null
+  },
+  {
+    "questionContent": "How old is your furnace?",
+    "title": "Furnace age",
+    "options": ["0-4 years", "5-9 years", "10-14 years", "15+"],
+    "key": "furnaceAge",
+    "selected": null
+  }
+]
