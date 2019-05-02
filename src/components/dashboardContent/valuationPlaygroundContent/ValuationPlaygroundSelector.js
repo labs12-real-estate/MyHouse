@@ -15,7 +15,13 @@ function ValuationPlaygroundSelector({ currentUpgrade, upgradeList, setCurrentUp
       <h1 className="valuation_playground_upgradeType_title">{upgradeType}</h1>
       <select value={selectedValue()} onChange={changeHandler} className="valuation_playground_selector">
         {upgradeList.map((upgrade, index) => {
-          return index === 0 ? <option value="">{upgrade.name}</option> : <option>{upgrade.name}</option>;
+          return index === 0 ? (
+            <option key={index} value="">
+              {upgrade.name}
+            </option>
+          ) : (
+            <option key={index}>{upgrade.name}</option>
+          );
         })}
       </select>
     </div>
