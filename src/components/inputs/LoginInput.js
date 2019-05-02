@@ -11,6 +11,7 @@ const initialCreds = {
 
 function LoginInput({ signIn }) {
   const [creds, handleChange] = useForm(initialCreds);
+
   return (
     <form onSubmit={e => signIn(creds, e)}>
       <div className="login_inputs_container">
