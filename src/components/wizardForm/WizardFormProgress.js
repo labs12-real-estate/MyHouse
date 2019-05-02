@@ -1,11 +1,13 @@
 import React from 'react';
 
-function WizardFormProgress() {
+function WizardFormProgress({ step, max = 4 }) {
   return (
     <div>
-      <div>WizardFormProgress</div>
+      <div>
+        {Math.min(step, max)} of {max}
+      </div>
+      <progress max={max} value={step - 1} />
     </div>
   );
 }
-
 export default WizardFormProgress;
