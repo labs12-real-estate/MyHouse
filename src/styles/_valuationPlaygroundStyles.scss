@@ -103,38 +103,44 @@
       align-items: center;
       padding: 0 4.2%;
 
+      .selected_option {
+        color: red;
+      }
+
       .valuation_playground_selector::-ms-expand {
         display: none;
       }
 
       .valuation_playground_selector {
-        border: 1px solid #c4c4c4;
+        border: none;
         cursor: pointer;
         font-family: Montserrat;
         font-style: normal;
         font-weight: 500;
         font-size: 1.6rem;
         line-height: 2.2rem;
-        color: blue;
+        // color: blue;
         width: 50%;
-        appearance: none;
+        // appearance: none;
         height: 3.5rem;
         display: block;
+        // text-align doesn't work
+
         &:focus {
           outline: none;
         }
-
-        //   .selected_option {
-        //   // color: red;
-        // }
 
         option:checked {
           display: none;
         }
 
         option:not(:checked) {
-          color: red;
+          color: #888;
         }
+      }
+
+      .vpg_select_border {
+        border: 1px solid #c4c4c4;
       }
     } // end valuation_selector_container
 
