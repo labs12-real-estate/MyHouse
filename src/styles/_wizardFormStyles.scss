@@ -1,0 +1,75 @@
+.wizard_page_container {
+  display: flex;
+
+  .wizard_form_container {
+    margin-top: 70px;
+    width: 100%;
+    .wizard_form_main {
+      margin-top: 160px;
+      margin-left: 10%;
+      margin-right: 10%;
+      // padding: ;
+      background: white;
+
+      display: grid;
+      grid-template-columns: 4fr 6fr;
+
+      .wizard_form_initial_data,
+      .welcome {
+        display: contents;
+      }
+
+      .welcome {
+        .left_panel {
+          background: dodgerblue;
+        }
+        .right_panel {
+          h4 {
+            &::before,
+            &::after {
+              content: '';
+              border: 5px solid red;
+            }
+          }
+
+          .address_container {
+            height: 150px;
+          }
+          .initial_value_range {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            h4 {
+              grid-column: 1 / -1;
+            }
+          }
+          .bottom_container {
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+  }
+}
+
+progress[value] {
+  --radius: 2rem;
+
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: 250px;
+  height: 1rem;
+  &::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  }
+  &::-webkit-progress-value {
+    border-radius: var(--radius);
+    transition: 500ms;
+    background-color: dodgerblue;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+  }
+}
