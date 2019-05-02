@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import DashboardTopBar from '../components/navigation/DashboardTopBar';
 import WizardFormQA from '../components/wizardForm/WizardFormQA';
 import WizardFormConfirmation from '../components/wizardForm/WizardFormConfirmation';
+import WizardFormProgress from '../components/wizardForm/WizardFormProgress';
+import WizardFormInitialData from '../components/wizardForm/WizardFormInitialData';
 import _questions from './wizardFormQuestions.json';
 
 function WizardFormPage() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0);
   const [questions, setQuestions] = useState(_questions);
 
   const handleAnswer = questionIx => optionIx => _e => {
@@ -63,31 +65,34 @@ function WizardFormPage() {
   };
 
   return (
-    <div>
+    <div className="wizard_page_container">
       <DashboardTopBar />
-      <h1>WizardFormPage</h1>
-      <div style={{ marginTop: '20vh' }}>
-        <form>
-          {step < 5 ? (
-            questions.map(
-              ({ questionContent, options, selected }, i) =>
-                step === i + 1 && (
-                  <WizardFormQA
-                    key={i}
-                    step={step}
-                    questionContent={questionContent}
-                    options={options}
-                    selected={selected}
-                    handleAnswer={handleAnswer(i)}
-                    handleNext={handleNext}
-                    handlePrev={handlePrev}
-                  />
-                )
-            )
-          ) : (
-            <WizardFormConfirmation questions={questions} handleAnswer={handleAnswer} handleSubmit={handleSubmit} />
-          )}
-        </form>
+      <div className="wizard_form_container">
+        <main className="wizard_form_main">
+          {step > 0 && <WizardFormProgress step={step} />}
+          <WizardFormInitialData step={step} handleNext={handleNext} />
+          <form>
+            {step < 5 ? (
+              questions.map(
+                ({ questionContent, options, selected }, i) =>
+                  step === i + 1 && (
+                    <WizardFormQA
+                      key={i}
+                      step={step}
+                      questionContent={questionContent}
+                      options={options}
+                      selected={selected}
+                      handleAnswer={handleAnswer(i)}
+                      handleNext={handleNext}
+                      handlePrev={handlePrev}
+                    />
+                  )
+              )
+            ) : (
+              <WizardFormConfirmation questions={questions} handleAnswer={handleAnswer} handleSubmit={handleSubmit} />
+            )}
+          </form>
+        </main>
       </div>
     </div>
   );
