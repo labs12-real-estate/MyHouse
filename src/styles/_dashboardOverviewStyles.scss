@@ -1,7 +1,8 @@
 .dashboard_jumbo {
   background-color: white;
   margin: 0 5% 3rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
 
   .house_image {
     background-image: url('../assets/images/overview/house-bg.jpg');
@@ -39,10 +40,12 @@
       display: flex;
       align-items: center;
       h4 {
-        font-family: 'Montserrat', 'sans-serif';
+        font-family: 'Roboto', 'sans-serif';
         font-size: 1.2rem;
         font-weight: 600;
-        color: #666;
+        text-transform: uppercase;
+        color: #888;
+        margin-top: 0.8rem;
       }
       h1 {
         margin-left: 1.6rem;
@@ -56,10 +59,11 @@
 }
 
 .overview_cards_container {
-  margin: 5rem 5%;
+  margin: 3rem 5% 5rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  max-width: 1200px;
 
   .feature_card {
     z-index: -1;
@@ -68,8 +72,7 @@
     width: 350px;
     height: 100px;
     background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.09);
     img {
       display: inline-block;
       object-fit: cover;
@@ -78,15 +81,20 @@
     }
     .text_box {
       position: absolute;
-      margin-left: 1.5rem;
-      top: 40%;
+      margin-left: 1.8rem;
+      top: 37%;
       display: inline-block;
       h3 {
-        font-size: 1.5rem;
-        color: gray;
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-family: 'Roboto', 'sans-serif';
+        text-transform: uppercase;
+        color: #999;
+        margin-bottom: 0.7rem;
       }
       h1 {
-        font-size: 3rem;
+        font-size: 2.6rem;
+        font-family: 'Roboto', 'sans-serif';
       }
     }
   }
