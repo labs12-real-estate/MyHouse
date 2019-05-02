@@ -29,64 +29,64 @@ export const playgroundReducer = (state = initialState, action) => {
       return {
         ...state,
         currentUpgrade: { ...filteredCounterTop },
-        upgradeROI: filteredCounterTop.upgrade_cost * filteredCounterTop.ROI_percentage - filteredCounterTop.upgrade_cost,
-        newValue: filteredCounterTop.upgrade_cost * filteredCounterTop.ROI_percentage - filteredCounterTop.upgrade_cost + state.currentValue
+        upgradeROI: filteredCounterTop.upgrade_cost * filteredCounterTop.ROI_percentage,
+        newValue: filteredCounterTop.upgrade_cost * filteredCounterTop.ROI_percentage + state.currentValue
       };
     case SET_CURRENT_ROOF:
       const filteredRoof = state.upgradeList.roof.filter(upgrade => upgrade.name === action.payload)[0];
       return {
         ...state,
         currentUpgrade: { ...filteredRoof },
-        upgradeROI: filteredRoof.upgrade_cost * filteredRoof.ROI_percentage - filteredRoof.upgrade_cost,
-        newValue: filteredRoof.upgrade_cost * filteredRoof.ROI_percentage - filteredRoof.upgrade_cost + state.currentValue
+        upgradeROI: filteredRoof.upgrade_cost * filteredRoof.ROI_percentage,
+        newValue: filteredRoof.upgrade_cost * filteredRoof.ROI_percentage + state.currentValue
       };
     case SET_CURRENT_SIDING:
       const filteredSiding = state.upgradeList.siding.filter(upgrade => upgrade.name === action.payload)[0];
       return {
         ...state,
         currentUpgrade: { ...filteredSiding },
-        upgradeROI: filteredSiding.upgrade_cost * filteredSiding.ROI_percentage - filteredSiding.upgrade_cost,
-        newValue: filteredSiding.upgrade_cost * filteredSiding.ROI_percentage - filteredSiding.upgrade_cost + state.currentValue
+        upgradeROI: filteredSiding.upgrade_cost * filteredSiding.ROI_percentage,
+        newValue: filteredSiding.upgrade_cost * filteredSiding.ROI_percentage + state.currentValue
       };
     case SET_CURRENT_AC:
       const filteredAC = state.upgradeList.AC.filter(upgrade => upgrade.name === action.payload)[0];
       return {
         ...state,
         currentUpgrade: { ...filteredAC },
-        upgradeROI: filteredAC.upgrade_cost * filteredAC.ROI_percentage - filteredAC.upgrade_cost,
-        newValue: filteredAC.upgrade_cost * filteredAC.ROI_percentage - filteredAC.upgrade_cost + state.currentValue
+        upgradeROI: filteredAC.upgrade_cost * filteredAC.ROI_percentage,
+        newValue: filteredAC.upgrade_cost * filteredAC.ROI_percentage + state.currentValue
       };
     case SET_CURRENT_FURNACE:
       const filteredFurnace = state.upgradeList.furnace.filter(upgrade => upgrade.name === action.payload)[0];
       return {
         ...state,
         currentUpgrade: { ...filteredFurnace },
-        upgradeROI: filteredFurnace.upgrade_cost * filteredFurnace.ROI_percentage - filteredFurnace.upgrade_cost,
-        newValue: filteredFurnace.upgrade_cost * filteredFurnace.ROI_percentage - filteredFurnace.upgrade_cost + state.currentValue
+        upgradeROI: filteredFurnace.upgrade_cost * filteredFurnace.ROI_percentage,
+        newValue: filteredFurnace.upgrade_cost * filteredFurnace.ROI_percentage + state.currentValue
       };
     case SET_CURRENT_FLOORING:
       const filteredFlooring = state.upgradeList.flooring.filter(upgrade => upgrade.name === action.payload)[0];
       return {
         ...state,
         currentUpgrade: { ...filteredFlooring },
-        upgradeROI: filteredFlooring.upgrade_cost * filteredFlooring.ROI_percentage - filteredFlooring.upgrade_cost,
-        newValue: filteredFlooring.upgrade_cost * filteredFlooring.ROI_percentage - filteredFlooring.upgrade_cost + state.currentValue
+        upgradeROI: filteredFlooring.upgrade_cost * filteredFlooring.ROI_percentage,
+        newValue: filteredFlooring.upgrade_cost * filteredFlooring.ROI_percentage + state.currentValue
       };
     case SET_CURRENT_ADDING_SQFT:
       const filteredAddingSqFt = state.upgradeList.addingSqFt.filter(upgrade => upgrade.name === action.payload)[0];
       return {
         ...state,
         currentUpgrade: { ...filteredAddingSqFt },
-        upgradeROI: filteredAddingSqFt.upgrade_cost * filteredAddingSqFt.ROI_percentage - filteredAddingSqFt.upgrade_cost,
-        newValue: filteredAddingSqFt.upgrade_cost * filteredAddingSqFt.ROI_percentage - filteredAddingSqFt.upgrade_cost + state.currentValue
+        upgradeROI: filteredAddingSqFt.upgrade_cost * filteredAddingSqFt.ROI_percentage,
+        newValue: filteredAddingSqFt.upgrade_cost * filteredAddingSqFt.ROI_percentage + state.currentValue
       };
     case SET_CURRENT_PAINTING:
       const filteredPainting = state.upgradeList.painting.filter(upgrade => upgrade.name === action.payload)[0];
       return {
         ...state,
         currentUpgrade: { ...filteredPainting },
-        upgradeROI: filteredPainting.upgrade_cost * filteredPainting.ROI_percentage - filteredPainting.upgrade_cost,
-        newValue: filteredPainting.upgrade_cost * filteredPainting.ROI_percentage - filteredPainting.upgrade_cost + state.currentValue
+        upgradeROI: filteredPainting.upgrade_cost * filteredPainting.ROI_percentage,
+        newValue: filteredPainting.upgrade_cost * filteredPainting.ROI_percentage + state.currentValue
       };
     default:
       return state;
