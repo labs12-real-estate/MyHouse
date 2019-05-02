@@ -11,7 +11,11 @@ import {
   CONFIRM_FETCH,
   CONFIRM_FAIL,
   SIGN_UP_SUCCESS,
-  SIGN_OUT
+  SIGN_OUT_FETCH,
+  SIGN_OUT_SUCCESS,
+  SIGN_OUT_FAIL,
+  IS_LOGGED_IN,
+  IS_LOGGED_OUT
 } from './index';
 
 export const openModal = e => {
@@ -91,6 +95,40 @@ export const confirmSignUp = ({ username, password, code }, e) => dispatch => {
       dispatch({
         type: CONFIRM_FAIL,
         payload: error
+      });
+    });
+};
+
+export const signOut = e => dispatch => {
+  e.preventDefault();
+  dispatch({
+    type: SIGN_OUT_FETCH
+  });
+
+  Auth.signOut()
+    .then(data => {
+      dispatch({
+        type: SIGN_OUT_SUCCESS
+      });
+    })
+    .catch(error => {
+      dispatch({
+        type: SIGN_OUT_FAIL,
+        payload: error
+      });
+    });
+};
+
+export const isLoggedInAction = () => dispatch => {
+  Auth.currentSession()
+    .then(data => {
+      dispatch({
+        type: IS_LOGGED_IN
+      });
+    })
+    .catch(error => {
+      dispatch({
+        type: IS_LOGGED_OUT
       });
     });
 };
