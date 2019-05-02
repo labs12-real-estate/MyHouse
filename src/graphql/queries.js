@@ -33,7 +33,7 @@ export const getHouse = `query GetHouse($id: ID!) {
     windows
     waterfront
     countertops
-    acAge
+    flooring
     furnaceAge
     roofAge
   }
@@ -76,7 +76,7 @@ export const listHouses = `query ListHouses(
       windows
       waterfront
       countertops
-      acAge
+      flooring
       furnaceAge
       roofAge
     }
