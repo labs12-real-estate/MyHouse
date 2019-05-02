@@ -115,7 +115,7 @@
         font-weight: 500;
         font-size: 1.6rem;
         line-height: 2.2rem;
-        // color: #df6f6f;
+        color: blue;
         width: 50%;
         appearance: none;
         height: 3.5rem;
@@ -124,17 +124,17 @@
           outline: none;
         }
 
-        /*  .selected_option {
-          // color: red;
-        }
+        //   .selected_option {
+        //   // color: red;
+        // }
 
         option:checked {
-          color: red;
-        } */
+          display: none;
+        }
 
-        // option:not(:checked) {
-        //   color: grey;
-        // }
+        option:not(:checked) {
+          color: red;
+        }
       }
     } // end valuation_selector_container
 
