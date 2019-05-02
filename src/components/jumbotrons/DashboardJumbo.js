@@ -1,5 +1,4 @@
 import React from 'react';
-import { ReactComponent as LocationLogo } from '../../assets/icons/location.svg';
 import { commaSeparator } from '../../helper-functions/display-functions';
 
 function DashboardJumbo({ address, valuation, houseBackgroundPhoto }) {
@@ -8,7 +7,7 @@ function DashboardJumbo({ address, valuation, houseBackgroundPhoto }) {
       <div className="house_image" />
       <div className="address_value_flex">
         <div className="address">
-          <LocationLogo className="logo" />
+          <i className="fas fa-map-marker-alt" />
           <h3>{address}</h3>
         </div>
         <div className="value">
