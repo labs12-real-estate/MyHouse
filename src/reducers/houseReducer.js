@@ -3,7 +3,7 @@ import { GET_HOUSE_FETCH, GET_HOUSE_SUCCESS, GET_HOUSE_FAIL } from '../actions';
 const initialState = {
   error: null,
   fetching: false,
-  house: null
+  house: { parcelData: {} }
 };
 
 export const houseReducer = (state = initialState, action) => {

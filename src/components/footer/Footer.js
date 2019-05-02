@@ -11,14 +11,16 @@ function Footer() {
           </h3>
           <span>Team</span>
           <span>
-            <a href="https://github.com/labs12-real-estate">Repository</a>
+            <a href="https://github.com/labs12-real-estate" target="blank">
+              Repository
+            </a>
           </span>
         </div>
         <div>
           <span>Connect</span>
           <i className="fab fa-twitter" />
           <i className="fab fa-instagram" />
-          <a href="https://github.com/labs12-real-estate">
+          <a href="https://github.com/labs12-real-estate" target="blank">
             <i className="fab fa-github" />
           </a>
           <i className="fab fa-facebook" />
