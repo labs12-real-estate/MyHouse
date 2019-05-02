@@ -13,7 +13,7 @@ function OverviewPage({ error, house, getHouse }) {
       <div className="dashboard_page_container">
         <SideBar />
         <div className="dashboard_content_container">
-          <OverviewContent />
+          <OverviewContent {...house} />
         </div>
       </div>
     </div>
