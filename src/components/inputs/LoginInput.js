@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { useForm } from '../../helper-functions/form-logic-functions';
 import { signIn } from '../../actions/authActions';
