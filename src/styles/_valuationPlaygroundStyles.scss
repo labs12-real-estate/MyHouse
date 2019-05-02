@@ -14,7 +14,6 @@
   width: 88%;
   margin: 0 auto;
   display: flex;
-  max-width: 1400px;
 
   .valuation_playground_jumbo_container {
     background: #fff;
@@ -121,14 +120,14 @@
       }
 
       .valuation_playground_selector {
-        border: none;
+        border: 1px solid #c4c4c4;
         cursor: pointer;
         font-family: Montserrat;
         font-style: normal;
         font-weight: 500;
         font-size: 1.6rem;
         line-height: 2.2rem;
-        color: #c4c4c4;
+        // color: #df6f6f;
         width: 50%;
         appearance: none;
         height: 3.5rem;
@@ -136,6 +135,18 @@
         &:focus {
           outline: none;
         }
+
+        /*  .selected_option {
+          // color: red;
+        }
+
+        option:checked {
+          color: red;
+        } */
+
+        // option:not(:checked) {
+        //   color: grey;
+        // }
       }
     } // end valuation_selector_container
 
