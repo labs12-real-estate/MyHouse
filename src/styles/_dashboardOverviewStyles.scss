@@ -55,8 +55,8 @@
         font-family: 'Roboto', 'sans-serif';
       }
     }
-  }
-}
+  } // end of .address_value_flex
+} // end of .dashboard_jumbo
 
 .overview_cards_container {
   margin: 3rem 5% 5rem;
@@ -96,6 +96,6 @@
         font-size: 2.6rem;
         font-family: 'Roboto', 'sans-serif';
       }
-    }
-  }
-}
+    } // end of .text_box
+  } // end of .feature_card
+} // end of .overview_cards_container
