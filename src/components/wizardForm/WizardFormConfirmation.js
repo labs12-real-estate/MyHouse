@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import Button from '../../components/buttons/Button';
 
+// This is necessary because we are representing "no selection" as `null`
+// but `null` is not valid as a value for a `select` element.
 const NULL = 'NULL';
 
 function WizardFormConfirmation({ questions, handleAnswer, handleSubmit }) {
