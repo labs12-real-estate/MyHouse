@@ -55,7 +55,6 @@
         justify-content: space-between;
         align-items: baseline;
         width: 80%;
-        // min-height: 40px;
         margin: 0 auto 25px;
 
         .valuation_playground_jumbo_upgrade_info {
@@ -85,11 +84,11 @@
 
     .valuation_playground_upgradeType_title {
       font-family: Montserrat;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 1.8rem;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      font-weight: 600;
       line-height: 2.2rem; /* identical to box height */
-      color: #000000;
+      color: #666;
     }
 
     .valuation_playground_selector_container {
@@ -119,9 +118,8 @@
         font-weight: 500;
         font-size: 1.6rem;
         line-height: 2.2rem;
-        // color: blue;
         width: 50%;
-        // appearance: none;
+        max-width: 250px;
         height: 3.5rem;
         display: block;
         // text-align doesn't work
@@ -144,6 +142,7 @@
       }
     } // end valuation_selector_container
 
+    // === Saving for later: styling the dropdown icon ===
     // .valuation_playground_selector_container::after {
     //   content: '\f078';
     //   font: normal normal normal 17px/1 FontAwesome;
