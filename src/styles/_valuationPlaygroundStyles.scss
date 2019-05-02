@@ -7,12 +7,12 @@
   margin-left: 6%;
   margin-top: 22px;
   color: #222222;
+  margin-bottom: 15px;
 }
 
 .valuation_playground_content_container {
   width: 88%;
   margin: 0 auto;
-  border: 1px solid green;
   display: flex;
 
   .valuation_playground_jumbo_container {
@@ -86,7 +86,6 @@
   } // end jumbo_container
 
   .valuation_playground_upgrades_container {
-    border: 0.5px solid orange;
     display: flex;
     flex-direction: column;
     width: 48%;
