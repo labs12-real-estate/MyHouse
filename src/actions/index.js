@@ -14,10 +14,14 @@ export const SIGN_IN_FAIL = 'SIGN_IN_FAIL';
 export const SIGN_UP_FETCH = 'SIGN_UP_FETCH';
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
 export const SIGN_UP_FAIL = 'SIGN_UP_FAIL';
-export const SIGN_OUT = 'SIGN_OUT';
+export const SIGN_OUT_FETCH = 'SIGN_OUT_FETCH';
+export const SIGN_OUT_SUCCESS = 'SIGN_OUT_SUCCESS';
+export const SIGN_OUT_FAIL = 'SIGN_OUT_FAIL';
 export const SIGN_UP_PENDING = 'SIGN_UP_PENDING';
 export const CONFIRM_FETCH = 'CONFIRM_FETCH';
 export const CONFIRM_FAIL = 'CONFIRM_FAIL';
+export const IS_LOGGED_IN = 'IS_LOGGED_IN';
+export const IS_LOGGED_OUT = 'IS_LOGGED_OUT';
 
 // userAction Types
 
