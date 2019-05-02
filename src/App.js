@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { isLoggedInAction } from './actions/authActions';
 import LandingPage from './views/LandingPage';
 import WizardFormPage from './views/WizardFormPage';
 import OverviewPage from './views/OverviewPage';
@@ -7,9 +9,10 @@ import MyHousePage from './views/MyHousePage';
 import ValuationPlaygroundPage from './views/ValuationPlaygroundPage';
 import MortgageCalculatorPage from './views/MortgageCalculatorPage';
 import DesignStudioPage from './views/DesignStudioPage';
-// Note: onUpdate sends the user back to the top of the page on route switch.
 
-function App() {
+// Note: onUpdate sends the user back to the top of the page on route switch.
+function App({ isLoggedInAction }) {
+  useEffect(isLoggedInAction, []);
   return (
     <div>
       <Switch>
@@ -25,4 +28,7 @@ function App() {
   );
 }
 
-export default App;
+export default connect(
+  null,
+  { isLoggedInAction }
+)(App);
