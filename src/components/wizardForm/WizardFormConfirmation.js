@@ -15,7 +15,7 @@ function WizardFormConfirmation({ questions, handleAnswer, handleSubmit }) {
       {questions.map(({ title, options, selected }, qIx) => (
         <Fragment key={qIx}>
           <label htmlFor={title}>{title}</label>
-          <select onChange={handleChange(qIx)} value={selected || NULL} id={title}>
+          <select onChange={handleChange(qIx)} value={selected === null ? NULL : selected} id={title}>
             <option value={NULL}>Not applicable</option>
             {options.map((opt, oIx) => (
               <option key={oIx} value={oIx}>
