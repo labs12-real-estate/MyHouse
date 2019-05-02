@@ -1,7 +1,6 @@
 import React from 'react';
 
 function FeatureCard({ url, text, value }) {
-  console.log(value);
   return (
     <div className="feature_card">
       <img src={url} alt="" />

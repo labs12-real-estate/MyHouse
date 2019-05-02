@@ -1,6 +1,11 @@
 export const upgradeList = {
   counterTops: [
     {
+      name: 'Select Countertops',
+      upgrade_cost: null,
+      ROI_percentage: null
+    },
+    {
       name: 'Laminate',
       upgrade_cost: 1200,
       ROI_percentage: 1.2
@@ -8,7 +13,7 @@ export const upgradeList = {
     {
       name: 'Granite/Concrete',
       upgrade_cost: 3250,
-      ROI_percentage: 1.2
+      ROI_percentage: 1.35
     },
     {
       name: 'Marble/Quartz',
@@ -17,6 +22,11 @@ export const upgradeList = {
     }
   ],
   roof: [
+    {
+      name: 'Select Roof',
+      upgrade_cost: null,
+      ROI_percentage: null
+    },
     {
       name: 'Asphalt/Composite',
       upgrade_cost: 5500,
@@ -38,19 +48,24 @@ export const upgradeList = {
       ROI_percentage: 1.1
     },
     {
-      name: 'Cedar/Shake',
+      name: 'Cedar/Shake (Roof)',
       upgrade_cost: 12700,
       ROI_percentage: 1.1
     }
   ],
   siding: [
     {
+      name: 'Select Siding',
+      upgrade_cost: null,
+      ROI_percentage: null
+    },
+    {
       name: 'Stucco',
       upgrade_cost: 14000,
       ROI_percentage: 1.0
     },
     {
-      name: 'Cedar/Shake',
+      name: 'Cedar/Shake (Siding)',
       upgrade_cost: 12000,
       ROI_percentage: 1.0
     },
@@ -77,6 +92,11 @@ export const upgradeList = {
   ],
   AC: [
     {
+      name: 'Select AC',
+      upgrade_cost: null,
+      ROI_percentage: null
+    },
+    {
       name: 'Central AC',
       upgrade_cost: 7200,
       ROI_percentage: 1.5
@@ -93,6 +113,11 @@ export const upgradeList = {
     }
   ],
   furnace: [
+    {
+      name: 'Select Furnace',
+      upgrade_cost: null,
+      ROI_percentage: null
+    },
     {
       name: 'Electric Furnace',
       upgrade_cost: 3000,
@@ -115,6 +140,11 @@ export const upgradeList = {
     }
   ],
   flooring: [
+    {
+      name: 'Select Flooring',
+      upgrade_cost: null,
+      ROI_percentage: null
+    },
     {
       name: 'Carpet',
       upgrade_cost: 2500,
@@ -143,6 +173,11 @@ export const upgradeList = {
   ],
   addingSqFt: [
     {
+      name: 'Select Adding Sq Ft',
+      upgrade_cost: null,
+      ROI_percentage: null
+    },
+    {
       name: 'Loft',
       upgrade_cost: 18000,
       ROI_percentage: 1.1
@@ -164,6 +199,11 @@ export const upgradeList = {
     }
   ],
   painting: [
+    {
+      name: 'Select Painting',
+      upgrade_cost: null,
+      ROI_percentage: null
+    },
     {
       name: 'Full Exterior Paint',
       upgrade_cost: 3500,

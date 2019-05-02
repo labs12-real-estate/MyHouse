@@ -6,22 +6,26 @@
   line-height: 4.2rem;
   margin-left: 6%;
   margin-top: 22px;
+  margin-bottom: 15px;
   color: #222222;
+  margin-bottom: 15px;
 }
 
 .valuation_playground_content_container {
   width: 88%;
   margin: 0 auto;
-  border: 1px solid green;
   display: flex;
 
   .valuation_playground_jumbo_container {
     background: #fff;
     box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
-    height: 800px;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    max-width: 35%;
+    margin-left: 15px;
+    width: 35%;
+    max-width: 500px;
+    min-width: 450px;
 
     .valuation_playground_jumbo_img {
       width: 100%;
@@ -44,7 +48,7 @@
       flex-direction: column;
       border-top: 1px solid #d4d4d4;
       font-size: 1.6rem;
-      padding: 30px 0;
+      padding: 30px 0 60px;
 
       .valuation_playground_jumbo_upgrade_type {
         color: #222;
@@ -86,10 +90,11 @@
   } // end jumbo_container
 
   .valuation_playground_upgrades_container {
-    border: 0.5px solid orange;
     display: flex;
     flex-direction: column;
     width: 48%;
+    min-width: 600px;
+    max-width: 70%;
 
     .valuation_playground_upgradeType_title {
       font-family: Montserrat;
@@ -116,14 +121,14 @@
       }
 
       .valuation_playground_selector {
-        border: none;
+        border: 1px solid #c4c4c4;
         cursor: pointer;
         font-family: Montserrat;
         font-style: normal;
         font-weight: 500;
         font-size: 1.6rem;
         line-height: 2.2rem;
-        color: #c4c4c4;
+        // color: #df6f6f;
         width: 50%;
         appearance: none;
         height: 3.5rem;
@@ -131,6 +136,18 @@
         &:focus {
           outline: none;
         }
+
+        /*  .selected_option {
+          // color: red;
+        }
+
+        option:checked {
+          color: red;
+        } */
+
+        // option:not(:checked) {
+        //   color: grey;
+        // }
       }
     } // end valuation_selector_container
 

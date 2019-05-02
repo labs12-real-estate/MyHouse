@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { getHouse } from '../actions/houseActions';
 import DashboardTopBar from '../components/navigation/DashboardTopBar';
 import SideBar from '../components/navigation/SideBar';
 import OverviewContent from '../components/dashboardContent/overviewContent/OverviewContent';
-import { connect } from 'react-redux';
-import { getHouse } from '../actions/houseActions';
 
 function OverviewPage({ error, house, getHouse }) {
   useEffect(getHouse, []); // get house data from AWS server on first render
@@ -12,7 +12,9 @@ function OverviewPage({ error, house, getHouse }) {
       <DashboardTopBar />
       <div className="dashboard_page_container">
         <SideBar />
-        <OverviewContent {...house} />
+        <div className="dashboard_content_container">
+          <OverviewContent {...house} />
+        </div>
       </div>
     </div>
   );

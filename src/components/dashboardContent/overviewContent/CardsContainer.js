@@ -20,7 +20,7 @@ function CardsContainer({ countertops, parcelData }) {
   return (
     <div className="overview_cards_container">
       {cardsArray.map(element => (
-        <FeatureCard {...element} />
+        <FeatureCard key={element.text} {...element} />
       ))}
     </div>
   );
