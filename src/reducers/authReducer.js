@@ -22,6 +22,7 @@ const initialState = {
   error: null,
   fetching: false,
   pendingConfirmation: false,
+  submittedConfirmation: false,
   name: '',
   username: '',
   isLoggedIn: false
@@ -48,7 +49,7 @@ export const authReducer = (state = initialState, action) => {
     case SIGN_UP_FETCH:
     case SIGN_OUT_FETCH:
     case CONFIRM_FETCH:
-      return { ...state, fetching: true };
+      return { ...state, fetching: true, submittedConfirmation: true };
     case SIGN_UP_PENDING:
       return { ...state, fetching: false, pendingConfirmation: true };
     case IS_LOGGED_IN:
