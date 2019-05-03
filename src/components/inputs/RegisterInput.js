@@ -13,7 +13,7 @@ const initialForm = {
 };
 
 // @TODO: This could be refactored into subcomponents
-function RegisterInput({ history, houseInput, confirmSignUp, signUp, pendingConfirmation }) {
+function RegisterInput({ history, houseInput, confirmSignUp, signUp, pendingConfirmation, submittedConfirmation }) {
   const [formState, handleChange] = useForm(initialForm);
   const [{ code }, handleChangeCode] = useForm({
     code: ''
@@ -27,12 +27,22 @@ function RegisterInput({ history, houseInput, confirmSignUp, signUp, pendingConf
     }
   });
   const { username, password, email, name } = formState;
-  const handleConfirmSubmit = e =>
-    confirmSignUp({ username, password, code }, houseInput, e).then(data => {
-      history.push('/overview');
+
+  const handleSignUp = e => {
+    e.preventDefault();
+    signUp(formatUser(formState));
+  };
+
+  const handleConfirmSubmit = e => {
+    e.preventDefault();
+    confirmSignUp({ username, password, code }, history, houseInput).then(_data => {
+      localStorage.removeItem('wizardForm');
+      localStorage.removeItem('initialData');
     });
-  return !pendingConfirmation ? (
-    <form onSubmit={e => signUp(formatUser(formState), e)}>
+  };
+
+  return !(pendingConfirmation || submittedConfirmation) ? (
+    <form onSubmit={handleSignUp}>
       <div className="login_inputs_container">
         <label className="login_label">Full Name</label>
         <input name="name" value={name} onChange={handleChange} className="login_input" type="text" />
@@ -57,7 +67,8 @@ function RegisterInput({ history, houseInput, confirmSignUp, signUp, pendingConf
 }
 
 const mapStateToProps = ({ authReducer }) => ({
-  pendingConfirmation: authReducer.pendingConfirmation
+  pendingConfirmation: authReducer.pendingConfirmation,
+  submittedConfirmation: authReducer.submittedConfirmation
 });
 
 export default withRouter(
