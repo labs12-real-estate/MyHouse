@@ -43,14 +43,19 @@
     .house_profile_links {
       font-family: 'Roboto', 'sans-serif';
       font-size: 1.4rem;
-      color: #666;
+      color: #777;
       padding-top: 12px;
       padding-bottom: 12px;
       height: 70px;
 
       .fab,
-      .far {
+      .far,
+      .fas {
         margin-bottom: 12px;
+      }
+
+      span {
+        cursor: pointer;
       }
     }
 

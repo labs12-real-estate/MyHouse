@@ -15,15 +15,27 @@ function UserProfileSection() {
       </div>
       <div className="house_profile_user_section_sub_container">
         <span className="house_profile_links house_profile_left_padding">
-          <i className="far fa-envelope" /> <span>tony@starkindustries.com</span>
+          <span>
+            <i className="far fa-envelope" /> tony@starkindustries.com
+          </span>
           <br />
-          <i className="fab fa-twitter" /> <span>@ironman</span>
+          <span>
+            <i className="fab fa-twitter" /> @ironman
+          </span>
         </span>
         <div className="house_profile_links house_profile_features">
-          <span>Print house profile</span>
-          <span>Export as PDF</span>
-          <span>Share public link</span>
-          <span>Export as CSV</span>
+          <span>
+            <i className="fas fa-print" /> Print house profile
+          </span>
+          <span>
+            <i className="fas fa-file-pdf" /> Export as PDF
+          </span>
+          <span>
+            <i className="fas fa-share" /> Share public link
+          </span>
+          <span>
+            <i className="fas fa-file-csv" /> Export as CSV
+          </span>
         </div>
       </div>
     </div>
