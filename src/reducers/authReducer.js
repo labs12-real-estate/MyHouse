@@ -10,7 +10,11 @@ import {
   SIGN_UP_PENDING,
   CONFIRM_FETCH,
   CONFIRM_FAIL,
-  SIGN_OUT
+  SIGN_OUT_FETCH,
+  SIGN_OUT_SUCCESS,
+  SIGN_OUT_FAIL,
+  IS_LOGGED_IN,
+  IS_LOGGED_OUT
 } from '../actions/index';
 
 const initialState = {
@@ -18,8 +22,10 @@ const initialState = {
   error: null,
   fetching: false,
   pendingConfirmation: false,
+  submittedConfirmation: false,
   name: '',
-  username: ''
+  username: '',
+  isLoggedIn: false
 };
 
 export const authReducer = (state = initialState, action) => {
@@ -29,19 +35,27 @@ export const authReducer = (state = initialState, action) => {
     case CLOSE_MODAL:
       return { ...state, isOpen: action.payload };
     case SIGN_IN_SUCCESS:
-      return { ...state, fetching: false, name: action.payload.name, username: action.payload.username, pendingConfirmation: false };
+      return { ...state, fetching: false, name: action.payload.name, username: action.payload.username, pendingConfirmation: false, isLoggedIn: true };
     case SIGN_UP_SUCCESS:
-      return { ...state, fetching: false, pendingConfirmation: false };
+      return { ...state, fetching: false, pendingConfirmation: false, isLoggedIn: true };
+    case SIGN_OUT_SUCCESS:
+      return { ...state, fetching: false, isLoggedIn: false };
     case SIGN_IN_FAIL:
     case SIGN_UP_FAIL:
+    case SIGN_OUT_FAIL:
     case CONFIRM_FAIL:
       return { ...state, fetching: true, error: action.payload };
     case SIGN_IN_FETCH:
     case SIGN_UP_FETCH:
+    case SIGN_OUT_FETCH:
     case CONFIRM_FETCH:
-      return { ...state, fetching: true };
+      return { ...state, fetching: true, submittedConfirmation: true };
     case SIGN_UP_PENDING:
       return { ...state, fetching: false, pendingConfirmation: true };
+    case IS_LOGGED_IN:
+      return { ...state, isLoggedIn: true };
+    case IS_LOGGED_OUT:
+      return { ...state, isLoggedIn: false };
     default:
       return state;
   }

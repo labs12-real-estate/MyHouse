@@ -5,6 +5,7 @@ import WizardFormConfirmation from '../components/wizardForm/WizardFormConfirmat
 import WizardFormProgress from '../components/wizardForm/WizardFormProgress';
 import WizardFormInitialData from '../components/wizardForm/WizardFormInitialData';
 import _questions from './wizardFormQuestions.json';
+import toHouseInput from '../helper-functions/toHouseInput';
 
 function WizardFormPage() {
   const [step, setStep] = useState(0);
@@ -35,7 +36,6 @@ function WizardFormPage() {
   }, []);
 
   useEffect(() => {
-    console.log({ questions });
     saveToLocalStorage({ questions, step });
   }, [questions, step]);
 
@@ -48,8 +48,7 @@ function WizardFormPage() {
   const handlePrev = () => {
     setStep(step - 1);
   };
-  const handleSubmit = e => {
-    e.preventDefault();
+  const getHouseInput = () => {
     // This will format the questions array into an object
     // that matches the shape specified in the GraphQL schema
     const serialized = questions.reduce(
@@ -59,9 +58,8 @@ function WizardFormPage() {
       }),
       {}
     );
-    // @TODO: On submit, need to commit this to Redux store
-    //        and re-route/display SignUp component
-    console.log(serialized);
+    const { data } = JSON.parse(localStorage.getItem('initialData'));
+    return toHouseInput(data, serialized);
   };
 
   return (
@@ -71,27 +69,25 @@ function WizardFormPage() {
         <main className="wizard_form_main">
           {step > 0 && <WizardFormProgress step={step} />}
           <WizardFormInitialData step={step} handleNext={handleNext} />
-          <form>
-            {step < 5 ? (
-              questions.map(
-                ({ questionContent, options, selected }, i) =>
-                  step === i + 1 && (
-                    <WizardFormQA
-                      key={i}
-                      step={step}
-                      questionContent={questionContent}
-                      options={options}
-                      selected={selected}
-                      handleAnswer={handleAnswer(i)}
-                      handleNext={handleNext}
-                      handlePrev={handlePrev}
-                    />
-                  )
-              )
-            ) : (
-              <WizardFormConfirmation questions={questions} handleAnswer={handleAnswer} handleSubmit={handleSubmit} />
-            )}
-          </form>
+          {step < 5 ? (
+            questions.map(
+              ({ questionContent, options, selected }, i) =>
+                step === i + 1 && (
+                  <WizardFormQA
+                    key={i}
+                    step={step}
+                    questionContent={questionContent}
+                    options={options}
+                    selected={selected}
+                    handleAnswer={handleAnswer(i)}
+                    handleNext={handleNext}
+                    handlePrev={handlePrev}
+                  />
+                )
+            )
+          ) : (
+            <WizardFormConfirmation questions={questions} handleAnswer={handleAnswer} getHouseInput={getHouseInput} />
+          )}
         </main>
       </div>
     </div>

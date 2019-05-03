@@ -9,13 +9,14 @@ import countertopsjpg from '../../../assets/images/overview/countertops.jpg';
 import { numberWithCommas } from '../../../helper-functions/display-functions';
 
 function CardsContainer({ countertops, parcelData }) {
-  const cardsArray = [];
-  cardsArray.push({ url: lotsizejpg, text: 'LOT SIZE', value: numberWithCommas(parcelData.homeSquareFootage) + 'ft²' });
-  cardsArray.push({ url: bedroomsjpg, text: 'BEDROOMS', value: parcelData.numBedrooms });
-  cardsArray.push({ url: bathsjpg, text: 'BATHS', value: parcelData.numBathrooms });
-  cardsArray.push({ url: garagejpg, text: 'GARAGE', value: 'N/A' });
-  cardsArray.push({ url: acresjpg, text: 'ACRES', value: numberWithCommas(parcelData.lotSquareFootage) + 'ft²' });
-  cardsArray.push({ url: countertopsjpg, text: 'COUNTERTOPS', value: countertops });
+  const cardsArray = [
+    { url: lotsizejpg, text: 'SQUARE FEET', value: numberWithCommas(parcelData.homeSquareFootage) + 'ft²' },
+    { url: bedroomsjpg, text: 'BEDROOMS', value: parcelData.numBedrooms },
+    { url: bathsjpg, text: 'BATHS', value: parcelData.numBathrooms },
+    { url: garagejpg, text: 'GARAGE', value: 'N/A' },
+    { url: acresjpg, text: 'ACRES', value: numberWithCommas(parcelData.lotSquareFootage) + 'ft²' },
+    { url: countertopsjpg, text: 'COUNTERTOPS', value: countertops }
+  ];
 
   return (
     <div className="overview_cards_container">

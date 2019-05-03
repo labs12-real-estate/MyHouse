@@ -1,4 +1,5 @@
 import { Auth } from 'aws-amplify';
+import { makeHouse } from './houseActions';
 import {
   OPEN_MODAL,
   CLOSE_MODAL,
@@ -11,7 +12,11 @@ import {
   CONFIRM_FETCH,
   CONFIRM_FAIL,
   SIGN_UP_SUCCESS,
-  SIGN_OUT
+  SIGN_OUT_FETCH,
+  SIGN_OUT_SUCCESS,
+  SIGN_OUT_FAIL,
+  IS_LOGGED_IN,
+  IS_LOGGED_OUT
 } from './index';
 
 export const openModal = e => {
@@ -30,13 +35,12 @@ export const closeModal = e => {
   };
 };
 
-export const signIn = (creds, e) => dispatch => {
-  e.preventDefault();
+export const signIn = (creds, history, houseInput) => dispatch => {
   dispatch({
     type: SIGN_IN_FETCH
   });
 
-  Auth.signIn(creds)
+  return Auth.signIn(creds)
     .then(user => {
       dispatch({
         type: SIGN_IN_SUCCESS,
@@ -45,6 +49,7 @@ export const signIn = (creds, e) => dispatch => {
           name: user.attributes.name
         }
       });
+      houseInput ? makeHouse(houseInput, history)(dispatch) : history.push('/overview');
     })
     .catch(error => {
       dispatch({
@@ -54,14 +59,13 @@ export const signIn = (creds, e) => dispatch => {
     });
 };
 
-export const signUp = (user, e) => dispatch => {
-  e.preventDefault();
+export const signUp = user => dispatch => {
   dispatch({
     type: SIGN_UP_FETCH
   });
 
   Auth.signUp(user)
-    .then(user => {
+    .then(_user => {
       dispatch({
         type: SIGN_UP_PENDING
       });
@@ -74,23 +78,57 @@ export const signUp = (user, e) => dispatch => {
     });
 };
 
-export const confirmSignUp = ({ username, password, code }, e) => dispatch => {
-  e.preventDefault();
+export const confirmSignUp = ({ username, password, code }, history, houseInput) => dispatch => {
   dispatch({
     type: CONFIRM_FETCH
   });
 
-  Auth.confirmSignUp(username, code)
+  return Auth.confirmSignUp(username, code)
     .then(user => {
       dispatch({
-        type: SIGN_UP_SUCCESS
+        type: SIGN_UP_SUCCESS,
+        payload: user
       });
-      signIn({ username, password }, e)(dispatch);
+      return signIn({ username, password }, history, houseInput)(dispatch);
     })
     .catch(error => {
       dispatch({
         type: CONFIRM_FAIL,
         payload: error
+      });
+    });
+};
+
+export const signOut = e => dispatch => {
+  e.preventDefault();
+  dispatch({
+    type: SIGN_OUT_FETCH
+  });
+
+  Auth.signOut()
+    .then(data => {
+      dispatch({
+        type: SIGN_OUT_SUCCESS
+      });
+    })
+    .catch(error => {
+      dispatch({
+        type: SIGN_OUT_FAIL,
+        payload: error
+      });
+    });
+};
+
+export const isLoggedInAction = () => dispatch => {
+  Auth.currentSession()
+    .then(data => {
+      dispatch({
+        type: IS_LOGGED_IN
+      });
+    })
+    .catch(error => {
+      dispatch({
+        type: IS_LOGGED_OUT
       });
     });
 };
