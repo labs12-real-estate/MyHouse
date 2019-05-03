@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { openModal } from '../../actions/authActions';
+import { openModal, signOut } from '../../actions/authActions';
 import Button from '../buttons/Button';
 import LoginModal from '../modals/LoginModal';
 
-function LandingTopBar(props) {
+function LandingTopBar({ openModal, isLoggedIn, signOut }) {
   return (
     <div className="landing_nav_container">
       <div className="landing_nav_home_icon">
@@ -16,14 +16,27 @@ function LandingTopBar(props) {
       <div className="landing_nav_item_container">
         <Link to="/">Home</Link>
         <Link to="#">Team</Link>
-        <Button buttonText="Login" buttonStyle="landing_nav_button" clickEvent={props.openModal} />
-        <LoginModal />
+        {isLoggedIn && <Link to="/overview">Dashboard</Link>}
+        {isLoggedIn ? (
+          <Button buttonText="Logout" buttonStyle="landing_nav_button" clickEvent={signOut} />
+        ) : (
+          <>
+            <Button buttonText="Login" buttonStyle="landing_nav_button" clickEvent={openModal} />
+            <LoginModal />
+          </>
+        )}
       </div>
     </div>
   );
 }
 
+const mapStateToProps = ({ authReducer: { isLoggedIn } }) => {
+  return {
+    isLoggedIn
+  };
+};
+
 export default connect(
-  null,
-  { openModal }
+  mapStateToProps,
+  { openModal, signOut }
 )(LandingTopBar);
