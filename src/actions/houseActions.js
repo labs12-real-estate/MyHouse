@@ -1,4 +1,4 @@
-import { GET_HOUSE_FETCH, GET_HOUSE_SUCCESS, GET_HOUSE_FAIL, MAKE_HOUSE_FETCH, MAKE_HOUSE_SUCCESS, MAKE_HOUSE_FAIL } from './index';
+import { GET_HOUSE_FETCH, GET_HOUSE_SUCCESS, GET_HOUSE_FAIL, MAKE_HOUSE_FETCH, MAKE_HOUSE_SUCCESS, MAKE_HOUSE_FAIL, SET_CURRENT_VALUE } from './index';
 import { API, graphqlOperation } from 'aws-amplify';
 import { listHouses } from '../graphql/queries';
 import { createHouse } from '../graphql/mutations';
@@ -26,6 +26,10 @@ export const getHouse = () => dispatch => {
       dispatch({
         type: GET_HOUSE_SUCCESS,
         payload: house
+      });
+      dispatch({
+        type: SET_CURRENT_VALUE,
+        payload: house.valuation
       });
     })
     .catch(error => {
