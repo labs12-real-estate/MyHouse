@@ -1,5 +1,5 @@
-import { Auth, API, graphqlOperation } from 'aws-amplify';
-import { createHouse } from '../graphql/mutations';
+import { Auth } from 'aws-amplify';
+import { makeHouse } from './houseActions';
 import {
   OPEN_MODAL,
   CLOSE_MODAL,
@@ -35,8 +35,7 @@ export const closeModal = e => {
   };
 };
 
-export const signIn = (creds, makeHouse = undefined, e) => dispatch => {
-  e.preventDefault();
+export const signIn = (creds, history, houseInput) => dispatch => {
   dispatch({
     type: SIGN_IN_FETCH
   });
@@ -50,7 +49,7 @@ export const signIn = (creds, makeHouse = undefined, e) => dispatch => {
           name: user.attributes.name
         }
       });
-      makeHouse && makeHouse().catch(console.error);
+      houseInput ? makeHouse(houseInput, history)(dispatch) : history.push('/overview');
     })
     .catch(error => {
       dispatch({
@@ -60,8 +59,7 @@ export const signIn = (creds, makeHouse = undefined, e) => dispatch => {
     });
 };
 
-export const signUp = (user, e) => dispatch => {
-  e.preventDefault();
+export const signUp = user => dispatch => {
   dispatch({
     type: SIGN_UP_FETCH
   });
@@ -80,21 +78,18 @@ export const signUp = (user, e) => dispatch => {
     });
 };
 
-export const confirmSignUp = ({ username, password, code }, houseInput, e) => dispatch => {
-  e.preventDefault();
+export const confirmSignUp = ({ username, password, code }, history, houseInput) => dispatch => {
   dispatch({
     type: CONFIRM_FETCH
   });
 
   return Auth.confirmSignUp(username, code)
-    .then(_user => {
-      // Need to make this a thunk so that it is not invoked _until_
-      // the user is successfully signed in
-      const makeHouse = () => API.graphql(graphqlOperation(createHouse, { input: houseInput }));
+    .then(user => {
       dispatch({
-        type: SIGN_UP_SUCCESS
+        type: SIGN_UP_SUCCESS,
+        payload: user
       });
-      return signIn({ username, password }, makeHouse, e)(dispatch);
+      return signIn({ username, password }, history, houseInput)(dispatch);
     })
     .catch(error => {
       dispatch({
