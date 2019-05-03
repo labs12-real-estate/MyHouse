@@ -1,4 +1,4 @@
-.navbar {
+/* .navbar {
   background-color: #428bca;
   margin-bottom: 10px;
 }
@@ -11,7 +11,7 @@ input,
 select,
 label {
   width: 70px;
-  /* margin-right: 5px; */
+  margin-right: 5px;
 }
 
 th,
@@ -38,4 +38,4 @@ tfoot tr:first-child {
 
 .baseline {
   stroke-dasharray: 4, 4;
-}
+} */
