@@ -6,13 +6,14 @@ import {
   SET_CURRENT_FURNACE,
   SET_CURRENT_FLOORING,
   SET_CURRENT_ADDING_SQFT,
-  SET_CURRENT_PAINTING
+  SET_CURRENT_PAINTING,
+  SET_CURRENT_VALUE
 } from '../actions/index';
 import { upgradeList } from '../dummy-data-structures/valuation-playground-upgrade-list';
 
 const initialState = {
   upgradeList: upgradeList,
-  currentValue: 505777,
+  currentValue: null,
   newValue: null,
   upgradeROI: null,
   currentUpgrade: {
@@ -24,6 +25,8 @@ const initialState = {
 
 export const playgroundReducer = (state = initialState, action) => {
   switch (action.type) {
+    case SET_CURRENT_VALUE:
+      return { ...state, currentValue: action.payload };
     case SET_CURRENT_COUNTER_TOP:
       const filteredCounterTop = state.upgradeList.counterTops.filter(upgrade => upgrade.name === action.payload)[0];
       return {
