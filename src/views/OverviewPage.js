@@ -6,7 +6,9 @@ import SideBar from '../components/navigation/SideBar';
 import OverviewContent from '../components/dashboardContent/overviewContent/OverviewContent';
 
 function OverviewPage({ error, house, getHouse }) {
-  useEffect(getHouse, []); // get house data from AWS server on first render
+  useEffect(() => {
+    getHouse();
+  }, [getHouse]); // get house data from AWS server on first render
   return (
     <div>
       <DashboardTopBar />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { useForm } from '../../helper-functions/form-logic-functions';
 import { signIn } from '../../actions/authActions';
 import Button from '../buttons/Button';
@@ -9,11 +10,16 @@ const initialCreds = {
   password: ''
 };
 
-function LoginInput({ signIn }) {
+function LoginInput({ history, signIn }) {
   const [creds, handleChange] = useForm(initialCreds);
 
+  const handleSignIn = e => {
+    e.preventDefault();
+    signIn(creds, history);
+  };
+
   return (
-    <form onSubmit={e => signIn(creds, e)}>
+    <form onSubmit={handleSignIn}>
       <div className="login_inputs_container">
         <label className="login_label">Username</label>
         <input name="username" value={creds.username} onChange={handleChange} className="login_input" type="text" />
@@ -25,7 +31,9 @@ function LoginInput({ signIn }) {
   );
 }
 
-export default connect(
-  null,
-  { signIn }
-)(LoginInput);
+export default withRouter(
+  connect(
+    null,
+    { signIn }
+  )(LoginInput)
+);
