@@ -104,7 +104,7 @@
 .house_profile_forms_container {
   border: 1px solid red;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 30px auto 80px;
   display: flex;
   justify-content: space-between;
 
@@ -116,5 +116,32 @@
   .house_profile_forms_right {
     border: 1px solid green;
     width: 40%;
+  }
+
+  .house_profile_form {
+    background: #fff;
+    margin-bottom: 20px;
+
+    .house_profile_form_title {
+      border-bottom: 1px solid #c4c4c4;
+      padding: 15px 0;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin: 0 auto;
+
+      h2 {
+        font-family: 'Roboto', 'sans-serif';
+        font-weight: 600;
+        font-size: 2.4rem;
+        margin-left: 5%;
+      }
+
+      i {
+        font-size: 1.4rem;
+        color: #bbb;
+        margin-right: 5%;
+      }
+    }
   }
 }
