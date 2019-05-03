@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Button from '../buttons/Button';
+import { signOut } from '../../actions/authActions';
 
-function DashboardTopBar() {
+function DashboardTopBar({ signOut }) {
   return (
     <div className="dashboard_nav_container">
       <div className="dashboard_nav_home_icon">
@@ -11,10 +13,13 @@ function DashboardTopBar() {
         </Link>
       </div>
       <div className="dashboard_nav_item_container">
-        <Button buttonText="Login" buttonStyle="dashboard_nav_button" />
+        <Button buttonText="Logout" buttonStyle="dashboard_nav_button" clickEvent={signOut} />
       </div>
     </div>
   );
 }
 
-export default DashboardTopBar;
+export default connect(
+  null,
+  { signOut }
+)(DashboardTopBar);
