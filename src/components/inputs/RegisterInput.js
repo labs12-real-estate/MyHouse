@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { withRouter, Redirect } from 'react-router-dom';
+import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { useForm } from '../../helper-functions/form-logic-functions';
 import { confirmSignUp, signUp } from '../../actions/authActions';
