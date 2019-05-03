@@ -102,29 +102,39 @@
 
 // HouseProfileForms styles
 .house_profile_forms_container {
-  border: 1px solid red;
+  // border: 1px solid red;
   max-width: 1100px;
   margin: 30px auto 80px;
   display: flex;
   justify-content: space-between;
 
   .house_profile_forms_left {
-    border: 1px solid green;
+    // border: 1px solid green;
     width: 58%;
   }
 
   .house_profile_forms_right {
-    border: 1px solid green;
+    // border: 1px solid green;
     width: 40%;
   }
 
   .house_profile_form {
     background: #fff;
     margin-bottom: 20px;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.05);
+
+    p {
+      width: 80%;
+      margin: 0 auto;
+      padding: 30px 0 50px;
+      font-family: 'Roboto', 'sans-serif';
+      font-weight: 300;
+      font-size: 1.6rem;
+    }
 
     .house_profile_form_title {
       border-bottom: 1px solid #c4c4c4;
-      padding: 15px 0;
+      padding: 20px 0;
       display: flex;
       justify-content: space-between;
       width: 100%;
@@ -134,13 +144,13 @@
         font-family: 'Roboto', 'sans-serif';
         font-weight: 600;
         font-size: 2.4rem;
-        margin-left: 5%;
+        margin-left: 10%;
       }
 
       i {
         font-size: 1.4rem;
         color: #bbb;
-        margin-right: 5%;
+        margin-right: 10%;
       }
     }
   }
