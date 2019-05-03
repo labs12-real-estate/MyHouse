@@ -33,7 +33,7 @@ export const onCreateHouse = `subscription OnCreateHouse {
     windows
     waterfront
     countertops
-    acAge
+    flooring
     furnaceAge
     roofAge
   }
@@ -71,7 +71,7 @@ export const onUpdateHouse = `subscription OnUpdateHouse {
     windows
     waterfront
     countertops
-    acAge
+    flooring
     furnaceAge
     roofAge
   }
@@ -109,7 +109,7 @@ export const onDeleteHouse = `subscription OnDeleteHouse {
     windows
     waterfront
     countertops
-    acAge
+    flooring
     furnaceAge
     roofAge
   }

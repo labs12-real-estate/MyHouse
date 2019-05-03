@@ -33,7 +33,7 @@ export const createHouse = `mutation CreateHouse($input: CreateHouseInput!) {
     windows
     waterfront
     countertops
-    acAge
+    flooring
     furnaceAge
     roofAge
   }
@@ -71,7 +71,7 @@ export const updateHouse = `mutation UpdateHouse($input: UpdateHouseInput!) {
     windows
     waterfront
     countertops
-    acAge
+    flooring
     furnaceAge
     roofAge
   }
@@ -109,7 +109,7 @@ export const deleteHouse = `mutation DeleteHouse($input: DeleteHouseInput!) {
     windows
     waterfront
     countertops
-    acAge
+    flooring
     furnaceAge
     roofAge
   }

@@ -1,4 +1,5 @@
-import { Auth } from 'aws-amplify';
+import { Auth, API, graphqlOperation } from 'aws-amplify';
+import { createHouse } from '../graphql/mutations';
 import {
   OPEN_MODAL,
   CLOSE_MODAL,
@@ -34,13 +35,13 @@ export const closeModal = e => {
   };
 };
 
-export const signIn = (creds, e) => dispatch => {
+export const signIn = (creds, makeHouse = undefined, e) => dispatch => {
   e.preventDefault();
   dispatch({
     type: SIGN_IN_FETCH
   });
 
-  Auth.signIn(creds)
+  return Auth.signIn(creds)
     .then(user => {
       dispatch({
         type: SIGN_IN_SUCCESS,
@@ -49,6 +50,7 @@ export const signIn = (creds, e) => dispatch => {
           name: user.attributes.name
         }
       });
+      makeHouse && makeHouse().catch(console.error);
     })
     .catch(error => {
       dispatch({
@@ -65,7 +67,7 @@ export const signUp = (user, e) => dispatch => {
   });
 
   Auth.signUp(user)
-    .then(user => {
+    .then(_user => {
       dispatch({
         type: SIGN_UP_PENDING
       });
@@ -78,18 +80,21 @@ export const signUp = (user, e) => dispatch => {
     });
 };
 
-export const confirmSignUp = ({ username, password, code }, e) => dispatch => {
+export const confirmSignUp = ({ username, password, code }, houseInput, e) => dispatch => {
   e.preventDefault();
   dispatch({
     type: CONFIRM_FETCH
   });
 
-  Auth.confirmSignUp(username, code)
-    .then(user => {
+  return Auth.confirmSignUp(username, code)
+    .then(_user => {
+      // Need to make this a thunk so that it is not invoked _until_
+      // the user is successfully signed in
+      const makeHouse = () => API.graphql(graphqlOperation(createHouse, { input: houseInput }));
       dispatch({
         type: SIGN_UP_SUCCESS
       });
-      signIn({ username, password }, e)(dispatch);
+      return signIn({ username, password }, makeHouse, e)(dispatch);
     })
     .catch(error => {
       dispatch({

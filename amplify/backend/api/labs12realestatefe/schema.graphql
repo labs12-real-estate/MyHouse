@@ -14,7 +14,7 @@ type House @auth(rules: [{ allow: owner }]) @model {
 
   # These will be part of the wizard form
   countertops: String
-  acAge: String
+  flooring: String
   furnaceAge: String
   roofAge: String
 }

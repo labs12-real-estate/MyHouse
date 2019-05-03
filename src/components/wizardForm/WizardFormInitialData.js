@@ -2,18 +2,18 @@ import React, { useState, useEffect } from 'react';
 import Button from '../../components/buttons/Button';
 
 function WizardFormInitialData({ step, handleNext }) {
-  const [address, setAddress] = useState('48592 Jerome, Shelby Township, MI 48315');
-  const [valuation, setValuation] = useState({ high: 435000, low: 300000 });
+  const [address, setAddress] = useState('');
+  const [valuation, setValuation] = useState({ high: 0, low: 0 });
 
   const [street, ...rest] = address.split(', ');
   const restAddress = rest.join(', ');
 
   useEffect(() => {
-    const initialData = JSON.parse(localStorage.getItem('initialData'));
+    const { data: initialData } = JSON.parse(localStorage.getItem('initialData'));
 
     if (initialData) {
       setAddress(initialData.address);
-      setValuation(initialData.valuation);
+      setValuation({ high: initialData.high, low: initialData.low });
     }
   }, []);
   return (

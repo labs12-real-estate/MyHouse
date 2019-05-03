@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { useForm } from '../../helper-functions/form-logic-functions';
 import { confirmSignUp, signUp } from '../../actions/authActions';
@@ -12,7 +13,7 @@ const initialForm = {
 };
 
 // @TODO: This could be refactored into subcomponents
-function RegisterInput({ confirmSignUp, signUp, pendingConfirmation }) {
+function RegisterInput({ history, houseInput, confirmSignUp, signUp, pendingConfirmation }) {
   const [formState, handleChange] = useForm(initialForm);
   const [{ code }, handleChangeCode] = useForm({
     code: ''
@@ -26,6 +27,10 @@ function RegisterInput({ confirmSignUp, signUp, pendingConfirmation }) {
     }
   });
   const { username, password, email, name } = formState;
+  const handleConfirmSubmit = e =>
+    confirmSignUp({ username, password, code }, houseInput, e).then(data => {
+      history.push('/overview');
+    });
   return !pendingConfirmation ? (
     <form onSubmit={e => signUp(formatUser(formState), e)}>
       <div className="login_inputs_container">
@@ -37,15 +42,15 @@ function RegisterInput({ confirmSignUp, signUp, pendingConfirmation }) {
         <input name="username" value={username} onChange={handleChange} className="login_input" type="text" />
         <label className="login_label">Password</label>
         <input name="password" value={password} onChange={handleChange} className="login_input" type="password" />
-        <Button buttonStyle="modal_login_button" buttonText="Login" />
+        <Button buttonStyle="modal_login_button" buttonText="Register" />
       </div>
     </form>
   ) : (
-    <form onSubmit={e => confirmSignUp({ username, password, code }, e)}>
+    <form onSubmit={handleConfirmSubmit}>
       <div className="login_inputs_container">
         <label className="login_label">Confirmation Code</label>
         <input name="code" value={code} onChange={handleChangeCode} className="login_input" type="text" />
-        <Button buttonStyle="modal_login_button" buttonText="Login" />
+        <Button buttonStyle="modal_login_button" buttonText="Confirm" />
       </div>
     </form>
   );
@@ -55,7 +60,9 @@ const mapStateToProps = ({ authReducer }) => ({
   pendingConfirmation: authReducer.pendingConfirmation
 });
 
-export default connect(
-  mapStateToProps,
-  { confirmSignUp, signUp }
-)(RegisterInput);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { confirmSignUp, signUp }
+  )(RegisterInput)
+);
