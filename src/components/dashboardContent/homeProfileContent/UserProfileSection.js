@@ -13,10 +13,18 @@ function UserProfileSection() {
           </h3>
         </div>
       </div>
-      <div>
-        <span>
+      <div className="house_profile_user_section_sub_container">
+        <span className="house_profile_links house_profile_left_padding">
           <i className="far fa-envelope" /> <span>tony@starkindustries.com</span>
+          <br />
+          <i className="fab fa-twitter" /> <span>@ironman</span>
         </span>
+        <div className="house_profile_links house_profile_features">
+          <span>Print house profile</span>
+          <span>Export as PDF</span>
+          <span>Share public link</span>
+          <span>Export as CSV</span>
+        </div>
       </div>
     </div>
   );
