@@ -99,8 +99,7 @@ export const confirmSignUp = ({ username, password, code }, history, houseInput)
     });
 };
 
-export const signOut = e => dispatch => {
-  e.preventDefault();
+export const signOut = history => dispatch => {
   dispatch({
     type: SIGN_OUT_FETCH
   });
@@ -110,6 +109,7 @@ export const signOut = e => dispatch => {
       dispatch({
         type: SIGN_OUT_SUCCESS
       });
+      history.push('/');
     })
     .catch(error => {
       dispatch({
