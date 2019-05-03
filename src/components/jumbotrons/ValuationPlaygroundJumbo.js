@@ -4,12 +4,12 @@ import { commaSeparator } from '../../helper-functions/display-functions';
 
 import houseBG from '../../assets/images/house-bg.jpg';
 
-function ValuationPlaygroundJumbo({ newValue, upgradeROI, currentValue, total_remodel_cost, currentUpgrade: { upgrade_cost, name } }) {
+function ValuationPlaygroundJumbo({ newValue, upgradeROI, currentValue, currentUpgrade: { upgrade_cost, name }, address }) {
   return (
     <div className="valuation_playground_jumbo_container">
       <img src={houseBG} alt="house" className="valuation_playground_jumbo_img" />
       <h2 className="valuation_playground_jumbo_title">
-        <i className="fas fa-map-marker-alt" /> 48592 Jerome, Shelby Township, MI 48315
+        <i className="fas fa-map-marker-alt" /> {address}
       </h2>
       <div className="valuation_playground_jumbo_prices_container">
         <div className="valuation_playground_jumbo_row">
@@ -25,17 +25,16 @@ function ValuationPlaygroundJumbo({ newValue, upgradeROI, currentValue, total_re
           <span className="valuation_playground_jumbo_upgrade_info">Valuation Effect</span>
           <span className="valuation_playground_jumbo_upgrade_numbers">{newValue ? commaSeparator(newValue - currentValue) : '--'}</span>
         </div>
-        {/* <span className="valuation_playground_jumbo_upgrade_type">{name}</span> */}
+
         <div className="valuation_playground_jumbo_row">
           <span className="valuation_playground_jumbo_upgrade_info">Return on Investment</span>
-          {/* <span className="valuation_playground_jumbo_upgrade_numbers">{upgradeROI ? commaSeparator(upgradeROI) : '--'}</span> */}
+
           <span className="valuation_playground_jumbo_upgrade_numbers">{upgradeROI ? `${Math.round(upgradeROI * 100)}%` : '--'}</span>
         </div>
         <div className="valuation_playground_jumbo_row">
           <span className="valuation_playground_jumbo_upgrade_info">New Valuation Estimate</span>
           <span className="valuation_playground_jumbo_upgrade_numbers">{newValue ? commaSeparator(newValue) : '--'}</span>
         </div>
-        {/* <span className="valuation_playground_jumbo_upgrade_type">{name}</span> */}
       </div>
     </div>
   );
