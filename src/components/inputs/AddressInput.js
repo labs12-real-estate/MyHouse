@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 
-function AddressInput() {
+function AddressInput({ history }) {
   const [sessiontoken, setSessiontoken] = useState('');
   const [address, setAddress] = useState('');
   const [predictions, setPredictions] = useState([]);
@@ -43,6 +44,15 @@ function AddressInput() {
 
   const getValue = e => {
     e.preventDefault();
+    axios
+      .post('https://labs12-real-estate.herokuapp.com/api/houses/getvalue', {
+        address
+      })
+      .then(state => {
+        localStorage.setItem('initialData', JSON.stringify(state));
+        history.push('/wizard-form');
+      })
+      .catch(console.error);
   };
 
   const fillAddress = (address, e) => {
@@ -71,4 +81,4 @@ function AddressInput() {
   );
 }
 
-export default AddressInput;
+export default withRouter(AddressInput);
