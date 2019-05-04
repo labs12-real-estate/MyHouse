@@ -10,7 +10,7 @@ function HouseProfileForms() {
           <HouseProfileForm key={index} title={i.title} content={i.content} />
         ))}
       </div>
-      <div className="house_profile_forms_right">HouseProfileForms</div>
+      <div className="house_profile_forms_right">Finish and Parcel Data</div>
     </div>
   );
 }
