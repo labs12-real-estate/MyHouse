@@ -12,6 +12,7 @@
     right: 0;
     overflow: auto;
     background: lightblue;
+
     .wizard_form_initial_data {
       margin: 0 10%;
       margin-top: 100px;
@@ -20,24 +21,60 @@
       .welcome {
         height: 500px;
         display: flex;
+        position: relative;
+
         .left_panel {
+          width: 35%;
           position: relative;
-          width: 40%;
-          background: dodgerblue;
+          background-image: url('../assets/images/welcome.jpg');
+          background-position: center;
+          background-size: cover;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            background: linear-gradient(202.93deg, rgba(8, 54, 145, 0.8) 22.94%, rgba(0, 104, 255, 0.8) 53.85%, rgba(0, 94, 230, 0.8) 86.75%);
+          }
+        }
+
+        .left_panel_text {
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 799;
+          width: 35%;
+          height: 500px;
+
           h1 {
             color: white;
             margin-top: 100px;
             margin-left: 30px;
-            font-size: 4.5rem;
+            font-family: 'Montserrat', 'sans-serf';
+            font-weight: 700;
+            font-size: 3.8rem;
+            letter-spacing: 0;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
           }
+
           h2 {
             position: absolute;
-            color: lightblue;
+            color: #fff;
+            opacity: 0.4;
             font-size: 2rem;
             bottom: 20px;
             left: 30px;
+            font-family: 'Montserrat', 'sans-serf';
+            font-weight: 700;
+            font-size: 2rem;
+            letter-spacing: 0;
           }
-        }
+        } // end of .left_panel_text
+
         .right_panel {
           padding: 50px 0;
           width: 60%;
@@ -61,7 +98,6 @@
               margin-bottom: 30px;
 
               &:before {
-                // border-top: 2px solid #dfdfdf;
                 content: '';
                 margin: 0 auto;
                 position: absolute;
@@ -76,17 +112,17 @@
             h2 {
               font-weight: 600;
               margin-top: 1.5rem;
-              // margin-left: 15%;
               letter-spacing: 0;
-              font-size: 3rem;
+              font-size: 2.8rem;
               font-family: 'Fira Sans', 'sans-serif';
+              color: #444;
             }
             h3 {
-              line-height: 20px;
+              line-height: 1.8rem;
               margin-top: 1rem;
               // margin-left: calc(15% + 3rem);
               margin-left: 8%;
-              font-size: 2.4rem;
+              font-size: 2.2rem;
               font-weight: 300;
               color: gray;
               letter-spacing: 0;
@@ -133,7 +169,7 @@
               font-family: 'Roboto', 'sans-serif';
               font-weight: 300;
               font-size: 1.8rem;
-              color: gray;
+              color: #333;
               .orange {
                 color: orange;
               }
@@ -143,7 +179,7 @@
               font-family: 'Roboto', 'sans-serif';
               font-weight: 300;
               font-size: 1.8rem;
-              color: gray;
+              color: #333;
               .green {
                 color: green;
               }
@@ -193,7 +229,7 @@
               }
             }
           }
-        }
+        } // end of .right_panel
       }
     }
   }
