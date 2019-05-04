@@ -5,7 +5,7 @@ type House @auth(rules: [{ allow: owner }]) @model {
   upgradeStory: String
   userProfilePhoto: AWSURL
   houseBackgroundPhoto: AWSURL
-  address: String!
+  address: String
   parcelData: ParcelData!
   valuation: Int!
   solar: Boolean
