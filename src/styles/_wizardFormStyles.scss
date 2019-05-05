@@ -2,21 +2,23 @@
   display: flex;
 
   .wizard_form_container {
-    margin: 70px auto 0;
+    margin: 0 auto;
     width: 100%;
-    max-width: 1200px;
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     overflow: auto;
-    background: lightblue;
+    // background: radial-gradient(729.81px at 48.02% 50%, #6da3ef 0%, #3a7fec 44.76%, #2049b2 60.56%, #083691 78.61%, #00308c 100%);
+    background: linear-gradient(202.93deg, rgba(8, 54, 145, 0.9) 22.94%, rgba(0, 104, 255, 0.83) 53.85%, rgba(0, 94, 230, 0.8) 86.75%);
+    backdrop-filter: blur(100px);
 
     .wizard_form_initial_data {
-      margin: 0 10%;
-      margin-top: 100px;
+      margin: 150px auto 0;
+      max-width: 900px;
       background: white;
+      box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
 
       .welcome {
         height: 500px;
@@ -38,7 +40,7 @@
             bottom: 0;
             right: 0;
             z-index: 1;
-            background: linear-gradient(202.93deg, rgba(8, 54, 145, 0.8) 22.94%, rgba(0, 104, 255, 0.8) 53.85%, rgba(0, 94, 230, 0.8) 86.75%);
+            background: linear-gradient(202.93deg, rgba(8, 54, 145, 0.9) 22.94%, rgba(0, 104, 255, 0.83) 53.85%, rgba(0, 94, 230, 0.8) 86.75%);
           }
         }
 
