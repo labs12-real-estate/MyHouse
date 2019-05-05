@@ -13,12 +13,25 @@
     // background: radial-gradient(729.81px at 48.02% 50%, #6da3ef 0%, #3a7fec 44.76%, #2049b2 60.56%, #083691 78.61%, #00308c 100%);
     background: linear-gradient(202.93deg, rgba(8, 54, 145, 0.9) 22.94%, rgba(0, 104, 255, 0.83) 53.85%, rgba(0, 94, 230, 0.8) 86.75%);
     backdrop-filter: blur(100px);
+    z-index: -1;
+
+    .cloud {
+      z-index: -1;
+      height: 100%;
+      max-height: 460px;
+      width: 100%;
+      background-image: url('../assets/images/landing-cloud-white.png');
+      background-position: center;
+      background-size: cover;
+      position: fixed;
+      bottom: 0;
+    }
 
     .wizard_form_initial_data {
-      margin: 150px auto 0;
+      margin: 130px auto 0;
       max-width: 900px;
       background: white;
-      box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
+      box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
 
       .welcome {
         height: 500px;
