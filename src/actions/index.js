@@ -25,6 +25,13 @@ export const IS_LOGGED_OUT = 'IS_LOGGED_OUT';
 
 // userAction Types
 
+export const GET_USERHOUSE_FETCH = 'GET_USERHOUSE_FETCH';
+export const GET_USERHOUSE_SUCCESS = 'GET_USERHOUSE_SUCCESS';
+export const GET_USERHOUSE_FAIL = 'GET_USERHOUSE_FAIL';
+export const MAKE_USER_FETCH = 'MAKE_USER_FETCH';
+export const MAKE_USER_SUCCESS = 'MAKE_USER_SUCCESS';
+export const MAKE_USER_FAIL = 'MAKE_USER_FAIL';
+
 // houseAction Types
 
 export const GET_HOUSE_FETCH = 'GET_HOUSE_FETCH';
