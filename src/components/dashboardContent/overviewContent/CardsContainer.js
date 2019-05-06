@@ -6,7 +6,7 @@ import bathsjpg from '../../../assets/images/overview/baths.jpg';
 import garagejpg from '../../../assets/images/overview/cars.jpg';
 import acresjpg from '../../../assets/images/overview/acres.jpg';
 import countertopsjpg from '../../../assets/images/overview/countertops.jpg';
-import { numberWithCommas } from '../../../helper-functions/display-functions';
+import { numberWithCommas, sqFtToAcreConversion } from '../../../helper-functions/display-functions';
 
 function CardsContainer({ countertops, parcelData }) {
   const cardsArray = [
@@ -14,7 +14,7 @@ function CardsContainer({ countertops, parcelData }) {
     { url: bedroomsjpg, text: 'BEDROOMS', value: parcelData.numBedrooms },
     { url: bathsjpg, text: 'BATHS', value: parcelData.numBathrooms },
     { url: garagejpg, text: 'GARAGE', value: 'N/A' },
-    { url: acresjpg, text: 'ACRES', value: numberWithCommas(parcelData.lotSquareFootage) + 'ft²' },
+    { url: acresjpg, text: 'ACRES', value: sqFtToAcreConversion(parcelData.lotSquareFootage) },
     { url: countertopsjpg, text: 'COUNTERTOPS', value: countertops }
   ];
 
