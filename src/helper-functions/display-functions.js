@@ -17,3 +17,7 @@ export const numberWithCommas = num => {
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
 };
+
+export const sqFtToAcreConversion = sqFt => {
+  return `${Math.round(sqFt * 0.0000229568)}`;
+};
