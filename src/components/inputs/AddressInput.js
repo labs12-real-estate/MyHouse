@@ -64,18 +64,20 @@ function AddressInput({ history }) {
     <div>
       <div className="address_searchbar">
         <form onSubmit={getValue}>
-          <input onChange={handleInputChange} placeholder="address" value={address} name="address" autoComplete="off" />
+          <input onChange={handleInputChange} placeholder="Enter address..." value={address} name="address" autoComplete="off" />
           <button className="form-button">Get Started</button>
         </form>
-        {predictions.length > 0 && address ? (
-          <div className="search_result_dropdown">
-            {predictions.map(prediction => (
-              <button key={prediction.id} onClick={e => fillAddress(prediction.description, e)}>
-                {prediction.description}
-              </button>
-            ))}
-          </div>
-        ) : null}
+        <div className="search_result_container">
+          {predictions.length > 0 && address ? (
+            <div className="search_result_dropdown">
+              {predictions.map(prediction => (
+                <button key={prediction.id} onClick={e => fillAddress(prediction.description, e)}>
+                  {prediction.description}
+                </button>
+              ))}
+            </div>
+          ) : null}
+        </div>
       </div>
     </div>
   );
