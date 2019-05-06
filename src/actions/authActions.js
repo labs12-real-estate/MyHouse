@@ -49,7 +49,7 @@ export const signIn = (creds, history, houseInput) => dispatch => {
           name: user.attributes.name
         }
       });
-      houseInput ? makeHouse(houseInput, history)(dispatch) : history.push('/overview');
+      houseInput ? makeHouse({ id: user.username, houseInput }, history)(dispatch) : history.push('/overview');
     })
     .catch(error => {
       dispatch({
@@ -110,6 +110,7 @@ export const signOut = history => dispatch => {
         type: SIGN_OUT_SUCCESS
       });
       history.push('/');
+      localStorage.clear();
     })
     .catch(error => {
       dispatch({
@@ -123,7 +124,8 @@ export const isLoggedInAction = () => dispatch => {
   Auth.currentSession()
     .then(data => {
       dispatch({
-        type: IS_LOGGED_IN
+        type: IS_LOGGED_IN,
+        payload: data.accessToken.payload.username
       });
     })
     .catch(error => {

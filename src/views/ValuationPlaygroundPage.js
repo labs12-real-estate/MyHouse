@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
-import { getHouse } from '../actions/houseActions';
+import { getUserHouse } from '../actions/usersActions';
 import { connect } from 'react-redux';
 import DashboardTopBar from '../components/navigation/DashboardTopBar';
 import SideBar from '../components/navigation/SideBar';
 import ValuationPlaygroundContent from '../components/dashboardContent/valuationPlaygroundContent/ValuationPlaygroundContent';
 
-function ValuationPlaygroundPage({ error, house, getHouse }) {
+function ValuationPlaygroundPage({ error, username, house, getUserHouse }) {
   useEffect(() => {
-    getHouse();
-  }, [getHouse]);
+    getUserHouse();
+  }, [getUserHouse, username]);
   return (
     <div>
       <DashboardTopBar />
@@ -21,9 +21,10 @@ function ValuationPlaygroundPage({ error, house, getHouse }) {
 }
 
 export default connect(
-  ({ houseReducer }) => ({
+  ({ houseReducer, authReducer }) => ({
     house: houseReducer.house,
-    error: houseReducer.error
+    error: houseReducer.error,
+    username: authReducer.username
   }),
-  { getHouse }
+  { getUserHouse }
 )(ValuationPlaygroundPage);

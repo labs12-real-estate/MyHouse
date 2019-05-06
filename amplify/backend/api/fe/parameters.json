@@ -1,5 +1,5 @@
 {
-    "AppSyncApiName": "labs12realestatefe",
+    "AppSyncApiName": "fe",
     "DynamoDBBillingMode": "PAY_PER_REQUEST",
     "AuthCognitoUserPoolId": {
         "Fn::GetAtt": [
