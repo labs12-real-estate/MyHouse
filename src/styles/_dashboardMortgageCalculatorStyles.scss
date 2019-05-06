@@ -1,0 +1,85 @@
+.mortgage_calc_container {
+  padding-left: 70px;
+  max-width: 1000px;
+
+  .mortgage_calc_chart {
+    background: #fff;
+    margin: 10px 0;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .money {
+    width: 100%;
+    background: #fff;
+    padding: 20px 15px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+
+    h2 {
+      font-family: 'Roboto', 'sans-serif';
+      font-weight: 600;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      color: #888;
+    }
+
+    h3 {
+      color: #22ab00;
+      font-family: 'Roboto', 'sans-serif';
+      font-weight: 400;
+      font-size: 2.6rem;
+      padding-top: 15px;
+    }
+  }
+
+  .mortgage_calc_input_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 14px;
+    width: 100%;
+
+    .mortgage_calc_input_box {
+      width: 32%;
+      background: #fff;
+      padding: 20px 15px;
+      box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+
+      .mortgage_calc_label {
+        font-size: 1.2rem;
+        font-family: 'Roboto', 'sans-serif';
+        font-weight: 600;
+        color: #888;
+        text-transform: uppercase;
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      span {
+        font-size: 2rem;
+        font-family: 'Roboto', 'sans-serif';
+        color: #bbb;
+        margin-right: 5px;
+      }
+
+      input {
+        width: 90%;
+        border: none;
+        border-bottom: 1px solid #c4c4c4;
+        font-size: 2.2rem;
+        font-family: 'Roboto', 'sans-serif';
+        margin: 10px auto 0;
+      }
+    }
+  }
+
+  .line {
+    fill: none;
+    stroke: #428bca;
+    stroke-width: 1.5px;
+  }
+
+  // Makes graph line dotted instead of solid
+  // .baseline {
+  //   stroke-dasharray: 4, 4;
+  // }
+}
