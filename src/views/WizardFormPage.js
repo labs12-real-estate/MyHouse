@@ -66,29 +66,28 @@ function WizardFormPage() {
     <div className="wizard_page_container">
       <DashboardTopBar />
       <div className="wizard_form_container">
-        <main className="wizard_form_main">
-          {step > 0 && <WizardFormProgress step={step} />}
-          <WizardFormInitialData step={step} handleNext={handleNext} />
-          {step < 5 ? (
-            questions.map(
-              ({ questionContent, options, selected }, i) =>
-                step === i + 1 && (
-                  <WizardFormQA
-                    key={i}
-                    step={step}
-                    questionContent={questionContent}
-                    options={options}
-                    selected={selected}
-                    handleAnswer={handleAnswer(i)}
-                    handleNext={handleNext}
-                    handlePrev={handlePrev}
-                  />
-                )
-            )
-          ) : (
-            <WizardFormConfirmation questions={questions} handleAnswer={handleAnswer} getHouseInput={getHouseInput} />
-          )}
-        </main>
+        <div className="cloud" />
+        {step > 0 && <WizardFormProgress step={step} />}
+        <WizardFormInitialData step={step} handleNext={handleNext} />
+        {step < 5 ? (
+          questions.map(
+            ({ questionContent, options, selected }, i) =>
+              step === i + 1 && (
+                <WizardFormQA
+                  key={i}
+                  step={step}
+                  questionContent={questionContent}
+                  options={options}
+                  selected={selected}
+                  handleAnswer={handleAnswer(i)}
+                  handleNext={handleNext}
+                  handlePrev={handlePrev}
+                />
+              )
+          )
+        ) : (
+          <WizardFormConfirmation questions={questions} handleAnswer={handleAnswer} getHouseInput={getHouseInput} />
+        )}
       </div>
     </div>
   );

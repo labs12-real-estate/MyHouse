@@ -1,5 +1,5 @@
 projects:
-  labs12realestatefe:
+  fe:
     schemaPath: src/graphql/schema.json
     includes:
       - src/graphql/**/*.js
@@ -10,7 +10,7 @@ projects:
         codeGenTarget: javascript
         generatedFileName: ''
         docsFilePath: src/graphql
-        graphQLApiId: cw2qzhbrm5aephw6ksu3ltlbjm
+        graphQLApiId: iw4f74pwvnejvbubqs2zmy5b7i
       endpoints:
         prod: >-
-          https://dnir3w34tjdc5nwkbxvs2uxnym.appsync-api.us-east-2.amazonaws.com/graphql
+          https://dq7s45dllbhyrl72br3azniqwu.appsync-api.us-east-2.amazonaws.com/graphql

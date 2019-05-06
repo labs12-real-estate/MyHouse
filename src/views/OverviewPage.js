@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { getHouse } from '../actions/houseActions';
+import { getUserHouse } from '../actions/usersActions';
 import DashboardTopBar from '../components/navigation/DashboardTopBar';
 import SideBar from '../components/navigation/SideBar';
 import OverviewContent from '../components/dashboardContent/overviewContent/OverviewContent';
 
-function OverviewPage({ error, house, getHouse }) {
+function OverviewPage({ username, error, house, getUserHouse }) {
   useEffect(() => {
-    getHouse();
-  }, [getHouse]); // get house data from AWS server on first render
+    username !== '' && getUserHouse(username);
+  }, [getUserHouse, username]); // get house data from AWS server on first render
   return (
     <div>
       <DashboardTopBar />
@@ -23,9 +23,10 @@ function OverviewPage({ error, house, getHouse }) {
 }
 
 export default connect(
-  ({ houseReducer }) => ({
+  ({ authReducer, houseReducer }) => ({
     house: houseReducer.house,
-    error: houseReducer.error
+    error: houseReducer.error,
+    username: authReducer.username
   }),
-  { getHouse }
+  { getUserHouse }
 )(OverviewPage);
