@@ -110,6 +110,7 @@ export const signOut = history => dispatch => {
         type: SIGN_OUT_SUCCESS
       });
       history.push('/');
+      localStorage.clear();
     })
     .catch(error => {
       dispatch({
