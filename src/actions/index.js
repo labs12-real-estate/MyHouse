@@ -34,9 +34,6 @@ export const MAKE_USER_FAIL = 'MAKE_USER_FAIL';
 
 // houseAction Types
 
-export const GET_HOUSE_FETCH = 'GET_HOUSE_FETCH';
-export const GET_HOUSE_SUCCESS = 'GET_HOUSE_SUCCESS';
-export const GET_HOUSE_FAIL = 'GET_HOUSE_FAIL';
 export const MAKE_HOUSE_FETCH = 'MAKE_HOUSE_FETCH';
 export const MAKE_HOUSE_SUCCESS = 'MAKE_HOUSE_SUCCESS';
 export const MAKE_HOUSE_FAIL = 'MAKE_HOUSE_FAIL';
