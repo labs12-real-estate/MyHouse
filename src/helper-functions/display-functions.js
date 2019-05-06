@@ -19,5 +19,5 @@ export const numberWithCommas = num => {
 };
 
 export const sqFtToAcreConversion = sqFt => {
-  return Math.round(sqFt * 0.0000229568);
+  return `${Math.round(sqFt * 0.0000229568)}`;
 };
