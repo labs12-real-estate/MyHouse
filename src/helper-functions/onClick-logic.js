@@ -8,3 +8,8 @@ export const handleSignOut = (e, closeModal, signOut, history) => {
   closeModal(e);
   signOut(history);
 };
+
+export const scrollToTop = e => {
+  e.preventDefault();
+  window.scrollTo(0, 0);
+};
