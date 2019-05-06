@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { useForm } from '../../helper-functions/form-logic-functions';
 import { signIn } from '../../actions/authActions';
+import { handleSignIn } from '../../helper-functions/onClick-logic';
 import Button from '../buttons/Button';
 
 const initialCreds = {
@@ -13,13 +14,8 @@ const initialCreds = {
 function LoginInput({ history, signIn }) {
   const [creds, handleChange] = useForm(initialCreds);
 
-  const handleSignIn = e => {
-    e.preventDefault();
-    signIn(creds, history);
-  };
-
   return (
-    <form onSubmit={handleSignIn}>
+    <form onSubmit={e => handleSignIn(e, signIn, creds, history)}>
       <div className="login_inputs_container">
         <label className="login_label">Username</label>
         <input name="username" value={creds.username} onChange={handleChange} className="login_input" type="text" />
