@@ -53,9 +53,9 @@ export const authReducer = (state = initialState, action) => {
     case SIGN_UP_PENDING:
       return { ...state, fetching: false, pendingConfirmation: true };
     case IS_LOGGED_IN:
-      return { ...state, isLoggedIn: true };
+      return { ...state, isLoggedIn: true, username: action.payload };
     case IS_LOGGED_OUT:
-      return { ...state, isLoggedIn: false };
+      return { ...state, isLoggedIn: false, username: '' };
     default:
       return state;
   }
