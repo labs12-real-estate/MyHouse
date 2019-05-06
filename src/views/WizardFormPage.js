@@ -66,6 +66,7 @@ function WizardFormPage() {
     <div className="wizard_page_container">
       <DashboardTopBar />
       <div className="wizard_form_container">
+        <div className="cloud" />
         {step > 0 && <WizardFormProgress step={step} />}
         <WizardFormInitialData step={step} handleNext={handleNext} />
         {step < 5 ? (

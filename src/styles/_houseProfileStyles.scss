@@ -29,8 +29,9 @@
 .house_profile_user_section_container {
   background: #fff;
   width: 100%;
-  height: 200px;
+  height: 130px;
   position: relative;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
 
   .house_profile_user_section_sub_container {
     max-width: 1100px;
@@ -38,12 +39,43 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .house_profile_links {
+      font-family: 'Roboto', 'sans-serif';
+      font-size: 1.4rem;
+      color: #777;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      height: 70px;
+
+      .fab,
+      .far,
+      .fas {
+        margin-bottom: 12px;
+      }
+
+      span {
+        cursor: pointer;
+      }
+    }
+
+    .house_profile_left_padding {
+      padding-left: 170px;
+    }
+
+    .house_profile_features {
+      display: flex;
+      max-width: 325px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      height: 70px;
+    }
   }
 
   img {
     position: absolute;
     border-radius: 100%;
-    top: -30%;
+    top: -35%;
     width: 150px;
   }
 
@@ -64,6 +96,62 @@
       font-size: 1.8rem;
       font-weight: 400;
       letter-spacing: 0;
+    }
+  }
+}
+
+// HouseProfileForms styles
+.house_profile_forms_container {
+  // border: 1px solid red;
+  max-width: 1100px;
+  margin: 30px auto 80px;
+  display: flex;
+  justify-content: space-between;
+
+  .house_profile_forms_left {
+    // border: 1px solid green;
+    width: 58%;
+  }
+
+  .house_profile_forms_right {
+    // border: 1px solid green;
+    width: 40%;
+  }
+
+  .house_profile_form {
+    background: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.05);
+
+    p {
+      width: 80%;
+      margin: 0 auto;
+      padding: 30px 0 50px;
+      font-family: 'Roboto', 'sans-serif';
+      font-weight: 300;
+      font-size: 1.6rem;
+    }
+
+    .house_profile_form_title {
+      border-bottom: 1px solid #c4c4c4;
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin: 0 auto;
+
+      h2 {
+        font-family: 'Roboto', 'sans-serif';
+        font-weight: 600;
+        font-size: 2.4rem;
+        margin-left: 10%;
+      }
+
+      i {
+        font-size: 1.4rem;
+        color: #bbb;
+        margin-right: 10%;
+      }
     }
   }
 }

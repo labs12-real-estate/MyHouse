@@ -21,7 +21,8 @@ function WizardFormInitialData({ step, handleNext }) {
     <div className="wizard_form_initial_data">
       {step === 0 && (
         <div className="welcome">
-          <div className="left_panel">
+          <div className="left_panel" />
+          <div className="left_panel_text">
             <h1>Welcome</h1>
             <h2>MyHouse</h2>
           </div>
