@@ -7,7 +7,7 @@ import OverviewContent from '../components/dashboardContent/overviewContent/Over
 
 function OverviewPage({ username, error, house, getUserHouse }) {
   useEffect(() => {
-    getUserHouse(username);
+    username !== '' && getUserHouse(username);
   }, [getUserHouse, username]); // get house data from AWS server on first render
   return (
     <div>
