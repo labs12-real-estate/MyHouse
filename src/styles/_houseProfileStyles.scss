@@ -130,6 +130,7 @@
       font-family: 'Roboto', 'sans-serif';
       font-weight: 300;
       font-size: 1.6rem;
+      line-height: 2.5rem;
     }
 
     .house_profile_form_title {
@@ -152,6 +153,19 @@
         color: #bbb;
         margin-right: 10%;
       }
+
+    
+    }
+    h3 {
+      padding: 10px 0 10px;
+      width: 80%;
+      margin: 0 auto;
+      font-family: 'Roboto', 'sans-serif';
+      font-weight: 300;
+      font-size: 1.6rem;
+    }
+    span{
+      font-weight: 600
     }
   }
 }
