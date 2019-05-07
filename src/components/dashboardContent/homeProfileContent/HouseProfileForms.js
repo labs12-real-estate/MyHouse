@@ -10,18 +10,17 @@ function HouseProfileForms() {
   return (
     <div className="house_profile_forms_container">
       <div className="house_profile_forms_left">
-        {houseProfileData.map((i, index) => (
-          <HouseProfileForm key={index} title={i.title} content={i.content} />
+        {houseProfileData.map(i => (
+          <HouseProfileForm key={i.id} title={i.title} content={i.content} id={i.id} />
         ))}
       </div>
       <div className="house_profile_forms_right">
-      {houseProfileDataFinishes.map((i, index) => (
+        {houseProfileDataFinishes.map((i, index) => (
           <HouseProfileFinishes key={index} title={i.title} countertops={i.countertops} furnaceAge={i.furnaceAge} roofAge={i.roofAge} acAge={i.acAge} />
         ))}
         {houseProfileDataParcel.map((i, index) => (
-          <HouseProfileParcel key={index} title={i.title} squareFt={i.squareFt} numBedrooms={i.numBedrooms} numBathrooms={i.numBathrooms} lotSize= {i.lotSize}/>
+          <HouseProfileParcel key={index} title={i.title} squareFt={i.squareFt} numBedrooms={i.numBedrooms} numBathrooms={i.numBathrooms} lotSize={i.lotSize} />
         ))}
-          
       </div>
     </div>
   );

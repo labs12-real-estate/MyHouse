@@ -8,12 +8,14 @@ import {
   EDIT_HOUSE_INFO,
   SAVE_HOUSE_INFO
 } from '../actions';
+import { houseProfileData } from '../dummy-data-structures/house-profile-dummy-data';
 
 const initialState = {
   error: null,
   fetching: false,
   house: { parcelData: {} },
-  isEditing: false
+  isEditing: false,
+  houseProfileData
 };
 
 export const houseReducer = (state = initialState, action) => {
@@ -27,16 +29,24 @@ export const houseReducer = (state = initialState, action) => {
     case MAKE_HOUSE_FAIL:
     case GET_USERHOUSE_FAIL:
       return { ...state, fetching: false, error: action.payload };
+    case EDIT_HOUSE_INFO:
+      return {
+        ...state,
+        isEditing: action.payload
+      };
     default:
       return state;
   }
 };
 
-export const houseProfileReducer = (state = initialState, action) => {
+/* export const houseProfileReducer = (state = initialState, action) => {
   switch (action.type) {
     case EDIT_HOUSE_INFO:
-      return { ...state, isEditing: true };
+      return {
+        ...state,
+        isEditing: houseProfileData.some(info => info.id === action.payload)
+      };
     default:
       return state;
   }
-};
+}; */
