@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import Button from '../../components/buttons/Button';
 import RegisterInput from '../../components/inputs/RegisterInput';
 
 // This is necessary because we are representing "no selection" as `null`
