@@ -13,7 +13,9 @@ import DesignStudioPage from './views/DesignStudioPage';
 
 // Note: onUpdate on Routes sends the user back to the top of the page on route switch.
 function App({ isLoggedInAction }) {
-  useEffect(isLoggedInAction, []);
+  useEffect(() => {
+    isLoggedInAction();
+  }, [isLoggedInAction]);
   return (
     <div>
       <Switch>

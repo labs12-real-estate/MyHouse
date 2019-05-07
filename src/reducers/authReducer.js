@@ -39,7 +39,7 @@ export const authReducer = (state = initialState, action) => {
     case SIGN_UP_SUCCESS:
       return { ...state, fetching: false, pendingConfirmation: false, isLoggedIn: true };
     case SIGN_OUT_SUCCESS:
-      return { ...state, fetching: false, isLoggedIn: false };
+      return { ...state, fetching: false, pendingConfirmation: false, submittedConfirmation: false, isLoggedIn: false };
     case SIGN_IN_FAIL:
     case SIGN_UP_FAIL:
     case SIGN_OUT_FAIL:
@@ -53,9 +53,9 @@ export const authReducer = (state = initialState, action) => {
     case SIGN_UP_PENDING:
       return { ...state, fetching: false, pendingConfirmation: true };
     case IS_LOGGED_IN:
-      return { ...state, isLoggedIn: true };
+      return { ...state, isLoggedIn: true, username: action.payload };
     case IS_LOGGED_OUT:
-      return { ...state, isLoggedIn: false };
+      return { ...state, isLoggedIn: false, username: '' };
     default:
       return state;
   }

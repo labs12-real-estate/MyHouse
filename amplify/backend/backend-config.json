@@ -6,7 +6,7 @@
 		}
 	},
 	"api": {
-		"labs12realestatefe": {
+		"fe": {
 			"service": "AppSync",
 			"providerPlugin": "awscloudformation",
 			"output": {
