@@ -38,6 +38,11 @@ export const MAKE_HOUSE_FETCH = 'MAKE_HOUSE_FETCH';
 export const MAKE_HOUSE_SUCCESS = 'MAKE_HOUSE_SUCCESS';
 export const MAKE_HOUSE_FAIL = 'MAKE_HOUSE_FAIL';
 
+// houseProfileAction Types
+
+export const EDIT_HOUSE_INFO = 'EDIT_HOUSE_INFO';
+export const SAVE_HOUSE_INFO = 'SAVE_HOUSE_INFO';
+
 // playgroundAction Types
 
 export const SET_CURRENT_COUNTER_TOP = 'SET_CURRENT_COUNTER_TOP';
