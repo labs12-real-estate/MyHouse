@@ -2,9 +2,18 @@
   display: flex;
 
   .dashboard_content_container {
-    margin-top: 50px;
+    margin-top: 54px;
     margin-left: 80px;
     width: 100%;
+    @include for-phone-only {
+      margin-left: 0;
+    }
+    @include for-tablet-portrait-up {
+      margin-left: 0;
+    }
+    @include for-desktop-up {
+      margin-left: 80px;
+    }
     .dashboard_content_title {
       font-family: Roboto;
       font-style: normal;

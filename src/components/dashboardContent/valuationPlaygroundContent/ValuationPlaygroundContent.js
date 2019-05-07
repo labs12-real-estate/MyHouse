@@ -1,6 +1,7 @@
 import React from 'react';
 import ValuationPlaygroundJumbo from '../../jumbotrons/ValuationPlaygroundJumbo';
 import ValuationPlaygroundUpgradeLists from './ValuationPlaygroundUpgradeLists';
+import { useWindowWidth } from '../../../helper-functions/display-functions';
 
 function ValuationPlaygroundContent(house) {
   return (
