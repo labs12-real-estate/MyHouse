@@ -5,12 +5,14 @@ import Button from '../buttons/Button';
 import { signOut, closeModal } from '../../actions/authActions';
 import { handleSignOut } from '../../helper-functions/onClick-logic';
 
-function DashboardTopBar({ signOut, history, closeModal }) {
+function DashboardTopBar({ toggleSideBar, signOut, history, closeModal }) {
   return (
     <div className="dashboard_nav_container">
+    <i onClick={toggleSideBar} className="sidebar_toggle fas fa-bars fa-3x phone_only" />
       <div className="dashboard_nav_home_icon">
         <Link to="/">
           <i className="fas fa-home fa-3x" />
+          <h1>MyHome</h1>
         </Link>
       </div>
       <div className="dashboard_nav_item_container">

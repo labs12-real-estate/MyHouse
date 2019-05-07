@@ -2,12 +2,19 @@
   display: flex;
   flex-direction: column;
   background: linear-gradient(0deg, #083691, #083691);
-  width: 110px;
+  width: $dashboard_sidebar_width;
   height: 100%;
   position: fixed;
-  top: 53px;
+  top: $dashboard_nav_height;
   left: 0;
   z-index: 1;
+  transition: 500ms;
+
+  @include for-phone-only {
+    &.hide {
+      transform: translateX(-$dashboard_sidebar_width);
+    }
+  }
 
   a {
     text-decoration: none;
