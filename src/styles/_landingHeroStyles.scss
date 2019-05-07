@@ -1,5 +1,6 @@
 .hero {
   text-align: center;
+  position: relative;
 
   h1 {
     color: #fff;
@@ -7,7 +8,7 @@
     font-size: 7.2rem;
     font-weight: 700;
     letter-spacing: -2px;
-    margin: 80px 0 20px;
+    margin: 80px 0 40px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
@@ -19,15 +20,46 @@
     line-height: 30px;
     opacity: 0.8;
     word-spacing: 2px;
+    margin: 0 auto;
+    @include for-phone-only {
+      margin-top: 25px;
+    }
   }
 
   .address_searchbar {
     margin: 0 auto;
-    position: relative;
-    width: 650px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 
     form {
       margin: 70px 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      @include for-phone-only {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        margin: 50px 0 0;
+      }
+
+      @include for-tablet-portrait-up {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        margin: 60px auto 0;
+      }
+
+      @include for-tablet-landscape-up {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        margin: 60px auto 0;
+        justify-content: center;
+      }
 
       input {
         border: none;
@@ -35,6 +67,18 @@
         font-size: 1.8rem;
         padding: 10px 20px;
         width: 500px;
+        box-shadow: 4px 5px 1px -1px RGBA(0, 0, 0, 0.1);
+
+        @include for-phone-only {
+          margin-top: 15px;
+          width: 365px;
+        }
+        @include for-tablet-portrait-up {
+          margin-top: 15px;
+        }
+        @include for-tablet-landscape-up {
+          margin-top: none;
+        }
 
         &:focus {
           outline: none;
@@ -51,6 +95,7 @@
         font-weight: 300;
         height: 41px;
         width: 150px;
+        box-shadow: 4px 5px 1px -1px RGBA(0, 0, 0, 0.1);
 
         &:hover {
           background: #f13800;
@@ -64,39 +109,53 @@
       } // end of button styles
     } // end of form styles
 
-    .search_result_dropdown {
-      background: #f4f4f4;
+    .search_result_container {
+      width: 100%;
       display: flex;
-      flex-direction: column;
-      justify-content: left;
-      padding: 0.5rem 0;
-      position: absolute;
-      top: 42px;
-      left: 0;
-      width: 500px;
-      z-index: 1000;
-
-      button {
+      justify-content: center;
+      .search_result_dropdown {
         background: #f4f4f4;
-        border: none;
-        color: #888;
-        cursor: pointer;
-        font-family: 'Roboto', 'sans-serif';
-        font-size: 1.6rem;
-        margin-bottom: 2px;
-        text-align: left;
-        padding: 7px 2rem;
-        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        padding: 0.5rem 0;
+        width: 650px;
+        z-index: 1000;
 
-        &:hover {
-          background: #e4e4e4;
-          color: #d33200;
+        @include for-phone-only {
+          width: 365px;
         }
-        &:focus {
-          outline: none;
+
+        @include for-tablet-portrait-up {
+          width: 500px;
         }
-      }
-    } // end of .search_result_dropdown
+
+        @include for-tablet-landscape-up {
+          width: 650px;
+        }
+
+        button {
+          background: #f4f4f4;
+          border: none;
+          color: #888;
+          cursor: pointer;
+          font-family: 'Roboto', 'sans-serif';
+          font-size: 1.6rem;
+          margin-bottom: 2px;
+          text-align: left;
+          padding: 7px 2rem;
+          width: 100%;
+
+          &:hover {
+            background: #e4e4e4;
+            color: #d33200;
+          }
+          &:focus {
+            outline: none;
+          }
+        }
+      } // end of .search_result_dropdown
+    }
   } // end of .address_searchbar
 } // end of .hero styles
 
@@ -104,10 +163,13 @@
   background-image: url('../assets/images/landing-cloud-white.png');
   background-size: cover;
   background-position: center;
-  height: 550px;
+  height: 552px;
   position: relative;
   width: 100%;
-  top: 10px;
+  top: 12px;
+  @include for-phone-only {
+    height: 400px;
+  }
 
   img {
     width: 40%;
@@ -119,8 +181,15 @@
     top: 80px;
     transform: translateY(0px);
     animation: float 6s ease-in-out infinite;
+
+    @include for-phone-only {
+      min-width: 350px;
+    }
+    @include for-tablet-portrait-up {
+      min-width: 500px;
+    }
   }
-}
+} // end cloud_top
 
 @keyframes float {
   0% {

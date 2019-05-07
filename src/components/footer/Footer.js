@@ -1,5 +1,6 @@
 import React from 'react';
-import { scrollToTop } from '../../helper-functions/display-functions';
+import { Link } from 'react-router-dom';
+import { scrollToTop } from '../../helper-functions/onClick-logic';
 
 function Footer() {
   return (
@@ -9,7 +10,9 @@ function Footer() {
           <h3 onClick={scrollToTop} title="Back to top">
             MyHouse
           </h3>
-          <span>Team</span>
+          <span>
+            <Link to="/">Team</Link>
+          </span>
           <span>
             <a href="https://github.com/labs12-real-estate" target="blank">
               Repository
