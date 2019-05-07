@@ -1,22 +1,18 @@
 import React, { useEffect } from 'react';
 import { getUserHouse } from '../actions/usersActions';
 import { connect } from 'react-redux';
-import DashboardTopBar from '../components/navigation/DashboardTopBar';
-import SideBar from '../components/navigation/SideBar';
+import DashboardContainer from './DashboardContainer';
 import ValuationPlaygroundContent from '../components/dashboardContent/valuationPlaygroundContent/ValuationPlaygroundContent';
 
-function ValuationPlaygroundPage({ error, username, house, getUserHouse }) {
+function ValuationPlaygroundPage({ error, house, username, getUserHouse }) {
   useEffect(() => {
-    getUserHouse();
+    getUserHouse(username);
+    username !== '' && getUserHouse(username);
   }, [getUserHouse, username]);
   return (
-    <div>
-      <DashboardTopBar />
-      <div className="dashboard_page_container">
-        <SideBar />
-        <ValuationPlaygroundContent {...house} />
-      </div>
-    </div>
+    <DashboardContainer>
+      <ValuationPlaygroundContent {...house} />
+    </DashboardContainer>
   );
 }
 

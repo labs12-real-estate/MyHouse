@@ -7,12 +7,15 @@ import {
   SET_CURRENT_FLOORING,
   SET_CURRENT_ADDING_SQFT,
   SET_CURRENT_PAINTING,
-  SET_CURRENT_VALUE
+  SET_CURRENT_VALUE,
+  SET_MOBILE_UPGRADE
 } from '../actions/index';
 import { upgradeList } from '../dummy-data-structures/valuation-playground-upgrade-list';
+import { masterUpgradeList } from '../dummy-data-structures/valuation-playground-master-upgrade-list';
 
 const initialState = {
   upgradeList: upgradeList,
+  masterUpgradeList: masterUpgradeList,
   currentValue: null,
   newValue: null,
   upgradeROI: null,
@@ -98,6 +101,16 @@ export const playgroundReducer = (state = initialState, action) => {
         upgradeROI: (filteredPainting.upgrade_cost * filteredPainting.ROI_percentage - filteredPainting.upgrade_cost) / filteredPainting.upgrade_cost,
         newValue: filteredPainting.upgrade_cost * filteredPainting.ROI_percentage + state.currentValue,
         total_remodel_cost: { ...state.total_remodel_cost, painting: filteredPainting.upgrade_cost }
+      };
+    case SET_MOBILE_UPGRADE:
+      const filteredMobileUpgrade = state.masterUpgradeList.filter(upgrade => upgrade.name === action.payload)[0];
+      return {
+        ...state,
+        currentUpgrade: { ...filteredMobileUpgrade },
+        upgradeROI:
+          (filteredMobileUpgrade.upgrade_cost * filteredMobileUpgrade.ROI_percentage - filteredMobileUpgrade.upgrade_cost) / filteredMobileUpgrade.upgrade_cost,
+        newValue: filteredMobileUpgrade.upgrade_cost * filteredMobileUpgrade.ROI_percentage + state.currentValue,
+        total_remodel_cost: { ...state.total_remodel_cost, painting: filteredMobileUpgrade.upgrade_cost }
       };
     default:
       return state;

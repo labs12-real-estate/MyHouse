@@ -2,12 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { commaSeparator } from '../../helper-functions/display-functions';
 
-import houseBG from '../../assets/images/house-bg.jpg';
-
 function ValuationPlaygroundJumbo({ newValue, upgradeROI, currentValue, currentUpgrade: { upgrade_cost, name }, address }) {
   return (
     <div className="valuation_playground_jumbo_container">
-      <img src={houseBG} alt="house" className="valuation_playground_jumbo_img" />
+      <div alt="house" className="valuation_playground_jumbo_img" />
       <h2 className="valuation_playground_jumbo_title">
         <i className="fas fa-map-marker-alt" /> {address}
       </h2>
