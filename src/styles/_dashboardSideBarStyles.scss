@@ -9,10 +9,13 @@
   left: 0;
   z-index: 1;
   transition: 500ms;
+  &.hide {
+    transform: translateX(-$dashboard_sidebar_width);
+  }
 
-  @include for-phone-only {
+  @include for-tablet-landscape-up {
     &.hide {
-      transform: translateX(-$dashboard_sidebar_width);
+      transform: none;
     }
   }
 

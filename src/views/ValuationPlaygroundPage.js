@@ -6,6 +6,7 @@ import ValuationPlaygroundContent from '../components/dashboardContent/valuation
 
 function ValuationPlaygroundPage({ error, house, username, getUserHouse }) {
   useEffect(() => {
+    getUserHouse(username);
     username !== '' && getUserHouse(username);
   }, [getUserHouse, username]);
   return (

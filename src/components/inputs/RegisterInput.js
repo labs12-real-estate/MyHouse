@@ -13,7 +13,7 @@ const initialForm = {
 };
 
 // @TODO: This could be refactored into subcomponents
-function RegisterInput({ history, houseInput, confirmSignUp, signUp, pendingConfirmation, submittedConfirmation }) {
+function RegisterInput({ handlePrev, history, houseInput, confirmSignUp, signUp, pendingConfirmation, submittedConfirmation }) {
   const [formState, handleChange] = useForm(initialForm);
   const [{ code }, handleChangeCode] = useForm({
     code: ''
@@ -44,15 +44,14 @@ function RegisterInput({ history, houseInput, confirmSignUp, signUp, pendingConf
   return !(pendingConfirmation || submittedConfirmation) ? (
     <form onSubmit={handleSignUp}>
       <div className="login_inputs_container">
-        <label className="login_label">Full Name</label>
-        <input name="name" value={name} onChange={handleChange} className="login_input" type="text" />
-        <label className="login_label">E-mail</label>
-        <input name="email" value={email} onChange={handleChange} className="login_input" type="text" />
-        <label className="login_label">Username</label>
-        <input name="username" value={username} onChange={handleChange} className="login_input" type="text" />
-        <label className="login_label">Password</label>
-        <input name="password" value={password} onChange={handleChange} className="login_input" type="password" />
-        <Button buttonStyle="modal_login_button" buttonText="Register" />
+        <h1>MyHouse</h1>
+        <h3>Create an account</h3>
+        <input name="name" value={name} onChange={handleChange} placeholder="  Name" className="login_input" type="text" />
+        <input name="email" value={email} onChange={handleChange} placeholder="  Email" className="login_input" type="text" />
+        <input name="username" value={username} onChange={handleChange} placeholder="  Username" className="login_input" type="text" />
+        <input name="password" value={password} onChange={handleChange} placeholder="  Password" className="login_input" type="password" />
+        <Button buttonStyle="register_button" buttonText="Register" />
+        <Button clickEvent={handlePrev} buttonStyle="back_button" buttonText="Back" />
       </div>
     </form>
   ) : (
@@ -60,7 +59,7 @@ function RegisterInput({ history, houseInput, confirmSignUp, signUp, pendingConf
       <div className="login_inputs_container">
         <label className="login_label">Confirmation Code</label>
         <input name="code" value={code} onChange={handleChangeCode} className="login_input" type="text" />
-        <Button buttonStyle="modal_login_button" buttonText="Confirm" />
+        <Button buttonStyle="register_button" buttonText="Confirm" />
       </div>
     </form>
   );
