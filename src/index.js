@@ -14,7 +14,7 @@ import awsConfig from './aws-exports';
 // This configures Amplify module, makes it available globally throughout app
 Amplify.configure(awsConfig);
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE___ || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk, logger)));
 
