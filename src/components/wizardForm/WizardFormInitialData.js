@@ -96,9 +96,27 @@ function WizardFormInitialData({ step, handleNext }) {
       )}
       {step === 5 && (
         <div className="confirmation">
-          {address}
-          {valuation.high}
-          {valuation.low}
+          <div className="logo_address">
+            <i className="fas fa-map-marker-alt" />
+            <div className="2_lines_address">
+              <h2>{street}</h2>
+              <h3>{restAddress}</h3>
+            </div>
+          </div>
+          <div className="container">
+            <div>
+              <h3>LOW</h3>
+              <div className="low">
+                <i className="fas fa-square orange" /> {commaSeparator(Math.round(valuation.low))}
+              </div>
+            </div>
+            <div>
+              <h3>HIGH</h3>
+              <div className="high">
+                <i className="fas fa-square green" /> {commaSeparator(Math.round(valuation.high))}
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>

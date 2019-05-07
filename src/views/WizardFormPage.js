@@ -87,7 +87,7 @@ function WizardFormPage() {
                 )
             )
           ) : (
-            <WizardFormConfirmation questions={questions} handleAnswer={handleAnswer} getHouseInput={getHouseInput} />
+            <WizardFormConfirmation handlePrev={handlePrev} questions={questions} handleAnswer={handleAnswer} getHouseInput={getHouseInput} />
           )}
         </div>
       </div>

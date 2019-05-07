@@ -7,7 +7,7 @@ function WizardFormProgress({ step, max = 4 }) {
         {Math.min(step, max)} of {max}
       </div>
       <progress max={max} value={step - 1} />
-      <p>For a more precise estimate, please answer the following</p>
+      {step < 5 ? <p>For a more precise estimate, please answer the following:</p> : <p>Please review your entries before submitting.</p>}
     </div>
   );
 }
