@@ -1,4 +1,4 @@
-import { MAKE_HOUSE_FETCH, MAKE_HOUSE_SUCCESS, MAKE_HOUSE_FAIL } from './index';
+import { MAKE_HOUSE_FETCH, MAKE_HOUSE_SUCCESS, MAKE_HOUSE_FAIL, EDIT_HOUSE_INFO, SAVE_HOUSE_INFO } from './index';
 import { API, graphqlOperation } from 'aws-amplify';
 import { makeUser } from './usersActions';
 import { createHouse } from '../graphql/mutations';
@@ -14,4 +14,18 @@ export const makeHouse = ({ id, houseInput }, history) => dispatch => {
     .catch(error => {
       dispatch({ type: MAKE_HOUSE_FAIL, payload: error });
     });
+};
+
+export const isEditing = index => {
+  return {
+    type: EDIT_HOUSE_INFO,
+    payload: index
+  };
+};
+
+export const saveHouse = updated => {
+  return {
+    type: SAVE_HOUSE_INFO,
+    payload: updated
+  };
 };
