@@ -5,6 +5,9 @@
     margin-top: 54px;
     margin-left: 80px;
     width: 100%;
+    margin-top: $dashboard_nav_height;
+    margin-left: $dashboard_sidebar_width;
+    transition: 500ms;
     @include for-phone-only {
       margin-left: 0;
     }
@@ -12,7 +15,7 @@
       margin-left: 0;
     }
     @include for-desktop-up {
-      margin-left: 80px;
+      margin-left: 70px;
     }
     .dashboard_content_title {
       font-family: Roboto;
