@@ -11,7 +11,8 @@ function HouseProfileForm(props) {
         </h2>
         <i className="fas fa-pen" onClick={() => setEditMode(!editMode)} />
       </div>
-      <p>{props.content}</p>
+
+      {!editMode ? <p>{props.content}</p> : <textarea value={props.content} style={{ width: '100%', height: '300px' }} />}
     </div>
   );
 }
