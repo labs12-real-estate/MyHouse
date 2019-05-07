@@ -11,6 +11,14 @@
     cursor: pointer;
     margin-left: 30px;
 
+    @include for-tablet-portrait-up {
+      margin-left: 5px;
+    }
+
+    @include for-phone-only {
+      margin-left: 5px;
+    }
+
     a {
       text-decoration: none;
       font-size: 1.4rem;
@@ -28,6 +36,25 @@
     display: flex;
     align-items: center;
 
+    @include for-phone-only {
+      width: 88%;
+      margin-right: 5px;
+      justify-content: space-evenly;
+    }
+
+    @include for-tablet-portrait-up {
+      width: 53%;
+      margin-right: 5px;
+    }
+
+    @include for-tablet-landscape-up {
+      width: 40%;
+    }
+
+    @include for-desktop-up {
+      width: 30%;
+    }
+
     a {
       text-decoration: none;
       color: white;
@@ -37,6 +64,9 @@
       font-size: 1.4rem;
       line-height: 1.6rem;
       opacity: 0.8;
+      @include for-phone-only {
+        font-size: 2rem;
+      }
       &:hover {
         opacity: 1;
       }
@@ -56,6 +86,9 @@
       height: 32px;
       width: 132px;
       padding: none;
+      @include for-phone-only {
+        width: 80px;
+      }
       cursor: pointer;
       &:hover {
         background: #f13800;

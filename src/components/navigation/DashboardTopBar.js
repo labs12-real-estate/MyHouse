@@ -6,7 +6,6 @@ import { signOut, closeModal } from '../../actions/authActions';
 import { handleSignOut } from '../../helper-functions/onClick-logic';
 
 function DashboardTopBar({ signOut, history, closeModal }) {
-  console.log(history);
   return (
     <div className="dashboard_nav_container">
       <div className="dashboard_nav_home_icon">

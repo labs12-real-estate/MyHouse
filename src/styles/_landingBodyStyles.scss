@@ -26,6 +26,11 @@
     margin: 0 auto;
     color: #222;
     line-height: 3rem;
+
+    @include for-phone-only {
+      width: 90%;
+      font-size: 2.4rem;
+    }
   }
 } // end of .landing_mid
 
@@ -44,6 +49,15 @@
     top: -170px;
     left: 0;
     right: 0;
+    @include for-phone-only {
+      max-width: 360px;
+    }
+    @include for-tablet-portrait-up {
+      max-width: 580px;
+    }
+    @include for-tablet-landscape-up {
+      max-width: 750px;
+    }
   }
 }
 
@@ -51,6 +65,17 @@
   background: #f7f7f7;
   color: #222;
   padding-top: 200px;
+  @include for-phone-only {
+    padding-top: 0px;
+  }
+
+  @include for-tablet-portrait-up {
+    padding-top: 90px;
+  }
+
+  @include for-tablet-landscape-up {
+    padding-top: 200px;
+  }
 
   h2 {
     font-family: 'Montserrat', 'sans-serif';
@@ -68,13 +93,53 @@
     margin: 0 auto;
     padding-bottom: 110px;
 
+    @include for-phone-only {
+      flex-direction: column;
+    }
+
+    @include for-tablet-portrait-up {
+      flex-direction: column;
+    }
+
+    @include for-tablet-landscape-up {
+      display: flex;
+      justify-content: space-between;
+      max-width: 900px;
+      margin: 0 auto;
+      padding-bottom: 110px;
+      flex-direction: row;
+    }
+
     .marketing_card {
       width: 30%;
+      @include for-phone-only {
+        width: 80%;
+        margin: 0px auto 60px auto;
+      }
+      @include for-tablet-portrait-up {
+        width: 60%;
+        margin: 0px auto 60px auto;
+      }
+      @include for-tablet-landscape-up {
+        width: 30%;
+        margin: none;
+      }
 
       img {
         display: block;
         margin: 0 auto 50px;
         width: 70px;
+        @include for-phone-only {
+          margin: 0 auto 20px;
+        }
+        @include for-tablet-portrait-up {
+          margin: 0 auto 20px;
+        }
+        @include for-tablet-landscape-up {
+          display: block;
+          margin: 0 auto 50px;
+          width: 70px;
+        }
       }
 
       h3 {
@@ -92,6 +157,9 @@
         font-size: 1.6rem;
         font-weight: 300;
         line-height: 2.4rem;
+        @include for-phone-only {
+          font-size: 2rem;
+        }
       }
     } // end of .marketing_card
   } // end of .marketing_cards
@@ -108,6 +176,15 @@
   background: #fff;
   margin: 0 auto;
   max-width: 1000px;
+  @include for-phone-only {
+    width: 90%;
+  }
+  @include for-tablet-portrait-up {
+    width: 90%;
+  }
+  @include for-tablet-landscape-up {
+    width: 90%;
+  }
 
   h2 {
     color: #333;
@@ -120,6 +197,21 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
+    @include for-phone-only {
+      flex-direction: column;
+    }
+
+    @include for-tablet-portrait-up {
+      flex-direction: column;
+    }
+
+    @include for-tablet-landscape-up {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
     .review_card {
       border-radius: 15px;
       box-shadow: -6px 8px 9px rgba(0, 0, 0, 0.08);
@@ -127,6 +219,18 @@
       margin-top: 30px;
       max-width: 47%;
       padding: 30px 40px;
+
+      @include for-phone-only {
+        max-width: 100%;
+        padding: 25px 8px;
+      }
+      @include for-tablet-portrait-up {
+        max-width: 100%;
+      }
+
+      @include for-tablet-landscape-up {
+        max-width: 47%;
+      }
 
       img {
         border-radius: 100%;
@@ -140,6 +244,9 @@
           line-height: 2rem;
           padding: 0 0 15px 20px;
           text-align: left;
+          @include for-phone-only {
+            padding: 0 0 15px 0px;
+          }
         }
 
         h5 {
@@ -169,6 +276,10 @@
     text-align: center;
     text-shadow: -2px 4px 3px rgba(0, 0, 0, 0.15);
     z-index: 950;
+
+    @include for-phone-only {
+      padding: 150px 0 50px;
+    }
   }
 
   .landing_house_bg {
@@ -213,81 +324,3 @@
     }
   }
 } // end of .landing_cta_bottom
-
-.landing_footer {
-  background: #002663;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  font-size: 1.6rem;
-  height: 190px;
-  justify-content: space-between;
-  padding: 30px 60px;
-
-  span {
-    font-family: 'Roboto', 'sans-serif';
-  }
-
-  .footer_top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin: 0 auto;
-    max-width: 1400px;
-    width: 100%;
-
-    div {
-      display: flex;
-      align-items: baseline;
-    }
-
-    h3 {
-      color: #0068ff;
-      cursor: pointer;
-      display: inline-block;
-      font-size: 2.6rem;
-      font-family: 'Montserrat', 'sans-serif';
-      font-weight: 700;
-      letter-spacing: -2px;
-    }
-
-    span {
-      margin-left: 2.4rem;
-      opacity: 0.8;
-      font-weight: 300;
-
-      a {
-        color: #fff;
-        opacity: 0.8;
-
-        &:hover {
-          transition: 0.3s;
-          opacity: 1;
-        }
-      }
-    }
-  }
-
-  .footer_bottom {
-    display: flex;
-    font-family: 'Roboto', 'serif';
-    font-size: 1.2rem;
-    font-weight: 300;
-    justify-content: space-between;
-    opacity: 0.5;
-    margin: 0 auto;
-    min-width: 375px;
-    max-width: 500px;
-  }
-
-  .fab {
-    color: #0068ff;
-    margin-left: 12px;
-    font-size: 2.2rem;
-
-    &:hover {
-      color: #297eff;
-    }
-  }
-} // end of .landing_footer
