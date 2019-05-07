@@ -5,14 +5,14 @@ import { houseProfileDataParcel } from '../../../dummy-data-structures/house-pro
 import HouseProfileForm from './HouseProfileForm';
 import HouseProfileFinishes from './HouseProfileFinishes';
 import HouseProfileParcel from './HouseProfileParcel';
+import { connect } from 'react-redux';
 
-function HouseProfileForms() {
+function HouseProfileForms({ house }) {
   return (
     <div className="house_profile_forms_container">
       <div className="house_profile_forms_left">
-        {houseProfileData.map(i => (
-          <HouseProfileForm key={i.id} title={i.title} content={i.content} id={i.id} />
-        ))}
+        <HouseProfileForm title="House Bio" content={house.description} id={1} defaultValue="Enter your house bio" field="description" />
+        <HouseProfileForm title="Recent Remodeling" content={house.recentRemodel} id={2} defaultValue="Enter any recent upgrades" field="recentRemodel" />
       </div>
       <div className="house_profile_forms_right">
         {houseProfileDataFinishes.map((i, index) => (
@@ -26,4 +26,13 @@ function HouseProfileForms() {
   );
 }
 
-export default HouseProfileForms;
+const mapStateToProps = state => {
+  return {
+    house: state.houseReducer.house
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(HouseProfileForms);

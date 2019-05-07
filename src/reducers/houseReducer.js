@@ -6,7 +6,8 @@ import {
   GET_USERHOUSE_SUCCESS,
   GET_USERHOUSE_FAIL,
   EDIT_HOUSE_INFO,
-  SAVE_HOUSE_INFO
+  SAVE_HOUSE_INFO,
+  CANCEL_SAVE_HOUSE_INFO
 } from '../actions';
 import { houseProfileData } from '../dummy-data-structures/house-profile-dummy-data';
 
@@ -14,7 +15,7 @@ const initialState = {
   error: null,
   fetching: false,
   house: { parcelData: {} },
-  isEditing: false,
+  editingIds: [],
   houseProfileData
 };
 
@@ -32,7 +33,18 @@ export const houseReducer = (state = initialState, action) => {
     case EDIT_HOUSE_INFO:
       return {
         ...state,
-        isEditing: action.payload
+        editingIds: [...state.editingIds, action.payload]
+      };
+    case SAVE_HOUSE_INFO:
+      return {
+        ...state,
+        house: { ...state.house, ...action.payload.changes },
+        editingIds: state.editingIds.filter(id => id !== action.payload.id)
+      };
+    case CANCEL_SAVE_HOUSE_INFO:
+      return {
+        ...state,
+        editingIds: state.editingIds.filter(id => id !== action.payload)
       };
     default:
       return state;

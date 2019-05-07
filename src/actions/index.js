@@ -39,6 +39,7 @@ export const MAKE_HOUSE_SUCCESS = 'MAKE_HOUSE_SUCCESS';
 export const MAKE_HOUSE_FAIL = 'MAKE_HOUSE_FAIL';
 export const EDIT_HOUSE_INFO = 'EDIT_HOUSE_INFO';
 export const SAVE_HOUSE_INFO = 'SAVE_HOUSE_INFO';
+export const CANCEL_SAVE_HOUSE_INFO = 'CANCEL_SAVE_HOUSE_INFO';
 
 // playgroundAction Types
 
