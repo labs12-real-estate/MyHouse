@@ -31,7 +31,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer_bottom">
-        <span>2019 MyHouse</span>
+        <span>© 2019 MyHouse</span>
         <span>Privacy Policy</span>
         <span>Terms &amp; Conditions</span>
       </div>

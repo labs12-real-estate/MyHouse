@@ -2,6 +2,22 @@
   padding-left: 70px;
   max-width: 1000px;
 
+  @include for-phone-only {
+    padding-left: 0;
+    margin: 0 auto;
+    width: 90%;
+  }
+  @include for-tablet-portrait-up {
+    padding-left: 0;
+    margin: 0 auto;
+    width: 90%;
+  }
+  @include for-desktop-up {
+    padding-left: 70px;
+    max-width: 1000px;
+    margin: 0;
+  }
+
   .mortgage_calc_chart {
     background: #fff;
     margin: 10px 0;
@@ -20,6 +36,9 @@
       font-size: 1.2rem;
       text-transform: uppercase;
       color: #888;
+      @include for-phone-only {
+        font-size: 2.6rem;
+      }
     }
 
     h3 {
@@ -38,11 +57,34 @@
     margin-top: 14px;
     width: 100%;
 
+    @include for-phone-only {
+      flex-direction: column;
+    }
+    @include for-tablet-portrait-up {
+      flex-direction: column;
+    }
+    @include for-desktop-up {
+      flex-direction: row;
+    }
+
     .mortgage_calc_input_box {
       width: 32%;
       background: #fff;
       padding: 20px 15px;
       box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+
+      @include for-phone-only {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+      @include for-tablet-portrait-up {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      @include for-desktop-up {
+        width: 32%;
+      }
 
       .mortgage_calc_label {
         font-size: 1.2rem;
@@ -52,6 +94,9 @@
         text-transform: uppercase;
         width: 90%;
         margin: 0 auto;
+        @include for-phone-only {
+          font-size: 2.6rem;
+        }
       }
 
       span {
@@ -68,6 +113,9 @@
         font-size: 2.2rem;
         font-family: 'Roboto', 'sans-serif';
         margin: 10px auto 0;
+        @include for-phone-only {
+          font-size: 2.6rem;
+        }
       }
     }
   }
