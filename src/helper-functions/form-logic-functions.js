@@ -16,5 +16,5 @@ export function useInput(initialString = '') {
   const handleChange = e => {
     setState(e.target.value);
   };
-  return [state, handleChange];
+  return [state, handleChange, setState];
 }
