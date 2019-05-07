@@ -11,7 +11,7 @@ function WizardFormQA({ step, handleAnswer, handlePrev, handleNext, questionCont
           return (
             <div className="QA_card" select={(selected === i).toString()} key={i} onClick={handleAnswer(i)}>
               <input checked={selected === i} type="radio" id={id} onChange={handleAnswer(i)} />
-              <span class="checkmark" />
+              <span className="checkmark" />
               <label htmlFor={id}>{option}</label>
             </div>
           );

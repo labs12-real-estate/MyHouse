@@ -694,7 +694,6 @@
               right: 0;
               bottom: 0.05rem;
               border: none;
-              background-color: white;
               font-weight: bold;
               font-size: 1.2rem;
             }
@@ -705,6 +704,11 @@
               font-size: 1.6rem;
               color: rgb(160, 160, 160);
             }
+          }
+          p{
+            color: red;
+            font-size: 1.5rem;
+            text-align: end;
           }
         }
       }

@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import RegisterInput from '../../components/inputs/RegisterInput';
-import Button from '../../components/buttons/Button';
 
 // This is necessary because we are representing "no selection" as `null`
 // but `null` is not valid as a value for a `select` element.
@@ -15,8 +14,8 @@ function WizardFormConfirmation({ getHouseInput, questions, handleAnswer, handle
     <div className="confirmation_container">
       <div className="review_container">
         {questions.map(({ title, options, selected }, qIx) => (
-          <div className="selection">
-            <Fragment key={qIx}>
+          <div className="selection" key={qIx}>
+            <Fragment>
               <label htmlFor={title}>{title}</label>
               <select onChange={handleChange(qIx)} value={selected === null ? NULL : selected} id={title}>
                 <option value={NULL}>Not applicable</option>
@@ -29,6 +28,7 @@ function WizardFormConfirmation({ getHouseInput, questions, handleAnswer, handle
             </Fragment>
           </div>
         ))}
+        <p>Please register to get a more accurate valuation.</p>
       </div>
       <div className="left-panel">
         <RegisterInput handlePrev={handlePrev} houseInput={getHouseInput()} />
