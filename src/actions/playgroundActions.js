@@ -6,7 +6,8 @@ import {
   SET_CURRENT_FURNACE,
   SET_CURRENT_FLOORING,
   SET_CURRENT_ADDING_SQFT,
-  SET_CURRENT_PAINTING
+  SET_CURRENT_PAINTING,
+  SET_MOBILE_UPGRADE
 } from './index';
 
 export const setCurrentCounterTop = upgrade => {
@@ -61,6 +62,13 @@ export const setCurrentAddingSqFt = upgrade => {
 export const setCurrentPainting = upgrade => {
   return {
     type: SET_CURRENT_PAINTING,
+    payload: upgrade
+  };
+};
+
+export const setMobileUpgrade = upgrade => {
+  return {
+    type: SET_MOBILE_UPGRADE,
     payload: upgrade
   };
 };

@@ -3,6 +3,17 @@
   margin: 0 auto;
   display: flex;
 
+  @include for-phone-only {
+    flex-direction: column-reverse;
+  }
+
+  @include for-tablet-portrait-up {
+    flex-direction: column-reverse;
+  }
+  @include for-desktop-up {
+    flex-direction: row;
+  }
+
   .valuation_playground_jumbo_container {
     background: #fff;
     box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
@@ -14,8 +25,42 @@
     max-width: 500px;
     min-width: 450px;
 
+    @include for-phone-only {
+      margin-left: 0;
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+    }
+
+    @include for-tablet-portrait-up {
+      margin-left: 0;
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+    }
+
+    @include for-desktop-up {
+      margin-left: 15px;
+      width: 35%;
+      max-width: 500px;
+      min-width: 450px;
+    }
+
     .valuation_playground_jumbo_img {
       width: 100%;
+      background-image: url('../assets/images/house-profile/housewithpool.png');
+      height: 363px;
+      background-position: center;
+
+      @include for-phone-only {
+        height: 200px;
+        background-position: center;
+      }
+
+      @include for-tablet-portrait-up {
+        height: 200px;
+        background-position: center;
+      }
     }
     .valuation_playground_jumbo_title {
       text-align: left;
@@ -24,6 +69,17 @@
       font-weight: 400;
       letter-spacing: 0;
       padding: 20px 0 20px 9%;
+
+      @include for-phone-only {
+        text-align: center;
+        font-size: 1.8rem;
+        font-family: 'Fira Sans', sans-serif;
+        font-weight: 400;
+        letter-spacing: 0;
+        padding: 20px 0%;
+        width: 80%;
+        margin: 0 auto;
+      }
 
       i {
         color: #e63700;
@@ -82,6 +138,20 @@
     min-width: 600px;
     max-width: 70%;
 
+    @include for-phone-only {
+      min-width: 100%;
+      width: 30%;
+    }
+
+    @include for-tablet-portrait-up {
+      min-width: 100%;
+      width: 30%;
+    }
+
+    @include for-desktop-up {
+      min-width: 600px;
+    }
+
     .valuation_playground_upgradeType_title {
       font-family: Montserrat;
       font-size: 1.4rem;
@@ -89,6 +159,12 @@
       font-weight: 600;
       line-height: 2.2rem; /* identical to box height */
       color: #666;
+
+      @include for-phone-only {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+      }
     }
 
     .valuation_playground_selector_container {
@@ -101,6 +177,19 @@
       justify-content: space-between;
       align-items: center;
       padding: 0 4.2%;
+
+      @include for-phone-only {
+        margin-right: 0px;
+        flex-direction: column;
+      }
+
+      @include for-tablet-portrait-up {
+        margin-right: 0px;
+      }
+
+      @include for-desktop-up {
+        margin-right: 15px;
+      }
 
       .valuation_playground_selector::-ms-expand {
         display: none;
@@ -119,6 +208,11 @@
         height: 3.5rem;
         display: block;
         // text-align doesn't work
+
+        @include for-phone-only {
+          width: 100%;
+          max-width: 100%;
+        }
 
         &:focus {
           outline: none;
