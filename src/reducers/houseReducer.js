@@ -1,9 +1,19 @@
-import { MAKE_HOUSE_FETCH, MAKE_HOUSE_SUCCESS, MAKE_HOUSE_FAIL, GET_USERHOUSE_FETCH, GET_USERHOUSE_SUCCESS, GET_USERHOUSE_FAIL } from '../actions';
+import {
+  MAKE_HOUSE_FETCH,
+  MAKE_HOUSE_SUCCESS,
+  MAKE_HOUSE_FAIL,
+  GET_USERHOUSE_FETCH,
+  GET_USERHOUSE_SUCCESS,
+  GET_USERHOUSE_FAIL,
+  EDIT_HOUSE_INFO,
+  SAVE_HOUSE_INFO
+} from '../actions';
 
 const initialState = {
   error: null,
   fetching: false,
-  house: { parcelData: {} }
+  house: { parcelData: {} },
+  isEditing: false
 };
 
 export const houseReducer = (state = initialState, action) => {
@@ -17,6 +27,15 @@ export const houseReducer = (state = initialState, action) => {
     case MAKE_HOUSE_FAIL:
     case GET_USERHOUSE_FAIL:
       return { ...state, fetching: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+
+export const houseProfileReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case EDIT_HOUSE_INFO:
+      return { ...state, isEditing: true };
     default:
       return state;
   }
