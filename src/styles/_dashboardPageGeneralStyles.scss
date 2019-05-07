@@ -5,6 +5,12 @@
     margin-top: 50px;
     margin-left: 80px;
     width: 100%;
+    margin-top: $dashboard_nav_height;
+    margin-left: $dashboard_sidebar_width;
+    transition: 500ms;
+    @include for-phone-only {
+      margin-left: 0;
+    }
     .dashboard_content_title {
       font-family: Roboto;
       font-style: normal;
