@@ -10,3 +10,11 @@ export function useForm(initialState) {
   };
   return [state, handleChange];
 }
+
+export function useInput(initialString = '') {
+  const [state, setState] = useState(initialString);
+  const handleChange = e => {
+    setState(e.target.value);
+  };
+  return [state, handleChange, setState];
+}

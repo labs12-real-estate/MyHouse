@@ -4,11 +4,13 @@ import { houseReducer } from './houseReducer';
 import { userReducer } from './userReducer';
 import { playgroundReducer } from './playgroundReducer';
 import { landingpageReducer } from './landingpageReducer';
+import { displayReducer } from './displayReducer';
 
 export default combineReducers({
   authReducer,
   houseReducer,
   userReducer,
   playgroundReducer,
-  landingpageReducer
+  landingpageReducer,
+  displayReducer
 });
