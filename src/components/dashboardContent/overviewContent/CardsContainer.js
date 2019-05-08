@@ -13,7 +13,7 @@ function CardsContainer({ countertops, parcelData }) {
     { url: lotsizejpg, text: 'SQUARE FEET', value: numberWithCommas(parcelData.homeSquareFootage) + 'ft²' },
     { url: bedroomsjpg, text: 'BEDROOMS', value: parcelData.numBedrooms },
     { url: bathsjpg, text: 'BATHS', value: parcelData.numBathrooms },
-    { url: garagejpg, text: 'GARAGE', value: 'N/A' },
+    { url: garagejpg, text: 'YEAR BUILT', value: parcelData.yearBuilt },
     { url: acresjpg, text: 'ACRES', value: sqFtToAcreConversion(parcelData.lotSquareFootage) },
     { url: countertopsjpg, text: 'COUNTERTOPS', value: countertops }
   ];
