@@ -16,11 +16,11 @@
     opacity: 0.75;
   }
   .sidebar_toggle {
-    display: none;
+    display: block;
   }
-  @include for-phone-only {
+  @include for-tablet-landscape-up {
     .sidebar_toggle {
-      display: block;
+      display: none;
     }
   }
 
@@ -47,7 +47,7 @@
     margin-bottom: 2.6rem;
     display: block;
   }
-  @include for-tablet-portrait-up {
+  @include for-tablet-landscape-up {
     h1 {
       display: none;
     }
