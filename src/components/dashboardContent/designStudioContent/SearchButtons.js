@@ -12,7 +12,6 @@ function SearchButtons(props) {
       {searchTerms.map(term => (
         <Button buttonText={term} buttonStyle="design_studio_btn" clickEvent={e => props.designSearch(term)} />
       ))}
-      <button onClick={e => props.designSearch(e.target.value)}>SEARCH</button>
     </div>
   );
 }
