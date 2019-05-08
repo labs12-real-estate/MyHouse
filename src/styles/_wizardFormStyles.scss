@@ -27,11 +27,13 @@
     }
 
     .wizard_form_card {
-      margin: 130px auto 0;
+      margin: 130px auto 20px;
       max-width: 900px;
       background: white;
-      box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5);
+      box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
       position: relative;
+      width: 90%;
+
       .wizard_form_initial_data {
         .welcome {
           height: 500px;
@@ -80,6 +82,9 @@
               font-size: 3.6rem;
               letter-spacing: 0;
               text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+              @media (max-width: 800px) {
+                font-size: 3rem;
+              }
             }
 
             h2 {
@@ -108,8 +113,8 @@
 
             .address_container {
               height: 45%;
-              width: 80%;
-              margin: 0 auto;
+              width: 90%;
+              margin: 0 0 0 8%;
               @include for-phone-only {
                 height: 40%;
               }
@@ -144,9 +149,13 @@
                 font-size: 2.8rem;
                 font-family: 'Fira Sans', 'sans-serif';
                 color: #444;
+                @media (max-width: 800px) {
+                  font-size: 2.4rem;
+                }
                 @include for-phone-only {
                   text-align: center;
                   font-size: 3rem;
+                  margin-left: -10%;
                 }
               }
               h3 {
@@ -159,16 +168,20 @@
                 color: gray;
                 letter-spacing: 0;
                 font-family: 'Fira Sans', 'sans-serif';
+                @media (max-width: 800px) {
+                  font-size: 1.8rem;
+                }
                 @include for-phone-only {
                   text-align: center;
                   font-size: 2.6rem;
+                  margin-left: -10%;
                 }
               }
             }
             .initial_value_range {
               height: 30%;
-              width: 80%;
-              margin: 0 auto 45px;
+              width: 90%;
+              margin: 0 0 45px 8%;
               @include for-phone-only {
                 margin-bottom: 20px;
               }
@@ -314,6 +327,9 @@
             background-image: url('../assets/images/wizard-form.jpg');
             background-position: center;
             background-size: cover;
+            @media (max-width: 800px) {
+              display: none;
+            }
             @include for-phone-only {
               display: none;
             }
@@ -325,6 +341,9 @@
             z-index: 799;
             width: 35%;
             height: 500px;
+            @media (max-width: 800px) {
+              display: none;
+            }
             @include for-phone-only {
               display: none;
             }
@@ -371,6 +390,9 @@
           } // end of .left_panel_text
           .right_panel {
             width: 65%;
+            @media (max-width: 800px) {
+              width: 100%;
+            }
             @include for-phone-only {
               width: 100%;
             }
@@ -390,6 +412,9 @@
                 font-family: 'Montserrat', 'sans-serif';
                 text-align: left;
                 color: #333;
+                @media (max-width: 800px) {
+                  display: none;
+                }
                 @include for-phone-only {
                   display: none;
                 }
@@ -398,6 +423,10 @@
                 width: 45%;
                 justify-content: space-between;
                 display: flex;
+                @media (max-width: 800px) {
+                  width: 100%;
+                  justify-content: space-around;
+                }
                 @include for-phone-only {
                   width: 100%;
                   justify-content: space-around;
@@ -408,6 +437,9 @@
                   font-weight: bold;
                   font-family: 'Montserrat', 'sans-serif';
                   margin-bottom: 0.5rem;
+                  @media (max-width: 800px) {
+                    font-size: 1.6rem;
+                  }
                   @include for-phone-only {
                     font-size: 1.6rem;
                   }
@@ -421,6 +453,9 @@
                   .orange {
                     color: rgb(255, 128, 64);
                   }
+                  @media (max-width: 800px) {
+                    font-size: 2rem;
+                  }
                   @include for-phone-only {
                     font-size: 2rem;
                   }
@@ -433,6 +468,9 @@
 
                   .green {
                     color: rgb(0, 128, 36);
+                  }
+                  @media (max-width: 800px) {
+                    font-size: 2rem;
                   }
                   @include for-phone-only {
                     font-size: 2rem;
@@ -541,6 +579,9 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        @media (max-width: 800px) {
+          width: 100%;
+        }
         @include for-phone-only {
           width: 100%;
         }
@@ -548,6 +589,9 @@
           color: gray;
           width: 55%;
           text-align: right;
+          @media (max-width: 800px) {
+            width: 75%;
+          }
           @include for-phone-only {
             width: 75%;
           }
@@ -558,12 +602,18 @@
           color: rgb(13, 55, 139);
           font-size: 1.7rem;
           margin-top: 2rem;
+          @media (max-width: 800px) {
+            width: 70%;
+          }
           @include for-phone-only {
             width: 70%;
           }
         }
         progress {
           width: 55%;
+          @media (max-width: 800px) {
+            width: 75%;
+          }
           @include for-phone-only {
             width: 75%;
           }
@@ -573,12 +623,17 @@
         height: 300px;
         position: absolute;
         width: 65%;
-        bottom: -100px;
+        bottom: 0px;
         right: 0;
         background-color: rgb(244, 244, 244);
+        @media (max-width: 800px) {
+          width: 100%;
+        }
         @include for-phone-only {
           width: 100%;
           height: 400px;
+          bottom: -100px;
+          margin-bottom: 20px;
         }
 
         .QA_question {
@@ -589,7 +644,7 @@
         }
         .QA_cards_container {
           label {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #333;
             -webkit-touch-callout: none; /* iOS Safari */
             -webkit-user-select: none; /* Safari */
@@ -606,6 +661,10 @@
           flex-wrap: wrap;
           justify-content: center;
           div {
+            @media (max-width: 800px) {
+              margin: 1rem;
+              width: 33%;
+            }
             @include for-phone-only {
               margin: 0.1rem;
               width: 80%;
@@ -613,6 +672,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            text-align: center;
             position: relative;
             margin: 1rem;
             width: 30%;
@@ -747,35 +807,18 @@
               padding: 3rem;
               box-shadow: none;
             }
-            @include for-tablet-portrait-up {
-              margin: 10% 10% 0;
-              padding: 1rem;
-            }
-            @include for-tablet-landscape-up {
-              margin: 10% 15% 0;
-              padding: 3rem;
-            }
-            padding: 3rem;
+            background-image: url('../assets/images/form-gradient-top.png');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            padding: 1.5rem;
             margin: 10% 15% 0;
             background-color: white;
             box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
             h1 {
-              @include for-phone-only {
-                display: none;
-              }
-              text-align: center;
-              font-size: 2.5rem;
-              color: #333;
-              margin-bottom: 1rem;
-            }
-            h3 {
-              @include for-phone-only {
-                display: none;
-              }
-              text-align: center;
-              font-size: 1.5rem;
-              color: rgb(160, 160, 160);
-              margin-bottom: 3rem;
+              font-size: 2.2rem;
+              color: white;
+              text-shadow: 1px 1px 2px #000000;
+              margin-bottom: 5rem;
             }
             label {
               text-align: center;
@@ -788,18 +831,31 @@
                 height: 5rem;
                 font-size: 2rem;
               }
-              background-color: rgb(236, 240, 244);
-              border: none;
-              height: 2.5rem;
-              border-bottom: 2px solid;
-              border-color: rgb(160, 160, 160);
+              margin-bottom: 25px;
+              border-style: none;
+              border-bottom: 1.5px solid #c4c4c4;
+              font-family: Roboto;
+              font-style: normal;
+              font-weight: 300;
+              font-size: 1.8rem;
+              line-height: 2.1rem;
+              color: #898890;
+              height: 20px;
+              padding-left: 5%;
+              transition: all 0.3s ease-in-out;
+              border-radius: 0px;
+              &:focus {
+                outline: none;
+                border-bottom: 1.5px solid #2868d9;
+              }
             }
             .register_button {
               @include for_phone_only {
                 height: 5rem;
               }
-              margin: 1rem 0;
-              background: rgb(0, 209, 121);
+              margin-right: 2rem;
+              width: 100%;
+              background: #e63700;
               font-family: Roboto;
               font-style: normal;
               font-weight: 500;
@@ -809,46 +865,22 @@
               color: white;
               box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
               border-radius: 4px;
-              height: 24px;
-              width: 100%;
+              height: 32px;
               padding: none;
+              @include for-phone-only {
+                height: 40px;
+                width: 80%;
+                margin-left: 2rem;
+              }
               cursor: pointer;
               &:hover {
-                background: rgb(0, 190, 100);
+                background: #f13800;
               }
               &:focus {
                 outline: none;
               }
               &:active {
-                background: rgb(0, 160, 70);
-              }
-            }
-            .back_button {
-              @include for_phone_only {
-                display: none;
-              }
-              background: rgb(110, 164, 233);
-              font-family: Roboto;
-              font-style: normal;
-              font-weight: 500;
-              font-size: 1.6rem;
-              line-height: 1.6rem;
-              border: none;
-              color: white;
-              box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-              border-radius: 4px;
-              height: 24px;
-              width: 100%;
-              padding: none;
-              cursor: pointer;
-              &:hover {
-                background: rgb(18, 106, 246);
-              }
-              &:focus {
-                outline: none;
-              }
-              &:active {
-                background: rgb(13, 55, 139);
+                background: #d33200;
               }
             }
           }
@@ -862,44 +894,84 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: space-evenly;
+          justify-content: space-around;
           @include for-phone-only {
             width: 100%;
           }
           .selection {
-            position: relative;
-            width: 40rem;
-            border-bottom: 2px solid rgb(160, 160, 160);
-            @include for-phone-only {
-              margin-bottom: 4rem;
-              width: 90%;
+            width: 70%;
+            height: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            label {
+              font-family: Montserrat;
+              font-size: 1.4rem;
+              text-transform: uppercase;
+              font-weight: 600;
+              line-height: 2.2rem; /* identical to box height */
+              color: #666;
+            }
+            select::-ms-expand {
+              display: none;
             }
             select {
-              width: 12rem;
-              position: absolute;
-              right: 0;
-              bottom: 0.05rem;
               border: none;
-              font-weight: bold;
-              font-size: 1.2rem;
-              @include for-phone-only {
-                width: 100%;
-                bottom: -3.1rem;
-                font-size: 1.5rem;
-              }
-            }
-            label {
-              position: absolute;
-              bottom: 0.3rem;
-              text-transform: uppercase;
+              cursor: pointer;
+              font-family: Montserrat;
+              font-style: normal;
+              font-weight: 500;
               font-size: 1.6rem;
-              color: rgb(160, 160, 160);
+              line-height: 2.2rem;
+              width: 50%;
+              max-width: 250px;
+              height: 3.5rem;
+              display: block;
+              &:focus {
+                outline: none;
+              }
+
+              option:checked {
+                display: none;
+              }
+
+              option:not(:checked) {
+                color: #888;
+              }
             }
           }
           p {
             color: red;
             font-size: 1.5rem;
             text-align: end;
+          }
+          Button {
+            align-self: flex-end;
+            margin-right: 10rem;
+            margin-bottom: 3rem;
+            background: rgb(110, 164, 233);
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.6rem;
+            line-height: 1.6rem;
+            border: none;
+            color: white;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            height: 32px;
+            width: 100px;
+            padding: none;
+            cursor: pointer;
+            &:hover {
+              background: rgb(18, 106, 246);
+            }
+            &:focus {
+              outline: none;
+            }
+            &:active {
+              background: rgb(13, 55, 139);
+            }
           }
         }
       }

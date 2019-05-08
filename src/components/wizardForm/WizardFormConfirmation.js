@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import RegisterInput from '../../components/inputs/RegisterInput';
+import Button from '../buttons/Button';
 
 // This is necessary because we are representing "no selection" as `null`
 // but `null` is not valid as a value for a `select` element.
@@ -29,6 +30,7 @@ function WizardFormConfirmation({ getHouseInput, questions, handleAnswer, handle
           </div>
         ))}
         <p>Please register to get a more accurate valuation.</p>
+        <Button clickEvent={handlePrev} buttonStyle="prev_button" buttonText="Prev" />
       </div>
       <div className="left-panel">
         <RegisterInput handlePrev={handlePrev} houseInput={getHouseInput()} />

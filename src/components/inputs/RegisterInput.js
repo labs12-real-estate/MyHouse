@@ -13,7 +13,7 @@ const initialForm = {
 };
 
 // @TODO: This could be refactored into subcomponents
-function RegisterInput({ handlePrev, history, houseInput, confirmSignUp, signUp, pendingConfirmation, submittedConfirmation }) {
+function RegisterInput({ history, houseInput, confirmSignUp, signUp, pendingConfirmation, submittedConfirmation }) {
   const [formState, handleChange] = useForm(initialForm);
   const [{ code }, handleChangeCode] = useForm({
     code: ''
@@ -44,14 +44,12 @@ function RegisterInput({ handlePrev, history, houseInput, confirmSignUp, signUp,
   return !(pendingConfirmation || submittedConfirmation) ? (
     <form onSubmit={handleSignUp}>
       <div className="login_inputs_container">
-        <h1>MyHouse</h1>
-        <h3>Create an account</h3>
+        <h1>Register</h1>
         <input name="name" value={name} onChange={handleChange} placeholder="  Name" className="login_input" type="text" />
         <input name="email" value={email} onChange={handleChange} placeholder="  Email" className="login_input" type="text" />
         <input name="username" value={username} onChange={handleChange} placeholder="  Username" className="login_input" type="text" />
         <input name="password" value={password} onChange={handleChange} placeholder="  Password" className="login_input" type="password" />
         <Button buttonStyle="register_button" buttonText="Register" />
-        <Button clickEvent={handlePrev} buttonStyle="back_button" buttonText="Back" />
       </div>
     </form>
   ) : (
