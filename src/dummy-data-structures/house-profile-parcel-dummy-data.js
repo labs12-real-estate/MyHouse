@@ -1,4 +1,3 @@
-import { Agent } from 'https';
 
 export const houseProfileDataParcel = [
   {
