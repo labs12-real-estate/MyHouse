@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import ImageCard from './ImageCard';
 
-function ImageGallery(props) {
+function ImageGallery({ searchResults }) {
   return (
-    <div>
-      <h1>Image Gallery</h1>
-      {props.searchResults &&
-        props.searchResults.map(result => {
-          return <img src={result.urls.thumb} key={result.id} alt={result.description} />;
+    <div className="design_studio_img_container">
+      {searchResults &&
+        searchResults.map(result => {
+          return <ImageCard result={result} key={result.id} />;
         })}
     </div>
   );

@@ -8,8 +8,8 @@ const searchTerms = ['Bedroom', 'Bathroom', 'Kitchen', 'Dining Room', 'Living Ro
 function SearchButtons(props) {
   return (
     <div className="design_studio_btn_container">
-      {searchTerms.map(term => (
-        <Button buttonText={term} buttonStyle="design_studio_btn" clickEvent={e => props.designSearch(term)} />
+      {searchTerms.map((term, index) => (
+        <Button key={index} buttonText={term} buttonStyle="design_studio_btn" clickEvent={e => props.designSearch(term)} />
       ))}
     </div>
   );

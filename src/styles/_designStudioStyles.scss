@@ -22,5 +22,18 @@
         color: #222;
       }
     }
+  } // end of design_studio_btn_container
+
+  .design_studio_img_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 0 10px;
+    grid-auto-rows: 10px;
+    // max-width: 1200px;
+
+    div {
+      width: 200px;
+      // grid-row-end: span 10;
+    }
   }
 }
