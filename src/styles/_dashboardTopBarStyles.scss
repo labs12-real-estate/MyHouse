@@ -18,7 +18,7 @@
   .sidebar_toggle {
     display: block;
   }
-  @include for-tablet-landscape-up {
+  @include for-desktop-up {
     .sidebar_toggle {
       display: none;
     }
@@ -47,7 +47,7 @@
     margin-bottom: 2.6rem;
     display: block;
   }
-  @include for-tablet-landscape-up {
+  @include for-desktop-up {
     h1 {
       display: none;
     }

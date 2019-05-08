@@ -13,7 +13,7 @@
     transform: translateX(-$dashboard_sidebar_width);
   }
 
-  @include for-tablet-landscape-up {
+  @include for-desktop-up {
     &.hide {
       transform: none;
     }
