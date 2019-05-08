@@ -5,7 +5,6 @@ import DashboardContainer from './DashboardContainer';
 import OverviewContent from '../components/dashboardContent/overviewContent/OverviewContent';
 
 function OverviewPage({ username, error, house, getUserHouse }) {
-  
   return (
     <DashboardContainer>
       <OverviewContent {...house} />
