@@ -1,6 +1,6 @@
 [
   {
-    "questionContent": "What material are your countertops?",
+    "questionContent": "What types of countertops do you have installed?",
     "title": "Countertops",
     "options": ["Laminate", "Marble/Quartz", "Granite/Concrete", "Formica/Tile"],
     "key": "countertops",

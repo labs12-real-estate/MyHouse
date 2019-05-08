@@ -2,7 +2,7 @@
   display: flex;
 
   .dashboard_content_container {
-    margin-top: 50px;
+    margin-top: 54px;
     margin-left: 80px;
     width: 100%;
     margin-top: $dashboard_nav_height;
@@ -10,6 +10,12 @@
     transition: 500ms;
     @include for-desktop-up {
       margin-left: $dashboard_sidebar_width;
+    }
+    @include for-tablet-portrait-up {
+      margin-left: 0;
+    }
+    @include for-desktop-up {
+      margin-left: 70px;
     }
     .dashboard_content_title {
       font-family: Roboto;
