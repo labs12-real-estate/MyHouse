@@ -1,3 +1,4 @@
+
 .wizard_page_container {
   display: flex;
 
@@ -44,6 +45,9 @@
             background-image: url('../assets/images/welcome.jpg');
             background-position: center;
             background-size: cover;
+            @include for-phone-only {
+              display:none;
+            }
 
             &::before {
               content: '';
@@ -64,6 +68,9 @@
             z-index: 799;
             width: 35%;
             height: 500px;
+            @include for-phone-only {
+              display:none;
+            }
 
             h1 {
               color: white;
@@ -95,11 +102,18 @@
             width: 60%;
             display: flex;
             flex-direction: column;
+            @include for-phone-only {
+              width:100%;
+              padding: 50px 0px;
+            }
 
             .address_container {
               height: 45%;
               width: 80%;
               margin: 0 auto;
+              @include for-phone-only {
+                height: 40%;
+              }
 
               h4 {
                 font-weight: bold;
@@ -131,6 +145,10 @@
                 font-size: 2.8rem;
                 font-family: 'Fira Sans', 'sans-serif';
                 color: #444;
+                @include for-phone-only {
+                  text-align: center;
+                  font-size: 3.6rem;
+                }
               }
               h3 {
                 line-height: 1.6rem;
@@ -142,12 +160,19 @@
                 color: gray;
                 letter-spacing: 0;
                 font-family: 'Fira Sans', 'sans-serif';
+                @include for-phone-only {
+                  text-align: center;
+                  font-size: 3rem;
+                }
               }
             }
             .initial_value_range {
               height: 30%;
               width: 80%;
               margin: 0 auto 45px;
+              @include for-phone-only {
+                margin-bottom: 20px;
+              }
               h4 {
                 font-weight: bold;
                 text-align: center;
@@ -187,6 +212,9 @@
                 .orange {
                   color: rgb(255, 128, 64);
                 }
+                @include for-phone-only {
+                  font-size: 2.4rem;
+                }
               }
               .high {
                 margin-top: 0.5rem;
@@ -197,13 +225,22 @@
                 .green {
                   color: rgb(0, 128, 36);
                 }
+                @include for-phone-only {
+                  font-size: 2.4rem;
+                }
               }
               .container {
                 margin-top: 1.5rem;
                 display: flex;
+                @include for-phone-only {
+                  justify-content: center;
+                }
               }
               .container > div {
                 margin-right: 4rem;
+                @include for-phone-only {
+                  margin: 0 2rem;
+                }
               }
             }
             .bottom_container {
@@ -212,6 +249,11 @@
               display: flex;
               align-items: center;
               justify-content: space-between;
+              @include for-phone-only {
+                flex-direction: column;
+                width: 100%;
+                height: 25%;
+              }
 
               p {
                 font-family: 'Roboto', 'sans-serif';
@@ -221,6 +263,10 @@
                 color: gray;
                 margin-left: 8%;
                 width: 50%;
+                @include for-phone-only {
+                  width:70%;
+                  text-align: center;
+                }
               }
 
               .next_button {
@@ -238,6 +284,11 @@
                 height: 32px;
                 width: 100px;
                 padding: none;
+                @include for-phone-only {
+                  height: 40px;
+                  width: 80%;
+                  margin-left: 2rem;
+                }
                 cursor: pointer;
                 &:hover {
                   background: #f13800;
@@ -263,6 +314,9 @@
             background-image: url('../assets/images/wizard-form.jpg');
             background-position: center;
             background-size: cover;
+            @include for-phone-only {
+              display: none;
+            }
           }
           .left_panel_text {
             position: absolute;
@@ -271,6 +325,9 @@
             z-index: 799;
             width: 35%;
             height: 500px;
+            @include for-phone-only {
+              display: none;
+            }
 
             .logo_address {
               display: flex;
@@ -314,6 +371,9 @@
           } // end of .left_panel_text
           .right_panel {
             width: 65%;
+            @include for-phone-only {
+              width: 100%;
+            }
             .initial_value_range {
               padding: 0 7.5%;
               height: 70px;
@@ -330,6 +390,9 @@
                 font-family: 'Montserrat', 'sans-serif';
                 text-align: left;
                 color: #333;
+                @include for-phone-only {
+                  font-size: 1.5rem;
+                }
               }
               .container {
                 width: 45%;
@@ -376,6 +439,14 @@
             margin-left: 3rem;
             display: flex;
             align-items: center;
+            @include for-phone-only {
+              .lines_address {
+                display:flex;
+              }
+              width:100%;
+              justify-content: center;
+              margin: 0;
+            }
             i {
               font-size: 3.2rem;
               margin-right: 1rem;
@@ -386,6 +457,9 @@
               letter-spacing: 0;
               font-size: 2.2rem;
               font-family: 'Fira Sans', 'sans-serif';
+              @include for-phone-only {
+                margin-right: 2rem;
+              }
             }
             h3 {
               line-height: 1.6rem;
@@ -398,6 +472,9 @@
             }
           }
           .container {
+            @include for-phone-only {
+              display: none;
+            }
             justify-content: space-between;
             display: flex;
             div {
@@ -443,6 +520,9 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        @include for-phone-only {
+          width: 100%;
+        }
         div {
           color: gray;
           width: 55%;
@@ -466,6 +546,10 @@
         bottom: 0;
         right: 0;
         background-color: rgb(244, 244, 244);
+        @include for-phone-only {
+          width: 100%;
+        }
+        
         .QA_question {
           margin-top: 2rem;
           text-align: center;
@@ -527,7 +611,19 @@
           position: absolute;
           right: 3rem;
           bottom: 3rem;
+          @include for-phone-only {
+            width: 100%;
+            bottom: 1.5rem;
+            right: auto;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+          }
           .next_button {
+            @include for-phone-only {
+              margin: 1rem auto;
+              width: 80%; 
+            }
             margin-right: 2rem;
             background: #e63700;
             font-family: Roboto;
@@ -554,6 +650,10 @@
             }
           }
           .prev_button {
+            @include for-phone-only {
+              margin: 0 auto;
+              width: 80%; 
+            }
             margin-right: 2rem;
             background: rgb(110, 164, 233);
             font-family: Roboto;
@@ -585,6 +685,10 @@
         height: 430px;
         position: relative;
         .left-panel {
+          @include for-phone-only {
+            width: 100%;
+            top: 430px;
+          }
           height: 430px;
           position: absolute;
           left: 0;
@@ -592,17 +696,35 @@
           width: 35%;
           background-color: rgb(236, 240, 244);
           .login_inputs_container {
+            @include for-phone-only {
+              margin:0;
+              padding: 3rem;
+            }
+            @include for-tablet-portrait-up{
+              margin: 10% 10% 0;
+              padding: 1rem;
+            }
+            @include for-tablet-landscape-up{
+              margin: 10% 15% 0;
+              padding: 3rem;
+            }
             padding: 3rem;
             margin: 10% 15% 0;
             background-color: white;
             box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
             h1 {
+              @include for-phone-only {
+                display: none;
+              }
               text-align: center;
               font-size: 2.5rem;
               color: #333;
               margin-bottom: 1rem;
             }
             h3 {
+              @include for-phone-only {
+                display: none;
+              }
               text-align: center;
               font-size: 1.5rem;
               color: rgb(160, 160, 160);
@@ -615,6 +737,10 @@
               margin-bottom: 3rem;
             }
             .login_input {
+              @include for_phone_only {
+                height: 5rem;
+                font-size: 2rem;
+              }
               background-color: rgb(236, 240, 244);
               border: none;
               height: 2.5rem;
@@ -622,6 +748,9 @@
               border-color: rgb(160, 160, 160);
             }
             .register_button {
+              @include for_phone_only {
+                height: 5rem;
+              }
               margin: 1rem 0;
               background: rgb(0, 209, 121);
               font-family: Roboto;
@@ -648,6 +777,9 @@
               }
             }
             .back_button {
+              @include for_phone_only {
+                height: 4rem;
+              }
               background: rgb(110, 164, 233);
               font-family: Roboto;
               font-style: normal;
@@ -684,10 +816,16 @@
           flex-direction: column;
           align-items: center;
           justify-content: space-evenly;
+          @include for-phone-only {
+            width:100%;
+          }
           .selection{
             position: relative;
             width: 40rem;
             border-bottom: 2px solid rgb(160, 160, 160);
+            @include for-phone-only {
+              margin-bottom: 4rem;
+            }
             select {
               width:12rem;
               position: absolute;
@@ -696,6 +834,11 @@
               border: none;
               font-weight: bold;
               font-size: 1.2rem;
+              @include for-phone-only {
+                width: 100%;
+                bottom: -3rem;
+                font-size: 2rem;
+              }
             }
             label {
               position: absolute;
