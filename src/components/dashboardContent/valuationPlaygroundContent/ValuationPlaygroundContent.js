@@ -4,13 +4,13 @@ import ValuationPlaygroundUpgradeLists from './ValuationPlaygroundUpgradeLists';
 import ValuationPlaygroundMobileUpgradeList from './ValuationPlaygroundMobileUpgradeList';
 import { useWindowWidth } from '../../../helper-functions/display-functions';
 
-function ValuationPlaygroundContent(house) {
+function ValuationPlaygroundContent() {
   return (
     <div className="dashboard_content_container">
       <h1 className="dashboard_content_title">Valuation Playground</h1>
       <div className="valuation_playground_content_container">
         {useWindowWidth() <= 1200 ? <ValuationPlaygroundMobileUpgradeList /> : <ValuationPlaygroundUpgradeLists />}
-        <ValuationPlaygroundJumbo {...house} />
+        <ValuationPlaygroundJumbo />
       </div>
     </div>
   );
