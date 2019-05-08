@@ -9,14 +9,12 @@ const unsplash = axios.create({
 });
 
 export const designSearch = searchTerm => dispatch => {
-  console.log('SEARCH FIRED: ', searchTerm);
   dispatch({ type: GET_DESIGNS_FETCH, payload: searchTerm });
   return unsplash
     .get('/search/photos', {
       params: { query: searchTerm }
     })
     .then(res => {
-      console.log('REZ', res.data);
       dispatch({ type: GET_DESIGNS_SUCCESS, payload: res.data });
     })
     .catch(err => {
