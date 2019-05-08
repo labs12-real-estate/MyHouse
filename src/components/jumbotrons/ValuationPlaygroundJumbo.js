@@ -38,8 +38,22 @@ function ValuationPlaygroundJumbo({ newValue, upgradeROI, currentValue, currentU
   );
 }
 
-const mapStateToProps = ({ playgroundReducer }) => {
-  return playgroundReducer;
+const mapStateToProps = ({
+  playgroundReducer: {
+    newValue,
+    upgradeROI,
+    currentValue,
+    currentUpgrade: { upgrade_cost, name }
+  },
+  houseReducer
+}) => {
+  return {
+    newValue,
+    upgradeROI,
+    currentValue,
+    currentUpgrade: { upgrade_cost, name },
+    address: houseReducer.house.address
+  };
 };
 
 export default connect(
