@@ -1,3 +1,10 @@
+import React from 'react';
+import { connect } from 'react-redux';
+import DashboardTopBar from '../components/navigation/DashboardTopBar';
+import SideBar from '../components/navigation/SideBar';
+import { toggleSideBar } from '../actions/displayActions';
+
+function DashboardContainer({ isOpen, toggleSideBar, children }) {
 import React, { useState, useEffect } from 'react';
 import DashboardTopBar from '../components/navigation/DashboardTopBar';
 import SideBar from '../components/navigation/SideBar';
@@ -16,11 +23,19 @@ import {connect} from 'react-redux';
     <div>
       <DashboardTopBar toggleSideBar={toggleSideBar} />
       <div className="dashboard_page_container">
-        <SideBar hide={hideSideBar} />
+        <SideBar hide={!isOpen} />
         {children}
       </div>
     </div>
   );
+
+}
+
+export default connect(
+  ({ displayReducer }) => ({ isOpen: displayReducer.isOpen }),
+  { toggleSideBar }
+)(DashboardContainer);
+
 };
 
 export default connect(
@@ -29,3 +44,4 @@ export default connect(
   }),
   { getUserHouse }
 )(DashboardContainer);
+
