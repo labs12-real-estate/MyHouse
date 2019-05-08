@@ -5,9 +5,11 @@ import ImageGallery from './ImageGallery';
 function DesignStudioContent() {
   return (
     <div className="dashboard_content_container">
-      <h1>DesignStudioContent</h1>
-      <SearchButtons />
-      <ImageGallery />
+      <div className="design_studio_container">
+        <h1>Design Studio</h1>
+        <SearchButtons />
+        <ImageGallery />
+      </div>
     </div>
   );
 }

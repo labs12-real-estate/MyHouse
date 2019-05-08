@@ -1,0 +1,26 @@
+.design_studio_container {
+  margin: 0 5%;
+
+  .design_studio_btn_container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 25px;
+
+    .design_studio_btn {
+      border: none;
+      background: #fff;
+      color: #666;
+      cursor: pointer;
+      font-family: 'Roboto', 'sans-serif';
+      font-size: 1.6rem;
+      padding: 0.7rem 2.2rem;
+      box-shadow: 0px 4px 20px rgba(68, 68, 68, 0.1);
+
+      &:hover {
+        color: #222;
+      }
+    }
+  }
+}
