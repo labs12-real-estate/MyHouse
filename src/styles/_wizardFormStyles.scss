@@ -1,4 +1,3 @@
-
 .wizard_page_container {
   display: flex;
 
@@ -46,7 +45,7 @@
             background-position: center;
             background-size: cover;
             @include for-phone-only {
-              display:none;
+              display: none;
             }
 
             &::before {
@@ -69,7 +68,7 @@
             width: 35%;
             height: 500px;
             @include for-phone-only {
-              display:none;
+              display: none;
             }
 
             h1 {
@@ -103,7 +102,7 @@
             display: flex;
             flex-direction: column;
             @include for-phone-only {
-              width:100%;
+              width: 100%;
               padding: 50px 0px;
             }
 
@@ -147,7 +146,7 @@
                 color: #444;
                 @include for-phone-only {
                   text-align: center;
-                  font-size: 3.6rem;
+                  font-size: 3rem;
                 }
               }
               h3 {
@@ -162,7 +161,7 @@
                 font-family: 'Fira Sans', 'sans-serif';
                 @include for-phone-only {
                   text-align: center;
-                  font-size: 3rem;
+                  font-size: 2.6rem;
                 }
               }
             }
@@ -213,7 +212,7 @@
                   color: rgb(255, 128, 64);
                 }
                 @include for-phone-only {
-                  font-size: 2.4rem;
+                  font-size: 2.2rem;
                 }
               }
               .high {
@@ -226,7 +225,7 @@
                   color: rgb(0, 128, 36);
                 }
                 @include for-phone-only {
-                  font-size: 2.4rem;
+                  font-size: 2.2rem;
                 }
               }
               .container {
@@ -239,7 +238,7 @@
               .container > div {
                 margin-right: 4rem;
                 @include for-phone-only {
-                  margin: 0 2rem;
+                  margin: 0 1rem;
                 }
               }
             }
@@ -392,19 +391,26 @@
                 text-align: left;
                 color: #333;
                 @include for-phone-only {
-                  font-size: 1.5rem;
+                  display: none;
                 }
               }
               .container {
                 width: 45%;
                 justify-content: space-between;
                 display: flex;
+                @include for-phone-only {
+                  width: 100%;
+                  justify-content: space-around;
+                }
                 h3 {
                   color: #999;
                   font-size: 1.2rem;
                   font-weight: bold;
                   font-family: 'Montserrat', 'sans-serif';
                   margin-bottom: 0.5rem;
+                  @include for-phone-only {
+                    font-size: 1.6rem;
+                  }
                 }
                 .low {
                   color: #333;
@@ -415,6 +421,9 @@
                   .orange {
                     color: rgb(255, 128, 64);
                   }
+                  @include for-phone-only {
+                    font-size: 2rem;
+                  }
                 }
                 .high {
                   color: #333;
@@ -424,6 +433,9 @@
 
                   .green {
                     color: rgb(0, 128, 36);
+                  }
+                  @include for-phone-only {
+                    font-size: 2rem;
                   }
                 }
               }
@@ -442,11 +454,11 @@
             align-items: center;
             @include for-phone-only {
               .lines_address {
-                display:flex;
+                display: flex;
               }
-              width:100%;
-              justify-content: center;
               margin: 0;
+              width: 100%;
+              justify-content: center;
             }
             i {
               font-size: 3.2rem;
@@ -461,6 +473,9 @@
               @include for-phone-only {
                 margin-right: 2rem;
               }
+              @media (max-width: 400px) {
+                font-size: 1.8rem;
+              }
             }
             h3 {
               line-height: 1.6rem;
@@ -470,6 +485,11 @@
               color: rgb(89, 89, 89);
               letter-spacing: 0;
               font-family: 'Fira Sans', 'sans-serif';
+              @media (max-width: 400px) {
+                font-size: 1.4rem;
+                margin: 0;
+                line-height: 2rem;
+              }
             }
           }
           .container {
@@ -528,6 +548,9 @@
           color: gray;
           width: 55%;
           text-align: right;
+          @include for-phone-only {
+            width: 75%;
+          }
         }
         p {
           text-align: center;
@@ -535,9 +558,15 @@
           color: rgb(13, 55, 139);
           font-size: 1.7rem;
           margin-top: 2rem;
+          @include for-phone-only {
+            width: 70%;
+          }
         }
         progress {
           width: 55%;
+          @include for-phone-only {
+            width: 75%;
+          }
         }
       }
       .wizard_form_QA_container {
@@ -551,7 +580,7 @@
           width: 100%;
           height: 400px;
         }
-        
+
         .QA_question {
           margin-top: 2rem;
           text-align: center;
@@ -562,6 +591,12 @@
           label {
             font-size: 1.2rem;
             color: #333;
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
             @include for-phone-only {
               font-size: 2rem;
             }
@@ -622,7 +657,7 @@
           bottom: 3rem;
           @include for-phone-only {
             width: 100%;
-            bottom: 1.5rem;
+            bottom: 1rem;
             right: auto;
             display: flex;
             flex-direction: column-reverse;
@@ -630,8 +665,9 @@
           }
           .next_button {
             @include for-phone-only {
-              margin: 1rem auto;
-              width: 80%; 
+              margin: 0.5rem auto;
+              width: 80%;
+              height: 4rem;
             }
             margin-right: 2rem;
             background: #e63700;
@@ -661,7 +697,8 @@
           .prev_button {
             @include for-phone-only {
               margin: 0 auto;
-              width: 80%; 
+              width: 80%;
+              height: 4rem;
             }
             margin-right: 2rem;
             background: rgb(110, 164, 233);
@@ -706,14 +743,15 @@
           background-color: rgb(236, 240, 244);
           .login_inputs_container {
             @include for-phone-only {
-              margin:0;
+              margin: 0;
               padding: 3rem;
+              box-shadow: none;
             }
-            @include for-tablet-portrait-up{
+            @include for-tablet-portrait-up {
               margin: 10% 10% 0;
               padding: 1rem;
             }
-            @include for-tablet-landscape-up{
+            @include for-tablet-landscape-up {
               margin: 10% 15% 0;
               padding: 3rem;
             }
@@ -787,7 +825,7 @@
             }
             .back_button {
               @include for_phone_only {
-                height: 4rem;
+                display: none;
               }
               background: rgb(110, 164, 233);
               font-family: Roboto;
@@ -826,17 +864,18 @@
           align-items: center;
           justify-content: space-evenly;
           @include for-phone-only {
-            width:100%;
+            width: 100%;
           }
-          .selection{
+          .selection {
             position: relative;
             width: 40rem;
             border-bottom: 2px solid rgb(160, 160, 160);
             @include for-phone-only {
               margin-bottom: 4rem;
+              width: 90%;
             }
             select {
-              width:12rem;
+              width: 12rem;
               position: absolute;
               right: 0;
               bottom: 0.05rem;
@@ -845,8 +884,8 @@
               font-size: 1.2rem;
               @include for-phone-only {
                 width: 100%;
-                bottom: -3rem;
-                font-size: 2rem;
+                bottom: -3.1rem;
+                font-size: 1.5rem;
               }
             }
             label {
@@ -857,7 +896,7 @@
               color: rgb(160, 160, 160);
             }
           }
-          p{
+          p {
             color: red;
             font-size: 1.5rem;
             text-align: end;
