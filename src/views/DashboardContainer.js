@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import DashboardTopBar from '../components/navigation/DashboardTopBar';
 import SideBar from '../components/navigation/SideBar';
