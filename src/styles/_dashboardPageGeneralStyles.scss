@@ -8,7 +8,7 @@
     margin-top: $dashboard_nav_height;
     margin-left: 0;
     transition: 500ms;
-    @include for-tablet-landscape-up {
+    @include for-desktop-up {
       margin-left: $dashboard_sidebar_width;
     }
     .dashboard_content_title {
