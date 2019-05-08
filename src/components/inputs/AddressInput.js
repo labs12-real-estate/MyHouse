@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
+import { getValuation } from '../../actions/landingpageActions';
 
-function AddressInput({ history }) {
+function AddressInput({ history, getValuation }) {
   const [sessiontoken, setSessiontoken] = useState('');
   const [address, setAddress] = useState('');
   const [predictions, setPredictions] = useState([]);
@@ -44,15 +46,16 @@ function AddressInput({ history }) {
 
   const getValue = e => {
     e.preventDefault();
-    axios
-      .post('https://labs12-real-estate.herokuapp.com/api/houses/getvalue', {
-        address
-      })
-      .then(state => {
-        localStorage.setItem('initialData', JSON.stringify(state));
-        history.push('/wizard-form');
-      })
-      .catch(console.error);
+    getValuation(address, history);
+    // axios
+    //   .post('https://labs12-real-estate.herokuapp.com/api/houses/getvalue', {
+    //     address
+    //   })
+    //   .then(state => {
+    //     localStorage.setItem('initialData', JSON.stringify(state));
+    //     history.push('/wizard-form');
+    //   })
+    //   .catch(console.error);
   };
 
   const fillAddress = (address, e) => {
@@ -83,4 +86,11 @@ function AddressInput({ history }) {
   );
 }
 
-export default withRouter(AddressInput);
+export default withRouter(
+  connect(
+    null,
+    {
+      getValuation
+    }
+  )(AddressInput)
+);

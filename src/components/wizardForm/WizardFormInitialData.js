@@ -98,7 +98,7 @@ function WizardFormInitialData({ step, handleNext }) {
         <div className="confirmation">
           <div className="logo_address">
             <i className="fas fa-map-marker-alt" />
-            <div className="2_lines_address">
+            <div className="lines_address">
               <h2>{street}</h2>
               <h3>{restAddress}</h3>
             </div>
