@@ -123,15 +123,13 @@ export const signOut = history => dispatch => {
 
 export const isLoggedInAction = () => dispatch => {
   Auth.currentSession()
-  .then(
-    (session) => {
-      const {name, email, ['cognito:username']:username} = session.idToken.payload
+    .then(session => {
+      const { name, email, ['cognito:username']: username } = session.idToken.payload;
       dispatch({
         type: IS_LOGGED_IN,
-        payload: {name, email, username}
-      })
-    }
-  )
+        payload: { name, email, username }
+      });
+    })
     .catch(error => {
       dispatch({
         type: IS_LOGGED_OUT
