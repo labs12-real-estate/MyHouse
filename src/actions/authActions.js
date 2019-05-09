@@ -148,7 +148,9 @@ export const toggleForgotPassword = () => {
   };
 };
 
-export const forgotPassword = ({ username }) => dispatch => {
+export const forgotPassword = (e, { username }) => dispatch => {
+  e.preventDefault();
+  console.log(username);
   dispatch({
     type: FORGOT_PASSWORD_FETCH
   });
@@ -167,7 +169,8 @@ export const forgotPassword = ({ username }) => dispatch => {
     });
 };
 
-export const confirmForgotPassword = ({ username, new_password, code }) => dispatch => {
+export const confirmForgotPassword = (e, { username, new_password, code }) => dispatch => {
+  e.preventDefault();
   dispatch({
     type: CONFIRM_FETCH
   });
