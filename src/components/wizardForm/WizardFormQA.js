@@ -21,6 +21,7 @@ function WizardFormQA({ step, handleAnswer, handlePrev, handleNext, questionCont
         {step > 1 && <Button clickEvent={handlePrev} buttonStyle="prev_button" buttonText="Prev" />}
         {step < 5 && <Button clickEvent={handleNext} buttonStyle="next_button" buttonText={selected !== null ? 'Next' : 'Skip'} />}
       </div>
+      <div className="shadow" />
     </div>
   );
 }
