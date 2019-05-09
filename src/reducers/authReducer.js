@@ -15,7 +15,10 @@ import {
   SIGN_OUT_FAIL,
   IS_LOGGED_IN,
   IS_LOGGED_OUT,
-  TOGGLE_FORGOT_PASSWORD
+  TOGGLE_FORGOT_PASSWORD,
+  GET_USER_SESSION_FAIL,
+  GET_USER_SESSION_SUCCESS,
+  GET_USER_SESSION_FETCH
 } from '../actions/index';
 
 const initialState = {
@@ -26,8 +29,13 @@ const initialState = {
   submittedConfirmation: false,
   name: '',
   username: '',
+  forgotPassword: false,
   isLoggedIn: false,
-  forgotPassword: false
+  user: {
+    name: '',
+    username: '',
+    email: ''
+  }
 };
 
 export const authReducer = (state = initialState, action) => {
@@ -37,11 +45,11 @@ export const authReducer = (state = initialState, action) => {
     case CLOSE_MODAL:
       return { ...state, isOpen: action.payload };
     case SIGN_IN_SUCCESS:
-      return { ...state, fetching: false, name: action.payload.name, username: action.payload.username, pendingConfirmation: false, isLoggedIn: true };
+      return { ...state, fetching: false, user: action.payload, pendingConfirmation: false, isLoggedIn: true };
     case SIGN_UP_SUCCESS:
       return { ...state, fetching: false, pendingConfirmation: false, isLoggedIn: true };
     case SIGN_OUT_SUCCESS:
-      return { ...state, fetching: false, pendingConfirmation: false, submittedConfirmation: false, isLoggedIn: false };
+      return { ...state, fetching: false, pendingConfirmation: false, submittedConfirmation: false, isLoggedIn: false, user: initialState.user };
     case SIGN_IN_FAIL:
     case SIGN_UP_FAIL:
     case SIGN_OUT_FAIL:
@@ -51,15 +59,19 @@ export const authReducer = (state = initialState, action) => {
     case SIGN_UP_FETCH:
     case SIGN_OUT_FETCH:
     case CONFIRM_FETCH:
+    case GET_USER_SESSION_FETCH:
       return { ...state, fetching: true, submittedConfirmation: true };
     case SIGN_UP_PENDING:
       return { ...state, fetching: false, pendingConfirmation: true };
     case IS_LOGGED_IN:
-      return { ...state, isLoggedIn: true, username: action.payload };
+    case GET_USER_SESSION_SUCCESS:
+      return { ...state, isLoggedIn: true, user: action.payload, fetching: false };
     case IS_LOGGED_OUT:
       return { ...state, isLoggedIn: false, username: '' };
     case TOGGLE_FORGOT_PASSWORD:
       return { ...state, forgotPassword: !state.forgotPassword };
+    case GET_USER_SESSION_FAIL:
+      return { ...state, isLoggedIn: false, user: initialState.user, fetching: false };
     default:
       return state;
   }

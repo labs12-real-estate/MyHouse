@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import DashboardTopBar from '../components/navigation/DashboardTopBar';
 import SideBar from '../components/navigation/SideBar';
 import { toggleSideBar } from '../actions/displayActions';
-import { getUserHouse } from '../actions/usersActions';
+import { getUserHouse, getUserSession } from '../actions/usersActions';
 
-function DashboardContainer({ isOpen, toggleSideBar, getUserHouse, username, children }) {
+function DashboardContainer({ isOpen, toggleSideBar, getUserHouse, username, children, getUserSession }) {
   useEffect(() => {
     username !== '' && getUserHouse(username);
   }, [getUserHouse, username]); // get house data from AWS server on first render
@@ -21,6 +21,6 @@ function DashboardContainer({ isOpen, toggleSideBar, getUserHouse, username, chi
 }
 
 export default connect(
-  ({ authReducer, displayReducer }) => ({ isOpen: displayReducer.isOpen, username: authReducer.username }),
-  { toggleSideBar, getUserHouse }
+  ({ authReducer, displayReducer }) => ({ isOpen: displayReducer.isOpen, username: authReducer.user.username }),
+  { toggleSideBar, getUserHouse, getUserSession }
 )(DashboardContainer);

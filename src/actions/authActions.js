@@ -51,7 +51,8 @@ export const signIn = (creds, history, houseInput) => dispatch => {
         type: SIGN_IN_SUCCESS,
         payload: {
           username: user.username,
-          name: user.attributes.name
+          name: user.attributes.name,
+          email: user.attributes.email
         }
       });
       houseInput ? makeHouse({ id: user.username, houseInput }, history)(dispatch) : history.push('/overview');
@@ -127,10 +128,11 @@ export const signOut = history => dispatch => {
 
 export const isLoggedInAction = () => dispatch => {
   Auth.currentSession()
-    .then(data => {
+    .then(session => {
+      const { name, email, ['cognito:username']: username } = session.idToken.payload;
       dispatch({
         type: IS_LOGGED_IN,
-        payload: data.accessToken.payload.username
+        payload: { name, email, username }
       });
     })
     .catch(error => {
