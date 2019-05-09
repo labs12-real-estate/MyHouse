@@ -826,7 +826,7 @@
             height: 430px;
             transform: translateY(99px);
           }
-          .login_inputs_container {
+          .register_inputs_container {
             background-image: url('../assets/images/form-gradient-top.png');
             background-repeat: no-repeat;
             background-size: 100%;
@@ -834,6 +834,9 @@
             margin: 10% 15% 0;
             background-color: white;
             box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
+            @media (max-width: 800px) {
+              margin: 5% 15% 0;
+            }
             @media (max-width: 400px) {
               margin: 10% 5% 0;
             }
@@ -865,7 +868,8 @@
                 font-size: 2rem;
               }
             }
-            .login_input {
+            .register_input {
+              width: 100%;
               margin-bottom: 15px;
               border-style: none;
               border-bottom: 1.5px solid #c4c4c4;
@@ -1045,6 +1049,16 @@
           font-size: 24px;
           line-height: 29px;
           color: rgba(255, 255, 255, 0.7);
+          @media (max-width: 800px) {
+            font-size: 36px;
+            left: 15px;
+            bottom: 15px;
+          }
+          @include for-phone-only {
+            font-size: 24px;
+            left: 10px;
+            bottom: 10px;
+          }
         }
       }
     }

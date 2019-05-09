@@ -43,20 +43,20 @@ function RegisterInput({ history, houseInput, confirmSignUp, signUp, pendingConf
 
   return !(pendingConfirmation || submittedConfirmation) ? (
     <form onSubmit={handleSignUp}>
-      <div className="login_inputs_container">
+      <div className="register_inputs_container">
         <h1>Register</h1>
-        <input name="name" value={name} onChange={handleChange} placeholder="  Name" className="login_input" type="text" />
-        <input name="email" value={email} onChange={handleChange} placeholder="  Email" className="login_input" type="text" />
-        <input name="username" value={username} onChange={handleChange} placeholder="  Username" className="login_input" type="text" />
-        <input name="password" value={password} onChange={handleChange} placeholder="  Password" className="login_input" type="password" />
+        <input name="name" value={name} onChange={handleChange} placeholder="  Name" className="register_input" type="text" />
+        <input name="email" value={email} onChange={handleChange} placeholder="  Email" className="register_input" type="text" />
+        <input name="username" value={username} onChange={handleChange} placeholder="  Username" className="register_input" type="text" />
+        <input name="password" value={password} onChange={handleChange} placeholder="  Password" className="register_input" type="password" />
         <Button buttonStyle="register_button" buttonText="Register" />
       </div>
     </form>
   ) : (
     <form onSubmit={handleConfirmSubmit}>
-      <div className="login_inputs_container">
-        <label className="login_label">Confirmation Code</label>
-        <input name="code" value={code} onChange={handleChangeCode} className="login_input" type="text" />
+      <div className="register_inputs_container">
+        <label className="register_label">Confirmation Code</label>
+        <input name="code" value={code} onChange={handleChangeCode} className="register_input" type="text" />
         <Button buttonStyle="register_button" buttonText="Confirm" />
       </div>
     </form>
