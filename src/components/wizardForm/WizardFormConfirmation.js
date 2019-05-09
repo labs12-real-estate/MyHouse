@@ -29,11 +29,14 @@ function WizardFormConfirmation({ getHouseInput, questions, handleAnswer, handle
             </Fragment>
           </div>
         ))}
-        <p>Please register to get a more accurate valuation.</p>
+        <p>
+          Please register <span className="mobile">below </span>to get a more accurate valuation.
+        </p>
         <Button clickEvent={handlePrev} buttonStyle="prev_button" buttonText="Prev" />
       </div>
       <div className="left-panel">
         <RegisterInput handlePrev={handlePrev} houseInput={getHouseInput()} />
+        <div className="bottom_logo">MyHouse</div>
       </div>
     </div>
   );

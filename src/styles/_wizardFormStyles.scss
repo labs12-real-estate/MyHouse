@@ -501,6 +501,9 @@
             i {
               font-size: 3.2rem;
               margin-right: 1rem;
+              @include for-phone-only {
+                margin-left: 1rem;
+              }
             }
             h2 {
               color: #333;
@@ -511,7 +514,7 @@
               @include for-phone-only {
                 margin-right: 2rem;
               }
-              @media (max-width: 400px) {
+              @media (max-width: 500px) {
                 font-size: 1.8rem;
               }
             }
@@ -523,9 +526,9 @@
               color: rgb(89, 89, 89);
               letter-spacing: 0;
               font-family: 'Fira Sans', 'sans-serif';
-              @media (max-width: 400px) {
+              @media (max-width: 500px) {
                 font-size: 1.4rem;
-                margin: 0;
+                margin: 0 1rem 0 0;
                 line-height: 2rem;
               }
             }
@@ -786,27 +789,44 @@
             }
           }
         }
+        @include for-phone-only {
+          .shadow {
+            z-index: -1;
+            position: absolute;
+            width: 100%;
+            height: 80px;
+            bottom: 0;
+            box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
+          }
+        }
       }
       .confirmation_container {
         height: 430px;
         position: relative;
         .left-panel {
-          @include for-phone-only {
-            width: 100%;
-            top: 430px;
-          }
+          background-image: url('../assets/images/form-gradient-bottom.png');
+          background-repeat: no-repeat;
+          background-position: bottom;
+          background-size: 100%;
           height: 430px;
           position: absolute;
           left: 0;
           bottom: 0;
           width: 35%;
           background-color: rgb(236, 240, 244);
+          @media (max-width: 800px) {
+            width: 100%;
+            top: 430px;
+            box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
+            z-index: 0;
+            margin-bottom: 20px;
+            height: 530px;
+          }
+          @include for-phone-only {
+            height: 430px;
+            transform: translateY(99px);
+          }
           .login_inputs_container {
-            @include for-phone-only {
-              margin: 0;
-              padding: 3rem;
-              box-shadow: none;
-            }
             background-image: url('../assets/images/form-gradient-top.png');
             background-repeat: no-repeat;
             background-size: 100%;
@@ -814,24 +834,39 @@
             margin: 10% 15% 0;
             background-color: white;
             box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
+            @media (max-width: 400px) {
+              margin: 10% 5% 0;
+            }
             h1 {
               font-size: 2.2rem;
               color: white;
               text-shadow: 1px 1px 2px #000000;
               margin-bottom: 5rem;
+              @media (max-width: 800px) {
+                margin-bottom: 11rem;
+                font-size: 3rem;
+              }
+              @include for-phone-only {
+                margin-bottom: 7rem;
+                font-size: 2.2rem;
+              }
             }
             label {
               text-align: center;
               font-size: 1.5rem;
               color: rgb(160, 160, 160);
-              margin-bottom: 3rem;
-            }
-            .login_input {
-              @include for_phone_only {
-                height: 5rem;
+              margin: 6rem 0 2rem;
+              @media (max-width: 800px) {
+                font-size: 2.5rem;
+                margin: 13rem 0 3rem;
+              }
+              @include for-phone-only {
+                margin: 9rem 0 2rem;
                 font-size: 2rem;
               }
-              margin-bottom: 25px;
+            }
+            .login_input {
+              margin-bottom: 15px;
               border-style: none;
               border-bottom: 1.5px solid #c4c4c4;
               font-family: Roboto;
@@ -840,7 +875,7 @@
               font-size: 1.8rem;
               line-height: 2.1rem;
               color: #898890;
-              height: 20px;
+              height: 30px;
               padding-left: 5%;
               transition: all 0.3s ease-in-out;
               border-radius: 0px;
@@ -850,9 +885,6 @@
               }
             }
             .register_button {
-              @include for_phone_only {
-                height: 5rem;
-              }
               margin-right: 2rem;
               width: 100%;
               background: #e63700;
@@ -867,11 +899,6 @@
               border-radius: 4px;
               height: 32px;
               padding: none;
-              @include for-phone-only {
-                height: 40px;
-                width: 80%;
-                margin-left: 2rem;
-              }
               cursor: pointer;
               &:hover {
                 background: #f13800;
@@ -895,15 +922,27 @@
           flex-direction: column;
           align-items: center;
           justify-content: space-around;
-          @include for-phone-only {
+          background: white;
+          @media (max-width: 800px) {
             width: 100%;
           }
+          @include for-phone-only {
+            height: 400px;
+            bottom: -100px;
+          }
           .selection {
-            width: 70%;
+            width: 85%;
             height: 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            @include for-phone-only {
+              flex-direction: column;
+              height: 60px;
+            }
+            @media (max-width: 800px) {
+              width: 70%;
+            }
             label {
               font-family: Montserrat;
               font-size: 1.4rem;
@@ -911,6 +950,9 @@
               font-weight: 600;
               line-height: 2.2rem; /* identical to box height */
               color: #666;
+              @include for-phone-only {
+                align-self: flex-start;
+              }
             }
             select::-ms-expand {
               display: none;
@@ -923,10 +965,14 @@
               font-weight: 500;
               font-size: 1.6rem;
               line-height: 2.2rem;
-              width: 50%;
+              width: 22rem;
               max-width: 250px;
               height: 3.5rem;
               display: block;
+              @include for-phone-only {
+                align-self: flex-end;
+                width: 23rem;
+              }
               &:focus {
                 outline: none;
               }
@@ -941,11 +987,18 @@
             }
           }
           p {
+            span.mobile {
+              display: none;
+              @media (max-width: 800px) {
+                display: inline;
+              }
+            }
             color: red;
-            font-size: 1.5rem;
-            text-align: end;
+            font-size: 1.6rem;
+            text-align: center;
+            margin: 0 4rem;
           }
-          Button {
+          button {
             align-self: flex-end;
             margin-right: 10rem;
             margin-bottom: 3rem;
@@ -963,6 +1016,12 @@
             width: 100px;
             padding: none;
             cursor: pointer;
+            @include for-phone-only {
+              align-self: center;
+              width: 80%;
+              margin: 0 0 1rem 0;
+              height: 4rem;
+            }
             &:hover {
               background: rgb(18, 106, 246);
             }
@@ -973,6 +1032,19 @@
               background: rgb(13, 55, 139);
             }
           }
+        }
+        .bottom_logo {
+          position: absolute;
+          width: 117px;
+          height: 30px;
+          left: 10px;
+          bottom: 10px;
+          font-family: Montserrat;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 29px;
+          color: rgba(255, 255, 255, 0.7);
         }
       }
     }
