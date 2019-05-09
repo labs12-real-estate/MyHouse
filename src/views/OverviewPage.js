@@ -1,13 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { getUserHouse } from '../actions/usersActions';
 import DashboardContainer from './DashboardContainer';
 import OverviewContent from '../components/dashboardContent/overviewContent/OverviewContent';
 
 function OverviewPage({ username, error, house, getUserHouse }) {
-  useEffect(() => {
-    username !== '' && getUserHouse(username);
-  }, [getUserHouse, username]); // get house data from AWS server on first render
   return (
     <DashboardContainer>
       <OverviewContent {...house} />

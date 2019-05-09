@@ -45,7 +45,7 @@ export default ({ payments }) => {
       .select('.actual')
       .transition()
       .attr('d', actual(payments));
-  }, [payments, fullWidth, fullHeight]);
+  }, [payments, fullWidth, fullHeight, actual, baseline, x, y]);
 
   return (
     <svg ref={chart} height="100%" width="100%" viewBox={`0 0 ${fullWidth} ${fullHeight}`}>

@@ -1,24 +1,28 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 import { isEditing, saveHouseInfo, cancelSaveHouseInfo } from '../../../actions/houseActions';
 import { useInput } from '../../../helper-functions/form-logic-functions';
 
 function HouseProfileForm(props) {
-  const [state, setState] = useInput(props.content);
-  const handleEdit = () => props.isEditing(props.id);
+  const [content, setContent, setContentDirect] = useInput(props.content);
+  useEffect(()=> {
+    setContentDirect(props.content)
+  }, [props.content])
+  console.log(props.content, content, 23123)
+  const handleEdit = () => props.isEditing(props.field);
   const handleCancel = () => {
-    props.cancelSaveHouseInfo(props.id);
-    // setState({ target: { value: props.content } });
+    props.cancelSaveHouseInfo(props.field);
+    // setContent({ target: { value: props.content } });
   };
-  const handleSave = () => props.saveHouseInfo({ changes: { [props.field]: state }, id: props.id });
-  const isEditing = props.editingIds.includes(props.id);
+  const handleSave = () => props.saveHouseInfo({ changes: { [props.field]: content }, field: props.field, id: props.id} );
+  const isEditing = props.editingFields.includes(props.field);
 
   console.log(props.id);
   return (
     <div className="house_profile_form">
       <div className="house_profile_form_title">
         <h2>
-          {props.title} <span style={{ color: 'red' }}>{`${!isEditing}`}</span>
+          {props.title}
         </h2>
         {!isEditing ? (
           <i className="fas fa-pen" onClick={handleEdit} title="Edit" />
@@ -30,14 +34,15 @@ function HouseProfileForm(props) {
         )}
       </div>
 
-      {!isEditing ? <p>{state || props.defaultValue}</p> : <textarea value={state} onChange={setState} />}
+      {!isEditing ? <p>{content || " " || props.defaultValue}</p> : <textarea value={content} onChange={setContent} />}
     </div>
   );
 }
 
 const mapStateToProps = state => {
   return {
-    editingIds: state.houseReducer.editingIds
+    editingFields: state.houseReducer.editingFields,
+    id: state.houseReducer.house.id
   };
 };
 

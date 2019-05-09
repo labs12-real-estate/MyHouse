@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { isLoggedInAction } from './actions/authActions';
 import PrivateRoute from './components/privateRoute/PrivateRoute';
+import PrivateRouteWF from './components/privateRoute/PrivateRouteWF';
 import LandingPage from './views/LandingPage';
 import WizardFormPage from './views/WizardFormPage';
 import OverviewPage from './views/OverviewPage';
@@ -20,7 +21,7 @@ function App({ isLoggedInAction }) {
     <div>
       <Switch>
         <Route onUpdate={window.scrollTo(0, 0)} path="/" exact component={LandingPage} />
-        <Route onUpdate={window.scrollTo(0, 0)} path="/wizard-form" component={WizardFormPage} />
+        <PrivateRouteWF onUpdate={window.scrollTo(0, 0)} path="/wizard-form" component={WizardFormPage} />
         <PrivateRoute onUpdate={window.scrollTo(0, 0)} path="/overview" component={OverviewPage} />
         <PrivateRoute onUpdate={window.scrollTo(0, 0)} path="/myhouse" component={MyHousePage} />
         <PrivateRoute onUpdate={window.scrollTo(0, 0)} path="/valuation-playground" component={ValuationPlaygroundPage} />

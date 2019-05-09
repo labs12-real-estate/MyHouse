@@ -1,8 +1,17 @@
 .dashboard_jumbo {
   background-color: white;
-  margin: 0 5% 3rem;
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
-  max-width: 1200px;
+  margin-left: 70px;
+  width: 90%;
+  @include for-phone-only {
+    margin: 0 auto;
+  }
+  @include for-tablet-portrait-up {
+    margin: 0 auto;
+  }
+  @include for-tablet-landscape-up {
+    margin-left: 64px;
+  }
 
   .house_image {
     background-image: url('../assets/images/overview/house-bg.jpg');
@@ -15,6 +24,26 @@
   .address_value_flex {
     display: flex;
     justify-content: space-between;
+
+    @include for-phone-only {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    @include for-tablet-portrait-up {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    @include for-tablet-landscape-up {
+      justify-content: space-between;
+      flex-direction: row;
+      text-align: center;
+    }
 
     .address {
       margin: 1.2rem 4rem;
@@ -41,7 +70,7 @@
       align-items: center;
       h4 {
         font-family: 'Roboto', 'sans-serif';
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         font-weight: 600;
         text-transform: uppercase;
         color: #888;
@@ -59,25 +88,61 @@
 } // end of .dashboard_jumbo
 
 .overview_cards_container {
-  margin: 3rem 5% 5rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
-  max-width: 1200px;
+  width: 90%;
+  margin-left: 59px;
+  @include for-phone-only {
+    margin: 0 auto;
+  }
+  @include for-tablet-portrait-up {
+    margin: 0 auto;
+  }
+  @include for-tablet-landscape-up {
+    margin-left: 59px;
+  }
 
   .feature_card {
     z-index: -1;
     position: relative;
-    margin: 1rem 0;
-    width: 350px;
-    height: 100px;
+    margin: 1rem 0 1rem 1%;
+    width: 400px;
+    height: 170px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.09);
+    @include for-phone-only {
+      width: 100%;
+      margin: 1rem 0 1rem 0;
+      height: 109px;
+    }
+    @include for-tablet-portrait-up {
+      width: 100%;
+      margin: 1rem 0 1rem 0;
+    }
+    @include for-tablet-landscape-up {
+      margin: 1rem 0 1rem 1%;
+      width: 49%;
+    }
+    @include for-overview-page {
+      width: 49%;
+    }
+
     img {
       display: inline-block;
       object-fit: cover;
-      width: 40%;
-      height: 100px;
+      width: 50%;
+      height: 170px;
+      @include for-phone-only {
+        width: 37%;
+        height: 110px;
+      }
+      @include for-tablet-landscape-up {
+        width: 45%;
+      }
+      @include for-desktop-up {
+        width: 50%;
+      }
     }
     .text_box {
       position: absolute;
@@ -85,7 +150,7 @@
       top: 37%;
       display: inline-block;
       h3 {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         font-weight: 600;
         font-family: 'Roboto', 'sans-serif';
         text-transform: uppercase;

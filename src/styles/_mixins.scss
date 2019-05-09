@@ -33,4 +33,8 @@
   }
 }
 
-
+@mixin for-overview-page {
+  @media (min-width: 1200px) and (max-width: 1460px) {
+    @content;
+  }
+}

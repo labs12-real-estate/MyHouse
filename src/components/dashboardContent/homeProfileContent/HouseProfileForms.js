@@ -1,5 +1,4 @@
 import React from 'react';
-import { houseProfileData } from '../../../dummy-data-structures/house-profile-dummy-data';
 import { houseProfileDataFinishes } from '../../../dummy-data-structures/house-profile-finishes-dummy-data';
 import { houseProfileDataParcel } from '../../../dummy-data-structures/house-profile-parcel-dummy-data';
 import HouseProfileForm from './HouseProfileForm';
@@ -11,8 +10,8 @@ function HouseProfileForms({ house }) {
   return (
     <div className="house_profile_forms_container">
       <div className="house_profile_forms_left">
-        <HouseProfileForm title="House Bio" content={house.description} id={1} defaultValue="Enter your house bio" field="description" />
-        <HouseProfileForm title="Recent Remodeling" content={house.recentRemodel} id={2} defaultValue="Enter any recent upgrades" field="recentRemodel" />
+        <HouseProfileForm title="House Bio" content={house.description}  defaultValue="Enter your house bio" field="description" />
+        <HouseProfileForm title="Recent Remodeling" content={house.recentRemodel} defaultValue="Enter any recent upgrades" field="recentRemodel" />
       </div>
       <div className="house_profile_forms_right">
         {houseProfileDataFinishes.map((i, index) => (
