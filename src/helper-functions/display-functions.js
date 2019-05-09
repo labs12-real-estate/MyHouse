@@ -20,6 +20,10 @@ export const sqFtToAcreConversion = sqFt => {
   return `${Math.round(sqFt * 0.0000229568 * 100) / 100}`;
 };
 
+export const acreToSqFtConversion = acre => {
+  return Math.round(acre / 0.0000229568);
+};
+
 export const useWindowWidth = () => {
   const [width, setWidth] = useState(window.innerWidth);
 
