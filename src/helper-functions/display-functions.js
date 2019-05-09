@@ -43,9 +43,9 @@ export const useWindowWidth = () => {
   return width;
 };
 
-export const loginModalButtonRender = fetching => {
+export const loginModalButtonRender = (fetching, buttonText, buttonStyle) => {
   return !fetching ? (
-    <Button buttonStyle="modal_login_button" buttonText="Login" />
+    <Button buttonStyle={buttonStyle} buttonText={buttonText} />
   ) : (
     <div style={{ textAlign: 'center' }}>
       <Loader height={50} width={50} type="TailSpin" color="#2868d9" />
