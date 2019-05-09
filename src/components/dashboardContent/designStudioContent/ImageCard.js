@@ -16,7 +16,7 @@ function ImageCard({ result, searchTerm }) {
 
   return (
     <div style={{ gridRowEnd: `span ${spans}` }} className="design_studio_img_div">
-      <img ref={imgRef} src={result.urls.regular} alt={result.description} />
+      <img ref={imgRef} src={result.urls.small} alt={result.description} />
     </div>
   );
 }
