@@ -12,7 +12,7 @@ export const designSearch = searchTerm => dispatch => {
   dispatch({ type: GET_DESIGNS_FETCH, payload: searchTerm });
   return unsplash
     .get('/search/photos', {
-      params: { query: searchTerm }
+      params: { query: searchTerm, per_page: 20 }
     })
     .then(res => {
       dispatch({ type: GET_DESIGNS_SUCCESS, payload: res.data });
