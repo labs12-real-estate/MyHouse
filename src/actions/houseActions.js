@@ -17,6 +17,12 @@ export const makeHouse = ({ id, houseInput }, history) => dispatch => {
 };
 
 export const saveHouseInfo = ({ field, changes, id }) => dispatch => {
+  if (changes.description === ''){
+    changes.description=null
+  }
+  if (changes.recentRemodel === ''){
+    changes.recentRemodel =null
+  }
   dispatch({ type: SAVE_HOUSE_INFO_FETCH, payload: {changes, field, id }});
   return API.graphql(graphqlOperation(updateHouse, { input: {...changes, id } }))
     .then(({ data }) => {

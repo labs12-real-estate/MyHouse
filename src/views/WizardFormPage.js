@@ -4,7 +4,7 @@ import WizardFormQA from '../components/wizardForm/WizardFormQA';
 import WizardFormConfirmation from '../components/wizardForm/WizardFormConfirmation';
 import WizardFormProgress from '../components/wizardForm/WizardFormProgress';
 import WizardFormInitialData from '../components/wizardForm/WizardFormInitialData';
-import _questions from './wizardFormQuestions.json';
+import _questions from '../dummy-data-structures/wizardFormQuestions'
 import toHouseInput from '../helper-functions/toHouseInput';
 
 function WizardFormPage() {

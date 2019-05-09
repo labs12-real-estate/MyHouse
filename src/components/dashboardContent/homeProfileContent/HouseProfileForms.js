@@ -14,12 +14,8 @@ function HouseProfileForms({ house }) {
         <HouseProfileForm title="Recent Remodeling" content={house.recentRemodel} defaultValue="Enter any recent upgrades" field="recentRemodel" />
       </div>
       <div className="house_profile_forms_right">
-        {houseProfileDataFinishes.map((i, index) => (
-          <HouseProfileFinishes key={index} title={i.title} countertops={i.countertops} furnaceAge={i.furnaceAge} roofAge={i.roofAge} acAge={i.acAge} />
-        ))}
-        {houseProfileDataParcel.map((i, index) => (
-          <HouseProfileParcel key={index} title={i.title} squareFt={i.squareFt} numBedrooms={i.numBedrooms} numBathrooms={i.numBathrooms} lotSize={i.lotSize} />
-        ))}
+          <HouseProfileFinishes countertops={house.countertops} furnaceAge={house.furnaceAge} roofAge={house.roofAge} flooring={house.flooring} />
+          <HouseProfileParcel squareFt={house.parcelData.homeSquareFootage} numBedrooms={house.parcelData.numBedrooms} numBathrooms={house.parcelData.numBathrooms} lotSize={house.parcelData.lotSquareFootage} />
       </div>
     </div>
   );

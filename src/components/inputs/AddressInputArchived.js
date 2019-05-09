@@ -43,7 +43,6 @@ class AddressInput extends Component {
 
     // Autocomplete request is called every few keystrokes
     if ([3, 6, 10, 15].includes(string.length)) {
-      console.log(this.sessiontoken);
       const url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${string}&types=${
         this.types
       }&location=${this.location}&radius=500&key=${this.key}&sessiontoken=${this.sessiontoken}`;
