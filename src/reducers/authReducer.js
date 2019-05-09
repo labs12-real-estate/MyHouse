@@ -30,7 +30,7 @@ const initialState = {
   user: {
     name: '',
     username: '',
-    email: ''  
+    email: ''
   }
 };
 

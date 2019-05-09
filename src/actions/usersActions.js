@@ -1,4 +1,15 @@
-import { GET_USERHOUSE_FETCH, GET_USERHOUSE_SUCCESS, GET_USERHOUSE_FAIL, MAKE_USER_FETCH, MAKE_USER_SUCCESS, MAKE_USER_FAIL, SET_CURRENT_VALUE, GET_USER_SESSION_FAIL, GET_USER_SESSION_FETCH, GET_USER_SESSION_SUCCESS } from './index';
+import {
+  GET_USERHOUSE_FETCH,
+  GET_USERHOUSE_SUCCESS,
+  GET_USERHOUSE_FAIL,
+  MAKE_USER_FETCH,
+  MAKE_USER_SUCCESS,
+  MAKE_USER_FAIL,
+  SET_CURRENT_VALUE,
+  GET_USER_SESSION_FAIL,
+  GET_USER_SESSION_FETCH,
+  GET_USER_SESSION_SUCCESS
+} from './index';
 import { API, graphqlOperation, Auth } from 'aws-amplify';
 import { getUser } from '../graphql/queries';
 import { createUser } from '../graphql/mutations';
@@ -43,15 +54,12 @@ export const getUserHouse = id => dispatch => {
 export const getUserSession = () => dispatch => {
   dispatch({
     type: GET_USER_SESSION_FETCH
-  })
-  Auth.currentSession()
-  .then(
-    (session) => {
-      const {name, email, ['cognito:username']:username} = session.idToken.payload
-      dispatch({
-        type: GET_USER_SESSION_SUCCESS,
-        payload: {name, email, username}
-      })
-    }
-  )
-}
+  });
+  Auth.currentSession().then(session => {
+    const { name, email, ['cognito:username']: username } = session.idToken.payload;
+    dispatch({
+      type: GET_USER_SESSION_SUCCESS,
+      payload: { name, email, username }
+    });
+  });
+};

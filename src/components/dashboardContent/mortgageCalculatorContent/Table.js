@@ -9,12 +9,7 @@ export default ({ payments, className }) => {
         overpaymentTotal: acc.overpaymentTotal + year.overpayment,
         rows: [
           ...acc.rows,
-          [
-            year.partial ? year.partial + 'm' : index + 1,
-            Math.round(year.interestYearly || 0),
-            Math.round(year.overpayment),
-            Math.round(year.balance)
-          ]
+          [year.partial ? year.partial + 'm' : index + 1, Math.round(year.interestYearly || 0), Math.round(year.overpayment), Math.round(year.balance)]
         ]
       }),
       { interestTotal: 0, overpaymentTotal: 0, rows: [] }
@@ -41,9 +36,7 @@ export default ({ payments, className }) => {
       </tbody>
       <tfoot>
         <tr>
-          <td colSpan={2}>
-            {Math.round(output.interestTotal).toLocaleString()}
-          </td>
+          <td colSpan={2}>{Math.round(output.interestTotal).toLocaleString()}</td>
           <td>{Math.round(output.overpaymentTotal).toLocaleString()}</td>
           <td />
         </tr>

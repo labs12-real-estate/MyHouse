@@ -5,7 +5,6 @@ import SideBar from '../components/navigation/SideBar';
 import { toggleSideBar } from '../actions/displayActions';
 import { getUserHouse, getUserSession } from '../actions/usersActions';
 
-
 function DashboardContainer({ isOpen, toggleSideBar, getUserHouse, username, children, getUserSession }) {
   useEffect(() => {
     username !== '' && getUserHouse(username);
