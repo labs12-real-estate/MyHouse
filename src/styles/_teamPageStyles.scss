@@ -2,6 +2,21 @@
   @include radial-gradient(#6c9de2, #79adff, #3560d0, #0038a5, #003498);
   width: 100%;
   height: 100%;
+  .cloud {
+    z-index: 0;
+    background-image: url('../assets/images/landing-cloud-white.png');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    width: 100%;
+    position: absolute;
+    @media (max-width: 1000px) {
+      height: 400px;
+    }
+    @include for-phone-only {
+      height: 300px;
+    }
+  }
 }
 
 .team_page_title {
@@ -16,6 +31,9 @@
     letter-spacing: -2px;
     margin: 80px 0 40px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    @include for-phone-only {
+        font-size: 6rem;
+      }
   }
 
   p {
@@ -28,7 +46,7 @@
     word-spacing: 2px;
     margin: 0 auto;
     @include for-phone-only {
-      margin-top: 25px;
+        font-size: 2rem;
     }
   }
 }
@@ -53,36 +71,105 @@
 }
 
 .members_container {
-  background-color: lightblue;
+  background-color: white;
+  margin-top: 400px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 1000px) {
+    margin-top: 300px;
+  }
+  @include for-phone-only {
+    margin-top: 200px;
+  }
   .member_card {
-    background-color: lightcoral;
-    width: 90rem;
+    z-index: 1;
+    width: 90%;
+    max-width: 90rem;
     display: flex;
+    margin-bottom: 10rem;
+    @include for-phone-only {
+        flex-direction: column;
+        align-items: center;
+      }
     .left-panel {
-      background-color: lightyellow;
+      width: 40%;
+      text-align: right;
+      @include for-phone-only {
+        width: 100%;
+        text-align: center;
+      }
       img {
-        height: 20rem;
         width: 20rem;
+        height: 20rem;
         border-radius: 100%;
         object-fit: cover;
         margin-right: 10rem;
+        @media (max-width: 800px) {
+          width: 16rem;
+          height: 16rem;
+        }
+        @include for-phone-only {
+            margin: 0;
+          }
       }
     }
     .right-panel {
-      background-color: lightblue;
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      @include for-phone-only {
+        width: 100%;
+        align-items: center;
+      }
       h1 {
         font-family: Montserrat;
         font-style: normal;
         font-weight: bold;
-        font-size: 36px;
+        font-size: 4rem;
         color: #222222;
+        @media (max-width: 800px) {
+          font-size: 3rem;
+        }
+        @include for-phone-only {
+          margin: 1rem 0;
+        }
       }
       h3 {
-          
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bolder;
+        font-size: 1.8rem;
+        color: #000000;
+        @media (max-width: 800px) {
+          font-size: 1.2rem;
+        }
+      }
+      p {
+        margin: 1rem 0;
+        font-family: Roboto;
+        font-style: normal;
+        font-size: 1.5rem;
+        color: #222222;
+        @media (max-width: 800px) {
+          font-size: 1.2rem;
+        }
+        @include for-phone-only {
+            text-align: center;
+          }
+      }
+      .fab {
+        color: #0068ff;
+        margin-right: 1rem;
+        font-size: 1.6rem;
+        @media (max-width: 800px) {
+          font-size: 2.4rem;
+        }
+        &:hover {
+          color: #297eff;
+        }
       }
     }
   }

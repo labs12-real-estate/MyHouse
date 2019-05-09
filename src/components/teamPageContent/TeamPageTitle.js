@@ -11,6 +11,7 @@ export default function TeamPageTitle() {
           text holder
         </p>
       </div>
+      <div className="cloud" />
     </div>
   );
 }

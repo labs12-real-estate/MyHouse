@@ -13,7 +13,24 @@ export default function TeamMembers() {
             <h1>{member.name}</h1>
             <h3>{member.team}</h3>
             <p>{member.intro}</p>
-            <div className="social" />
+            <div className="social">
+              <a href={member.url.twitter} target="blank">
+                <i className="fab fa-twitter" />
+              </a>
+              <a href={member.url.instagram} target="blank">
+                <i className="fab fa-instagram" />
+              </a>
+
+              <a href={member.url.github} target="blank">
+                <i className="fab fa-github" />
+              </a>
+              <a href={member.url.facebook} target="blank">
+                <i className="fab fa-facebook" />
+              </a>
+              <a href={member.url.linkedin} target="blank">
+                <i className="fab fa-linkedin" />
+              </a>
+            </div>
           </div>
         </div>
       ))}

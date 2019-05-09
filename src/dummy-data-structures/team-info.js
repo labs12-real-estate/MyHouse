@@ -9,7 +9,8 @@ export const teamInfo = [
       twitter: '',
       instagram: '',
       github: '',
-      facebook: ''
+      facebook: '',
+      linkedin: ''
     }
   },
   {
