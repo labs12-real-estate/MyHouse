@@ -129,7 +129,7 @@ export const signOut = history => dispatch => {
 export const isLoggedInAction = () => dispatch => {
   Auth.currentSession()
     .then(session => {
-      const { name, email, ['cognito:username']: username } = session.idToken.payload;
+      const { name, email, 'cognito:username': username } = session.idToken.payload;
       dispatch({
         type: IS_LOGGED_IN,
         payload: { name, email, username }
@@ -150,7 +150,6 @@ export const toggleForgotPassword = () => {
 
 export const forgotPassword = (e, { username }) => dispatch => {
   e.preventDefault();
-  console.log(username);
   dispatch({
     type: FORGOT_PASSWORD_FETCH
   });
