@@ -1,17 +1,16 @@
 export const loginModalStyle = () => {
   return {
-    overlay: {
-      backgroundColor: 'none'
+    modal: {
+      backgroundColor: '#FFFFFF',
+      height: '425px',
+      width: '335px',
+      padding: '0px'
     },
-    content: {
-      position: 'relative',
-      top: '90px',
-      left: '76%',
-      background: '#fff',
-      outline: 'none',
-      padding: '0px',
-      width: '260px',
-      overflow: 'none'
+    closeIcon: {
+      fill: '#FFFFFF'
+    },
+    overlay: {
+      width: '100%'
     }
   };
 };
