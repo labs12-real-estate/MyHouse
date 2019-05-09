@@ -1,4 +1,4 @@
-import { GET_DESIGNS_FETCH, GET_DESIGNS_SUCCESS, GET_DESIGNS_FAIL } from './index';
+import { GET_DESIGNS_FETCH, GET_DESIGNS_SUCCESS, GET_DESIGNS_FAIL, NEXT_PAGE_FETCH, NEXT_PAGE_SUCCESS, NEXT_PAGE_FAIL } from './index';
 import axios from 'axios';
 
 const unsplash = axios.create({
@@ -8,16 +8,35 @@ const unsplash = axios.create({
   }
 });
 
+const pageCounter = () => {
+  let page = 1;
+  return () => page++;
+};
+
 export const designSearch = searchTerm => dispatch => {
   dispatch({ type: GET_DESIGNS_FETCH, payload: searchTerm });
   return unsplash
     .get('/search/photos', {
-      params: { query: searchTerm, per_page: 20 }
+      params: { query: searchTerm, per_page: 20, page: 1 }
     })
     .then(res => {
-      dispatch({ type: GET_DESIGNS_SUCCESS, payload: res.data });
+      dispatch({ type: GET_DESIGNS_SUCCESS, payload: { data: res.data, term: searchTerm } });
     })
     .catch(err => {
       dispatch({ type: GET_DESIGNS_FAIL, payload: err });
+    });
+};
+
+export const nextPage = searchTerm => dispatch => {
+  dispatch({ type: NEXT_PAGE_FETCH, payload: searchTerm });
+  return unsplash
+    .get('/search/photos', {
+      params: { query: searchTerm, per_page: 20, page: pageCounter()() }
+    })
+    .then(res => {
+      dispatch({ type: NEXT_PAGE_SUCCESS, payload: { data: res.data, term: searchTerm } });
+    })
+    .catch(err => {
+      dispatch({ type: NEXT_PAGE_FAIL, payload: err });
     });
 };

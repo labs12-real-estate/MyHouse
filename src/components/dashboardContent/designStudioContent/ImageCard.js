@@ -7,7 +7,7 @@ function ImageCard({ result, searchTerm }) {
     const { current } = imgRef;
     const height = current.clientHeight;
     const span = Math.ceil(height / 12);
-    setSpans(span > 40 && span % 2 === 1 ? span - 2 : span);
+    setSpans(span > 34 && span % 2 === 1 ? span - 2 : span);
   };
 
   useLayoutEffect(() => {
@@ -16,7 +16,7 @@ function ImageCard({ result, searchTerm }) {
 
   return (
     <div style={{ gridRowEnd: `span ${spans}` }} className="design_studio_img_div">
-      <img ref={imgRef} src={result.urls.thumb} alt={result.description} />
+      <img ref={imgRef} src={result.urls.regular} alt={result.description} />
     </div>
   );
 }

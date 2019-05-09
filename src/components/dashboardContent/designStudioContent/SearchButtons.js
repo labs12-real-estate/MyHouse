@@ -9,7 +9,12 @@ function SearchButtons(props) {
   return (
     <div className="design_studio_btn_container">
       {searchTerms.map((term, index) => (
-        <Button key={index} buttonText={term} buttonStyle="design_studio_btn" clickEvent={e => props.designSearch(term)} />
+        <Button
+          key={index}
+          buttonText={term}
+          buttonStyle={`design_studio_btn ${props.currentSearch === term ? 'active_btn' : ''}`}
+          clickEvent={e => props.designSearch(term)}
+        />
       ))}
     </div>
   );
@@ -17,7 +22,8 @@ function SearchButtons(props) {
 
 const mapStateToProps = state => {
   return {
-    searchResults: null
+    searchResults: null,
+    currentSearch: state.designStudioReducer.currentSearch
   };
 };
 
