@@ -6,7 +6,7 @@ function ImageCard({ result, searchTerm }) {
   const calculateSpans = () => {
     const { current } = imgRef;
     const height = current.clientHeight;
-    const span = Math.ceil(height / 10 + 1);
+    const span = Math.ceil(height / 12);
     setSpans(span);
   };
 
@@ -16,7 +16,7 @@ function ImageCard({ result, searchTerm }) {
 
   return (
     <div style={{ gridRowEnd: `span ${spans}` }}>
-      <img ref={imgRef} src={result.urls.thumb} alt={result.description} />
+      <img ref={imgRef} src={result.urls.regular} alt={result.description} />
     </div>
   );
 }
