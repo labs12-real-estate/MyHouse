@@ -1,0 +1,89 @@
+.team_page_body {
+  @include radial-gradient(#6c9de2, #79adff, #3560d0, #0038a5, #003498);
+  width: 100%;
+  height: 100%;
+}
+
+.team_page_title {
+  text-align: center;
+  position: relative;
+
+  h1 {
+    color: #fff;
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: 7.2rem;
+    font-weight: 700;
+    letter-spacing: -2px;
+    margin: 80px 0 40px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  p {
+    color: #fff;
+    font-family: 'Roboto', 'serif';
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 30px;
+    opacity: 0.8;
+    word-spacing: 2px;
+    margin: 0 auto;
+    @include for-phone-only {
+      margin-top: 25px;
+    }
+  }
+}
+
+.team_page_bottom {
+  height: 600px;
+  position: relative;
+  z-index: 1;
+
+  .house_bg {
+    background-image: url('../assets/images/house-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    opacity: 0.07;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+.members_container {
+  background-color: lightblue;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  .member_card {
+    background-color: lightcoral;
+    width: 90rem;
+    display: flex;
+    .left-panel {
+      background-color: lightyellow;
+      img {
+        height: 20rem;
+        width: 20rem;
+        border-radius: 100%;
+        object-fit: cover;
+        margin-right: 10rem;
+      }
+    }
+    .right-panel {
+      background-color: lightblue;
+      h1 {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 36px;
+        color: #222222;
+      }
+      h3 {
+          
+      }
+    }
+  }
+}
