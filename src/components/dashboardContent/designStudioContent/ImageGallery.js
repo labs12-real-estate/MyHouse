@@ -6,12 +6,14 @@ import Button from '../../buttons/Button';
 
 function ImageGallery({ searchResults, nextPage, currentSearch }) {
   // () => nextPage(currentSearch)
+  // const []
+
   return (
     <div className="design_studio_img_container">
-      {/* <Button clickEvent={() => nextPage(currentSearch)} buttonText="Next" buttonStyle="pagination_btn" /> */}
+      <Button clickEvent={() => nextPage(currentSearch)} buttonText="Next" buttonStyle="pagination_btn" />
       {searchResults &&
         searchResults.map(result => {
-          return <ImageCard result={result} key={result.id} />;
+          return <ImageCard result={result} key={`${result.id}-${Math.random()}`} />;
         })}
     </div>
   );
@@ -19,7 +21,7 @@ function ImageGallery({ searchResults, nextPage, currentSearch }) {
 
 const mapStateToProps = state => {
   return {
-    searchResults: state.designStudioReducer.searchResults.results,
+    searchResults: state.designStudioReducer.searchResults,
     currentSearch: state.designStudioReducer.currentSearch
   };
 };

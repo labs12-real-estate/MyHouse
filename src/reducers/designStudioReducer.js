@@ -10,7 +10,7 @@ export const designStudioReducer = (state = initialState, action) => {
     case GET_DESIGNS_SUCCESS:
       return { ...state, searchResults: action.payload.data, currentSearch: action.payload.term };
     case NEXT_PAGE_SUCCESS:
-      return { ...state, searchResults: action.payload.data };
+      return { ...state, searchResults: [...state.searchResults, ...action.payload.data] };
     default:
       return state;
   }

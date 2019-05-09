@@ -20,7 +20,7 @@ export const designSearch = searchTerm => dispatch => {
       params: { query: searchTerm, per_page: 15, page: 1 }
     })
     .then(res => {
-      dispatch({ type: GET_DESIGNS_SUCCESS, payload: { data: res.data, term: searchTerm } });
+      dispatch({ type: GET_DESIGNS_SUCCESS, payload: { data: res.data.results, term: searchTerm } });
     })
     .catch(err => {
       dispatch({ type: GET_DESIGNS_FAIL, payload: err });
@@ -34,7 +34,8 @@ export const nextPage = searchTerm => dispatch => {
       params: { query: searchTerm, per_page: 10, page: pageCounter()() }
     })
     .then(res => {
-      dispatch({ type: NEXT_PAGE_SUCCESS, payload: { data: res.data, term: searchTerm } });
+      console.log(res);
+      dispatch({ type: NEXT_PAGE_SUCCESS, payload: { data: res.data.results, term: searchTerm } });
     })
     .catch(err => {
       dispatch({ type: NEXT_PAGE_FAIL, payload: err });
