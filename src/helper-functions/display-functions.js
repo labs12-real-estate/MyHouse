@@ -40,3 +40,5 @@ export const useWindowWidth = () => {
   };
   return width;
 };
+
+export const normalizeContent = content => (content ? content.trim() : content);
