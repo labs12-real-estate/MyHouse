@@ -14,7 +14,8 @@ import {
   SIGN_OUT_SUCCESS,
   SIGN_OUT_FAIL,
   IS_LOGGED_IN,
-  IS_LOGGED_OUT
+  IS_LOGGED_OUT,
+  TOGGLE_FORGOT_PASSWORD
 } from '../actions/index';
 
 const initialState = {
@@ -25,7 +26,8 @@ const initialState = {
   submittedConfirmation: false,
   name: '',
   username: '',
-  isLoggedIn: false
+  isLoggedIn: false,
+  forgotPassword: false
 };
 
 export const authReducer = (state = initialState, action) => {
@@ -44,7 +46,7 @@ export const authReducer = (state = initialState, action) => {
     case SIGN_UP_FAIL:
     case SIGN_OUT_FAIL:
     case CONFIRM_FAIL:
-      return { ...state, fetching: true, error: action.payload };
+      return { ...state, fetching: false, error: action.payload };
     case SIGN_IN_FETCH:
     case SIGN_UP_FETCH:
     case SIGN_OUT_FETCH:
@@ -56,6 +58,8 @@ export const authReducer = (state = initialState, action) => {
       return { ...state, isLoggedIn: true, username: action.payload };
     case IS_LOGGED_OUT:
       return { ...state, isLoggedIn: false, username: '' };
+    case TOGGLE_FORGOT_PASSWORD:
+      return { ...state, forgotPassword: !state.forgotPassword };
     default:
       return state;
   }
