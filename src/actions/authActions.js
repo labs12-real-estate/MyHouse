@@ -16,7 +16,12 @@ import {
   SIGN_OUT_SUCCESS,
   SIGN_OUT_FAIL,
   IS_LOGGED_IN,
-  IS_LOGGED_OUT
+  IS_LOGGED_OUT,
+  TOGGLE_FORGOT_PASSWORD,
+  FORGOT_PASSWORD_FETCH,
+  FORGOT_PASSWORD_FAIL,
+  FORGOT_PASSWORD_PENDING,
+  FORGOT_PASSWORD_SUCCESS
 } from './index';
 
 export const openModal = e => {
@@ -124,7 +129,7 @@ export const signOut = history => dispatch => {
 export const isLoggedInAction = () => dispatch => {
   Auth.currentSession()
     .then(session => {
-      const { name, email, ['cognito:username']: username } = session.idToken.payload;
+      const { name, email, 'cognito:username': username } = session.idToken.payload;
       dispatch({
         type: IS_LOGGED_IN,
         payload: { name, email, username }
@@ -133,6 +138,52 @@ export const isLoggedInAction = () => dispatch => {
     .catch(error => {
       dispatch({
         type: IS_LOGGED_OUT
+      });
+    });
+};
+
+export const toggleForgotPassword = () => {
+  return {
+    type: TOGGLE_FORGOT_PASSWORD
+  };
+};
+
+export const forgotPassword = (e, { username }) => dispatch => {
+  e.preventDefault();
+  dispatch({
+    type: FORGOT_PASSWORD_FETCH
+  });
+
+  Auth.forgotPassword(username)
+    .then(_user => {
+      dispatch({
+        type: FORGOT_PASSWORD_PENDING
+      });
+    })
+    .catch(error => {
+      dispatch({
+        type: FORGOT_PASSWORD_FAIL,
+        payload: error
+      });
+    });
+};
+
+export const confirmForgotPassword = (e, { username, new_password, code }) => dispatch => {
+  e.preventDefault();
+  dispatch({
+    type: CONFIRM_FETCH
+  });
+
+  return Auth.forgotPasswordSubmit(username, code, new_password)
+    .then(_user => {
+      dispatch({
+        type: FORGOT_PASSWORD_SUCCESS
+      });
+    })
+    .catch(error => {
+      dispatch({
+        type: CONFIRM_FAIL,
+        payload: error
       });
     });
 };

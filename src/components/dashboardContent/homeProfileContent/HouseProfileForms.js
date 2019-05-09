@@ -1,6 +1,4 @@
 import React from 'react';
-import { houseProfileDataFinishes } from '../../../dummy-data-structures/house-profile-finishes-dummy-data';
-import { houseProfileDataParcel } from '../../../dummy-data-structures/house-profile-parcel-dummy-data';
 import HouseProfileForm from './HouseProfileForm';
 import HouseProfileFinishes from './HouseProfileFinishes';
 import HouseProfileParcel from './HouseProfileParcel';

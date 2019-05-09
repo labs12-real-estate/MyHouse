@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import Button from '../components/buttons/Button';
+import Loader from 'react-loader-spinner';
 
 export const activeNavItemStyles = (path1, path2) => {
   return path1 !== path2 ? 'dashboard_sidebar_navitem' : 'dashboard_sidebar_active_navitem';
@@ -40,3 +42,14 @@ export const useWindowWidth = () => {
   };
   return width;
 };
+
+export const loginModalButtonRender = (fetching, buttonText, buttonStyle) => {
+  return !fetching ? (
+    <Button buttonStyle={buttonStyle} buttonText={buttonText} />
+  ) : (
+    <div style={{ textAlign: 'center' }}>
+      <Loader height={50} width={50} type="TailSpin" color="#2868d9" />
+    </div>
+  );
+};
+export const normalizeContent = content => (content ? content.trim() : content);
