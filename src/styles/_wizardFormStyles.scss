@@ -854,11 +854,11 @@
                 font-size: 2.2rem;
               }
             }
-            label {
+            .register_label {
+              margin: 6rem 0 2rem;
               text-align: center;
               font-size: 1.5rem;
-              color: rgb(160, 160, 160);
-              margin: 6rem 0 2rem;
+              color: rgb(160, 160, 160); 
               @media (max-width: 800px) {
                 font-size: 2.5rem;
                 margin: 13rem 0 3rem;

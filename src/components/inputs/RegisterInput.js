@@ -55,7 +55,7 @@ function RegisterInput({ history, houseInput, confirmSignUp, signUp, pendingConf
   ) : (
     <form onSubmit={handleConfirmSubmit}>
       <div className="register_inputs_container">
-        <label className="register_label">Confirmation Code</label>
+        <p className="register_label">Confirmation Code</p>
         <input name="code" value={code} onChange={handleChangeCode} className="register_input" type="text" />
         <Button buttonStyle="register_button" buttonText="Confirm" />
       </div>
