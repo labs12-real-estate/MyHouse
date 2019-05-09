@@ -15,6 +15,13 @@
     max-width: 800px;
     margin: 0 0 30px;
 
+    @include for-phone-only {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+
     .design_studio_btn {
       border: none;
       background: #fff;
@@ -24,6 +31,14 @@
       font-size: 1.6rem;
       padding: 0.7rem 2.2rem;
       box-shadow: 0px 4px 20px rgba(68, 68, 68, 0.1);
+
+      @include for-tablet-portrait-up {
+        padding: 0.7rem 1.5rem;
+      }
+      @include for-phone-only {
+        width: 45%;
+        margin-bottom: 10px;
+      }
 
       &:hover {
         background: #e63700;
@@ -42,8 +57,23 @@
     grid-gap: 0 10px;
     grid-auto-rows: 13px;
 
+    @include for-phone-only {
+      justify-items: center;
+    }
+
+    .design_studio_img_div {
+      grid-row-end: span calc(100% + 1);
+    }
+
     img {
       width: 250px;
+
+      @include for-tablet-portrait-up {
+        width: 95%;
+      }
+      @include for-phone-only {
+        width: 100%;
+      }
     }
   }
 }
