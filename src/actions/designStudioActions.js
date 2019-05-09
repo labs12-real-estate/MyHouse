@@ -31,7 +31,7 @@ export const nextPage = searchTerm => dispatch => {
   dispatch({ type: NEXT_PAGE_FETCH, payload: searchTerm });
   return unsplash
     .get('/search/photos', {
-      params: { query: searchTerm, per_page: 20, page: pageCounter()() }
+      params: { query: searchTerm, per_page: 20, page: 2 }
     })
     .then(res => {
       dispatch({ type: NEXT_PAGE_SUCCESS, payload: { data: res.data, term: searchTerm } });

@@ -22,7 +22,6 @@ function SearchButtons(props) {
 
 const mapStateToProps = state => {
   return {
-    searchResults: null,
     currentSearch: state.designStudioReducer.currentSearch
   };
 };

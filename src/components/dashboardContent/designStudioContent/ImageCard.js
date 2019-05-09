@@ -7,7 +7,7 @@ function ImageCard({ result, searchTerm }) {
     const { current } = imgRef;
     const height = current.clientHeight;
     const span = Math.ceil(height / 12);
-    setSpans(span > 34 && span % 2 === 1 ? span - 2 : span);
+    setSpans(span > 30 && span % 2 === 1 ? span - 2 : span);
   };
 
   useLayoutEffect(() => {
