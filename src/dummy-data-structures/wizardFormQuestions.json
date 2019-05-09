@@ -8,21 +8,21 @@
   },
   {
     "questionContent": "What material is your kitchen flooring",
-    "title": "Kitchen flooring type",
+    "title": "Flooring",
     "options": ["Hardwood", "Engineered/Laminate", "Ceramic Tile", "Porcelain Tile/Concrete"],
     "key": "flooring",
     "selected": null
   },
   {
     "questionContent": "How old is your roof?",
-    "title": "Roof age",
+    "title": "Roof Age",
     "options": ["0-4 years", "5-9 years", "10-14 years", "15+"],
     "key": "roofAge",
     "selected": null
   },
   {
     "questionContent": "How old is your furnace?",
-    "title": "Furnace age",
+    "title": "Furnace Age",
     "options": ["0-4 years", "5-9 years", "10-14 years", "15+"],
     "key": "furnaceAge",
     "selected": null

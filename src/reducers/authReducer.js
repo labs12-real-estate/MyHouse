@@ -14,7 +14,10 @@ import {
   SIGN_OUT_SUCCESS,
   SIGN_OUT_FAIL,
   IS_LOGGED_IN,
-  IS_LOGGED_OUT
+  IS_LOGGED_OUT,
+  GET_USER_SESSION_FAIL,
+  GET_USER_SESSION_SUCCESS,
+  GET_USER_SESSION_FETCH
 } from '../actions/index';
 
 const initialState = {
@@ -23,9 +26,12 @@ const initialState = {
   fetching: false,
   pendingConfirmation: false,
   submittedConfirmation: false,
-  name: '',
-  username: '',
-  isLoggedIn: false
+  isLoggedIn: false,
+  user: {
+    name: '',
+    username: '',
+    email: ''
+  }
 };
 
 export const authReducer = (state = initialState, action) => {
@@ -35,27 +41,30 @@ export const authReducer = (state = initialState, action) => {
     case CLOSE_MODAL:
       return { ...state, isOpen: action.payload };
     case SIGN_IN_SUCCESS:
-      return { ...state, fetching: false, name: action.payload.name, username: action.payload.username, pendingConfirmation: false, isLoggedIn: true };
+      return { ...state, fetching: false, user: action.payload, pendingConfirmation: false, isLoggedIn: true };
     case SIGN_UP_SUCCESS:
       return { ...state, fetching: false, pendingConfirmation: false, isLoggedIn: true };
     case SIGN_OUT_SUCCESS:
-      return { ...state, fetching: false, pendingConfirmation: false, submittedConfirmation: false, isLoggedIn: false };
+      return { ...state, fetching: false, pendingConfirmation: false, submittedConfirmation: false, isLoggedIn: false, user: initialState.user };
     case SIGN_IN_FAIL:
     case SIGN_UP_FAIL:
     case SIGN_OUT_FAIL:
     case CONFIRM_FAIL:
-      return { ...state, fetching: true, error: action.payload };
+      return { ...state, fetching: false, error: action.payload };
     case SIGN_IN_FETCH:
     case SIGN_UP_FETCH:
     case SIGN_OUT_FETCH:
     case CONFIRM_FETCH:
+    case GET_USER_SESSION_FETCH:
       return { ...state, fetching: true, submittedConfirmation: true };
     case SIGN_UP_PENDING:
       return { ...state, fetching: false, pendingConfirmation: true };
     case IS_LOGGED_IN:
-      return { ...state, isLoggedIn: true, username: action.payload };
+    case GET_USER_SESSION_SUCCESS:
+      return { ...state, isLoggedIn: true, user: action.payload, fetching: false };
     case IS_LOGGED_OUT:
-      return { ...state, isLoggedIn: false, username: '' };
+    case GET_USER_SESSION_FAIL:
+      return { ...state, isLoggedIn: false, user: initialState.user, fetching: false };
     default:
       return state;
   }
