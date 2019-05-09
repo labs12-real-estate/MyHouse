@@ -20,7 +20,7 @@ function LoginInput({ signIn, history, fetching, toggleForgotPassword }) {
       <form onSubmit={e => handleSignIn(e, signIn, creds, history)}>
         <input placeholder="Username" name="username" value={creds.username} onChange={handleChange} className="login_input" type="text" />
         <input placeholder="Password" name="password" value={creds.password} onChange={handleChange} className="login_input" type="password" />
-        {loginModalButtonRender(fetching)}
+        {loginModalButtonRender(fetching, 'Login', 'modal_login_button')}
         <p onClick={toggleForgotPassword}>Forgot your password?</p>
       </form>
     </div>
