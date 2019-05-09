@@ -28,7 +28,7 @@ export const houseReducer = (state = initialState, action) => {
     case GET_USERHOUSE_SUCCESS:
       return { ...state, fetching: false, house: action.payload };
     case MAKE_HOUSE_FAIL:
-    case GET_USERHOUSE_FAIL: 
+    case GET_USERHOUSE_FAIL:
     case SAVE_HOUSE_INFO_FAIL:
       return { ...state, fetching: false, error: action.payload };
     case EDIT_HOUSE_INFO:
@@ -42,10 +42,10 @@ export const houseReducer = (state = initialState, action) => {
         house: { ...state.house, ...action.payload.changes },
         editingFields: state.editingFields.filter(field => field !== action.payload.field)
       };
-      case SAVE_HOUSE_INFO_SUCCESS:
+    case SAVE_HOUSE_INFO_SUCCESS:
       return {
         ...state,
-        house:  action.payload 
+        house: action.payload
       };
     case CANCEL_SAVE_HOUSE_INFO:
       return {
