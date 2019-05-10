@@ -1,4 +1,5 @@
 import QuinnJpg from '../assets/images/members/Quinn.jpg';
+import PeytonJpg from '../assets/images/members/Peyton.jpg';
 
 export const teamInfo = [
   {
@@ -91,7 +92,7 @@ export const teamInfo = [
     intro:
       'Lorem ipsum dolor sit amet, sumo idque deserunt usu an, vix graeco alterum te. Aperiri saperet te per. Nec utamur impedit at. Vim et nisl nemore mediocrem. Sea partem verterem eu, eros argumentum in cum. Iudico civibus eleifend pro eu.',
     url: {
-      picture: 'https://picsum.photos/640/480',
+      picture: PeytonJpg,
       twitter: '',
       instagram: '',
       github: '',
