@@ -45,9 +45,17 @@
   form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 535px;
+    justify-content: flex-end;
+    height: 425px;
     padding: 35px;
+
+    .login_modal_error {
+      color: red;
+      text-align: center;
+      font-size: 1.2rem;
+      font-family: Montserrat;
+      font-weight: 500;
+    }
 
     h3 {
       font-family: Montserrat;

@@ -28,17 +28,17 @@ export default function LandingMiddle() {
           <MarketingCard
             icon={laptop}
             title="Customized"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            description="Create an account and gain access to your MyHouse profile page, which allows you to customize your homeowner story and all of the changes you've made since purchase!"
           />
           <MarketingCard
             icon={calculator}
             title="Transparent"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            description="We believe the homeowner should have all the tools and information necessary to make good decisions in home ownership. So we give it all to you."
           />
           <MarketingCard
             icon={statistics}
             title="Simple"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            description="If it's so complicated no one can use it, then it doesn't really serve a purpose. We strive to make all of our tools user friendly so everyone can benefit."
           />
         </div>
       </section>
