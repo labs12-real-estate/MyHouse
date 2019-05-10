@@ -9,7 +9,7 @@ export const teamInfo = [
       'Lorem ipsum dolor sit amet, sumo idque deserunt usu an, vix graeco alterum te. Aperiri saperet te per. Nec utamur impedit at. Vim et nisl nemore mediocrem. Sea partem verterem eu, eros argumentum in cum. Iudico civibus eleifend pro eu.',
     url: {
       picture: 'https://picsum.photos/640/480',
-      twitter: 'https:/google.com',
+      twitter: 'https://google.com',
       instagram: '',
       github: '',
       facebook: '',
@@ -24,7 +24,7 @@ export const teamInfo = [
     url: {
       picture: 'https://picsum.photos/640/480',
       twitter: '',
-      instagram: 'https:/google.com',
+      instagram: 'https://google.com',
       github: '',
       facebook: '',
       linkedin: ''
@@ -39,7 +39,7 @@ export const teamInfo = [
       picture: 'https://picsum.photos/640/480',
       twitter: '',
       instagram: '',
-      github: 'https:/google.com',
+      github: 'https://google.com',
       facebook: '',
       linkedin: ''
     }
@@ -54,7 +54,7 @@ export const teamInfo = [
       twitter: '',
       instagram: '',
       github: '',
-      facebook: 'https:/google.com',
+      facebook: 'https://google.com',
       linkedin: ''
     }
   },
@@ -69,7 +69,7 @@ export const teamInfo = [
       instagram: '',
       github: '',
       facebook: '',
-      linkedin: 'https:/google.com'
+      linkedin: 'https://google.com'
     }
   },
   {
