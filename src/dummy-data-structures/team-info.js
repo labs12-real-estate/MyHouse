@@ -56,9 +56,6 @@ export const teamInfo = [
       github: 'https://github.com/Jordan-Stoddard',
       facebook: '',
       linkedin: 'https://www.linkedin.com/in/jordan-stoddard-aa928167/'
-      github: '',
-      facebook: 'https://google.com',
-      linkedin: ''
     }
   },
   {
