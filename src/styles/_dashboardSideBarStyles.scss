@@ -1,6 +1,7 @@
 .dashboard_sidebar_container {
   display: flex;
   flex-direction: column;
+  padding-right: 5px;
   background: linear-gradient(0deg, #083691, #083691);
   width: $dashboard_sidebar_width;
   height: 100%;
