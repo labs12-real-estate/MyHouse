@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ImageCard from './ImageCard';
 import { getNextPage } from '../../../actions/designStudioActions';
 import { useInfiniteScroll } from '../../../helper-functions/display-functions';
-import Loader from 'react-loader-spinner';
+import decorateSvg from '../../../assets/icons/decorating.svg';
 
 function ImageGallery({ searchResults, getNextPage, currentSearch, currentPage }) {
   const getNext = () => {
@@ -18,14 +18,17 @@ function ImageGallery({ searchResults, getNextPage, currentSearch, currentPage }
 
   console.log('isFetching', isFetching);
   return (
-    <div className="design_studio_img_container">
-      {searchResults &&
-        searchResults.map(result => {
-          return <ImageCard result={result} key={`${result.id}}`} />;
-        })}
+    <>
+      {currentSearch === '' && <img src={decorateSvg} alt="" className="decorate_svg" />}
+      <div className="design_studio_img_container">
+        {searchResults &&
+          searchResults.map(result => {
+            return <ImageCard result={result} key={`${result.id}}`} />;
+          })}
 
-      {/* {isFetching && <Loader height={50} width={50} type="TailSpin" color="#2868d9" />} */}
-    </div>
+        {/* {isFetching && <Loader height={50} width={50} type="TailSpin" color="#2868d9" />} */}
+      </div>
+    </>
   );
 }
 

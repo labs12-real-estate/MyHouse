@@ -9,6 +9,31 @@
     color: #888;
     width: 60%;
     text-align: center;
+
+    @include for-phone-only {
+      width: 90%;
+    }
+  }
+
+  .decorate_svg {
+    width: 220px;
+    // height: 300px;
+    margin: 90px auto 0;
+    position: absolute;
+    left: 100px;
+    right: 0;
+    opacity: 0.07;
+
+    @include for-tablet-portrait-up {
+      left: 25px;
+    }
+    @include for-phone-only {
+      margin-top: 50px;
+      left: 25px;
+    }
+    @include for-desktop-up {
+      left: 100px;
+    }
   }
 
   .design_studio_btn_container {
@@ -17,6 +42,13 @@
     width: 100%;
     max-width: 750px;
     margin: 0 auto 30px;
+
+    @media screen and (max-width: 710px) {
+      width: 90%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
 
     @include for-phone-only {
       width: 100%;
@@ -38,6 +70,12 @@
       @include for-tablet-portrait-up {
         padding: 0.7rem 1.5rem;
       }
+
+      @media screen and (max-width: 710px) {
+        width: 27%;
+        margin-bottom: 10px;
+      }
+
       @include for-phone-only {
         width: 45%;
         margin-bottom: 10px;
