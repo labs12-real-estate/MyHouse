@@ -33,10 +33,6 @@
     }
   }
 
-  .fa-home {
-    display: none;
-  }
-
   h1 {
     font-family: 'Montserrat', 'sans-serif';
     font-style: normal;
@@ -47,14 +43,6 @@
     margin-top: 22px;
     margin-bottom: 2.6rem;
     display: block;
-  }
-  @include for-desktop-up {
-    h1 {
-      display: none;
-    }
-    .fa-home {
-      display: block;
-    }
   }
 
   .dashboard_nav_item_container {
