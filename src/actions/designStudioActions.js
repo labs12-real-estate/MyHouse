@@ -8,11 +8,6 @@ const unsplash = axios.create({
   }
 });
 
-const pageCounter = () => {
-  let page = 1;
-  return () => page++;
-};
-
 export const designSearch = searchTerm => dispatch => {
   dispatch({ type: GET_DESIGNS_FETCH, payload: searchTerm });
   return unsplash
@@ -27,14 +22,15 @@ export const designSearch = searchTerm => dispatch => {
     });
 };
 
-export const nextPage = searchTerm => dispatch => {
+export const getPage = (searchTerm, page) => dispatch => {
   dispatch({ type: NEXT_PAGE_FETCH, payload: searchTerm });
   return unsplash
     .get('/search/photos', {
-      params: { query: searchTerm, per_page: 20, page: 2 }
+      params: { query: searchTerm, per_page: 10, page }
     })
     .then(res => {
-      dispatch({ type: NEXT_PAGE_SUCCESS, payload: { data: res.data, term: searchTerm } });
+      console.log(res);
+      dispatch({ type: NEXT_PAGE_SUCCESS, payload: { data: res.data, term: searchTerm, page } });
     })
     .catch(err => {
       dispatch({ type: NEXT_PAGE_FAIL, payload: err });
