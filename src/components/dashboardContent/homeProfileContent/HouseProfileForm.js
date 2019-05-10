@@ -29,7 +29,9 @@ function HouseProfileForm(props) {
         )}
       </div>
       <div className="house_profile_form_content">
+        <div className='house_profile_form_content_gutter'>
         {isEditing ? <textarea autoFocus value={content || ''} onChange={updateContent} /> : <pre>{content || props.defaultValue}</pre>}
+      </div>
       </div>
     </div>
   );
