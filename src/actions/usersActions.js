@@ -55,11 +55,18 @@ export const getUserSession = () => dispatch => {
   dispatch({
     type: GET_USER_SESSION_FETCH
   });
-  Auth.currentSession().then(session => {
-    const { name, email, ['cognito:username']: username } = session.idToken.payload;
-    dispatch({
-      type: GET_USER_SESSION_SUCCESS,
-      payload: { name, email, username }
+  Auth.currentSession()
+    .then(session => {
+      const { name, email, 'cognito:username': username } = session.idToken.payload;
+      dispatch({
+        type: GET_USER_SESSION_SUCCESS,
+        payload: { name, email, username }
+      });
+    })
+    .catch(error => {
+      dispatch({
+        type: GET_USER_SESSION_FAIL,
+        payload: error
+      });
     });
-  });
 };
