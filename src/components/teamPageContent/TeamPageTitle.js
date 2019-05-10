@@ -5,13 +5,11 @@ export default function TeamPageTitle() {
     <div>
       <div className="team_page_title">
         <h1>Our Team</h1>
-        <p>
-          text holder
-          <br />
-          text holder
-        </p>
+        <div>
+          <strong>Our Mission:</strong> Providing transparency and empowerment to homeowner’s throughout the lifecycle of home ownership.
+        </div>
+        <div className="cloud" />
       </div>
-      <div className="cloud" />
     </div>
   );
 }

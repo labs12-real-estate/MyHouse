@@ -33,10 +33,6 @@
     }
   }
 
-  .fa-home {
-    display: none;
-  }
-
   h1 {
     font-family: 'Montserrat', 'sans-serif';
     font-style: normal;
@@ -55,14 +51,6 @@
 
     @include for-phone-only {
       margin-left: 18%;
-    }
-  }
-  @include for-desktop-up {
-    h1 {
-      display: none;
-    }
-    .fa-home {
-      display: block;
     }
   }
 

@@ -10,6 +10,7 @@
     height: 500px;
     width: 100%;
     position: absolute;
+    opacity: 1;
     @media (max-width: 1000px) {
       height: 400px;
     }
@@ -32,11 +33,11 @@
     margin: 80px 0 40px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     @include for-phone-only {
-        font-size: 6rem;
-      }
+      font-size: 6rem;
+    }
   }
 
-  p {
+  div {
     color: #fff;
     font-family: 'Roboto', 'serif';
     font-size: 2.4rem;
@@ -45,8 +46,20 @@
     opacity: 0.8;
     word-spacing: 2px;
     margin: 0 auto;
+    width: 50%;
     @include for-phone-only {
-        font-size: 2rem;
+      font-size: 2rem;
+      width: 90%;
+    }
+    h2 {
+      color: #fff;
+      font-family: 'Roboto', 'serif';
+      font-size: 2.4rem;
+      font-weight: 300;
+      line-height: 30px;
+      opacity: 0.8;
+      word-spacing: 2px;
+      margin: 0 auto;
     }
   }
 }
@@ -90,9 +103,9 @@
     display: flex;
     margin-bottom: 10rem;
     @include for-phone-only {
-        flex-direction: column;
-        align-items: center;
-      }
+      flex-direction: column;
+      align-items: center;
+    }
     .left-panel {
       width: 40%;
       text-align: right;
@@ -111,8 +124,8 @@
           height: 16rem;
         }
         @include for-phone-only {
-            margin: 0;
-          }
+          margin: 0;
+        }
       }
     }
     .right-panel {
@@ -146,31 +159,46 @@
         @media (max-width: 800px) {
           font-size: 1.2rem;
         }
+        @include for-phone-only {
+          font-size: 2.2rem;
+        }
       }
       p {
         margin: 1rem 0;
         font-family: Roboto;
         font-style: normal;
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         color: #222222;
         @media (max-width: 800px) {
-          font-size: 1.2rem;
+          font-size: 1.5rem;
         }
         @include for-phone-only {
-            text-align: center;
-          }
+          text-align: center;
+          margin: 2rem 0;
+          font-size: 1.5rem;
+        }
       }
       .fab {
         color: #0068ff;
-        margin-right: 1rem;
-        font-size: 1.6rem;
+        font-size: 2.1rem;
         @media (max-width: 800px) {
-          font-size: 2.4rem;
+          font-size: 2.1rem;
         }
         &:hover {
           color: #297eff;
         }
       }
+
+      .social {
+        display: flex;
+        justify-content: space-between;
+        width: 42%;
+        @media (max-width: 800px) {
+          width: 50%;
+        }
+        @include for-phone-only {
+          width: 75%;
+
       .disabled {
         color: #999;
         cursor: default;

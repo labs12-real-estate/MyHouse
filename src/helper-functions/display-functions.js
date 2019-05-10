@@ -73,4 +73,5 @@ export const loginModalButtonRender = (fetching, buttonText, buttonStyle) => {
     </div>
   );
 };
+
 export const normalizeContent = content => (content ? content.trim() : content);
