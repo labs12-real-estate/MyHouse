@@ -5,7 +5,7 @@ export default function TeamMembers() {
   return (
     <div className="members_container">
       {teamInfo.map(member => (
-        <div className="member_card">
+        <div className="member_card" key={member.name}>
           <div className="left-panel">
             <img src={member.url.picture} alt="" />
           </div>
