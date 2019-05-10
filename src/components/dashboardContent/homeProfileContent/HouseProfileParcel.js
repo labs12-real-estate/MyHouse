@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { acreToSqFtConversion } from '../../../helper-functions/display-functions';
 import { connect } from 'react-redux';
 import { saveHouseInfo } from '../../../actions/houseActions';
-import { useForm } from '../../../helper-functions/form-logic-functions';
 import HouseProfileParcelInput from './HouseProfileParcelInput';
-import { ConsoleLogger } from '@aws-amplify/core';
 
 const parcelDataTitles = {
   homeSquareFootage: 'Square Feet',
@@ -37,7 +35,6 @@ function HouseProfileParcel({ saveHouseInfo, id, parcelData }) {
   };
 
   const handleSelect = key => _e => {
-    console.log(key);
     setSelectedInput(key);
   };
 

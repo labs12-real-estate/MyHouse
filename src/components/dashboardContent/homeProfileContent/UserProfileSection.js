@@ -1,7 +1,6 @@
 import React from 'react';
 import userProfilePic from '../../../assets/images/house-profile/tonystark.jpg';
 import { connect } from 'react-redux';
-import { authReducer } from '../../../reducers/authReducer';
 
 function UserProfileSection({ house, user }) {
   return (
