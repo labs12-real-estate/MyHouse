@@ -171,6 +171,13 @@
           color: #297eff;
         }
       }
+      .disabled {
+        color: #999;
+        cursor: default;
+        &:hover {
+          color: #999;
+        }
+      }
     }
   }
 }
