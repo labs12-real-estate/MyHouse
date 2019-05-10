@@ -1,53 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import ImageCard from './ImageCard';
 import { getNextPage } from '../../../actions/designStudioActions';
-import Button from '../../buttons/Button';
+import { useInfiniteScroll } from '../../../helper-functions/display-functions';
+import Loader from 'react-loader-spinner';
 
-function ImageGallery({ searchResults, getNextPage, currentSearch, nextPage }) {
-  const [page, setPage] = useState(1);
-  const [images, setImages] = useState(searchResults);
-  const [isFetching, setIsFetching] = useState(false);
+function ImageGallery({ searchResults, getNextPage, currentSearch, currentPage }) {
   const getNext = () => {
-    setPage(page + 1);
-    getNextPage(currentSearch, page);
+    if (currentSearch === '') {
+      setIsFetching(false);
+    } else {
+      getNextPage(currentSearch, currentPage + 1);
+      setIsFetching(!isFetching);
+    }
   };
+  const [isFetching, setIsFetching] = useInfiniteScroll(getNext);
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    setImages(searchResults);
-  }, [searchResults]);
-
-  useEffect(() => {
-    if (!isFetching) {
-      return;
-    }
-    fetchMoreListItems();
-  }, [isFetching]);
-
-  function handleScroll() {
-    if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || isFetching) {
-      return;
-    }
-    setIsFetching(true);
-  }
-
-  function fetchMoreListItems() {
-    getNext();
-    setImages(prevState => {
-      console.log('fetchMoreListItems');
-      console.log(nextPage);
-      return [...new Set(searchResults)];
-    });
-
-    setIsFetching(false);
-  }
-
-  console.log(images);
+  console.log('isFetching', isFetching);
   return (
     <div className="design_studio_img_container">
       {searchResults &&
@@ -55,7 +24,7 @@ function ImageGallery({ searchResults, getNextPage, currentSearch, nextPage }) {
           return <ImageCard result={result} key={`${result.id}}`} />;
         })}
 
-      {isFetching && 'Fetching more list items...'}
+      {/* {isFetching && <Loader height={50} width={50} type="TailSpin" color="#2868d9" />} */}
     </div>
   );
 }
@@ -64,8 +33,7 @@ const mapStateToProps = state => {
   return {
     searchResults: state.designStudioReducer.searchResults,
     currentSearch: state.designStudioReducer.currentSearch,
-    nextPage: state.designStudioReducer.nextPage,
-    newSearch: state.designStudioReducer.newSearch
+    currentPage: state.designStudioReducer.currentPage
   };
 };
 

@@ -3,17 +3,24 @@ import { GET_DESIGNS_FETCH, GET_DESIGNS_SUCCESS, GET_DESIGNS_FAIL, NEXT_PAGE_FET
 const initialState = {
   searchResults: [],
   currentSearch: '',
-  nextPage: [],
-  newSearch: ''
+  currentPage: 1,
+  fetching: false
 };
 
 export const designStudioReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_DESIGNS_SUCCESS:
-      return { ...state, searchResults: action.payload.data, currentSearch: action.payload.term };
+      return { ...state, searchResults: action.payload.data, currentSearch: action.payload.term, currentPage: 1 };
+    case NEXT_PAGE_FETCH:
+    case GET_DESIGNS_FETCH:
+      return { ...state, fetching: true };
     case NEXT_PAGE_SUCCESS:
-      // return { ...state, nextPage: action.payload.data };
-      return { ...state, searchResults: [...state.searchResults, ...action.payload.data], newSearch: action.payload.newSearch };
+      return {
+        ...state,
+        searchResults: [...state.searchResults, ...action.payload.data],
+        currentPage: action.payload.page,
+        fetching: false
+      };
     default:
       return state;
   }

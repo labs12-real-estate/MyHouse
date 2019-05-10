@@ -4,8 +4,8 @@ import axios from 'axios';
 const unsplash = axios.create({
   baseURL: 'https://api.unsplash.com',
   headers: {
-    Authorization: 'Client-ID 532bf8ff02ed4d168a1cf59ae2511c9bdad059f443da2dcfc265dcc43210e122'
-    // Authorization: 'Client-ID 5e2bb786c9c1fb26d4745702a96291fc60621889e9afa7e6df595b272849375e'
+    // Authorization: 'Client-ID 532bf8ff02ed4d168a1cf59ae2511c9bdad059f443da2dcfc265dcc43210e122'
+    Authorization: 'Client-ID 5e2bb786c9c1fb26d4745702a96291fc60621889e9afa7e6df595b272849375e'
   }
 });
 
@@ -23,15 +23,14 @@ export const designSearch = searchTerm => dispatch => {
     });
 };
 
-export const getNextPage = (searchTerm, pageNum) => dispatch => {
+export const getNextPage = (searchTerm, page) => dispatch => {
   dispatch({ type: NEXT_PAGE_FETCH, payload: searchTerm });
   return unsplash
     .get('/search/photos', {
-      params: { query: searchTerm, per_page: 15, page: pageNum }
+      params: { query: searchTerm, per_page: 15, page }
     })
     .then(res => {
-      console.log(res);
-      dispatch({ type: NEXT_PAGE_SUCCESS, payload: { data: res.data.results, newSearch: searchTerm } });
+      dispatch({ type: NEXT_PAGE_SUCCESS, payload: { data: res.data.results, page } });
     })
     .catch(err => {
       dispatch({ type: NEXT_PAGE_FAIL, payload: err });
