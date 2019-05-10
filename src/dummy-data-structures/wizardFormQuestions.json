@@ -8,7 +8,7 @@
   },
   {
     "questionContent": "What material is your kitchen flooring",
-    "title": "Flooring",
+    "title": "Kitchen flooring",
     "options": ["Hardwood", "Engineered/Laminate", "Ceramic Tile", "Porcelain Tile/Concrete"],
     "key": "flooring",
     "selected": null
