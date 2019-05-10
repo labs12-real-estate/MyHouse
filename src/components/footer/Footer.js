@@ -11,7 +11,7 @@ function Footer() {
             MyHouse
           </h3>
           <span>
-            <Link to="/">Team</Link>
+            <Link to="/ourteam">Team</Link>
           </span>
           <span>
             <a href="https://github.com/labs12-real-estate" target="blank">
