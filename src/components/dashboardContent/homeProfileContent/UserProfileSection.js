@@ -8,13 +8,23 @@ function UserProfileSection({ house, user }) {
       <div className="house_profile_name_and_address">
         <div className="house_profile_user_section_sub_container">
           <img src={userProfilePic} alt="user" />
+          <div className='name_address'>
           <h1>{user.name}</h1>
           <h3>
-            <i className="fas fa-map-marker-alt" /> {house.address}
+            <i className="fas fa-map-marker-alt" /> 
+            {house.address}
+          </h3>
+          </div>
+        </div>
+        <div className="house_profile_user_section_sub_container small_home_address">
+          <h1>{user.name}</h1>
+          <img src={userProfilePic} alt="user" />
+          <h3>
+            {/* <i className="fas fa-map-marker-alt" />  */}{house.address} 
           </h3>
         </div>
       </div>
-      <div className="house_profile_user_section_sub_container">
+      <div className="house_profile_user_section_sub_container small_email_share">
         <span className="house_profile_links house_profile_left_padding">
           <span>
             <i className="far fa-envelope" />

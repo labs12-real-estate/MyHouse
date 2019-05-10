@@ -16,16 +16,16 @@ function HouseProfileFinishes(props) {
   };
 
   return (
-    <div className="house_profile_form">
+    <div className="house_profile_form width">
       <div className="house_profile_form_title">
-        <h2>House Finishes</h2>
+        <h2>Finishes</h2>
       </div>
       {questions.map(({ title, options, key }, qIx) => {
         const selected = options.findIndex(o => o === props[key]);
         return (
-          <div className="selection" key={qIx}>
-            <label htmlFor={title}>{title}</label>
-            <select onChange={handleChange(qIx)} value={selected === null ? NULL : selected} id={title}>
+          <div className="house_finishes_selector_container" key={qIx}>
+            <label className ='house_finishes_title'htmlFor={title}>{title}</label>
+            <select className='house_finishes_selector' onChange={handleChange(qIx)} value={selected === null ? NULL : selected} id={title}>
               <option value={NULL}>Not applicable</option>
               {options.map((opt, oIx) => (
                 <option key={oIx} value={oIx}>

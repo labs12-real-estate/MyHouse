@@ -43,6 +43,15 @@
     margin-top: 22px;
     margin-bottom: 2.6rem;
     display: block;
+    letter-spacing: 0;
+
+    @include for-tablet-portrait-up {
+      margin-left: 25%;
+    }
+
+    @include for-phone-only {
+      margin-left: 18%;
+    }
   }
 
   .dashboard_nav_item_container {
@@ -72,7 +81,7 @@
       box-shadow: 4px 5px 1px -1px RGBA(0, 0, 0, 0.1);
       border-radius: 4px;
       height: 32px;
-      width: 132px;
+      width: 100px;
       padding: none;
       cursor: pointer;
       &:focus {
@@ -80,6 +89,10 @@
       }
       &:active {
         background: #d33200;
+      }
+
+      @include for-phone-only {
+        width: 70px;
       }
     }
   } // end of dashboard_nav_item_container

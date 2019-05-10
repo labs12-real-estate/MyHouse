@@ -188,6 +188,7 @@
           color: #297eff;
         }
       }
+
       .social {
         display: flex;
         justify-content: space-between;
@@ -197,6 +198,12 @@
         }
         @include for-phone-only {
           width: 75%;
+
+      .disabled {
+        color: #999;
+        cursor: default;
+        &:hover {
+          color: #999;
         }
       }
     }

@@ -43,6 +43,27 @@ export const useWindowWidth = () => {
   return width;
 };
 
+export const useInfiniteScroll = callback => {
+  const [isFetching, setIsFetching] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (!isFetching) return;
+    callback();
+  }, [isFetching]);
+
+  function handleScroll() {
+    if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || isFetching) return;
+    setIsFetching(true);
+  }
+  console.log('INFINITE SCROLL');
+  return [isFetching, setIsFetching];
+};
+
 export const loginModalButtonRender = (fetching, buttonText, buttonStyle) => {
   return !fetching ? (
     <Button buttonStyle={buttonStyle} buttonText={buttonText} />
