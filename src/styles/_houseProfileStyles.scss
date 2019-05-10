@@ -178,8 +178,8 @@
    }
    h1{
     @include for-phone-only {
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-top: 15px;
    }
 
    @include for-tablet-portrait-up {
@@ -194,7 +194,7 @@
    h3{
     @include for-phone-only {
       font-size: 1.4rem;
-      padding-top: 10px;
+      padding-top: 15px;
     }
  
     @include for-tablet-portrait-up {
