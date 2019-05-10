@@ -1,3 +1,5 @@
+import QuinnJpg from '../assets/images/members/Quinn.jpg';
+
 export const teamInfo = [
   {
     name: 'Antony Venturini',
@@ -6,7 +8,7 @@ export const teamInfo = [
       'Lorem ipsum dolor sit amet, sumo idque deserunt usu an, vix graeco alterum te. Aperiri saperet te per. Nec utamur impedit at. Vim et nisl nemore mediocrem. Sea partem verterem eu, eros argumentum in cum. Iudico civibus eleifend pro eu.',
     url: {
       picture: 'https://picsum.photos/640/480',
-      twitter: '',
+      twitter: 'https:/google.com',
       instagram: '',
       github: '',
       facebook: '',
@@ -21,9 +23,10 @@ export const teamInfo = [
     url: {
       picture: 'https://picsum.photos/640/480',
       twitter: '',
-      instagram: '',
+      instagram: 'https:/google.com',
       github: '',
-      facebook: ''
+      facebook: '',
+      linkedin: ''
     }
   },
   {
@@ -35,8 +38,9 @@ export const teamInfo = [
       picture: 'https://picsum.photos/640/480',
       twitter: '',
       instagram: '',
-      github: '',
-      facebook: ''
+      github: 'https:/google.com',
+      facebook: '',
+      linkedin: ''
     }
   },
   {
@@ -49,7 +53,8 @@ export const teamInfo = [
       twitter: '',
       instagram: '',
       github: '',
-      facebook: ''
+      facebook: 'https:/google.com',
+      linkedin: ''
     }
   },
   {
@@ -62,7 +67,8 @@ export const teamInfo = [
       twitter: '',
       instagram: '',
       github: '',
-      facebook: ''
+      facebook: '',
+      linkedin: 'https:/google.com'
     }
   },
   {
@@ -75,7 +81,8 @@ export const teamInfo = [
       twitter: '',
       instagram: '',
       github: '',
-      facebook: ''
+      facebook: '',
+      linkedin: ''
     }
   },
   {
@@ -88,20 +95,22 @@ export const teamInfo = [
       twitter: '',
       instagram: '',
       github: '',
-      facebook: ''
+      facebook: '',
+      linkedin: ''
     }
   },
   {
     name: 'Quinn Doughtery',
     team: 'DATA SCIENCE',
     intro:
-      'Lorem ipsum dolor sit amet, sumo idque deserunt usu an, vix graeco alterum te. Aperiri saperet te per. Nec utamur impedit at. Vim et nisl nemore mediocrem. Sea partem verterem eu, eros argumentum in cum. Iudico civibus eleifend pro eu.',
+      "Quinn Dougherty is an engineer focused on data and all the math in the world. He used to be a composer and improvisor. He's been at Lambda School grinding data science since later 2018.",
     url: {
-      picture: 'https://picsum.photos/640/480',
+      picture: QuinnJpg,
       twitter: '',
       instagram: '',
       github: '',
-      facebook: ''
+      facebook: '',
+      linkedin: ''
     }
   }
 ];
