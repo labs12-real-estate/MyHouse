@@ -11,8 +11,7 @@ function UserProfileSection({ house, user }) {
           <div className='name_address'>
           <h1>{user.name}</h1>
           <h3>
-            {/* <i className="fas fa-map-marker-alt" />  */}
-            
+            <i className="fas fa-map-marker-alt" /> 
             {house.address}
           </h3>
           </div>
