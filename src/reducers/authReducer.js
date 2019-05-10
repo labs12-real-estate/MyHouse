@@ -47,7 +47,7 @@ export const authReducer = (state = initialState, action) => {
     case CLOSE_MODAL:
       return { ...state, isOpen: action.payload };
     case SIGN_IN_SUCCESS:
-      return { ...state, fetching: false, pendingConfirmation: false, isLoggedIn: true };
+      return { ...state, fetching: false, pendingConfirmation: false, isLoggedIn: true, user: action.payload };
     case SIGN_UP_SUCCESS:
       return { ...state, fetching: false, pendingConfirmation: false, isLoggedIn: true };
     case SIGN_OUT_SUCCESS:
