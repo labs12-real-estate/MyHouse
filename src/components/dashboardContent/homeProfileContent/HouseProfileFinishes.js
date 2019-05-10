@@ -18,7 +18,7 @@ function HouseProfileFinishes(props) {
   return (
     <div className="house_profile_form width">
       <div className="house_profile_form_title">
-        <h2>House Finishes</h2>
+        <h2>Finishes</h2>
       </div>
       {questions.map(({ title, options, key }, qIx) => {
         const selected = options.findIndex(o => o === props[key]);
