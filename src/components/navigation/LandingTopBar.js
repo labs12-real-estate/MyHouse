@@ -14,7 +14,7 @@ function LandingTopBar({ isLoggedIn, signOut, openModal }) {
         </Link>
       </div>
       <div className="landing_nav_item_container">
-        <Link to="#">Team</Link>
+        <Link to="/ourteam">Team</Link>
         {isLoggedIn && <Link to="/overview">Dashboard</Link>}
         {isLoggedIn ? (
           <Button buttonText="Logout" buttonStyle="landing_nav_button" clickEvent={signOut} />
