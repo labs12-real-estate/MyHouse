@@ -90,7 +90,7 @@ export const teamInfo = [
     name: 'Peyton Runyan',
     team: 'DATA SCIENCE',
     intro:
-      'Lorem ipsum dolor sit amet, sumo idque deserunt usu an, vix graeco alterum te. Aperiri saperet te per. Nec utamur impedit at. Vim et nisl nemore mediocrem. Sea partem verterem eu, eros argumentum in cum. Iudico civibus eleifend pro eu.',
+      'Peyton Runyan is a data scientist passionate about process improvement and AI microservices. Prior to joining MyHouse team he worked as analytics lead at Dash Watch.',
     url: {
       picture: PeytonJpg,
       twitter: '',
