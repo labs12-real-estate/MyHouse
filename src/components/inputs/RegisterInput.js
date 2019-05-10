@@ -45,10 +45,10 @@ function RegisterInput({ history, houseInput, confirmSignUp, signUp, pendingConf
     <form onSubmit={handleSignUp}>
       <div className="register_inputs_container">
         <h1>Register</h1>
-        <textarea name="name" value={name} onChange={handleChange} placeholder="  Name" className="register_input" type="text" />
-        <textarea name="email" value={email} onChange={handleChange} placeholder="  Email" className="register_input" type="text" />
+        <textarea name="name" value={name} onChange={handleChange} placeholder="  Full Name" className="register_input" type="text" />
+        <input name="email" value={email} onChange={handleChange} placeholder="  Email" className="register_input" type="text" />
         <textarea name="username" value={username} onChange={handleChange} placeholder="  Username" className="register_input" type="text" />
-        <textarea name="password" value={password} onChange={handleChange} placeholder="  Password" className="register_input" type="password" />
+        <input name="password" value={password} onChange={handleChange} placeholder="  Password" className="register_input" type="password" />
         <Button buttonStyle="register_button" buttonText="Register" />
       </div>
     </form>
