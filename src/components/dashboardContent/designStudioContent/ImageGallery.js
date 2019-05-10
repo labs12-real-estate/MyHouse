@@ -64,7 +64,8 @@ const mapStateToProps = state => {
   return {
     searchResults: state.designStudioReducer.searchResults,
     currentSearch: state.designStudioReducer.currentSearch,
-    nextPage: state.designStudioReducer.nextPage
+    nextPage: state.designStudioReducer.nextPage,
+    newSearch: state.designStudioReducer.newSearch
   };
 };
 

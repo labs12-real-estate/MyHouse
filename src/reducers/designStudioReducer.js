@@ -3,7 +3,8 @@ import { GET_DESIGNS_FETCH, GET_DESIGNS_SUCCESS, GET_DESIGNS_FAIL, NEXT_PAGE_FET
 const initialState = {
   searchResults: [],
   currentSearch: '',
-  nextPage: []
+  nextPage: [],
+  newSearch: ''
 };
 
 export const designStudioReducer = (state = initialState, action) => {
@@ -12,7 +13,7 @@ export const designStudioReducer = (state = initialState, action) => {
       return { ...state, searchResults: action.payload.data, currentSearch: action.payload.term };
     case NEXT_PAGE_SUCCESS:
       // return { ...state, nextPage: action.payload.data };
-      return { ...state, searchResults: [...state.searchResults, ...action.payload.data] };
+      return { ...state, searchResults: [...state.searchResults, ...action.payload.data], newSearch: action.payload.newSearch };
     default:
       return state;
   }
