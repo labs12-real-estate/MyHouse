@@ -198,12 +198,14 @@
         }
         @include for-phone-only {
           width: 75%;
+        }
 
-      .disabled {
-        color: #999;
-        cursor: default;
-        &:hover {
+        .disabled {
           color: #999;
+          cursor: default;
+          &:hover {
+            color: #999;
+          }
         }
       }
     }
