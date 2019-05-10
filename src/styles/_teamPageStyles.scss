@@ -178,16 +178,7 @@
           font-size: 1.5rem;
         }
       }
-      .fab {
-        color: #0068ff;
-        font-size: 2.1rem;
-        @media (max-width: 800px) {
-          font-size: 2.1rem;
-        }
-        &:hover {
-          color: #297eff;
-        }
-      }
+      
 
       .social {
         display: flex;
@@ -198,12 +189,25 @@
         }
         @include for-phone-only {
           width: 75%;
+        }
 
-      .disabled {
-        color: #999;
-        cursor: default;
-        &:hover {
+          
+        .fab {
+          color: #0068ff;
+          font-size: 2.1rem;
+          @media (max-width: 800px) {
+            font-size: 2.1rem;
+          }
+          &:hover {
+            color: #297eff;
+          }
+        }
+        .disabled {
           color: #999;
+          cursor: default;
+          &:hover {
+            color: #999;
+          }
         }
       }
     }
