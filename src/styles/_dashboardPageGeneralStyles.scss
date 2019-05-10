@@ -9,13 +9,7 @@
     margin-left: 0;
     transition: 500ms;
     @include for-desktop-up {
-      margin-left: $dashboard_sidebar_width;
-    }
-    @include for-tablet-portrait-up {
-      margin-left: 0;
-    }
-    @include for-desktop-up {
-      margin-left: 70px;
+      padding-left: $dashboard_sidebar_width;
     }
     .dashboard_content_title {
       font-family: Roboto;
