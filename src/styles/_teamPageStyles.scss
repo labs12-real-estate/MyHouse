@@ -178,16 +178,7 @@
           font-size: 1.5rem;
         }
       }
-      .fab {
-        color: #0068ff;
-        font-size: 2.1rem;
-        @media (max-width: 800px) {
-          font-size: 2.1rem;
-        }
-        &:hover {
-          color: #297eff;
-        }
-      }
+      
 
       .social {
         display: flex;
@@ -200,6 +191,17 @@
           width: 75%;
         }
 
+          
+        .fab {
+          color: #0068ff;
+          font-size: 2.1rem;
+          @media (max-width: 800px) {
+            font-size: 2.1rem;
+          }
+          &:hover {
+            color: #297eff;
+          }
+        }
         .disabled {
           color: #999;
           cursor: default;
