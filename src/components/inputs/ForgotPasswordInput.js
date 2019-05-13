@@ -16,10 +16,10 @@ function ForgotPasswordInput({ toggleForgotPassword, fetching, forgotPassword, e
       <h2>Forgot Password?</h2>
       <div className="login_gradient" />
       <form onSubmit={e => forgotPassword(e, creds)}>
-        <h3>Enter your username and we will e-mail you a confirmation code.</h3>
+        {error ? forgotPasswordAttemptsExceeded(error, 'login_modal_error') : <h3>Enter your username and we will e-mail you a confirmation code.</h3>}
+        {error ? incorrectForgotPasswordCreds(error, 'login_modal_error') : null}
+
         <input placeholder="Username" name="username" value={creds.username} onChange={handleChange} className="login_input" type="text" />
-        {error && forgotPasswordAttemptsExceeded(error, 'login_modal_error')}
-        {error && incorrectForgotPasswordCreds(error, 'login_modal_error')}
         {loginModalButtonRender(fetching, 'Submit', 'modal_login_button')}
         <p onClick={toggleForgotPassword}>Back</p>
       </form>
