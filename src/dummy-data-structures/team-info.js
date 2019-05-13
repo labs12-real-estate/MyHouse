@@ -50,7 +50,7 @@ export const teamInfo = [
     intro:
       'Jordan Stoddard is a Full Stack Web Developer with 10 years experience in Project Management and Growth. \n In his previous career he had the opportunity to lead teams of 35+ and manage projects for some of the largest and well known companies in the world such as: Google, Bank of America, VMWare, Stanford University, IBM, Greylock Realty Partners and many others.',
     url: {
-      picture: 'https://zoom.us/p/jWk1V8RISV-TfsfmVaJXbQ/41d8979b-f997-407e-b965-4345974fc59c-1167?type=large',
+      picture: 'https://us04web.zoom.us/p/_ckQOX08Qy6bTpBGmSwZug/889e8b57-5179-4b48-a24d-5498b1c9b730?type=large&_=6849',
       twitter: 'https://twitter.com/Jdogstoddard',
       instagram: '',
       github: 'https://github.com/Jordan-Stoddard',
