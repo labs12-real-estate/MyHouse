@@ -45,9 +45,29 @@
   form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 535px;
+    justify-content: flex-end;
+    height: 425px;
     padding: 35px;
+
+    .login_modal_error {
+      color: red;
+      text-align: center;
+      font-size: 1.4rem;
+      font-family: Montserrat;
+      font-weight: 500;
+      margin-bottom: 10px;
+      margin-top: 100px;
+    }
+
+    .login_modal_error_2 {
+      color: red;
+      text-align: center;
+      font-size: 1.4rem;
+      font-family: Montserrat;
+      font-weight: 500;
+      margin-bottom: 20px;
+      margin-top: 75px;
+    }
 
     h3 {
       font-family: Montserrat;
@@ -57,6 +77,18 @@
       color: #666;
       text-align: center;
       margin-bottom: 20px;
+      margin-top: 75px;
+    }
+
+    h4 {
+      font-family: Montserrat;
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 1.6rem;
+      color: #666;
+      text-align: center;
+      margin-bottom: 10px;
+      margin-top: 100px;
     }
 
     .modal_login_button {
@@ -66,7 +98,7 @@
       font-style: normal;
       font-weight: normal;
       font-size: 1.8rem;
-      line-height: 2.1rem;
+      line-height: 3.1rem;
       text-align: center;
       height: 36px;
       color: #ffffff;

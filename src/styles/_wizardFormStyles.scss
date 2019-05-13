@@ -655,6 +655,7 @@
             -moz-user-select: none; /* Firefox */
             -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+            cursor: pointer;
             @include for-phone-only {
               font-size: 2rem;
             }
@@ -684,6 +685,7 @@
             border-color: rgb(196, 196, 196);
             border-radius: 0.8rem;
             background-color: white;
+            cursor: pointer;
             input:checked ~ .checkmark {
               background-color: rgb(110, 164, 233);
               border-color: rgb(110, 164, 233);
@@ -694,6 +696,7 @@
               cursor: pointer;
               height: 0;
               width: 0;
+              cursor: pointer;
             }
             .checkmark {
               position: absolute;
@@ -705,6 +708,7 @@
               border: 1px solid;
               border-color: rgb(196, 196, 196);
               border-radius: 50%;
+              cursor: pointer;
             }
             &:hover input ~ .checkmark {
               background-color: rgb(110, 164, 233);
