@@ -1,3 +1,8 @@
+// This fix iphone scrolling issue
+// html {  
+//   -webkit-overflow-scrolling: touch;
+// }
+
 .team_page_body {
   @include radial-gradient(#6c9de2, #79adff, #3560d0, #0038a5, #003498);
   width: 100%;
