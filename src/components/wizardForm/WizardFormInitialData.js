@@ -54,7 +54,11 @@ function WizardFormInitialData({ step, handleNext }) {
               </div>
             </div>
             <div className="bottom_container">
-              <p>Complete our quick survey for a more accurate valuation</p>
+              <p>
+                In order to get a more accurate valuation, just answer a few more questions.
+                <br />
+                <br /> Click next to get started.
+              </p>
               <Button clickEvent={handleNext} buttonStyle="next_button" buttonText="Next" />
             </div>
           </div>
