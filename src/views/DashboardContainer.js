@@ -3,12 +3,16 @@ import { connect } from 'react-redux';
 import DashboardTopBar from '../components/navigation/DashboardTopBar';
 import SideBar from '../components/navigation/SideBar';
 import { toggleSideBar } from '../actions/displayActions';
-import { getUserHouse, getUserSession } from '../actions/usersActions';
+import { getUserPhotos } from '../actions/storageActions';
+import { getUserHouse } from '../actions/usersActions';
 
-function DashboardContainer({ isOpen, toggleSideBar, getUserHouse, username, children, getUserSession }) {
+function DashboardContainer({ isOpen, toggleSideBar, getUserHouse, username, children, getUserPhotos }) {
   useEffect(() => {
-    username !== '' && getUserHouse(username);
-  }, [getUserHouse, username]); // get house data from AWS server on first render
+    if (username !== '') {
+      getUserHouse(username);
+      getUserPhotos();
+    }
+  }, [getUserHouse, getUserPhotos, username]); // get house data from AWS server on first render
   return (
     <div>
       <DashboardTopBar toggleSideBar={toggleSideBar} />
@@ -22,5 +26,5 @@ function DashboardContainer({ isOpen, toggleSideBar, getUserHouse, username, chi
 
 export default connect(
   ({ authReducer, displayReducer }) => ({ isOpen: displayReducer.isOpen, username: authReducer.user.username }),
-  { toggleSideBar, getUserHouse, getUserSession }
+  { toggleSideBar, getUserHouse, getUserPhotos }
 )(DashboardContainer);
