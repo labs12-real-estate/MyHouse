@@ -686,10 +686,6 @@
             border-radius: 0.8rem;
             background-color: white;
             cursor: pointer;
-            input:checked ~ .checkmark {
-              background-color: rgb(110, 164, 233);
-              border-color: rgb(110, 164, 233);
-            }
             input {
               position: absolute;
               opacity: 0;
@@ -698,20 +694,8 @@
               width: 0;
               cursor: pointer;
             }
-            .checkmark {
-              position: absolute;
-              top: 0.75rem;
-              right: 1.5rem;
-              height: 0.75rem;
-              width: 0.75rem;
-              background-color: white;
-              border: 1px solid;
-              border-color: rgb(196, 196, 196);
-              border-radius: 50%;
-              cursor: pointer;
-            }
-            &:hover input ~ .checkmark {
-              background-color: rgb(110, 164, 233);
+            &:hover {
+              border-color: rgb(110, 164, 233);
             }
           }
           div[select='true'] {
@@ -727,7 +711,7 @@
             bottom: 1rem;
             right: auto;
             display: flex;
-            flex-direction: column-reverse;
+            flex-direction: column;
             justify-content: center;
           }
           .next_button {
@@ -768,7 +752,7 @@
               height: 4rem;
             }
             margin-right: 2rem;
-            background: rgb(110, 164, 233);
+            background: rgb(18, 106, 246);
             font-family: Roboto;
             font-style: normal;
             font-weight: 500;
@@ -783,13 +767,13 @@
             padding: none;
             cursor: pointer;
             &:hover {
-              background: rgb(18, 106, 246);
+              background: rgb(26, 114, 254);
             }
             &:focus {
               outline: none;
             }
             &:active {
-              background: rgb(13, 55, 139);
+              background: rgb(8, 96, 236);
             }
           }
         }
@@ -819,17 +803,18 @@
           width: 35%;
           background-color: rgb(236, 240, 244);
           @media (max-width: 800px) {
-            width: 100%;
-            top: 430px;
-            box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
-            z-index: 0;
-            margin-bottom: 20px;
-            height: 530px;
+            display: none;
+            // width: 100%;
+            // top: 430px;
+            // box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
+            // z-index: 0;
+            // margin-bottom: 20px;
+            // height: 530px;
           }
-          @include for-phone-only {
-            height: 430px;
-            transform: translateY(99px);
-          }
+          // @include for-phone-only {
+          //   height: 430px;
+          //   transform: translateY(99px);
+          // }
           .register_inputs_container {
             background-image: url('../assets/images/form-gradient-top.png');
             background-repeat: no-repeat;
@@ -862,7 +847,7 @@
               margin: 6rem 0 2rem;
               text-align: center;
               font-size: 1.5rem;
-              color: rgb(160, 160, 160); 
+              color: rgb(160, 160, 160);
               @media (max-width: 800px) {
                 font-size: 2.5rem;
                 margin: 13rem 0 3rem;
@@ -893,32 +878,6 @@
                 border-bottom: 1.5px solid #2868d9;
               }
             }
-            .register_button {
-              margin-right: 2rem;
-              width: 100%;
-              background: #e63700;
-              font-family: Roboto;
-              font-style: normal;
-              font-weight: 500;
-              font-size: 1.6rem;
-              line-height: 1.6rem;
-              border: none;
-              color: white;
-              box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-              border-radius: 4px;
-              height: 32px;
-              padding: none;
-              cursor: pointer;
-              &:hover {
-                background: #f13800;
-              }
-              &:focus {
-                outline: none;
-              }
-              &:active {
-                background: #d33200;
-              }
-            }
           }
         }
         .review_container {
@@ -938,6 +897,19 @@
           @include for-phone-only {
             height: 400px;
             bottom: -100px;
+            margin-bottom: 20px;
+          }
+          .shadow {
+            display: none;
+            @include for-phone-only {
+              display: inline;
+              z-index: -1;
+              position: absolute;
+              width: 100%;
+              height: 80px;
+              bottom: 0;
+              box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
+            }
           }
           .selection {
             width: 85%;
@@ -996,49 +968,81 @@
             }
           }
           p {
-            span.mobile {
-              display: none;
-              @media (max-width: 800px) {
-                display: inline;
-              }
-            }
             color: red;
             font-size: 1.6rem;
             text-align: center;
             margin: 0 4rem;
           }
-          button {
+          .button_container {
             align-self: flex-end;
-            margin-right: 10rem;
-            margin-bottom: 3rem;
-            background: rgb(110, 164, 233);
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 1.6rem;
-            line-height: 1.6rem;
-            border: none;
-            color: white;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-            height: 32px;
-            width: 100px;
-            padding: none;
-            cursor: pointer;
+            margin-right: 3rem;
+            margin-bottom: 2rem;
             @include for-phone-only {
               align-self: center;
               width: 80%;
-              margin: 0 0 1rem 0;
-              height: 4rem;
+              margin: 0;
+              margin-bottom: 0.5rem;
             }
-            &:hover {
+            .prev_button {
+              margin-right: 2rem;
               background: rgb(18, 106, 246);
+              font-family: Roboto;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 1.6rem;
+              line-height: 1.6rem;
+              border: none;
+              color: white;
+              box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+              border-radius: 4px;
+              height: 32px;
+              width: 100px;
+              padding: none;
+              cursor: pointer;
+              @include for-phone-only {
+                width: 100%;
+                height: 4rem;
+              }
+              &:hover {
+                background: rgb(26, 114, 254);
+              }
+              &:focus {
+                outline: none;
+              }
+              &:active {
+                background: rgb(8, 96, 236);
+              }
             }
-            &:focus {
-              outline: none;
-            }
-            &:active {
-              background: rgb(13, 55, 139);
+            .register_button {
+              @include for-phone-only {
+                margin: 0.5rem 0;
+                width: 100%;
+                height: 4rem;
+              }
+              margin-right: 2rem;
+              background: #e63700;
+              font-family: Roboto;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 1.6rem;
+              line-height: 1.6rem;
+              border: none;
+              color: white;
+              box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+              border-radius: 4px;
+              height: 32px;
+              width: 100px;
+              padding: none;
+              cursor: pointer;
+              &:hover {
+                background: #f13800;
+              }
+              &:focus {
+                outline: none;
+              }
+              &:active {
+                background: #d33200;
+              }
             }
           }
         }

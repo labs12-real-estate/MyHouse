@@ -21,7 +21,8 @@ import {
   FORGOT_PASSWORD_FETCH,
   FORGOT_PASSWORD_FAIL,
   FORGOT_PASSWORD_PENDING,
-  FORGOT_PASSWORD_SUCCESS
+  FORGOT_PASSWORD_SUCCESS,
+  SEND_REGISTER_ERROR
 } from './index';
 
 export const openModal = e => {
@@ -186,4 +187,11 @@ export const confirmForgotPassword = (e, { username, new_password, code }) => di
         payload: error
       });
     });
+};
+
+export const sendRegisterError = error => dispatch => {
+  dispatch({
+    type: SEND_REGISTER_ERROR,
+    payload: error
+  });
 };
