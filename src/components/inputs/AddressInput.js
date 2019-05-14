@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import axios from 'axios';
 import { getValuation } from '../../actions/landingpageActions';
+import { useWindowWidth } from '../../helper-functions/display-functions';
+import Loader from 'react-loader-spinner';
 
-function AddressInput({ history, getValuation }) {
+function AddressInput({ history, getValuation, fetching }) {
   const [sessiontoken, setSessiontoken] = useState('');
   const [address, setAddress] = useState('');
   const [predictions, setPredictions] = useState([]);
@@ -68,7 +70,14 @@ function AddressInput({ history, getValuation }) {
       <div className="address_searchbar">
         <form onSubmit={getValue}>
           <input onChange={handleInputChange} placeholder="Enter address..." value={address} name="address" autoComplete="off" />
-          <button className="form-button">Get Started</button>
+          {useWindowWidth() >= 600 && (
+            <button className="form-button">{fetching ? <Loader height={25} width={25} type="TailSpin" color="#FFF" /> : 'Get Started'}</button>
+          )}
+          {useWindowWidth() <= 600 && (
+            <button className="form-button">
+              {fetching ? <Loader height={25} width={25} type="TailSpin" color="#FFF" /> : <i className="fas fa-search" />}
+            </button>
+          )}
         </form>
         <div className="search_result_container">
           {predictions.length > 0 && address ? (
@@ -86,9 +95,15 @@ function AddressInput({ history, getValuation }) {
   );
 }
 
+const mapStateToProps = ({ landingpageReducer: { fetching } }) => {
+  return {
+    fetching
+  };
+};
+
 export default withRouter(
   connect(
-    null,
+    mapStateToProps,
     {
       getValuation
     }

@@ -12,6 +12,7 @@ function DashboardTopBar({ toggleSideBar, signOut, history, closeModal }) {
       {path !== '/wizard-form' && <i onClick={toggleSideBar} className="sidebar_toggle fas fa-bars fa-3x phone_only" />}
       <div className="dashboard_nav_home_icon">
         <Link to="/">
+          <i className="fas fa-home fa-2x" />
           <h1>MyHouse</h1>
         </Link>
       </div>

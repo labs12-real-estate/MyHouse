@@ -3,6 +3,22 @@ import { acreToSqFtConversion } from '../../../helper-functions/display-function
 import { connect } from 'react-redux';
 import { saveHouseInfo } from '../../../actions/houseActions';
 import HouseProfileParcelInput from './HouseProfileParcelInput';
+import { parcelDataTitles } from '../../../dummy-data-structures/house-profile-parcel-dummy-data';
+
+function HouseProfileParcel({ saveHouseInfo, id, parcelData }) {
+  const [selectedInput, setSelectedInput] = useState(null);
+  const inputSubmit = (key, _value) => e => {
+    e.preventDefault();
+    // If the key is `lotSquareFootage`, we have to convert user input (acres) to
+    // match what we have in the backend (square feet)
+    const value = key === 'lotSquareFootage' ? acreToSqFtConversion(_value) : _value;
+    const newParcelData = {
+      ...parcelData,
+      [key]: value
+    };
+    saveHouseInfo({ changes: { parcelData: newParcelData }, id });
+    setSelectedInput(null);
+  };
 
 const parcelDataTitles = {
 	homeSquareFootage: 'Square Feet',

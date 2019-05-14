@@ -1,22 +1,61 @@
 .landing_nav_container {
   display: flex;
   justify-content: space-between;
-  margin: 0 auto;
-  max-width: 1400px;
-  padding: 2.5rem 0 2rem;
+  align-items: center;
+  padding: 1.1rem 3%;
+  height: $dashboard_nav_height;
+  width: 100%;
+  @include for-phone-only {
+    padding: 1.1rem 3%;
+  }
+  @include for-tablet-portrait-up {
+    padding: 1.1rem 3%;
+  }
+  @include for-desktop-up {
+    padding: 1.1rem 1%;
+  }
 
   .landing_nav_home_icon {
     color: white;
     opacity: 0.75;
     cursor: pointer;
-    margin-left: 30px;
+    display: flex;
+    align-items: flex-end;
+    h1 {
+      font-family: 'Montserrat', 'sans-serif';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 2.5rem;
+      line-height: 4.2rem;
+      margin-left: 5%;
+      display: block;
+      letter-spacing: 0;
+      @include for-phone-only {
+        display: none;
+      }
+    }
+    .fa-2x {
+      font-size: 2.5rem;
+    }
+    p {
+      color: #fff;
+      font-family: 'Roboto', 'serif';
+      font-size: 1.4rem;
+      font-weight: 300;
+      line-height: 1.6rem;
+      opacity: 0.8;
+      word-spacing: 2px;
+      opacity: 1;
+      word-spacing: 2px;
+      margin-left: 15px;
+    }
 
     @include for-tablet-portrait-up {
-      margin-left: 5px;
+      // margin-left: 5px;
     }
 
     @include for-phone-only {
-      margin-left: 5px;
+      // margin-left: 5px;
     }
 
     a {
@@ -24,6 +63,8 @@
       font-size: 1.6rem;
       color: inherit;
       opacity: inherit;
+      display: flex;
+      align-items: center;
       &:hover {
         opacity: 1;
       }
@@ -31,28 +72,18 @@
   }
 
   .landing_nav_item_container {
-    width: 25%;
-    justify-content: space-between;
+    width: 300px;
+    justify-content: flex-end;
     display: flex;
     align-items: center;
 
     @include for-phone-only {
-      width: 88%;
-      margin-right: 5px;
-      justify-content: space-evenly;
-    }
-
-    @include for-tablet-portrait-up {
-      width: 53%;
-      margin-right: 5px;
-    }
-
-    @include for-tablet-landscape-up {
-      width: 40%;
+      width: 300px;
+      justify-content: flex-end;
     }
 
     @include for-desktop-up {
-      width: 30%;
+      width: 300px;
     }
 
     a {
@@ -64,8 +95,9 @@
       font-size: 1.6rem;
       line-height: 1.6rem;
       opacity: 0.8;
+      margin-right: 25px;
       @include for-phone-only {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
       &:hover {
         opacity: 1;

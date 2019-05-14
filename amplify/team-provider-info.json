@@ -1,40 +1,40 @@
 {
-    "production": {
-        "awscloudformation": {
-            "AuthRoleName": "labs12realestatefe-20190430082755-authRole",
-            "UnauthRoleArn": "arn:aws:iam::673706820281:role/labs12realestatefe-20190430082755-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::673706820281:role/labs12realestatefe-20190430082755-authRole",
-            "Region": "us-east-2",
-            "DeploymentBucketName": "labs12realestatefe-20190430082755-deployment",
-            "UnauthRoleName": "labs12realestatefe-20190430082755-unauthRole",
-            "StackName": "labs12realestatefe-20190430082755",
-            "StackId": "arn:aws:cloudformation:us-east-2:673706820281:stack/labs12realestatefe-20190430082755/86e63d70-6b5c-11e9-b86a-06ba3123ae48"
-        },
-        "categories": {
-            "auth": {
-                "cognito3debf5fd": {
-                    "hostedUIProviderCreds": "[]"
-                }
-            }
-        }
+  "production": {
+    "awscloudformation": {
+      "AuthRoleName": "labs12realestatefe-20190430082755-authRole",
+      "UnauthRoleArn": "arn:aws:iam::673706820281:role/labs12realestatefe-20190430082755-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::673706820281:role/labs12realestatefe-20190430082755-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "labs12realestatefe-20190430082755-deployment",
+      "UnauthRoleName": "labs12realestatefe-20190430082755-unauthRole",
+      "StackName": "labs12realestatefe-20190430082755",
+      "StackId": "arn:aws:cloudformation:us-east-2:673706820281:stack/labs12realestatefe-20190430082755/86e63d70-6b5c-11e9-b86a-06ba3123ae48"
     },
-    "dev": {
-        "awscloudformation": {
-            "AuthRoleName": "labs12realestatefe-20190505110116-authRole",
-            "UnauthRoleArn": "arn:aws:iam::673706820281:role/labs12realestatefe-20190505110116-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::673706820281:role/labs12realestatefe-20190505110116-authRole",
-            "Region": "us-east-2",
-            "DeploymentBucketName": "labs12realestatefe-20190505110116-deployment",
-            "UnauthRoleName": "labs12realestatefe-20190505110116-unauthRole",
-            "StackName": "labs12realestatefe-20190505110116",
-            "StackId": "arn:aws:cloudformation:us-east-2:673706820281:stack/labs12realestatefe-20190505110116/c792e560-6f5f-11e9-bb5e-060ae44bf6ec"
-        },
-        "categories": {
-            "auth": {
-                "cognito3debf5fd": {
-                    "hostedUIProviderCreds": "[]"
-                }
-            }
+    "categories": {
+      "auth": {
+        "cognito3debf5fd": {
+          "hostedUIProviderCreds": "[]"
         }
+      }
     }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "labs12realestatefe-20190505110116-authRole",
+      "UnauthRoleArn": "arn:aws:iam::673706820281:role/labs12realestatefe-20190505110116-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::673706820281:role/labs12realestatefe-20190505110116-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "labs12realestatefe-20190505110116-deployment",
+      "UnauthRoleName": "labs12realestatefe-20190505110116-unauthRole",
+      "StackName": "labs12realestatefe-20190505110116",
+      "StackId": "arn:aws:cloudformation:us-east-2:673706820281:stack/labs12realestatefe-20190505110116/c792e560-6f5f-11e9-bb5e-060ae44bf6ec"
+    },
+    "categories": {
+      "auth": {
+        "cognito3debf5fd": {
+          "hostedUIProviderCreds": "[]"
+        }
+      }
+    }
+  }
 }
