@@ -124,6 +124,7 @@
       width: 250px;
       transition: 0.3s;
       background: #f4f4f4;
+      animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 
       @include for-tablet-portrait-up {
         width: 95%;
@@ -132,5 +133,22 @@
         width: 100%;
       }
     }
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
