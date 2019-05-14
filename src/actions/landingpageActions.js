@@ -2,6 +2,7 @@ import { GET_VALUATION_FETCH, GET_VALUATION_SUCCESS, GET_VALUATION_FAIL } from '
 import axios from 'axios';
 
 export const getValuationv2 = (address, history) => dispatch => {
+  console.log('igethere');
   dispatch({ type: GET_VALUATION_FETCH });
   const key = 'AIzaSyBQG-Y3BtowkEvTBq3dPPROa-GuMm1Rfpk';
   const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${key}`;

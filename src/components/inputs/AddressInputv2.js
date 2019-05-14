@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 import { getValuationv2 } from '../../actions/landingpageActions';
 
-function AddressInput({ history, getValuation }) {
+function AddressInputv2({ history, getValuationv2 }) {
   const [sessionToken, setSessionToken] = useState('');
   const [address, setAddress] = useState('');
   const [predictions, setPredictions] = useState([]);
@@ -74,5 +74,5 @@ export default withRouter(
     {
       getValuationv2
     }
-  )(AddressInput)
+  )(AddressInputv2)
 );
