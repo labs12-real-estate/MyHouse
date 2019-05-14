@@ -2,15 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signOut, openModal } from '../../actions/authActions';
+import { useWindowScrollY } from '../../helper-functions/display-functions';
+import { stickyStyle } from '../../styles/inlineStyles/navStickyStyles';
 import Button from '../buttons/Button';
 import LoginModal from '../modals/LoginModal';
 
 function LandingTopBar({ isLoggedIn, signOut, openModal }) {
   return (
-    <div className="landing_nav_container">
+    <div style={useWindowScrollY() > 0 ? stickyStyle : {}} className="landing_nav_container">
       <div className="landing_nav_home_icon">
         <Link to="/">
           <i className="fas fa-home fa-2x" />
+          <h1>MyHouse</h1>
         </Link>
       </div>
       <div className="landing_nav_item_container">
