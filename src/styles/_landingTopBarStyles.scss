@@ -3,8 +3,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.1rem 3%;
-  background: none;
-  // box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
   height: $dashboard_nav_height;
   width: 100%;
   @include for-phone-only {
