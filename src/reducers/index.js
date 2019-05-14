@@ -5,6 +5,7 @@ import { userReducer } from './userReducer';
 import { playgroundReducer } from './playgroundReducer';
 import { landingpageReducer } from './landingpageReducer';
 import { displayReducer } from './displayReducer';
+import { storageReducer } from './storageReducer';
 
 export default combineReducers({
   authReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
   userReducer,
   playgroundReducer,
   landingpageReducer,
-  displayReducer
+  displayReducer,
+  storageReducer
 });
