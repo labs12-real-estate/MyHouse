@@ -11,6 +11,7 @@ function LandingTopBar({ isLoggedIn, signOut, openModal }) {
       <div className="landing_nav_home_icon">
         <Link to="/">
           <i className="fas fa-home fa-2x" />
+          <h1>MyHouse</h1>
         </Link>
       </div>
       <div className="landing_nav_item_container">
