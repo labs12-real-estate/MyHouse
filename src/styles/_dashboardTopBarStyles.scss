@@ -9,15 +9,26 @@
   height: $dashboard_nav_height;
   width: 100%;
   z-index: 2;
+  @include for-phone-only {
+    padding: 1.1rem 3%;
+  }
+  @include for-tablet-portrait-up {
+    padding: 1.1rem 3%;
+  }
+  @include for-desktop-up {
+    padding: 1.1rem 1%;
+  }
 
   i,
   h1 {
     color: white;
-    opacity: 0.75;
   }
   .sidebar_toggle {
     display: block;
     cursor: pointer;
+  }
+  .fa-2x {
+    font-size: 2.5rem;
   }
   @include for-desktop-up {
     .sidebar_toggle {
@@ -26,10 +37,17 @@
   }
 
   .dashboard_nav_home_icon {
+    display: flex;
+    opacity: 0.75;
+    &:hover {
+      opacity: 0.8;
+    }
     a {
       cursor: pointer;
       text-decoration: none;
       color: inherit;
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -40,17 +58,15 @@
     font-size: 2.5rem;
     line-height: 4.2rem;
     margin-left: 5%;
-    margin-top: 22px;
-    margin-bottom: 2.6rem;
     display: block;
     letter-spacing: 0;
 
     @include for-tablet-portrait-up {
-      margin-left: 25%;
+      // margin-left: 25%;
     }
 
     @include for-phone-only {
-      margin-left: 18%;
+      // margin-left: 18%;
     }
   }
 
@@ -88,7 +104,10 @@
         outline: none;
       }
       &:active {
-        background: #d33200;
+        background: #dc3300;
+      }
+      &:hover {
+        background: #f13800;
       }
 
       @include for-phone-only {

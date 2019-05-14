@@ -256,29 +256,32 @@
               }
             }
             .bottom_container {
-              height: 20%;
+              height: 36%;
               width: 90%;
               display: flex;
-              align-items: center;
+              align-items: flex-end;
               justify-content: space-between;
               @include for-phone-only {
                 flex-direction: column;
                 width: 100%;
-                height: 25%;
+                height: 45%;
+                align-items: center;
               }
 
               p {
                 font-family: 'Roboto', 'sans-serif';
-                font-weight: 300;
+                font-weight: 400;
                 font-size: 1.4rem;
                 line-height: 1.8rem;
-                color: gray;
+                color: rgb(46, 46, 46);
                 margin-left: 8%;
                 width: 50%;
                 @include for-phone-only {
                   margin: 0;
                   width: 70%;
                   text-align: center;
+                  margin-bottom: 15px;
+                  font-size: 1.6rem;
                 }
               }
 
@@ -862,7 +865,7 @@
               margin: 6rem 0 2rem;
               text-align: center;
               font-size: 1.5rem;
-              color: rgb(160, 160, 160); 
+              color: rgb(160, 160, 160);
               @media (max-width: 800px) {
                 font-size: 2.5rem;
                 margin: 13rem 0 3rem;
