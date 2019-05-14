@@ -7,7 +7,8 @@ export const loginModalStyle = () => {
       padding: '0px'
     },
     closeIcon: {
-      fill: '#FFFFFF'
+      fill: '#FFFFFF',
+      cursor: 'pointer'
     },
     overlay: {
       width: '100%'

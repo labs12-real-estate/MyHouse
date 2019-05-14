@@ -43,6 +43,27 @@ export const incorrectSetPasswordCreds = function(error, className) {
   return error && error === 'Username cannot be empty' ? <span className={className}>Please enter a valid MyHouse username.</span> : null;
 };
 
+export const incorrectSetPasswordCode = function(error, className) {
+  if (error.message) {
+    return error.message.includes('Invalid verification code provided') ? (
+      <span className={className}>
+        Either code expired, invalid code or incorrect username. <br />
+        Please try again.
+      </span>
+    ) : null;
+  }
+  return error && error === 'Code cannot be empty' ? <span className={className}>Please enter a confirmation code.</span> : null;
+};
+
+export const incorrectSetPasswordPassword = function(error, className) {
+  if (error.code) {
+    return error.code.includes('InvalidParameterException') ? (
+      <span className={className}>New password must include uppercase & lowercase letter, number, symbol and be longer than 8 characters.</span>
+    ) : null;
+  }
+  return error && error === 'Password cannot be empty' ? <span className={className}>Password field cannot be empty.</span> : null;
+};
+
 // For RegisterInput
 
 export const emptyCreds = function(error, className) {
