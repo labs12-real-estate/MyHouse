@@ -77,3 +77,20 @@ export const loginModalButtonRender = (fetching, buttonText, buttonStyle) => {
 };
 
 export const normalizeContent = content => (content ? content.trim() : content);
+
+export const useWindowScrollY = () => {
+  const [yPosition, setYPosition] = useState(window.innerYPosition);
+
+  useEffect(() => {
+    updateScrollYPosition();
+    window.addEventListener('scroll', updateScrollYPosition);
+    return () => {
+      window.removeEventListener('scroll', updateScrollYPosition);
+    };
+  }, []);
+
+  const updateScrollYPosition = () => {
+    setYPosition(window.scrollY);
+  };
+  return yPosition;
+};
