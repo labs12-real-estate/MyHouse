@@ -68,6 +68,7 @@ export const GET_VALUATION_FAIL = 'GET_VALUATION_FAIL';
 // displayAction Types
 
 export const TOGGLE_SIDEBAR_DRAWER = 'TOGGLE_SIDEBAR_DRAWER';
+export const CLOSE_SIDEBAR_DRAWER = 'CLOSE_SIDEBAR_DRAWER';
 export const SET_MOBILE_UPGRADE = 'SET_MOBILE_UPGRADE';
 
 // storageAction Types
