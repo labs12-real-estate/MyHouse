@@ -123,6 +123,8 @@
 
     img {
       width: 250px;
+      transition: 0.3s;
+      background: #f4f4f4;
 
       @include for-tablet-portrait-up {
         width: 95%;
