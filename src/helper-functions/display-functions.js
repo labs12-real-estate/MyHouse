@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import Button from '../components/buttons/Button';
+import Loader from 'react-loader-spinner';
 
 export const activeNavItemStyles = (path1, path2) => {
   return path1 !== path2 ? 'dashboard_sidebar_navitem' : 'dashboard_sidebar_active_navitem';
@@ -39,4 +41,56 @@ export const useWindowWidth = () => {
     setWidth(window.innerWidth);
   };
   return width;
+};
+
+export const useInfiniteScroll = callback => {
+  const [isFetching, setIsFetching] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (!isFetching) return;
+    callback();
+  }, [isFetching]);
+
+  function handleScroll() {
+    if (Math.ceil(window.innerHeight + document.documentElement.scrollTop) !== Math.ceil(document.documentElement.offsetHeight) || isFetching) {
+      return;
+    }
+    setIsFetching(true);
+  }
+
+  return [isFetching, setIsFetching];
+};
+
+export const loginModalButtonRender = (fetching, buttonText, buttonStyle) => {
+  return !fetching ? (
+    <Button buttonStyle={buttonStyle} buttonText={buttonText} />
+  ) : (
+    <div style={{ textAlign: 'center' }}>
+      <Loader height={50} width={50} type="TailSpin" color="#2868d9" />
+    </div>
+  );
+};
+
+export const normalizeContent = content => (content ? content.trim() : content);
+
+export const useWindowScrollY = () => {
+  const [yPosition, setYPosition] = useState(window.innerYPosition);
+
+  useEffect(() => {
+    updateScrollYPosition();
+    window.addEventListener('scroll', updateScrollYPosition);
+    return () => {
+      window.removeEventListener('scroll', updateScrollYPosition);
+    };
+  }, []);
+
+  const updateScrollYPosition = () => {
+    setYPosition(window.scrollY);
+  };
+  return yPosition;
 };

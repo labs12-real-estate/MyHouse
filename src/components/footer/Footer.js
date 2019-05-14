@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { scrollToTop } from '../../helper-functions/onClick-logic';
+import { animateScroll as scroll } from 'react-scroll';
 
 function Footer() {
   return (
     <footer className="landing_footer">
       <div className="footer_top">
         <div>
-          <h3 onClick={scrollToTop} title="Back to top">
+          <h3 onClick={() => scroll.scrollToTop({ smooth: 'easeInOutCubic', duration: 1500 })} title="Back to top">
             MyHouse
           </h3>
           <span>
-            <Link to="/">Team</Link>
+            <Link to="/ourteam">Team</Link>
           </span>
           <span>
             <a href="https://github.com/labs12-real-estate" target="blank">

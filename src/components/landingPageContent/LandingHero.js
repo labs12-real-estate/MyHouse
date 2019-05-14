@@ -1,12 +1,14 @@
 import React from 'react';
 import AddressInput from '../inputs/AddressInput';
 import housePng from '../../assets/images/isometric-house.png';
+import { useWindowWidth } from '../../helper-functions/display-functions';
 
 export default function LandingHero() {
   return (
     <div>
       <div className="hero">
-        <h1>MyHouse</h1>
+        <h1>{useWindowWidth() <= 600 ? 'MyHouse' : 'Discover your value'}</h1>
+
         <p>
           We have the most precise home valuation techniques in the industry.
           <br />

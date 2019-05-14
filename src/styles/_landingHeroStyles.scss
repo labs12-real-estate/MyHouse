@@ -5,11 +5,20 @@
   h1 {
     color: #fff;
     font-family: 'Montserrat', 'sans-serif';
-    font-size: 7.2rem;
+    font-size: 6.8rem;
     font-weight: 700;
-    letter-spacing: -2px;
-    margin: 80px 0 40px;
+    letter-spacing: 4px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 140px 0 40px;
+    @include for-phone-only {
+      margin-top: 60px;
+    }
+    @include for-tablet-portrait-up {
+      margin-top: 80px;
+    }
+    @include for-tablet-landscape-up {
+      margin-top: 140px;
+    }
   }
 
   p {
@@ -31,6 +40,11 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-bottom: 120px;
+
+    @include for-phone-only {
+      margin-bottom: 60px;
+    }
 
     form {
       margin: 70px 0;
@@ -39,17 +53,13 @@
       justify-content: center;
 
       @include for-phone-only {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
         margin: 50px 0 0;
+        align-items: flex-end;
       }
 
       @include for-tablet-portrait-up {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
         margin: 60px auto 0;
+        align-items: flex-end;
       }
 
       @include for-tablet-landscape-up {
@@ -71,13 +81,15 @@
 
         @include for-phone-only {
           margin-top: 15px;
-          width: 365px;
+          width: 255px;
         }
         @include for-tablet-portrait-up {
           margin-top: 15px;
+          width: 450px;
         }
         @include for-tablet-landscape-up {
           margin-top: none;
+          width: 500px;
         }
 
         &:focus {
@@ -96,6 +108,16 @@
         height: 41px;
         width: 150px;
         box-shadow: 4px 5px 1px -1px RGBA(0, 0, 0, 0.1);
+
+        @include for-phone-only {
+          width: 110px;
+        }
+        @include for-tablet-portrait-up {
+          width: 125px;
+        }
+        @include for-tablet-landscape-up {
+          width: 150px;
+        }
 
         &:hover {
           background: #f13800;
@@ -127,7 +149,7 @@
         }
 
         @include for-tablet-portrait-up {
-          width: 500px;
+          width: 575px;
         }
 
         @include for-tablet-landscape-up {
@@ -145,7 +167,6 @@
           text-align: left;
           padding: 7px 2rem;
           width: 100%;
-
           &:hover {
             background: #e4e4e4;
             color: #d33200;

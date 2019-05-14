@@ -2,17 +2,18 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { isEditing, saveHouseInfo, cancelSaveHouseInfo } from '../../../actions/houseActions';
 import { useInput } from '../../../helper-functions/form-logic-functions';
+import { normalizeContent } from '../../../helper-functions/display-functions';
 
 function HouseProfileForm(props) {
-  const [content, setContent, setContentDirect] = useInput(props.content);
+  const [content, updateContent, setContent] = useInput(normalizeContent(props.content));
   useEffect(() => {
-    setContentDirect(props.content);
-  }, [props.content]);
+    setContent(props.content);
+  }, [props.content, setContent]);
   const handleEdit = () => props.isEditing(props.field);
   const handleCancel = () => {
     props.cancelSaveHouseInfo(props.field);
   };
-  const handleSave = () => props.saveHouseInfo({ changes: { [props.field]: content }, field: props.field, id: props.id });
+  const handleSave = () => props.saveHouseInfo({ changes: { [props.field]: normalizeContent(content) }, field: props.field, id: props.id });
   const isEditing = props.editingFields.includes(props.field);
   return (
     <div className="house_profile_form">
@@ -27,8 +28,11 @@ function HouseProfileForm(props) {
           </span>
         )}
       </div>
-
-      {!isEditing ? <p>{content || props.defaultValue}</p> : <textarea value={content || ''} onChange={setContent} />}
+      <div className="house_profile_form_content">
+        <div className='house_profile_form_content_gutter'>
+        {isEditing ? <textarea autoFocus value={content || ''} onChange={updateContent} /> : <pre>{content || props.defaultValue}</pre>}
+      </div>
+      </div>
     </div>
   );
 }

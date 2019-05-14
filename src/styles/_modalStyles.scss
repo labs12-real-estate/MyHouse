@@ -17,6 +17,22 @@
     left: 30px;
   }
 
+  h2 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 4.4rem;
+    text-align: center;
+    letter-spacing: -0.05em;
+    color: #ffffff;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    left: 10px;
+  }
+
   .login_gradient {
     background-image: url('../assets/illustrations/form-gradient-top.png');
     width: 336px;
@@ -29,11 +45,78 @@
   form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 535px;
+    justify-content: flex-end;
+    height: 425px;
     padding: 35px;
 
+    .login_modal_error {
+      color: red;
+      text-align: center;
+      font-size: 1.4rem;
+      font-family: Montserrat;
+      font-weight: 500;
+      margin-bottom: 10px;
+      margin-top: 100px;
+    }
+
+    .login_modal_error_2 {
+      color: red;
+      text-align: center;
+      font-size: 1.4rem;
+      font-family: Montserrat;
+      font-weight: 500;
+      margin-bottom: 20px;
+      margin-top: 75px;
+    }
+
+    h3 {
+      font-family: Montserrat;
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 1.6rem;
+      color: #666;
+      text-align: center;
+      margin-bottom: 20px;
+      margin-top: 75px;
+    }
+
+    h4 {
+      font-family: Montserrat;
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 1.6rem;
+      color: #666;
+      text-align: center;
+      margin-bottom: 10px;
+      margin-top: 100px;
+    }
+
     .modal_login_button {
+      background: #e63700;
+      border-radius: 4px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.8rem;
+      line-height: 3.1rem;
+      text-align: center;
+      height: 36px;
+      color: #ffffff;
+      border: none;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      margin-top: 25px;
+      cursor: pointer;
+      &:hover {
+        background: #f13800;
+      }
+      &:focus {
+        outline: none;
+      }
+      &:active {
+        background: #d33200;
+      }
+    }
+    .modal_login_button_2 {
       background: #e63700;
       border-radius: 4px;
       font-family: Roboto;
@@ -46,11 +129,20 @@
       color: #ffffff;
       border: none;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      margin-top: 25px;
+      cursor: pointer;
+      &:hover {
+        background: #f13800;
+      }
+      &:focus {
+        outline: none;
+      }
+      &:active {
+        background: #d33200;
+      }
     }
   }
 
-  a {
+  p {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -76,6 +168,7 @@
     height: 40px;
     padding-left: 5%;
     transition: all 0.3s ease-in-out;
+    border-radius: 0px;
 
     &:focus {
       outline: none;
