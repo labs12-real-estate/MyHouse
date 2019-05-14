@@ -55,7 +55,7 @@ function WizardFormInitialData({ step, handleNext }) {
             </div>
             <div className="bottom_container">
               <p>
-                In order to get a more accurate valuation, just answer a few more questions.
+                In order to get a more accurate valuation, just answer a few questions.
                 <br />
                 <br /> Click next to get started.
               </p>
