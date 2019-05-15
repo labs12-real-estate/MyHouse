@@ -19,6 +19,7 @@
     "react-loader-spinner": "^2.3.0",
     "react-loading-skeleton": "^1.1.1",
     "react-modal": "^3.8.1",
+    "react-places-autocomplete": "^7.2.1",
     "react-redux": "^7.0.2",
     "react-responsive-modal": "^3.6.0",
     "react-router-dom": "^5.0.0",
