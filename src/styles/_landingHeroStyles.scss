@@ -195,19 +195,32 @@
   img {
     width: 40%;
     min-width: 500px;
-    max-width: 550px;
+    max-width: 800px;
     display: block;
     margin: 0 auto;
     position: relative;
-    top: 80px;
+    top: -20px;
     transform: translateY(0px);
     animation: float 6s ease-in-out infinite;
 
     @include for-phone-only {
+      top: 20px;
       min-width: 350px;
+      width: 90%;
     }
     @include for-tablet-portrait-up {
+      top: 40px;
       min-width: 500px;
+      max-width: 700px;
+      width: 80%;
+    }
+    @media (min-width: 750px) {
+      width: 85%;
+    }
+    @include for-desktop-up {
+      top: 20px;
+      max-width: 700px;
+      width: 90%;
     }
   }
 } // end cloud_top
