@@ -109,10 +109,6 @@
       &:hover {
         background: #f13800;
       }
-
-      @include for-phone-only {
-        width: 70px;
-      }
     }
   } // end of dashboard_nav_item_container
 } // end of dashboard_nav_container

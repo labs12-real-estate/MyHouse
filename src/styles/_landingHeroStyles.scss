@@ -78,6 +78,7 @@
         padding: 10px 20px;
         width: 500px;
         box-shadow: 4px 5px 1px -1px RGBA(0, 0, 0, 0.1);
+        border-radius: 0px;
 
         @include for-phone-only {
           margin-top: 15px;
