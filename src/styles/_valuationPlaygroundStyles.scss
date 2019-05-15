@@ -48,9 +48,10 @@
 
     .valuation_playground_jumbo_img {
       width: 100%;
-      background-image: url('../assets/images/house-profile/housewithpool.png');
+      background-image: url('../assets/images//paint-roller.jpg');
       height: 363px;
       background-position: center;
+      background-size: cover;
 
       @include for-phone-only {
         height: 200px;
