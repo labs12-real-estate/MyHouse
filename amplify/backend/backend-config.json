@@ -13,5 +13,11 @@
 				"securityType": "AMAZON_COGNITO_USER_POOLS"
 			}
 		}
+	},
+	"storage": {
+		"myhouseimages": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
 	}
 }

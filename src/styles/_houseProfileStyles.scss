@@ -1,11 +1,22 @@
 .house_profile_backdrop_image {
-  background-image: url('../assets/images/house-profile/housewithpool.png');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: linear-gradient(dodgerblue, lightgray);
   width: 100%;
   height: 350px;
   position: relative;
+
+  .backdrop_figure {
+    display: flex;
+    place-content: center;
+    height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+
+    .backdrop_img {
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+    }
+  }
 
   button {
     position: absolute;
@@ -102,8 +113,6 @@
         }
       }
 
-
-
       .house_profile_links {
         font-family: 'Roboto', 'sans-serif';
         font-size: 1.4rem;
@@ -130,11 +139,14 @@
       .house_profile_left_padding {
         padding-left: 170px;
 
-        @include for-phone-only {}
+        @include for-phone-only {
+        }
 
-        @include for-tablet-portrait-up {}
+        @include for-tablet-portrait-up {
+        }
 
-        @include for-desktop-up {}
+        @include for-desktop-up {
+        }
       }
 
       .house_profile_features {
@@ -144,11 +156,14 @@
         justify-content: space-between;
         height: 70px;
 
-        @include for-phone-only {}
+        @include for-phone-only {
+        }
 
-        @include for-tablet-portrait-up {}
+        @include for-tablet-portrait-up {
+        }
 
-        @include for-desktop-up {}
+        @include for-desktop-up {
+        }
       }
     }
 
@@ -182,9 +197,11 @@
           padding-top: 15px;
         }
 
-        @include for-tablet-portrait-up {}
+        @include for-tablet-portrait-up {
+        }
 
-        @include for-desktop-up {}
+        @include for-desktop-up {
+        }
       }
 
       h3 {
@@ -199,17 +216,10 @@
           text-align: center;
         }
 
-        @include for-desktop-up {}
+        @include for-desktop-up {
+        }
       }
-
     }
-
-
-
-
-
-
-
 
     img {
       position: absolute;
@@ -220,7 +230,6 @@
       @include for-phone-only {
         margin: 0px;
         position: relative;
-
       }
 
       @include for-tablet-portrait-up {
@@ -229,7 +238,6 @@
 
       @include for-desktop-up {
         position: absolute;
-
       }
     }
 
@@ -239,13 +247,12 @@
       justify-content: space-between;
 
       h1 {
-
         font-size: 2.4rem;
         font-family: 'Roboto', 'sans-serif';
         font-weight: 700;
 
         @include for-phone-only {
-          padding-left: 0px
+          padding-left: 0px;
         }
 
         @include for-tablet-portrait-up {
@@ -312,7 +319,7 @@
 
   @include for-tablet-portrait-up {
     margin-right: 20px;
-    flex-direction: column
+    flex-direction: column;
   }
 
   @include for-desktop-up {
@@ -322,8 +329,6 @@
     width: 96%;
     display: flex;
   }
-
-
 
   .house_profile_forms_left {
     // border: 1px solid green;
@@ -336,7 +341,7 @@
     @include for-tablet-portrait-up {
       width: 94%;
       margin-right: 100px;
-      margin-left: 20px
+      margin-left: 20px;
     }
 
     @include for-desktop-up {
@@ -359,7 +364,7 @@
       justify-content: space-between;
       width: 94%;
       margin-right: 20px;
-      margin-left: 20px
+      margin-left: 20px;
     }
 
     @include for-desktop-up {
@@ -369,8 +374,6 @@
       width: 40%;
     }
   }
-
-
 
   .house_profile_form {
     background: #fff;
@@ -417,7 +420,6 @@
         @include for-phone-only {
           font-size: 1.6rem;
         }
-
       }
 
       textarea {
@@ -433,8 +435,6 @@
       justify-content: space-between;
       width: 100%;
       margin: 0 auto;
-
-
 
       h2 {
         font-family: 'Roboto', 'sans-serif';
@@ -454,9 +454,8 @@
         }
 
         @include for-desktop-up {
-          margin-left: 30px
+          margin-left: 30px;
         }
-
       }
 
       i {
@@ -464,8 +463,6 @@
         color: #bbb;
         margin-right: 15px;
       }
-
-
     }
 
     h3 {
@@ -478,107 +475,100 @@
     }
 
     span {
-      font-weight: 600
+      font-weight: 600;
+
+      span {
+        font-weight: 600;
+      }
+    }
+
+    .width {
+      width: 49%;
+
+      @include for-phone-only {
+        width: 100%;
+      }
+
+      @include for-tablet-portrait-up {
+        width: 49%;
+      }
+
+      @include for-desktop-up {
+        width: 88%;
+      }
     }
   }
 
-  .width {
-    width: 49%;
+  //Begin of house finishes
+  .house_finishes_selector_container {
+    background: #ffffff;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
+    height: 62px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4.2%;
 
     @include for-phone-only {
-      width: 100%
+      margin-right: 0px;
+      flex-direction: column;
     }
 
     @include for-tablet-portrait-up {
-      width: 49%;
+      margin-right: 0px;
     }
 
     @include for-desktop-up {
-      width: 88%;
+      margin-right: 0px;
     }
-  }
-}
 
-//Begin of house finishes
-.house_finishes_selector_container {
-  background: #ffffff;
-  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
-  height: 62px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 4.2%;
-
-  @include for-phone-only {
-    margin-right: 0px;
-    flex-direction: column;
-
-  }
-
-  @include for-tablet-portrait-up {
-    margin-right: 0px;
-  }
-
-  @include for-desktop-up {
-    margin-right: 0px;
-  }
-
-  .house_finishes_selector::-ms-expand {
-    display: none;
-  }
-
-  .house_finishes_title {
-    font-family: 'Montserrat', 'sans-serif';
-    font-size: 1.2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #888;
-
-    @include for-phone-only {
-      padding-top: 8px;
-
+    .house_finishes_selector::-ms-expand {
+      display: none;
     }
-  }
 
+    .house_finishes_title {
+      font-family: 'Montserrat', 'sans-serif';
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #888;
 
-  .house_finishes_selector {
-    border: none;
-    cursor: pointer;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1.6rem;
-    line-height: 2.2rem;
-    width: 50%;
-    max-width: 250px;
-    height: 3.5rem;
-    display: block;
-    // text-align doesn't work
+      @include for-phone-only {
+        padding-top: 8px;
+      }
+    }
 
-    @include for-phone-only {
-      width: 100%;
-      max-width: 100%;
-      padding-top: 5px;
-      margin-top: 5px;
+    .house_finishes_selector {
+      border: none;
+      cursor: pointer;
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+      width: 50%;
+      max-width: 250px;
       height: 3.5rem;
+      display: block;
+      // text-align doesn't work
+
+      @include for-phone-only {
+        width: 100%;
+        max-width: 100%;
+        padding-top: 5px;
+        margin-top: 5px;
+        height: 3.5rem;
+      }
+
+      &:focus {
+        outline: none;
+      }
     }
 
-    &:focus {
-      outline: none;
+    .house_finishes_select_border {
+      border: 1px solid #c4c4c4;
     }
-
-
-  }
-
-
-
-  .house_finishes_select_border {
-    border: 1px solid #c4c4c4;
-  }
-
-  // end house finishes
-
-
+  } // end house finishes
 }
 
 // begin parcel data
@@ -595,7 +585,6 @@
   font-weight: 700;
   text-transform: uppercase;
   color: #888;
-
 
   @include for-phone-only {
     margin-right: 0px;
@@ -634,7 +623,6 @@
         outline: none;
       }
     }
-
   }
 
   .house_parcel_input {
@@ -660,14 +648,9 @@
     &:focus {
       outline: none;
     }
-
-
   }
-
-
 
   .house_finishes_select_border {
     border: 1px solid #c4c4c4;
   }
-
 }

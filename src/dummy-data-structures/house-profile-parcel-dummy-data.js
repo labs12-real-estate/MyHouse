@@ -7,3 +7,10 @@ export const houseProfileDataParcel = [
     lotSize: '.15 Acres'
   }
 ];
+
+export const parcelDataTitles = {
+  homeSquareFootage: 'Square Feet',
+  numBathrooms: 'Bathrooms',
+  numBedrooms: 'Bedrooms',
+  lotSquareFootage: 'Acres'
+};
