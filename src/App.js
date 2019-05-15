@@ -12,7 +12,6 @@ import ValuationPlaygroundPage from './views/ValuationPlaygroundPage';
 import MortgageCalculatorPage from './views/MortgageCalculatorPage';
 import DesignStudioPage from './views/DesignStudioPage';
 import TeamPage from './views/TeamPage';
-import AddressInputv2 from './components/inputs/AddressInputv2';
 // Note: onUpdate on Routes sends the user back to the top of the page on route switch.
 function App({ isLoggedInAction }) {
   useEffect(() => {
@@ -21,7 +20,6 @@ function App({ isLoggedInAction }) {
   return (
     <div>
       <Switch>
-        <Route onUpdate={window.scrollTo(0, 0)} path="/test" exact component={AddressInputv2} />
         <Route onUpdate={window.scrollTo(0, 0)} path="/" exact component={LandingPage} />
         <Route onUpdate={window.scrollTo(0, 0)} path="/ourteam" exact component={TeamPage} />
         <PrivateRouteWF onUpdate={window.scrollTo(0, 0)} path="/wizard-form" component={WizardFormPage} />
