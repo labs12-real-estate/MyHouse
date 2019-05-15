@@ -7,7 +7,7 @@ function SideBarNavItem({ navItem: { navTitle, path, icon }, location }) {
     <Link to={path}>
       <div className={activeNavItemStyles(path, location.pathname)}>
         <div className="dashboard_sidebar_icon">
-          <i className={icon} />
+          <img src={icon} alt={navTitle} title={navTitle} />
         </div>
         <h2 className="dashboard_sidebar_title">{navTitle}</h2>
       </div>

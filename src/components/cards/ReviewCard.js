@@ -1,12 +1,12 @@
 import React from 'react';
 
-function ReviewCard(props) {
+function ReviewCard({ author, comment, avatar }) {
   return (
     <div className="review_card">
-      <img src="https://www.w3schools.com/howto/img_avatar.png" alt="avatar" />
+      <img src={avatar} alt="avatar" />
       <div className="review_text">
-        <p>{props.comment}</p>
-        <h5>{props.author}</h5>
+        <p>{comment}</p>
+        <h5>{author}</h5>
       </div>
     </div>
   );

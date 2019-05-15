@@ -12,6 +12,7 @@ import ValuationPlaygroundPage from './views/ValuationPlaygroundPage';
 import MortgageCalculatorPage from './views/MortgageCalculatorPage';
 import DesignStudioPage from './views/DesignStudioPage';
 import TeamPage from './views/TeamPage';
+import SettingsPage from './views/SettingsPage'
 
 // Note: onUpdate on Routes sends the user back to the top of the page on route switch.
 function App({ isLoggedInAction }) {
@@ -29,6 +30,7 @@ function App({ isLoggedInAction }) {
         <PrivateRoute onUpdate={window.scrollTo(0, 0)} path="/valuation-playground" component={ValuationPlaygroundPage} />
         <PrivateRoute onUpdate={window.scrollTo(0, 0)} path="/mortgage-calculator" component={MortgageCalculatorPage} />
         <PrivateRoute onUpdate={window.scrollTo(0, 0)} path="/design-studio" component={DesignStudioPage} />
+        <PrivateRoute onUpdate={window.scrollTo(0, 0)} path="/settings" component={SettingsPage} />
       </Switch>
     </div>
   );
