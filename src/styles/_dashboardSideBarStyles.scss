@@ -1,7 +1,7 @@
 .dashboard_sidebar_container {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(0deg, #083691, #083691);
+  background: linear-gradient(0deg, #2d3950, #2d3950);
   width: $dashboard_sidebar_width;
   height: 100%;
   position: fixed;
@@ -32,6 +32,11 @@
     text-align: center;
     height: 100px;
     border-bottom: 0.5px solid rgba(194, 194, 194, 0.4%);
+    opacity: 0.9;
+
+    &:hover {
+      opacity: 1;
+    }
 
     .dashboard_sidebar_title {
       font-family: Roboto;
@@ -43,8 +48,12 @@
     }
 
     .dashboard_sidebar_icon {
-      color: #94aacd;
+      opacity: 1;
       margin-bottom: 10px;
+      img {
+        height: 30px;
+        fill: #94aacd;
+      }
     }
   }
 
@@ -56,8 +65,10 @@
     align-items: center;
     text-align: center;
     height: 100px;
-    background: #002874;
-    border-left: 4px solid #e63700;
+    background: linear-gradient(0deg, #2d3950, #2d3950);
+    border-left: 5px solid #e63700;
+    border-bottom: 0.5px solid rgba(194, 194, 194, 0.2%);
+    opacity: 1;
 
     .dashboard_sidebar_title {
       font-family: Roboto;
@@ -69,8 +80,11 @@
     }
 
     .dashboard_sidebar_icon {
-      color: #94aacd;
+      opacity: 1;
       margin-bottom: 10px;
+      img {
+        height: 30px;
+      }
     }
   } // end of dashboard_sidebar_navitem
 } // end of dashboard_sidebar_container
