@@ -106,9 +106,11 @@
         font-family: 'Roboto', 'serif';
         font-size: 1.8rem;
         font-weight: 300;
-        height: 41px;
+        height: 40.8px;
         width: 150px;
         box-shadow: 4px 5px 1px -1px RGBA(0, 0, 0, 0.1);
+        padding: 0;
+        margin: 0;
 
         @include for-phone-only {
           width: 110px;
