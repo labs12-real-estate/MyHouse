@@ -5,10 +5,11 @@ import { getValuation } from '../../actions/landingpageActions';
 import { useWindowWidth } from '../../helper-functions/display-functions';
 import Loader from 'react-loader-spinner';
 
-function AddressInput({ history, getValuation, fetching }) {
+function AddressInput({ history, getValuation, fetching, isLoggedIn }) {
   const [sessionToken, setSessionToken] = useState('');
   const [address, setAddress] = useState('');
   const [predictions, setPredictions] = useState([]);
+  const [error, setError] = useState(['']);
 
   // Variables for Google Place API
   const google = window.google;
@@ -17,6 +18,7 @@ function AddressInput({ history, getValuation, fetching }) {
   // Get session token on first render
   /* eslint-disable */
   useEffect(() => {
+    setError("");
     setSessionToken(new google.maps.places.AutocompleteSessionToken());
   }, []);
   /* eslint-disable */
@@ -40,7 +42,9 @@ function AddressInput({ history, getValuation, fetching }) {
 
   const getValue = e => {
     e.preventDefault();
-    getValuation(address, history);
+    if (isLoggedIn) {
+      setError('Please log out and try again.');
+    } else getValuation(address, history);
   };
 
   const fillAddress = (address, e) => {
@@ -51,6 +55,7 @@ function AddressInput({ history, getValuation, fetching }) {
   return (
     <div>
       <div className="address_searchbar">
+        {error && isLoggedIn && <p>{error}</p>}
         <form onSubmit={getValue}>
           <input onChange={handleInputChange} placeholder="Enter address..." value={address} name="address" autoComplete="off" />
           {useWindowWidth() >= 600 && (
@@ -78,9 +83,10 @@ function AddressInput({ history, getValuation, fetching }) {
   );
 }
 
-const mapStateToProps = ({ landingpageReducer: { fetching } }) => {
+const mapStateToProps = ({landingpageReducer, authReducer}) => {
   return {
-    fetching
+    fetching: landingpageReducer.fetching,
+    isLoggedIn: authReducer.isLoggedIn
   };
 };
 
