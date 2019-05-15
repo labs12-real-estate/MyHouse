@@ -15,9 +15,11 @@ function AddressInput({ history, getValuation, fetching }) {
   const location = new google.maps.LatLng(43.3148, -85.6024); // Latitude, longtitude of Michigan
 
   // Get session token on first render
+  /* eslint-disable */
   useEffect(() => {
     setSessionToken(new google.maps.places.AutocompleteSessionToken());
   }, []);
+  /* eslint-disable */
 
   const displaySuggestions = (predictions, status) => {
     if (status !== google.maps.places.PlacesServiceStatus.OK) {
