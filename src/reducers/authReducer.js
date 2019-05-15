@@ -44,7 +44,7 @@ const initialState = {
 export const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case OPEN_MODAL:
-      return { ...state, isOpen: action.payload };
+      return { ...state, isOpen: action.payload, submittedConfirmation: false, pendingConfirmation: false };
     case CLOSE_MODAL:
       return { ...state, isOpen: action.payload };
     case SIGN_IN_SUCCESS:
@@ -63,7 +63,7 @@ export const authReducer = (state = initialState, action) => {
     case FORGOT_PASSWORD_FAIL:
       return { ...state, fetching: false, error: action.payload };
     case SIGN_UP_FETCH:
-      return { ...state, fetching: true, pendingConfirmation: true, isLoggedIn: false };
+      return { ...state, fetching: true, pendingConfirmation: false, isLoggedIn: false };
     case SEND_REGISTER_ERROR:
       return { ...state, fetching: false, pendingConfirmation: false, isLoggedIn: false, error: action.payload };
     case SIGN_IN_FETCH:

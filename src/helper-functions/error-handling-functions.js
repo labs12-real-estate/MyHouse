@@ -83,7 +83,17 @@ export const existingUser = function(error, className) {
 };
 
 export const emptyNameEmail = function(error, className) {
-  return error && error === 'Please enter name and email address.' ? <span className={className}>Please enter name and valid email address.</span> : null;
+  return error && error === 'Please enter name and valid email address.' ? <span className={className}>Please enter name and valid email address.</span> : null;
+};
+
+export const clientsidePasswordValidation = function(error, className) {
+  return error && error === 'Password must have at least 8 characters, 1 lower case, 1 upper case, and 1 symbol.' ? (
+    <span className={className}>Password must have at least 8 characters, 1 lower case, 1 upper case, and 1 symbol.</span>
+  ) : null;
+};
+
+export const clientsideCredsValidation = function(error, className) {
+  return error && error === 'Please enter username and password.' ? <span className={className}>Please enter username and password.</span> : null;
 };
 
 export const wrongCode = function(error, className) {
