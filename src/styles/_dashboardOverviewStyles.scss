@@ -15,11 +15,9 @@
   }
 
   .house_image {
-    background-image: url('../assets/images/overview/Drone-Photo-2.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 300px;
+    width: 100%;
+    object-fit: cover;
   }
 
   .address_value_flex {
