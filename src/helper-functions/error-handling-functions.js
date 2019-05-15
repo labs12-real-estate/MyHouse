@@ -63,3 +63,29 @@ export const incorrectSetPasswordPassword = function(error, className) {
   }
   return error && error === 'Password cannot be empty' ? <span className={className}>Password field cannot be empty.</span> : null;
 };
+
+// For RegisterInput
+
+export const emptyCreds = function(error, className) {
+  return (error && error === 'Username cannot be empty') || (error && error === 'Password cannot be empty') ? (
+    <span className={className}>Please enter username and password.</span>
+  ) : null;
+};
+
+export const invalidPassword = function(error, className) {
+  return (error.message && error.name.includes('InvalidParameterException')) || (error.message && error.name.includes('InvalidPasswordException')) ? (
+    <span className={className}>Password must have at least 8 characters, 1 lower case, 1 upper case, and 1 symbol.</span>
+  ) : null;
+};
+
+export const existingUser = function(error, className) {
+  return error.message && error.message.includes('User already exists') ? <span className={className}>This username already exists.</span> : null;
+};
+
+export const emptyNameEmail = function(error, className) {
+  return error && error === 'Please enter name and email address.' ? <span className={className}>Please enter name and valid email address.</span> : null;
+};
+
+export const wrongCode = function(error, className) {
+  return error ? <span className={className}>{error.message}</span> : null;
+};

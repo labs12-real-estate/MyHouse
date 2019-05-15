@@ -12,7 +12,6 @@ import ValuationPlaygroundPage from './views/ValuationPlaygroundPage';
 import MortgageCalculatorPage from './views/MortgageCalculatorPage';
 import DesignStudioPage from './views/DesignStudioPage';
 import TeamPage from './views/TeamPage';
-
 // Note: onUpdate on Routes sends the user back to the top of the page on route switch.
 function App({ isLoggedInAction }) {
   useEffect(() => {
