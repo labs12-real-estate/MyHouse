@@ -114,7 +114,8 @@
 
         @include for-phone-only {
           width: 110px;
-          height: 42.8px;
+          height: 41.8px;
+          margin-bottom: 1.5px;
         }
         @include for-tablet-portrait-up {
           width: 125px;
