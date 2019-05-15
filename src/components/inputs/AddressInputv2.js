@@ -30,6 +30,7 @@ function AddressInputv2({ history, getValuationv2 }) {
     const string = e.target.value;
     setAddress(string);
     var service = new google.maps.places.AutocompleteService();
+    console.log(string.length);
     if ([3, 6, 10, 15].includes(string.length)) {
       service.getQueryPredictions({ input: string, sessionToken: sessionToken, location: location, radius: 500, types: ['address'] }, displaySuggestions);
     }

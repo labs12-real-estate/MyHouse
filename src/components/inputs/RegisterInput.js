@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { useForm } from '../../helper-functions/form-logic-functions';
 import { confirmSignUp, signUp, sendRegisterError } from '../../actions/authActions';
 import Button from '../buttons/Button';
-import { emptyCreds, invalidPassword, existingUser, emptyNameEmail } from '../../helper-functions/error-handling-functions';
+import { emptyCreds, invalidPassword, existingUser, emptyNameEmail, wrongCode } from '../../helper-functions/error-handling-functions';
 import { validateEmail } from '../../helper-functions/form-logic-functions';
 
 const initialForm = {
@@ -68,6 +68,7 @@ function RegisterInput({ history, houseInput, confirmSignUp, signUp, pendingConf
       <form onSubmit={handleConfirmSubmit}>
         <h1>Register</h1>
         <div className="login_gradient" />
+        {error && wrongCode(error, 'register_modal_error')}
         <p className="confirmation_code">Confirmation Code</p>
         <input name="code" value={code} onChange={handleChangeCode} className="register_input" type="text" />
         <Button buttonStyle="modal_register_button" buttonText="Confirm" />

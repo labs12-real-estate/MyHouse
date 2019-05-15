@@ -12,7 +12,11 @@ export const getValuationv2 = (address, history) => dispatch => {
       let complete_address = data.data.results[0].formatted_address;
       complete_address = complete_address.slice(0, -5); // remove 5 characters ", USA" at the end
       axios
-        .post('http://testing1-env.q5yaggzwbs.us-east-2.elasticbeanstalk.com/api', { address: complete_address })
+        .post(
+          'http://testing1-env.q5yaggzwbs.us-east-2.elasticbeanstalk.com/api',
+          { address: complete_address },
+          { headers: { 'Access-Control-Allow-Origin': '*' } }
+        )
         .then(data => {
           dispatch({ type: GET_VALUATION_SUCCESS });
           localStorage.setItem('initialData', JSON.stringify(data));

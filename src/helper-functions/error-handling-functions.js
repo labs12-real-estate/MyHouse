@@ -85,3 +85,7 @@ export const existingUser = function(error, className) {
 export const emptyNameEmail = function(error, className) {
   return error && error === 'Please enter name and email address.' ? <span className={className}>Please enter name and valid email address.</span> : null;
 };
+
+export const wrongCode = function(error, className) {
+  return error ? <span className={className}>{error.message}</span> : null;
+};
