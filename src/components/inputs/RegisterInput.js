@@ -2,8 +2,10 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { useForm } from '../../helper-functions/form-logic-functions';
-import { confirmSignUp, signUp } from '../../actions/authActions';
+import { confirmSignUp, signUp, sendRegisterError } from '../../actions/authActions';
 import Button from '../buttons/Button';
+import { emptyCreds, invalidPassword, existingUser, emptyNameEmail, wrongCode } from '../../helper-functions/error-handling-functions';
+import { validateEmail } from '../../helper-functions/form-logic-functions';
 
 const initialForm = {
   username: '',
@@ -13,7 +15,7 @@ const initialForm = {
 };
 
 // @TODO: This could be refactored into subcomponents
-function RegisterInput({ history, houseInput, confirmSignUp, signUp, pendingConfirmation, submittedConfirmation }) {
+function RegisterInput({ history, houseInput, confirmSignUp, signUp, pendingConfirmation, submittedConfirmation, error, sendRegisterError }) {
   const [formState, handleChange] = useForm(initialForm);
   const [{ code }, handleChangeCode] = useForm({
     code: ''
@@ -30,7 +32,11 @@ function RegisterInput({ history, houseInput, confirmSignUp, signUp, pendingConf
 
   const handleSignUp = e => {
     e.preventDefault();
-    signUp(formatUser(formState));
+    if (formState.email && formState.name && validateEmail(formState.email)) {
+      signUp(formatUser(formState));
+    } else {
+      sendRegisterError('Please enter name and email address.');
+    }
   };
 
   const handleConfirmSubmit = e => {
@@ -42,39 +48,45 @@ function RegisterInput({ history, houseInput, confirmSignUp, signUp, pendingConf
   };
 
   return !(pendingConfirmation || submittedConfirmation) ? (
-    <form onSubmit={handleSignUp}>
-      <div className="register_inputs_container">
+    <div className="register_inputs_container">
+      <form onSubmit={handleSignUp}>
         <h1>Register</h1>
-
-        <textarea name="name" value={name} onChange={handleChange} placeholder="  Name" className="register_input" type="text" />
-
-        <textarea name="name" value={name} onChange={handleChange} placeholder="  Full Name" className="register_input" type="text" />
-
+        <div className="login_gradient" />
+        {error && invalidPassword(error, 'register_modal_error')}
+        {error && emptyCreds(error, 'register_modal_error')}
+        {error && existingUser(error, 'register_modal_error')}
+        {error && emptyNameEmail(error, 'register_modal_error')}
+        <input name="name" value={name} onChange={handleChange} placeholder="  Full Name" className="register_input" type="text" />
         <input name="email" value={email} onChange={handleChange} placeholder="  Email" className="register_input" type="text" />
-        <textarea name="username" value={username} onChange={handleChange} placeholder="  Username" className="register_input" type="text" />
+        <input name="username" value={username} onChange={handleChange} placeholder="  Username" className="register_input" type="text" />
         <input name="password" value={password} onChange={handleChange} placeholder="  Password" className="register_input" type="password" />
-        <Button buttonStyle="register_button" buttonText="Register" />
-      </div>
-    </form>
+        <Button buttonStyle="modal_register_button" buttonText="Register" />
+      </form>
+    </div>
   ) : (
-    <form onSubmit={handleConfirmSubmit}>
-      <div className="register_inputs_container">
-        <p className="register_label">Confirmation Code</p>
-        <textarea name="code" value={code} onChange={handleChangeCode} className="register_input" type="text" />
-        <Button buttonStyle="register_button" buttonText="Confirm" />
-      </div>
-    </form>
+    <div className="register_inputs_container">
+      <form onSubmit={handleConfirmSubmit}>
+        <h1>Register</h1>
+        <div className="login_gradient" />
+        {error && wrongCode(error, 'register_modal_error')}
+        <p className="confirmation_code">Confirmation Code</p>
+        <input name="code" value={code} onChange={handleChangeCode} className="register_input" type="text" />
+        <Button buttonStyle="modal_register_button" buttonText="Confirm" />
+      </form>
+    </div>
   );
 }
 
 const mapStateToProps = ({ authReducer }) => ({
   pendingConfirmation: authReducer.pendingConfirmation,
-  submittedConfirmation: authReducer.submittedConfirmation
+  submittedConfirmation: authReducer.submittedConfirmation,
+  error: authReducer.error,
+  fetching: authReducer.fetching
 });
 
 export default withRouter(
   connect(
     mapStateToProps,
-    { confirmSignUp, signUp }
+    { confirmSignUp, signUp, sendRegisterError }
   )(RegisterInput)
 );

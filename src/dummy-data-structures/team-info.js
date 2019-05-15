@@ -75,13 +75,12 @@ export const teamInfo = [
   {
     name: 'Peter Murphy',
     team: 'Web Team',
-    intro:
-      'Lorem ipsum dolor sit amet, sumo idque deserunt usu an, vix graeco alterum te. Aperiri saperet te per. Nec utamur impedit at. Vim et nisl nemore mediocrem. Sea partem verterem eu, eros argumentum in cum. Iudico civibus eleifend pro eu.',
+    intro: 'Peter is a full-stack web developer, interested in functional programming, accessibility, and web technologies.',
     url: {
-      picture: 'https://picsum.photos/640/480',
-      twitter: '',
+      picture: 'https://avatars0.githubusercontent.com/u/26548438?s=460&v=4',
+      twitter: 'https://twitter.com/ptrfrncsmrph',
       instagram: '',
-      github: '',
+      github: 'https://github.com/ptrfrncsmrph',
       facebook: '',
       linkedin: ''
     }

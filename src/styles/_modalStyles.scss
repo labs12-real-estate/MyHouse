@@ -176,3 +176,103 @@
     }
   }
 }
+
+.register_inputs_container {
+  position: relative;
+  height: 100%;
+
+  h1 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.6rem;
+    line-height: 4.4rem; /* identical to box height */
+    text-align: center;
+    letter-spacing: -0.05em;
+    color: #ffffff;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    left: 30px;
+  }
+
+  .login_gradient {
+    background-image: url('../assets/illustrations/form-gradient-top.png');
+    width: 336px;
+    height: 110px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+  }
+  form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 35px;
+    width: 100%;
+
+    .register_modal_error {
+      color: red;
+      text-align: center;
+      font-size: 1.2rem;
+      font-family: Montserrat;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .modal_register_button {
+      background: #e63700;
+      border-radius: 4px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.8rem;
+      line-height: 2.1rem;
+      text-align: center;
+      height: 36px;
+      color: #ffffff;
+      border: none;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+      &:hover {
+        background: #f13800;
+      }
+      &:focus {
+        outline: none;
+      }
+      &:active {
+        background: #d33200;
+      }
+    }
+  }
+
+  .register_input {
+    margin-bottom: 15px;
+    border-style: none;
+    border-bottom: 1.5px solid #c4c4c4;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    color: #898890;
+    height: 40px;
+    padding-left: 5%;
+    transition: all 0.3s ease-in-out;
+    border-radius: 0px;
+
+    &:focus {
+      outline: none;
+      border-bottom: 1.5px solid #2868d9;
+    }
+  }
+
+  .confirmation_code {
+      text-align: center;
+      font-size: 1.5rem;
+      color: rgb(160, 160, 160)
+  }
+}

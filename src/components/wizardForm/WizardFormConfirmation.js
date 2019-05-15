@@ -1,12 +1,15 @@
 import React, { Fragment } from 'react';
-import RegisterInput from '../../components/inputs/RegisterInput';
+import { connect } from 'react-redux';
+// import RegisterInput from '../../components/inputs/RegisterInput';
+import { openModal } from '../../actions/authActions';
 import Button from '../buttons/Button';
+import RegisterModal from '../modals/RegisterModal';
 
 // This is necessary because we are representing "no selection" as `null`
 // but `null` is not valid as a value for a `select` element.
 const NULL = 'NULL';
 
-function WizardFormConfirmation({ getHouseInput, questions, handleAnswer, handlePrev }) {
+function WizardFormConfirmation({ getHouseInput, questions, handleAnswer, handlePrev, openModal }) {
   const handleChange = qIx => e => {
     const oIx = e.target.value === NULL ? null : +e.target.value;
     handleAnswer(qIx)(oIx)(e);
@@ -29,17 +32,25 @@ function WizardFormConfirmation({ getHouseInput, questions, handleAnswer, handle
             </Fragment>
           </div>
         ))}
-        <p>
-          Please register <span className="mobile">below </span>to get a more accurate valuation.
-        </p>
-        <Button clickEvent={handlePrev} buttonStyle="prev_button" buttonText="Prev" />
+        <p>Please register to get a more accurate valuation.</p>
+        <div className="button_container">
+          <Button clickEvent={handlePrev} buttonStyle="prev_button" buttonText="Prev" />
+          <Button clickEvent={openModal} buttonStyle="register_button" buttonText="Register" />
+          <RegisterModal getHouseInput={getHouseInput} />
+        </div>
+        <div className="shadow" />
       </div>
       <div className="left-panel">
-        <RegisterInput handlePrev={handlePrev} houseInput={getHouseInput()} />
+        {/* <RegisterInput handlePrev={handlePrev} houseInput={getHouseInput()} /> */}
         <div className="bottom_logo">MyHouse</div>
       </div>
     </div>
   );
 }
 
-export default WizardFormConfirmation;
+// export default WizardFormConfirmation;
+
+export default connect(
+  null,
+  { openModal }
+)(WizardFormConfirmation);
