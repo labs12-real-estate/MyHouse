@@ -28,15 +28,16 @@
 
     .wizard_form_card {
       margin: 130px auto 20px;
-      max-width: 900px;
+      max-width: 1000px;
       background: white;
       box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
       position: relative;
       width: 90%;
+      height: 550px;
 
       .wizard_form_initial_data {
         .welcome {
-          height: 500px;
+          height: 550px;
           display: flex;
           position: relative;
 
@@ -68,7 +69,7 @@
             top: 0;
             z-index: 799;
             width: 35%;
-            height: 500px;
+            height: 550px;
             @include for-phone-only {
               display: none;
             }
@@ -91,17 +92,17 @@
               position: absolute;
               color: #fff;
               opacity: 0.4;
-              bottom: 20px;
+              bottom: 30px;
               left: 30px;
               font-family: 'Montserrat', 'sans-serf';
               font-weight: 700;
-              font-size: 1.4rem;
+              font-size: 2.2rem;
               letter-spacing: 0;
             }
           } // end of .left_panel_text
 
           .right_panel {
-            padding: 65px 0px;
+            padding: 65px 0px 40px;
             margin: 0 auto;
             width: 60%;
             display: flex;
@@ -275,7 +276,11 @@
                 line-height: 1.8rem;
                 color: rgb(46, 46, 46);
                 margin-left: 8%;
-                width: 50%;
+                width: 60%;
+
+                span {
+                  font-weight: 600;
+                }
                 @include for-phone-only {
                   margin: 0;
                   width: 70%;
@@ -286,7 +291,7 @@
               }
 
               .next_button {
-                margin-right: 2rem;
+                // margin-right: 2rem;
                 background: #e63700;
                 font-family: Roboto;
                 font-style: normal;
@@ -321,7 +326,7 @@
         } // end of .welcome
 
         .questions_answers {
-          height: 500px;
+          height: 550px;
           display: flex;
           position: relative;
           .left_panel {
@@ -343,7 +348,7 @@
             top: 0;
             z-index: 799;
             width: 35%;
-            height: 500px;
+            height: 550px;
             @media (max-width: 800px) {
               display: none;
             }
@@ -707,8 +712,8 @@
         }
         .button_container {
           position: absolute;
-          right: 3rem;
-          bottom: 3rem;
+          right: 8.5rem;
+          bottom: 4rem;
           @include for-phone-only {
             width: 100%;
             bottom: 1rem;
@@ -723,7 +728,7 @@
               width: 80%;
               height: 4rem;
             }
-            margin-right: 2rem;
+            // margin-right: 2rem;
             background: #e63700;
             font-family: Roboto;
             font-style: normal;
@@ -978,8 +983,8 @@
           }
           .button_container {
             align-self: flex-end;
-            margin-right: 3rem;
-            margin-bottom: 2rem;
+            margin-right: 6.5rem;
+            margin-bottom: -2.3rem;
             @include for-phone-only {
               align-self: center;
               width: 80%;
