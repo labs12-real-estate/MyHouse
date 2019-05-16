@@ -22,9 +22,18 @@ import {
   FORGOT_PASSWORD_FAIL,
   FORGOT_PASSWORD_PENDING,
   FORGOT_PASSWORD_SUCCESS,
-  UPDATE_USER_ATTRIBUTES_FETCH,
-  UPDATE_USER_ATTRIBUTES_SUCCESS,
-  UPDATE_USER_ATTRIBUTES_FAIL
+  UPDATE_USER_EMAIL_FETCH,
+  UPDATE_USER_EMAIL_PENDING,
+  UPDATE_USER_EMAIL_FAIL,
+  UPDATE_USER_EMAIL_CONFIRM_FETCH,
+  UPDATE_USER_EMAIL_SUCCESS,
+  UPDATE_USER_EMAIL_CONFIRM_FAIL,
+  UPDATE_USER_EMAIL_CANCEL_FETCH,
+  UPDATE_USER_EMAIL_CANCEL_SUCCESS,
+  UPDATE_USER_EMAIL_CANCEL_FAIL,
+  UPDATE_USER_FULLNAME_FETCH,
+  UPDATE_USER_FULLNAME_SUCCESS,
+  UPDATE_USER_FULLNAME_FAIL
 } from './index';
 
 export const openModal = e => {
@@ -191,23 +200,82 @@ export const confirmForgotPassword = (e, { username, new_password, code }) => di
     });
 };
 
-export const updateUserAttributes = attributes => dispatch => {
-  dispatch({
-    type: UPDATE_USER_ATTRIBUTES_FETCH
-  });
-  return Auth.currentAuthenticatedUser()
-    .then(user => {
-      return Auth.updateUserAttributes(user, attributes).then(() => {
-        dispatch({
-          type: UPDATE_USER_ATTRIBUTES_SUCCESS,
-          payload: attributes
-        });
+export const updateUserEmail = (user, email) => dispatch => {
+  Auth.updateUserAttributes(user, { email })
+    .then(() => {
+      dispatch({
+        type: UPDATE_USER_EMAIL_PENDING,
+        payload: email
       });
     })
     .catch(error => {
       dispatch({
-        type: UPDATE_USER_ATTRIBUTES_FAIL,
+        type: UPDATE_USER_EMAIL_FAIL,
         payload: error
       });
     });
+};
+
+export const cancelUpdateUserEmail = () => async (dispatch, getState) => {
+  dispatch({
+    type: UPDATE_USER_EMAIL_CANCEL_FETCH
+  });
+  const { email } = getState().authReducer.user;
+  const user = await Auth.currentAuthenticatedUser();
+  console.log({ user, email });
+  await Auth.updateUserAttributes(user, { email });
+  dispatch({
+    type: UPDATE_USER_EMAIL_CANCEL_SUCCESS
+  });
+};
+
+export const confirmUserEmail = confirmationCode => dispatch => {
+  dispatch({
+    type: UPDATE_USER_EMAIL_CONFIRM_FETCH
+  });
+  Auth.verifyCurrentUserAttributeSubmit('email', confirmationCode)
+    .then(() => {
+      dispatch({
+        type: UPDATE_USER_EMAIL_SUCCESS
+      });
+    })
+    .catch(error => {
+      dispatch({
+        type: UPDATE_USER_EMAIL_CONFIRM_FAIL,
+        payload: error
+      });
+    });
+};
+
+export const updateUserFullName = (user, name) => dispatch => {
+  Auth.updateUserAttributes(user, { name })
+    .then(() => {
+      dispatch({
+        type: UPDATE_USER_FULLNAME_SUCCESS,
+        payload: name
+      });
+    })
+    .catch(error => {
+      dispatch({
+        type: UPDATE_USER_FULLNAME_FAIL,
+        payload: error
+      });
+    });
+};
+
+export const updateUserAttributes = ({ email, name }) => async dispatch => {
+  // Conditionally dispatch that we are initiating the attribute update.
+  email &&
+    dispatch({
+      type: UPDATE_USER_EMAIL_FETCH
+    });
+  name &&
+    dispatch({
+      type: UPDATE_USER_FULLNAME_FETCH
+    });
+  const user = await Auth.currentAuthenticatedUser();
+  // We need to branch this into two handlers because the confirmation step
+  // will be bypassed if only the user's name is updated.
+  email && updateUserEmail(user, email)(dispatch);
+  name && updateUserFullName(user, name)(dispatch);
 };
