@@ -25,7 +25,7 @@ import {
   FORGOT_PASSWORD_SUCCESS,
   UPDATE_USER_ATTRIBUTES_FETCH,
   UPDATE_USER_ATTRIBUTES_SUCCESS,
-  UPDATE_USER_ATTRIBUTES_FAIL
+  UPDATE_USER_ATTRIBUTES_FAIL,
   SEND_REGISTER_ERROR
 } from './index';
 
@@ -201,6 +201,7 @@ export const updateUserAttributes = () => dispatch => {
     type: UPDATE_USER_ATTRIBUTES_FETCH
   });
   throw new Error('Fill this in!');
+};
 
 export const sendRegisterError = error => dispatch => {
   dispatch({
