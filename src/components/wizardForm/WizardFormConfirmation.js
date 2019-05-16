@@ -40,10 +40,7 @@ function WizardFormConfirmation({ getHouseInput, questions, handleAnswer, handle
         </div>
         <div className="shadow" />
       </div>
-      <div className="left-panel">
-        {/* <RegisterInput handlePrev={handlePrev} houseInput={getHouseInput()} /> */}
-        <div className="bottom_logo">MyHouse</div>
-      </div>
+      <div className="left-panel">{/* <RegisterInput handlePrev={handlePrev} houseInput={getHouseInput()} /> */}</div>
     </div>
   );
 }
