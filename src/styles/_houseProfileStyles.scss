@@ -413,6 +413,10 @@
         resize: none;
         color: rgb(124, 120, 120);
         background-color: rgb(248, 248, 248);
+        white-space: pre-line; word-wrap: break-word;
+        line-height: 2.5rem;
+        overflow: scroll;
+        height: 217px;
 
         @include for-phone-only {
           font-size: 1.6rem;
@@ -460,9 +464,26 @@
       }
 
       i {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
         color: #bbb;
         margin-right: 15px;
+      }
+      i:hover{
+        cursor: pointer;
+      }
+
+      span {
+        display: flex;
+        .fa-times{
+          color: red;
+          font-size: 1.8rem;
+
+        }
+        .fa-check{
+          color: green;
+          font-size:1.8rem;
+
+        }
       }
 
 
