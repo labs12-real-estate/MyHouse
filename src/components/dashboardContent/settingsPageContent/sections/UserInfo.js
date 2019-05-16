@@ -1,5 +1,5 @@
 import React from 'react';
-import profilePhoto from '../../../../assets/images/house-profile/tonystark.jpg';
+import profilePhoto from 'assets/images/house-profile/tonystark.jpg';
 import { connect } from 'react-redux';
 
 function UserInfo({ user }) {
