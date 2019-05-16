@@ -28,16 +28,16 @@ function HouseProfileForm(props) {
           <i className="fas fa-pen" onClick={handleEdit} title="Edit" />
         ) : (
           <span>
-            <i className="fas fa-times" onClick={handleCancel} />
+            
             <i className="fas fa-check" title="Save" onClick={handleSave} />
           </span>
         )}
       </div>
       <div className="house_profile_form_content" onClick= {handleEdit} onBlur= {handleSave}>
         <div className='house_profile_form_content_gutter'>
-        {isEditing ? <textarea maxLength='350' autoFocus value={content || ''} onChange={updateContent} /> : <pre>{content || props.defaultValue}</pre>}
+        {isEditing ? <textarea maxLength='450' autoFocus value={content || ''} onChange={updateContent} /> : <pre>{content || props.defaultValue}</pre>}
            <div style={{textAlign:'right'}}>
-            {content ? content.length : 0} / 350
+            {content ? content.length : 0} / 450
           </div>
       </div>
       </div>

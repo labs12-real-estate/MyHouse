@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { useForm, validatePassword } from 'helper-functions/form-logic-functions.js';
+import { useForm, validatePassword } from '../../../../helper-functions/form-logic-functions.js';
 
 function NewPasswordForm({ user }) {
   const [formState, handleChange] = useForm({ oldPassword: '', newPassword: '', confirmNewPassword: '' });
