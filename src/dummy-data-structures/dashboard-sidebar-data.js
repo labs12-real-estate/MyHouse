@@ -13,7 +13,7 @@ export const dashboardSidebarData = [
     id: Math.random()
   },
   {
-    navTitle: 'MyHouse',
+    navTitle: 'MyHouse Profile',
     path: '/myhouse',
     icon: myHouseProfile,
     id: Math.random()

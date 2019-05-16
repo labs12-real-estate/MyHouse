@@ -17,8 +17,15 @@ export default function TeamMembers() {
               <a
                 href={
                   !member.url.twitter
-                    ? 'javascript:void(0)' // disable social icon if no link is provided
+                    ? '' // disable social icon if no link is provided
                     : member.url.twitter
+                }
+                onClick={
+                  !member.url.twitter
+                    ? e => {
+                        e.preventDefault();
+                      }
+                    : null
                 }
                 target="blank"
               >
@@ -30,17 +37,57 @@ export default function TeamMembers() {
                   }
                 />
               </a>
-              <a href={!member.url.instagram ? 'javascript:void(0)' : member.url.instagram} target="blank">
+              <a
+                href={!member.url.instagram ? '' : member.url.instagram}
+                onClick={
+                  !member.url.instagram
+                    ? e => {
+                        e.preventDefault();
+                      }
+                    : null
+                }
+                target="blank"
+              >
                 <i className={!member.url.instagram ? 'fab fa-instagram disabled' : 'fab fa-instagram'} />
               </a>
 
-              <a href={!member.url.github ? 'javascript:void(0)' : member.url.github} target="blank">
+              <a
+                href={!member.url.github ? '' : member.url.github}
+                onClick={
+                  !member.url.github
+                    ? e => {
+                        e.preventDefault();
+                      }
+                    : null
+                }
+                target="blank"
+              >
                 <i className={!member.url.github ? 'fab fa-github disabled' : 'fab fa-github'} />
               </a>
-              <a href={!member.url.facebook ? 'javascript:void(0)' : member.url.facebook} target="blank">
+              <a
+                href={!member.url.facebook ? '' : member.url.facebook}
+                onClick={
+                  !member.url.facebook
+                    ? e => {
+                        e.preventDefault();
+                      }
+                    : null
+                }
+                target="blank"
+              >
                 <i className={!member.url.facebook ? 'fab fa-facebook disabled' : 'fab fa-facebook'} />
               </a>
-              <a href={!member.url.linkedin ? 'javascript:void(0)' : member.url.linkedin} target="blank">
+              <a
+                href={!member.url.linkedin ? '' : member.url.linkedin}
+                onClick={
+                  !member.url.linkedin
+                    ? e => {
+                        e.preventDefault();
+                      }
+                    : null
+                }
+                target="blank"
+              >
                 <i className={!member.url.linkedin ? 'fab fa-linkedin disabled' : 'fab fa-linkedin'} />
               </a>
             </div>

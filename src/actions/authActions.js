@@ -1,5 +1,6 @@
 import { Auth } from 'aws-amplify';
 import { makeHouse } from './houseActions';
+import { toast } from 'react-toastify';
 import {
   OPEN_MODAL,
   CLOSE_MODAL,
@@ -25,6 +26,7 @@ import {
   UPDATE_USER_ATTRIBUTES_FETCH,
   UPDATE_USER_ATTRIBUTES_SUCCESS,
   UPDATE_USER_ATTRIBUTES_FAIL
+  SEND_REGISTER_ERROR
 } from './index';
 
 export const openModal = e => {
@@ -182,6 +184,9 @@ export const confirmForgotPassword = (e, { username, new_password, code }) => di
       dispatch({
         type: FORGOT_PASSWORD_SUCCESS
       });
+      toast.info('Success!', {
+        className: 'toastify_message'
+      });
     })
     .catch(error => {
       dispatch({
@@ -196,4 +201,10 @@ export const updateUserAttributes = () => dispatch => {
     type: UPDATE_USER_ATTRIBUTES_FETCH
   });
   throw new Error('Fill this in!');
+
+export const sendRegisterError = error => dispatch => {
+  dispatch({
+    type: SEND_REGISTER_ERROR,
+    payload: error
+  });
 };

@@ -22,3 +22,4 @@ function SettingsPageContent({ user }) {
 export default connect(({ authReducer }) => ({
   user: authReducer.user
 }))(SettingsPageContent);
+

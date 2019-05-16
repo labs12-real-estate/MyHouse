@@ -22,7 +22,8 @@ import {
   FORGOT_PASSWORD_SUCCESS,
   GET_USER_SESSION_FAIL,
   GET_USER_SESSION_SUCCESS,
-  GET_USER_SESSION_FETCH
+  GET_USER_SESSION_FETCH,
+  SEND_REGISTER_ERROR
 } from '../actions/index';
 
 const initialState = {
@@ -43,7 +44,7 @@ const initialState = {
 export const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case OPEN_MODAL:
-      return { ...state, isOpen: action.payload };
+      return { ...state, isOpen: action.payload, submittedConfirmation: false, pendingConfirmation: false };
     case CLOSE_MODAL:
       return { ...state, isOpen: action.payload };
     case SIGN_IN_SUCCESS:
@@ -56,12 +57,16 @@ export const authReducer = (state = initialState, action) => {
       return { ...state, fetching: false, pendingConfirmation: false, submittedConfirmation: false, forgotPassword: false, error: null };
     case SIGN_IN_FAIL:
     case SIGN_UP_FAIL:
+      return { ...state, fetching: false, pendingConfirmation: false, isLoggedIn: false, error: action.payload };
     case SIGN_OUT_FAIL:
     case CONFIRM_FAIL:
     case FORGOT_PASSWORD_FAIL:
       return { ...state, fetching: false, error: action.payload };
-    case SIGN_IN_FETCH:
     case SIGN_UP_FETCH:
+      return { ...state, fetching: true, pendingConfirmation: false, isLoggedIn: false };
+    case SEND_REGISTER_ERROR:
+      return { ...state, fetching: false, pendingConfirmation: false, isLoggedIn: false, error: action.payload };
+    case SIGN_IN_FETCH:
     case SIGN_OUT_FETCH:
     case CONFIRM_FETCH:
     case GET_USER_SESSION_FETCH:

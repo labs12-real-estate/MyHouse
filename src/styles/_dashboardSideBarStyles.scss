@@ -33,6 +33,10 @@
     height: 100px;
     border-bottom: 0.5px solid rgba(194, 194, 194, 0.4%);
     opacity: 0.9;
+    @include for-phone-only {
+      height: 82px;
+    }
+
 
     &:hover {
       opacity: 1;

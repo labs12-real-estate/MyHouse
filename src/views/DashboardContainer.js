@@ -20,6 +20,11 @@ function DashboardContainer({ isOpen, toggleSideBar, closeSideBar, getUserHouse,
     // (what is inside the container), but that would break this `closeSideBar` logic.
     closeSideBar();
   }, []); // eslint-disable-line
+  useEffect(() => {
+    // Clear wizard form data when user finish registering
+    localStorage.removeItem('wizardForm');
+    localStorage.removeItem('initialData');
+  }, []);
   return (
     <div>
       <DashboardTopBar toggleSideBar={toggleSideBar} />
