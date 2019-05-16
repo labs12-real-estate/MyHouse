@@ -293,7 +293,6 @@
                 font-weight: 400;
                 font-size: 1.6em;
                 line-height: 1.8rem;
-                // color: rgb(46, 46, 46);
                 color: #555;
                 margin-left: 8%;
                 width: 70%;
@@ -305,10 +304,15 @@
                 }
                 @include for-phone-only {
                   margin: 0;
-                  width: 70%;
+                  width: 90%;
                   text-align: center;
                   margin-bottom: 15px;
                   font-size: 1.6rem;
+                  text-align: left;
+
+                  span {
+                    font-size: 2rem;
+                  }
                 }
               }
 
@@ -329,8 +333,7 @@
                 padding: none;
                 @include for-phone-only {
                   height: 40px;
-                  width: 80%;
-                  margin-left: 2rem;
+                  width: 90%;
                 }
                 cursor: pointer;
                 &:hover {
@@ -601,18 +604,18 @@
         }
       }
       .wizard_form_QA_container {
-        height: 350px;
+        height: 340px;
         position: absolute;
         width: 65%;
         bottom: 0px;
         right: 0;
-        // background-color: rgb(244, 244, 244);
+        background-color: #f4f4f4;
         @media (max-width: 800px) {
           width: 100%;
         }
         @include for-phone-only {
           width: 100%;
-          height: 450px;
+          height: 415px;
           bottom: 0;
           margin: 0;
         }
@@ -620,7 +623,7 @@
         .QA_question {
           margin-top: 3rem;
           text-align: center;
-          font-size: 2.4rem;
+          font-size: 2rem;
           color: #333;
           font-family: 'Roboto', 'sans-serif';
 
@@ -634,8 +637,8 @@
 
           @include for-tablet-portrait-up {
             width: 90%;
-            margin: 3rem auto 0;
-            height: 48px;
+            margin: 2.5rem auto 0;
+            height: 40px;
           }
         }
         .QA_cards_container {
@@ -659,7 +662,7 @@
           justify-content: space-evenly;
           width: 80%;
           min-width: 480px;
-          margin: 20px auto 0;
+          margin: 15px auto 0;
 
           @include for-phone-only {
             min-width: 300px;
@@ -687,9 +690,10 @@
             width: 47%;
             min-width: 220px;
             height: 7rem;
-            border: 1px solid;
+            border: 2px solid;
             border-color: #ccc;
             background-color: white;
+            border-radius: 10px;
             cursor: pointer;
             input {
               position: absolute;
@@ -701,7 +705,7 @@
             }
             &:hover {
               // border-color: rgb(110, 164, 233);
-              border-color: black;
+              border-color: #999;
             }
           }
           div[select='true'] {
@@ -714,16 +718,16 @@
           bottom: 4rem;
           @include for-phone-only {
             width: 100%;
+            padding: 0 5%;
             bottom: 2rem;
             right: auto;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            flex-direction: row;
+            justify-content: space-between;
           }
           .next_button {
             @include for-phone-only {
-              margin: 0.5rem auto;
-              width: 80%;
+              width: 47%;
               height: 4rem;
             }
             // margin-right: 2rem;
@@ -752,17 +756,19 @@
             }
           }
           .skip_button {
-            background: #db7e62;
-            transition: 0.3s;
+            background: #f4f4f4;
+            border: 1px solid #e63700;
+            color: #e63700;
 
             &:hover {
-              background: #d48f7a;
+              background: #e63700;
+              color: #fff;
+              border: none;
             }
           }
           .prev_button {
             @include for-phone-only {
-              margin: 0 auto;
-              width: 80%;
+              width: 47%;
               height: 4rem;
             }
             margin-right: 2rem;
