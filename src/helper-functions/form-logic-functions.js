@@ -21,6 +21,10 @@ export function diffObjects(obj1, obj2) {
   );
 }
 
+export function validateLength({ min = 0, max = +Infinity }) {
+  return str => str.length >= min && str.length <= max;
+}
+
 export function useValidation(validators) {
   const initialState = Object.keys(validators).reduce((obj, key) => ({ ...obj, [key]: '' }), {});
   const [errorState, setErrorState] = useState(initialState);

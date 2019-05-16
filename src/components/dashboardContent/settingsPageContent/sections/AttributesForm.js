@@ -1,13 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { useForm, useValidation, validateEmail, diffObjects } from 'helper-functions/form-logic-functions.js';
+import { useForm, useValidation, validateEmail, validateLength, diffObjects } from 'helper-functions/form-logic-functions.js';
 import { updateUserAttributes } from 'actions/authActions';
 import ErrorContainer from './ErrorContainer';
 
 function AttributesForm({ user, updateUserAttributes }) {
   const initialState = { name: user.name, email: user.email };
   const [formState, handleChange, hasChanged] = useForm(initialState);
-  const [errorState, validate, hasErrors] = useValidation({ email: [validateEmail, 'Please enter a valid email'] });
+  const [errorState, validate, hasErrors] = useValidation({
+    name: [validateLength({ min: 3 }), 'Name must be at least 3 characters long'],
+    email: [validateEmail, 'Please enter a valid email']
+  });
   const handleSubmit = e => {
     e.preventDefault();
     const changes = diffObjects(initialState, formState);
@@ -15,10 +18,11 @@ function AttributesForm({ user, updateUserAttributes }) {
   };
   return (
     <form className="attributes" onSubmit={handleSubmit}>
+      <ErrorContainer error={errorState.name} />
       <label className="inline-grid">
         <div>Full Name</div>
         <div>
-          <input name="name" type="text" value={formState.name} onChange={handleChange} />
+          <input name="name" type="text" value={formState.name} onChange={handleChange} onBlur={validate(formState)} />
         </div>
       </label>
       <ErrorContainer error={errorState.email} />
