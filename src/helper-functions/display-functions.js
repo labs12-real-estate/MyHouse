@@ -47,21 +47,20 @@ export const useInfiniteScroll = callback => {
   const [isFetching, setIsFetching] = useState(false);
 
   useEffect(() => {
+    function handleScroll() {
+      if (Math.ceil(window.innerHeight + document.documentElement.scrollTop) !== Math.ceil(document.documentElement.offsetHeight) || isFetching) {
+        return;
+      }
+      setIsFetching(true);
+    }
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isFetching]);
 
   useEffect(() => {
     if (!isFetching) return;
     callback();
-  }, [isFetching]);
-
-  function handleScroll() {
-    if (Math.ceil(window.innerHeight + document.documentElement.scrollTop) !== Math.ceil(document.documentElement.offsetHeight) || isFetching) {
-      return;
-    }
-    setIsFetching(true);
-  }
+  }, [isFetching, callback]);
 
   return [isFetching, setIsFetching];
 };
@@ -77,3 +76,20 @@ export const loginModalButtonRender = (fetching, buttonText, buttonStyle) => {
 };
 
 export const normalizeContent = content => (content ? content.trim() : content);
+
+export const useWindowScrollY = () => {
+  const [yPosition, setYPosition] = useState(window.innerYPosition);
+
+  useEffect(() => {
+    updateScrollYPosition();
+    window.addEventListener('scroll', updateScrollYPosition);
+    return () => {
+      window.removeEventListener('scroll', updateScrollYPosition);
+    };
+  }, []);
+
+  const updateScrollYPosition = () => {
+    setYPosition(window.scrollY);
+  };
+  return yPosition;
+};

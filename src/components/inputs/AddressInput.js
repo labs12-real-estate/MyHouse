@@ -1,61 +1,50 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import axios from 'axios';
 import { getValuation } from '../../actions/landingpageActions';
+import { useWindowWidth } from '../../helper-functions/display-functions';
+import Loader from 'react-loader-spinner';
 
-function AddressInput({ history, getValuation }) {
-  const [sessiontoken, setSessiontoken] = useState('');
+function AddressInput({ history, getValuation, fetching, isLoggedIn }) {
+  const [sessionToken, setSessionToken] = useState('');
   const [address, setAddress] = useState('');
   const [predictions, setPredictions] = useState([]);
+  const [error, setError] = useState(['']);
 
   // Variables for Google Place API
-  const location = '43.3148,-85.6024'; // Latitude, longtitude of Michigan
-  const types = 'address';
-  const key = 'AIzaSyBQG-Y3BtowkEvTBq3dPPROa-GuMm1Rfpk';
+  const google = window.google;
+  const location = new google.maps.LatLng(43.3148, -85.6024); // Latitude, longtitude of Michigan
 
   // Get session token on first render
+  /* eslint-disable */
   useEffect(() => {
-    axios
-      .get('https://www.uuidgenerator.net/api/version4')
-      .then(res => {
-        setSessiontoken(res.data);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    setError("");
+    setSessionToken(new google.maps.places.AutocompleteSessionToken());
   }, []);
+  /* eslint-disable */
+
+  const displaySuggestions = (predictions, status) => {
+    if (status !== google.maps.places.PlacesServiceStatus.OK) {
+      alert(status);
+      return;
+    }
+    setPredictions(predictions);
+  };
 
   const handleInputChange = e => {
     const string = e.target.value;
     setAddress(string);
-
-    // Autocomplete request is called every few keystrokes
+    var service = new google.maps.places.AutocompleteService();
     if ([3, 6, 10, 15].includes(string.length)) {
-      const url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${string}&types=${types}&location=${location}&radius=500&key=${key}&sessiontoken=${sessiontoken}`;
-      axios
-        .get(url)
-        .then(res => {
-          setPredictions(res.data.predictions);
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      service.getQueryPredictions({ input: string, sessionToken: sessionToken, location: location, radius: 500, types: ['address'] }, displaySuggestions);
     }
   };
 
   const getValue = e => {
     e.preventDefault();
-    getValuation(address, history);
-    // axios
-    //   .post('https://labs12-real-estate.herokuapp.com/api/houses/getvalue', {
-    //     address
-    //   })
-    //   .then(state => {
-    //     localStorage.setItem('initialData', JSON.stringify(state));
-    //     history.push('/wizard-form');
-    //   })
-    //   .catch(console.error);
+    if (isLoggedIn) {
+      setError('Please log out and try again.');
+    } else getValuation(address, history);
   };
 
   const fillAddress = (address, e) => {
@@ -66,12 +55,20 @@ function AddressInput({ history, getValuation }) {
   return (
     <div>
       <div className="address_searchbar">
+        {error && isLoggedIn && <p>{error}</p>}
         <form onSubmit={getValue}>
           <input onChange={handleInputChange} placeholder="Enter address..." value={address} name="address" autoComplete="off" />
-          <button className="form-button">Get Started</button>
+          {useWindowWidth() >= 600 && (
+            <button className="form-button">{fetching ? <Loader height={25} width={25} type="TailSpin" color="#FFF" /> : 'Get Started'}</button>
+          )}
+          {useWindowWidth() <= 600 && (
+            <button className="form-button">
+              {fetching ? <Loader height={25} width={25} type="TailSpin" color="#FFF" /> : <i className="fas fa-search" />}
+            </button>
+          )}
         </form>
         <div className="search_result_container">
-          {predictions.length > 0 && address ? (
+          {predictions.length > 2 && address ? (
             <div className="search_result_dropdown">
               {predictions.map(prediction => (
                 <button key={prediction.id} onClick={e => fillAddress(prediction.description, e)}>
@@ -86,9 +83,16 @@ function AddressInput({ history, getValuation }) {
   );
 }
 
+const mapStateToProps = ({landingpageReducer, authReducer}) => {
+  return {
+    fetching: landingpageReducer.fetching,
+    isLoggedIn: authReducer.isLoggedIn
+  };
+};
+
 export default withRouter(
   connect(
-    null,
+    mapStateToProps,
     {
       getValuation
     }
