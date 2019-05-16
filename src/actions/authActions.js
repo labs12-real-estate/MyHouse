@@ -21,7 +21,10 @@ import {
   FORGOT_PASSWORD_FETCH,
   FORGOT_PASSWORD_FAIL,
   FORGOT_PASSWORD_PENDING,
-  FORGOT_PASSWORD_SUCCESS
+  FORGOT_PASSWORD_SUCCESS,
+  UPDATE_USER_ATTRIBUTES_FETCH,
+  UPDATE_USER_ATTRIBUTES_SUCCESS,
+  UPDATE_USER_ATTRIBUTES_FAIL
 } from './index';
 
 export const openModal = e => {
@@ -186,4 +189,11 @@ export const confirmForgotPassword = (e, { username, new_password, code }) => di
         payload: error
       });
     });
+};
+
+export const updateUserAttributes = () => dispatch => {
+  dispatch({
+    type: UPDATE_USER_ATTRIBUTES_FETCH
+  });
+  throw new Error('Fill this in!');
 };
