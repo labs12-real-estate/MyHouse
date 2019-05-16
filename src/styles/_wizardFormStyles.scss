@@ -378,34 +378,6 @@
               display: none;
             }
 
-            // .logo_address {
-            //   display: flex;
-            //   margin-top: 30px;
-            //   margin-left: 30px;
-            //   align-items: center;
-            //   i {
-            //     font-size: 3.2rem;
-            //     margin-right: 1rem;
-            //   }
-            //   h2 {
-            //     color: white;
-            //     opacity: 0.9;
-            //     font-weight: 600;
-            //     letter-spacing: 0;
-            //     font-size: 2.2rem;
-            //     font-family: 'Fira Sans', 'sans-serif';
-            //   }
-            //   h3 {
-            //     line-height: 1.6rem;
-            //     margin-top: 1rem;
-            //     font-size: 1.8rem;
-            //     font-weight: 300;
-            //     color: lightgray;
-            //     letter-spacing: 0;
-            //     font-family: 'Fira Sans', 'sans-serif';
-            //   }
-            // }
-
             h4 {
               position: absolute;
               color: #fff;
@@ -441,40 +413,40 @@
                 padding: 0;
               }
 
-              .logo_address {
-                display: flex;
-                align-items: center;
-                width: 50%;
+              // .logo_address {
+              //   display: flex;
+              //   align-items: center;
+              //   width: 50%;
 
-                @include for-phone-only {
-                  width: 100%;
-                  padding: 15px 25px;
-                  border-bottom: 1px solid #e4e4e4;
-                }
+              //   @include for-phone-only {
+              //     width: 100%;
+              //     padding: 15px 25px;
+              //     border-bottom: 1px solid #e4e4e4;
+              //   }
 
-                i {
-                  font-size: 2.4rem;
-                  margin-right: 0.5rem;
-                  padding-bottom: 14px;
-                }
-                h2 {
-                  color: #333;
-                  opacity: 0.9;
-                  font-weight: 600;
-                  letter-spacing: 0;
-                  font-size: 2.2rem;
-                  font-family: 'Fira Sans', 'sans-serif';
-                }
-                h3 {
-                  line-height: 1.6rem;
-                  margin-top: 0.4rem;
-                  font-size: 1.8rem;
-                  font-weight: 300;
-                  color: #333;
-                  letter-spacing: 0;
-                  font-family: 'Fira Sans', 'sans-serif';
-                }
-              }
+              //   i {
+              //     font-size: 2.4rem;
+              //     margin-right: 0.5rem;
+              //     padding-bottom: 14px;
+              //   }
+              //   h2 {
+              //     color: #333;
+              //     opacity: 0.9;
+              //     font-weight: 600;
+              //     letter-spacing: 0;
+              //     font-size: 2.2rem;
+              //     font-family: 'Fira Sans', 'sans-serif';
+              //   }
+              //   h3 {
+              //     line-height: 1.6rem;
+              //     margin-top: 0.4rem;
+              //     font-size: 1.8rem;
+              //     font-weight: 300;
+              //     color: #333;
+              //     letter-spacing: 0;
+              //     font-family: 'Fira Sans', 'sans-serif';
+              //   }
+              // }
 
               h4 {
                 font-weight: bold;
@@ -562,58 +534,11 @@
           }
         }
         .confirmation {
-          height: 70px;
+          height: 73px;
           display: flex;
           align-items: center;
           justify-content: space-between;
-          border-bottom: 2px solid lightgray;
-          .logo_address {
-            margin-left: 3rem;
-            display: flex;
-            align-items: center;
-            @include for-phone-only {
-              .lines_address {
-                display: flex;
-              }
-              margin: 0;
-              width: 100%;
-              justify-content: center;
-            }
-            i {
-              font-size: 3.2rem;
-              margin-right: 1rem;
-              @include for-phone-only {
-                margin-left: 1rem;
-              }
-            }
-            h2 {
-              color: #333;
-              font-weight: 600;
-              letter-spacing: 0;
-              font-size: 2.2rem;
-              font-family: 'Fira Sans', 'sans-serif';
-              @include for-phone-only {
-                margin-right: 2rem;
-              }
-              @media (max-width: 500px) {
-                font-size: 1.8rem;
-              }
-            }
-            h3 {
-              line-height: 1.6rem;
-              font-size: 1.8rem;
-              font-weight: 300;
-              margin-top: 0.4rem;
-              color: rgb(89, 89, 89);
-              letter-spacing: 0;
-              font-family: 'Fira Sans', 'sans-serif';
-              @media (max-width: 500px) {
-                font-size: 1.4rem;
-                margin: 0 1rem 0 0;
-                line-height: 2rem;
-              }
-            }
-          }
+
           .container {
             @include for-phone-only {
               display: none;
@@ -780,6 +705,7 @@
               // margin: 0.1rem;
               width: 80%;
               height: 4.5rem;
+              border-radius: 50px;
             }
             display: flex;
             justify-content: center;
@@ -898,7 +824,7 @@
         }
       }
       .confirmation_container {
-        height: 430px;
+        height: 417px;
         position: relative;
         .left-panel {
           background-image: url('../assets/images/form-gradient-bottom.png');
@@ -1004,9 +930,8 @@
             width: 100%;
           }
           @include for-phone-only {
-            height: 400px;
-            bottom: -100px;
-            margin-bottom: 20px;
+            height: 490px;
+            bottom: -162px;
           }
           .shadow {
             display: none;
@@ -1029,6 +954,7 @@
             @include for-phone-only {
               flex-direction: column;
               height: 60px;
+              border-bottom: 1px solid #e4e4e4;
             }
             @media (max-width: 800px) {
               width: 70%;
@@ -1056,12 +982,11 @@
               font-size: 1.6rem;
               line-height: 2.2rem;
               width: 22rem;
-              max-width: 250px;
               height: 3.5rem;
               display: block;
               @include for-phone-only {
-                align-self: flex-end;
-                width: 23rem;
+                align-self: flex-start;
+                width: 100%;
               }
               &:focus {
                 outline: none;
@@ -1077,10 +1002,16 @@
             }
           }
           p {
-            color: red;
-            font-size: 1.6rem;
-            text-align: center;
-            margin: 0 4rem;
+            color: #666;
+            font-size: 1.8rem;
+            text-align: left;
+            margin: 15px 4rem 0;
+            font-family: 'roboto';
+            font-weight: 600;
+
+            @include for-phone-only {
+              margin-top: 40px;
+            }
           }
           .button_container {
             align-self: flex-end;
@@ -1091,6 +1022,7 @@
               width: 80%;
               margin: 0;
               margin-bottom: 0.5rem;
+              margin-top: 20px;
             }
             .prev_button {
               margin-right: 2rem;
@@ -1202,5 +1134,40 @@ progress[value] {
     transition: 500ms;
     background-color: rgb(18, 106, 246);
     background-size: 35px 20px, 100% 100%, 100% 100%;
+  }
+}
+
+.logo_address {
+  display: flex;
+  align-items: center;
+  width: 50%;
+
+  @include for-phone-only {
+    width: 100%;
+    padding: 15px 25px;
+    border-bottom: 1px solid #e4e4e4;
+  }
+
+  i {
+    font-size: 2.4rem;
+    margin-right: 0.5rem;
+    padding-bottom: 14px;
+  }
+  h2 {
+    color: #333;
+    opacity: 0.9;
+    font-weight: 600;
+    letter-spacing: 0;
+    font-size: 2.2rem;
+    font-family: 'Fira Sans', 'sans-serif';
+  }
+  h3 {
+    line-height: 1.6rem;
+    margin-top: 0.4rem;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #333;
+    letter-spacing: 0;
+    font-family: 'Fira Sans', 'sans-serif';
   }
 }
