@@ -1,24 +1,38 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { useForm, validatePassword } from 'helper-functions/form-logic-functions.js';
+import isEqual from 'lodash/fp/isEqual';
+import { useForm, useValidation, validatePassword } from 'helper-functions/form-logic-functions.js';
+import ErrorContainer from './ErrorContainer';
 
 function NewPasswordForm({ user }) {
-  const [formState, handleChange] = useForm({ oldPassword: '', newPassword: '', confirmNewPassword: '' });
+  const [formState, handleChange, hasChanged] = useForm({ oldPassword: '', newPassword: '', confirmNewPassword: '' });
+  const [errorState, validate, hasErrors] = useValidation({
+    newPassword: [validatePassword, 'Password must be at least 8 characters long, contain upper and lowercase letters, a number and a special character'],
+    confirmNewPassword: [isEqual(formState.newPassword), 'Passwords must match']
+  });
   return (
-    <form>
+    <form className="password">
       <label className="inline-grid">
-        Old Password
-        <input name="oldPassword" type="password" value={formState.oldPassword} onChange={handleChange} />
+        <div>Old Password</div>
+        <div>
+          <input name="oldPassword" type="password" value={formState.oldPassword} onChange={handleChange} />
+        </div>
       </label>
+      <ErrorContainer error={errorState.newPassword} />
       <label className="inline-grid">
-        New Password
-        <input name="newPassword" type="password" value={formState.newPassword} onChange={handleChange} />
+        <div>New Password</div>
+        <div>
+          <input name="newPassword" type="password" value={formState.newPassword} onChange={handleChange} onBlur={validate(formState)} />
+        </div>
       </label>
+      <ErrorContainer error={errorState.confirmNewPassword} />
       <label className="inline-grid">
-        Confirm New Password
-        <input name="confirmNewPassword" type="password" value={formState.confirmNewPassword} onChange={handleChange} />
+        <div>Confirm New Password</div>
+        <div>
+          <input name="confirmNewPassword" type="password" value={formState.confirmNewPassword} onChange={handleChange} />
+        </div>
       </label>
-      <button>Submit</button>
+      <button disabled={!hasChanged || hasErrors}>Submit</button>
     </form>
   );
 }
