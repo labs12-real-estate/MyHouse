@@ -23,6 +23,9 @@ import {
   FORGOT_PASSWORD_FAIL,
   FORGOT_PASSWORD_PENDING,
   FORGOT_PASSWORD_SUCCESS,
+  UPDATE_USER_ATTRIBUTES_FETCH,
+  UPDATE_USER_ATTRIBUTES_SUCCESS,
+  UPDATE_USER_ATTRIBUTES_FAIL
   SEND_REGISTER_ERROR
 } from './index';
 
@@ -192,6 +195,12 @@ export const confirmForgotPassword = (e, { username, new_password, code }) => di
       });
     });
 };
+
+export const updateUserAttributes = () => dispatch => {
+  dispatch({
+    type: UPDATE_USER_ATTRIBUTES_FETCH
+  });
+  throw new Error('Fill this in!');
 
 export const sendRegisterError = error => dispatch => {
   dispatch({
