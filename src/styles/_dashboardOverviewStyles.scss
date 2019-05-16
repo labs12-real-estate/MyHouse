@@ -3,6 +3,7 @@
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
   margin-left: 70px;
   width: 90%;
+  max-width: 1400px;
   @include for-phone-only {
     margin: 0 auto;
   }
@@ -14,11 +15,9 @@
   }
 
   .house_image {
-    background-image: url('../assets/images/overview/overview-house.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 300px;
+    width: 100%;
+    object-fit: cover;
   }
 
   .address_value_flex {
@@ -93,6 +92,7 @@
   flex-wrap: wrap;
   width: 90%;
   margin-left: 59px;
+  max-width: 1400px;
   @include for-phone-only {
     margin: 0 auto;
   }

@@ -25,7 +25,7 @@ export const forgotPasswordAttemptsExceeded = (error, className) => {
 
 export const incorrectForgotPasswordCreds = function(error, className) {
   if (error.message) {
-    return error.message.includes('Username/client id combination not found.') ? (
+    return error.message.includes('Username/client id combination not found.') || error.message.includes('Cannot reset password') ? (
       <span className={className}>Please enter a valid MyHouse username.</span>
     ) : null;
   }
@@ -58,7 +58,7 @@ export const incorrectSetPasswordCode = function(error, className) {
 export const incorrectSetPasswordPassword = function(error, className) {
   if (error.code) {
     return error.code.includes('InvalidParameterException') ? (
-      <span className={className}>New password must include uppercase & lowercase letter, number, symbol and be longer than 8 characters.</span>
+      <span className={className}>New password must have at least 8 characters, 1 lower case, 1 upper case, and 1 symbol.</span>
     ) : null;
   }
   return error && error === 'Password cannot be empty' ? <span className={className}>Password field cannot be empty.</span> : null;
@@ -83,7 +83,17 @@ export const existingUser = function(error, className) {
 };
 
 export const emptyNameEmail = function(error, className) {
-  return error && error === 'Please enter name and email address.' ? <span className={className}>Please enter name and valid email address.</span> : null;
+  return error && error === 'Please enter name and valid email address.' ? <span className={className}>Please enter name and valid email address.</span> : null;
+};
+
+export const clientsidePasswordValidation = function(error, className) {
+  return error && error === 'Password must have at least 8 characters, 1 lower case, 1 upper case, and 1 symbol.' ? (
+    <span className={className}>Password must have at least 8 characters, 1 lower case, 1 upper case, and 1 symbol.</span>
+  ) : null;
+};
+
+export const clientsideCredsValidation = function(error, className) {
+  return error && error === 'Please enter username and password.' ? <span className={className}>Please enter username and password.</span> : null;
 };
 
 export const wrongCode = function(error, className) {
