@@ -1,5 +1,6 @@
 import { Auth } from 'aws-amplify';
 import { makeHouse } from './houseActions';
+import { toast } from 'react-toastify';
 import {
   OPEN_MODAL,
   CLOSE_MODAL,
@@ -179,6 +180,9 @@ export const confirmForgotPassword = (e, { username, new_password, code }) => di
     .then(_user => {
       dispatch({
         type: FORGOT_PASSWORD_SUCCESS
+      });
+      toast.info('Success!', {
+        className: 'toastify_message'
       });
     })
     .catch(error => {
