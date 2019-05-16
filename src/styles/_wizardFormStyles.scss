@@ -548,7 +548,7 @@
       }
       .wizard_form_progress {
         font-family: 'Roboto', 'sans-serif';
-        height: 160px;
+        height: 150px;
         position: absolute;
         width: 65%;
         top: 95px;
@@ -581,7 +581,7 @@
           width: 45%;
           color: #888;
           font-size: 1.6rem;
-          margin-top: 1.8rem;
+          margin-top: 1.4rem;
           line-height: 18px;
           @media (max-width: 800px) {
             width: 70%;
@@ -716,6 +716,9 @@
           position: absolute;
           right: 8.5rem;
           bottom: 4rem;
+          @include for-tablet-portrait-up {
+            right: 5rem;
+          }
           @include for-phone-only {
             width: 100%;
             padding: 0 5%;
@@ -725,6 +728,7 @@
             flex-direction: row;
             justify-content: space-between;
           }
+
           .next_button {
             @include for-phone-only {
               width: 47%;
@@ -902,11 +906,10 @@
           }
         }
         .review_container {
-          height: 270px;
+          height: 260px;
           position: absolute;
           right: 0;
-          // left: 0;
-          bottom: 60px;
+          bottom: 80px;
           width: 65%;
           display: flex;
           flex-direction: column;
@@ -920,32 +923,40 @@
             height: 490px;
             bottom: -162px;
           }
-          .shadow {
-            display: none;
-            @include for-phone-only {
-              display: inline;
-              z-index: -1;
-              position: absolute;
+
+          .upgrade_summary {
+            width: 70%;
+            // margin
+
+            .selection {
               width: 100%;
-              height: 80px;
-              bottom: 0;
-              box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
+              height: 30px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 15px;
+              @include for-phone-only {
+                flex-direction: column;
+                height: 60px;
+                border-bottom: 1px solid #e4e4e4;
+              }
+              @media (max-width: 800px) {
+                width: 70%;
+              }
             }
-          }
-          .selection {
-            width: 85%;
-            height: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            @include for-phone-only {
-              flex-direction: column;
-              height: 60px;
-              border-bottom: 1px solid #e4e4e4;
+            .shadow {
+              display: none;
+              @include for-phone-only {
+                display: inline;
+                z-index: -1;
+                position: absolute;
+                width: 100%;
+                height: 80px;
+                bottom: 0;
+                box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
+              }
             }
-            @media (max-width: 800px) {
-              width: 70%;
-            }
+
             label {
               font-family: Montserrat;
               font-size: 1.4rem;
@@ -989,88 +1000,14 @@
             }
           }
           p {
-            color: #666;
-            font-size: 1.8rem;
+            color: #999;
+            font-size: 1.6rem;
             text-align: left;
-            margin: 15px 4rem 0;
             font-family: 'roboto';
-            font-weight: 600;
+            font-weight: 400;
 
             @include for-phone-only {
               margin-top: 40px;
-            }
-          }
-          .button_container {
-            align-self: flex-end;
-            margin-right: 6.5rem;
-            margin-bottom: -2.3rem;
-            @include for-phone-only {
-              align-self: center;
-              width: 80%;
-              margin: 0;
-              margin-bottom: 0.5rem;
-              margin-top: 20px;
-            }
-            .prev_button {
-              margin-right: 2rem;
-              background: rgb(18, 106, 246);
-              font-family: Roboto;
-              font-style: normal;
-              font-weight: 500;
-              font-size: 1.6rem;
-              line-height: 1.6rem;
-              border: none;
-              color: white;
-              box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-              border-radius: 4px;
-              height: 32px;
-              width: 100px;
-              padding: none;
-              cursor: pointer;
-              @include for-phone-only {
-                width: 100%;
-                height: 4rem;
-              }
-              &:hover {
-                background: rgb(26, 114, 254);
-              }
-              &:focus {
-                outline: none;
-              }
-              &:active {
-                background: rgb(8, 96, 236);
-              }
-            }
-            .register_button {
-              @include for-phone-only {
-                margin: 0.5rem 0;
-                width: 100%;
-                height: 4rem;
-              }
-              margin-right: 2rem;
-              background: #e63700;
-              font-family: Roboto;
-              font-style: normal;
-              font-weight: 500;
-              font-size: 1.6rem;
-              line-height: 1.6rem;
-              border: none;
-              color: white;
-              box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-              border-radius: 4px;
-              height: 32px;
-              width: 100px;
-              padding: none;
-              cursor: pointer;
-              &:hover {
-                background: #f13800;
-              }
-              &:focus {
-                outline: none;
-              }
-              &:active {
-                background: #d33200;
-              }
             }
           }
         }
@@ -1156,5 +1093,86 @@ progress[value] {
     color: #333;
     letter-spacing: 0;
     font-family: 'Fira Sans', 'sans-serif';
+  }
+}
+
+.button_container {
+  position: absolute;
+  right: 6.5rem;
+  bottom: 4rem;
+  @include for-phone-only {
+    width: 100%;
+    padding: 0 5%;
+    bottom: 2rem;
+    right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+  }
+  @include for-tablet-portrait-up {
+    right: 5rem;
+  }
+  .prev_button {
+    margin-right: 2rem;
+    background: rgb(18, 106, 246);
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    border: none;
+    color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    height: 32px;
+    width: 100px;
+    padding: none;
+    cursor: pointer;
+    @include for-phone-only {
+      width: 47%;
+      height: 4rem;
+      margin: 0;
+    }
+    &:hover {
+      background: rgb(26, 114, 254);
+    }
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      background: rgb(8, 96, 236);
+    }
+  }
+  .register_button {
+    @include for-phone-only {
+      margin: 0;
+      width: 47%;
+      height: 4rem;
+    }
+    // margin-right: 2rem;
+    background: #e63700;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    border: none;
+    color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    height: 32px;
+    width: 100px;
+    padding: none;
+    cursor: pointer;
+    &:hover {
+      background: #f13800;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      background: #d33200;
+    }
   }
 }
