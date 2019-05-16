@@ -1,27 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { useForm, validateEmail } from 'helper-functions/form-logic-functions.js';
+import { useForm, useValidation, validateEmail } from 'helper-functions/form-logic-functions.js';
 import ErrorContainer from './ErrorContainer';
 
 function AttributesForm({ user }) {
-  const [formState, handleChange] = useForm({ name: user.name, email: user.email });
-  const [errorState, setErrorState] = useState({ email: '' });
+  const [formState, handleChange, hasChanged] = useForm({ name: user.name, email: user.email });
+  const [errorState, validate, hasErrors] = useValidation({ email: [validateEmail, 'Please enter a valid email'] });
   const handleSubmit = e => {
     e.preventDefault();
-    setErrorState(errorState => ({ ...errorState, email: 'Please enter a valid email' }));
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="attributes" onSubmit={handleSubmit}>
       <label className="inline-grid">
-        Name
-        <input name="name" type="text" value={formState.name} onChange={handleChange} />
+        <div>Name</div>
+        <div>
+          <input name="name" type="text" value={formState.name} onChange={handleChange} />
+        </div>
       </label>
       <ErrorContainer error={errorState.email} />
       <label className="inline-grid">
-        Email
-        <input name="email" type="text" value={formState.email} onChange={handleChange} />
+        <div>Email</div>
+        <div>
+          <input name="email" type="text" value={formState.email} onChange={handleChange} onBlur={validate(formState)} />
+        </div>
       </label>
-      <button>Submit</button>
+      <button disabled={!hasChanged || hasErrors}>Submit</button>
     </form>
   );
 }

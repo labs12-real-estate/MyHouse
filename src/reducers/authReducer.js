@@ -23,7 +23,10 @@ import {
   GET_USER_SESSION_FAIL,
   GET_USER_SESSION_SUCCESS,
   GET_USER_SESSION_FETCH,
-  SEND_REGISTER_ERROR
+  SEND_REGISTER_ERROR,
+  UPDATE_USER_ATTRIBUTES_FETCH,
+  UPDATE_USER_ATTRIBUTES_SUCCESS,
+  UPDATE_USER_ATTRIBUTES_FAIL
 } from '../actions/index';
 
 const initialState = {
@@ -37,7 +40,8 @@ const initialState = {
   user: {
     name: '',
     username: '',
-    email: ''
+    email: '',
+    pendingEmail: ''
   }
 };
 
@@ -55,12 +59,21 @@ export const authReducer = (state = initialState, action) => {
       return { ...state, fetching: false, pendingConfirmation: false, submittedConfirmation: false, isLoggedIn: false, user: initialState.user, error: null };
     case FORGOT_PASSWORD_SUCCESS:
       return { ...state, fetching: false, pendingConfirmation: false, submittedConfirmation: false, forgotPassword: false, error: null };
+    case UPDATE_USER_ATTRIBUTES_SUCCESS:
+      return {
+        fetching: false,
+        user: {
+          ...state.user,
+          ...action.payload
+        }
+      };
     case SIGN_IN_FAIL:
     case SIGN_UP_FAIL:
       return { ...state, fetching: false, pendingConfirmation: false, isLoggedIn: false, error: action.payload };
     case SIGN_OUT_FAIL:
     case CONFIRM_FAIL:
     case FORGOT_PASSWORD_FAIL:
+    case UPDATE_USER_ATTRIBUTES_FAIL:
       return { ...state, fetching: false, error: action.payload };
     case SIGN_UP_FETCH:
       return { ...state, fetching: true, pendingConfirmation: false, isLoggedIn: false };
@@ -71,6 +84,7 @@ export const authReducer = (state = initialState, action) => {
     case CONFIRM_FETCH:
     case GET_USER_SESSION_FETCH:
     case FORGOT_PASSWORD_FETCH:
+    case UPDATE_USER_ATTRIBUTES_FETCH:
       return { ...state, fetching: true, submittedConfirmation: true };
     case SIGN_UP_PENDING:
     case FORGOT_PASSWORD_PENDING:

@@ -196,11 +196,25 @@ export const confirmForgotPassword = (e, { username, new_password, code }) => di
     });
 };
 
-export const updateUserAttributes = () => dispatch => {
+export const updateUserAttributes = attributes => async dispatch => {
   dispatch({
-    type: UPDATE_USER_ATTRIBUTES_FETCH
+    type: UPDATE_USER_ATTRIBUTES_FETCH,
+    payload: attributes
   });
-  throw new Error('Fill this in!');
+  const user = await Auth.currentAuthenticatedUser();
+  return Auth.updateUserAttributes(user, attributes)
+    .then(() => {
+      dispatch({
+        type: UPDATE_USER_ATTRIBUTES_SUCCESS,
+        payload: attributes
+      });
+    })
+    .catch(error => {
+      dispatch({
+        type: UPDATE_USER_ATTRIBUTES_FAIL,
+        payload: error
+      });
+    });
 };
 
 export const sendRegisterError = error => dispatch => {

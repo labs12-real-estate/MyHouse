@@ -1,14 +1,35 @@
 import { useState } from 'react';
+import isEqual from 'lodash/isEqual';
 
 export function useForm(initialState) {
   const [state, setState] = useState(initialState);
   const handleChange = e => {
-    const {
-      target: { name, value }
-    } = e;
+    const { name, value } = e.target;
     setState({ ...state, [name]: value });
   };
-  return [state, handleChange];
+  const hasChanged = !isEqual(state, initialState);
+  return [state, handleChange, hasChanged];
+}
+
+export function useValidation(validators) {
+  const initialState = Object.keys(validators).reduce((obj, key) => ({ ...obj, [key]: '' }), {});
+  const [errorState, setErrorState] = useState(initialState);
+  const validate = state => _event => {
+    setErrorState(
+      Object.entries(validators).reduce(
+        // `validators` is a pair of a validation function and an error message
+        (acc, [key, [validatorFn, errorMessage]]) => ({
+          ...acc,
+          // For each validation, we are running the function on state value
+          // if it returns false (failure) we set the error message at that key
+          [key]: validatorFn(state[key]) ? '' : errorMessage
+        }),
+        {}
+      )
+    );
+  };
+  const hasErrors = !isEqual(errorState, initialState);
+  return [errorState, validate, hasErrors];
 }
 
 export function useInput(initialString = '') {
