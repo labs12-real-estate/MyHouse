@@ -68,19 +68,26 @@ function WizardFormInitialData({ step, handleNext }) {
         <div className="questions_answers">
           <div className="left_panel" />
           <div className="left_panel_text">
-            <div className="logo_address">
+            {/* <div className="logo_address">
               <i className="fas fa-map-marker-alt" />
               <div className="2_lines_address">
                 <h2>{street}</h2>
                 <h3>{restAddress}</h3>
               </div>
-            </div>
+            </div> */}
             <h4>MyHouse</h4>
           </div>
           <div className="right_panel">
             <div className="initial_value_range">
-              <h4>Initial Value Range</h4>
+              <div className="logo_address">
+                <i className="fas fa-map-marker-alt" />
+                <div className="2_lines_address">
+                  <h2>{street}</h2>
+                  <h3>{restAddress}</h3>
+                </div>
+              </div>
               <div className="container">
+                {/* <h4>Initial Value Range</h4> */}
                 <div>
                   <h3>LOW</h3>
                   <div className="low">
