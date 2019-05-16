@@ -1,0 +1,90 @@
+.settings_container {
+  display: flex;
+  justify-content: center;
+  max-width: 1000px;
+  font-family: 'Roboto', 'sans-serif';
+  font-size: 1.6rem;
+
+  @include for-phone-only {
+    padding-left: 0;
+    margin: 0 auto;
+    width: 90%;
+  }
+  @include for-tablet-portrait-up {
+    padding-left: 0;
+    margin: 0 auto;
+    width: 90%;
+  }
+  @include for-desktop-up {
+    padding-left: 70px;
+    max-width: 1000px;
+    margin: 0;
+  }
+
+  .settings_content {
+    background: white;
+    width: 40vw;
+    min-width: 50rem;
+    padding: 3rem;
+
+    h2 {
+      font-family: 'Roboto', 'sans-serif';
+      font-weight: 600;
+      font-size: 2rem;
+      color: black;
+      margin-bottom: 3rem;
+    }
+
+    .inline-grid {
+      width: 100%;
+      gap: 1rem;
+      display: inline-grid;
+      grid-template-columns: 1fr 3fr;
+    }
+
+    .user-info {
+      margin-bottom: 2rem;
+      img {
+        width: 8rem;
+        border-radius: 10vw;
+      }
+      div {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        button {
+          color: dodgerblue;
+          border: none;
+          width: max-content;
+          padding: 0.5rem 0;
+        }
+      } // end div
+    } // end .user-info
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      .error {
+        grid-column: 2 / -1;
+        font-size: 1.4rem;
+        color: red;
+      }
+
+      label {
+        div {
+          display: flex;
+          align-items: center;
+        }
+        margin: 1rem 0;
+        input {
+          font-size: 1.4rem;
+          width: 100%;
+        }
+      } // end label
+      button {
+        align-self: flex-end;
+      }
+    } // end form
+  } // end .settings_content
+} // end .settings_container
