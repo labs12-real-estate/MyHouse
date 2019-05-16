@@ -11,6 +11,16 @@ export function useForm(initialState) {
   return [state, handleChange, hasChanged];
 }
 
+export function diffObjects(obj1, obj2) {
+  return Object.entries(obj2).reduce(
+    (diff, [key, value]) => ({
+      ...diff,
+      ...(obj1[key] === value ? {} : { [key]: value })
+    }),
+    {}
+  );
+}
+
 export function useValidation(validators) {
   const initialState = Object.keys(validators).reduce((obj, key) => ({ ...obj, [key]: '' }), {});
   const [errorState, setErrorState] = useState(initialState);
