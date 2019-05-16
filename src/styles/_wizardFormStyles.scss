@@ -173,9 +173,9 @@
                   font-size: 2.4rem;
                 }
                 @include for-phone-only {
-                  text-align: center;
+                  // text-align: center;
                   font-size: 3rem;
-                  margin-left: -10%;
+                  // margin-left: -10%;
                 }
               }
               h3 {
@@ -192,9 +192,8 @@
                   font-size: 1.8rem;
                 }
                 @include for-phone-only {
-                  text-align: center;
                   font-size: 2.6rem;
-                  margin-left: -10%;
+                  margin-left: 9%;
                 }
               }
             }
@@ -265,7 +264,9 @@
                 margin-top: 1.5rem;
                 display: flex;
                 @include for-phone-only {
-                  justify-content: center;
+                  // justify-content: center;
+                  justify-content: space-between;
+                  width: 90%;
                 }
               }
               .container > div {
@@ -726,7 +727,8 @@
             right: auto;
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            // justify-content: space-between;
+            justify-content: flex-end;
           }
 
           .next_button {
@@ -920,13 +922,16 @@
             width: 100%;
           }
           @include for-phone-only {
-            height: 490px;
-            bottom: -162px;
+            height: 300px;
+            bottom: -30px;
           }
 
           .upgrade_summary {
             width: 70%;
             // margin
+            @include for-phone-only {
+              width: 80%;
+            }
 
             .selection {
               width: 100%;
@@ -935,13 +940,14 @@
               justify-content: space-between;
               align-items: center;
               margin-bottom: 15px;
-              @include for-phone-only {
-                flex-direction: column;
-                height: 60px;
-                border-bottom: 1px solid #e4e4e4;
-              }
               @media (max-width: 800px) {
                 width: 70%;
+              }
+              @include for-phone-only {
+                flex-direction: column;
+                width: 90%;
+                height: 60px;
+                border-bottom: 1px solid #e4e4e4;
               }
             }
             .shadow {
@@ -1008,6 +1014,7 @@
 
             @include for-phone-only {
               margin-top: 40px;
+              width: 80%;
             }
           }
         }
@@ -1102,8 +1109,8 @@ progress[value] {
   bottom: 4rem;
   @include for-phone-only {
     width: 100%;
-    padding: 0 5%;
-    bottom: 2rem;
+    padding: 0 5% 18px;
+    bottom: -17rem;
     right: auto;
     display: flex;
     flex-direction: row;
