@@ -29,11 +29,23 @@
     .wizard_form_card {
       margin: 100px auto 20px;
       max-width: 1000px;
+      min-width: 850px;
       background: white;
       box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
       position: relative;
       width: 90%;
       height: $form_wizard_height;
+
+      @include for-tablet-portrait-up {
+        width: 90%;
+        min-width: 550px;
+      }
+
+      @include for-phone-only {
+        width: 90%;
+        max-width: 600px;
+        min-width: 375px;
+      }
 
       .wizard_form_initial_data {
         .welcome {
@@ -417,10 +429,8 @@
 
               .logo_address {
                 display: flex;
-                // margin-top: 30px;
-                // margin-left: 30px;
                 align-items: center;
-                width: 40%;
+                width: 50%;
                 i {
                   font-size: 2.4rem;
                   margin-right: 0.5rem;
@@ -463,6 +473,7 @@
               }
               .container {
                 width: 40%;
+                min-width: 220px;
                 justify-content: space-between;
                 display: flex;
                 @media (max-width: 800px) {
@@ -711,6 +722,7 @@
           flex-wrap: wrap;
           justify-content: space-evenly;
           width: 80%;
+          min-width: 480px;
           margin: 30px auto 0;
 
           div {
@@ -1120,7 +1132,7 @@
           }
         }
       }
-    }
+    } // end of .wizard_form_card
   }
 }
 
