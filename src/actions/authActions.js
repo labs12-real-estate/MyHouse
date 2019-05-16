@@ -191,9 +191,23 @@ export const confirmForgotPassword = (e, { username, new_password, code }) => di
     });
 };
 
-export const updateUserAttributes = () => dispatch => {
+export const updateUserAttributes = attributes => dispatch => {
   dispatch({
     type: UPDATE_USER_ATTRIBUTES_FETCH
   });
-  throw new Error('Fill this in!');
+  return Auth.currentAuthenticatedUser()
+    .then(user => {
+      return Auth.updateUserAttributes(user, attributes).then(() => {
+        dispatch({
+          type: UPDATE_USER_ATTRIBUTES_SUCCESS,
+          payload: attributes
+        });
+      });
+    })
+    .catch(error => {
+      dispatch({
+        type: UPDATE_USER_ATTRIBUTES_FAIL,
+        payload: error
+      });
+    });
 };
