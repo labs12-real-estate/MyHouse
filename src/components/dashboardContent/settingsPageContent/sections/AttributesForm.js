@@ -5,7 +5,7 @@ import ErrorContainer from './ErrorContainer';
 
 function AttributesForm({ user }) {
   const [formState, handleChange] = useForm({ name: user.name, email: user.email });
-  const [errorState, setErrorState] = useState({ email: 'Please enter a valid email' });
+  const [errorState, setErrorState] = useState({ email: '' });
   const handleSubmit = e => {
     e.preventDefault();
     setErrorState(errorState => ({ ...errorState, email: 'Please enter a valid email' }));
