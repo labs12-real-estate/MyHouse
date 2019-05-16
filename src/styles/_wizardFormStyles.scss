@@ -42,13 +42,16 @@
       }
 
       @include for-phone-only {
-        width: 90%;
+        width: 100%;
         max-width: 600px;
         min-width: 350px;
-        max-height: 750px;
-        min-height: 750px;
+        // max-height: 750px;
+        // min-height: 750px;
         height: 100%;
-        margin-top: 70px;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 60px;
+        box-shadow: none;
       }
 
       .wizard_form_initial_data {
@@ -445,7 +448,7 @@
 
                 @include for-phone-only {
                   width: 100%;
-                  padding: 15px 30px;
+                  padding: 15px 25px;
                   border-bottom: 1px solid #e4e4e4;
                 }
 
@@ -500,8 +503,14 @@
                 }
                 @include for-phone-only {
                   width: 100%;
-                  justify-content: space-around;
+                  justify-content: flex-start;
                   padding-bottom: 15px;
+                  padding-left: 25px;
+                }
+                div {
+                  @include for-phone-only {
+                    margin-right: 20px;
+                  }
                 }
                 h3 {
                   color: #999;
@@ -513,7 +522,7 @@
                     font-size: 1.6rem;
                   }
                   @include for-phone-only {
-                    font-size: 1.4rem;
+                    font-size: 1.2rem;
                   }
                 }
                 .low {
@@ -660,7 +669,7 @@
         }
         @include for-phone-only {
           width: 100%;
-          top: 130px;
+          top: 180px;
         }
         div {
           color: gray;
@@ -685,7 +694,9 @@
             width: 70%;
           }
           @include for-phone-only {
-            width: 70%;
+            width: 80%;
+            margin-top: 1rem;
+            font-size: 1.4rem;
           }
         }
         progress {
@@ -695,7 +706,7 @@
             width: 75%;
           }
           @include for-phone-only {
-            width: 75%;
+            width: 80%;
           }
         }
       }
@@ -711,7 +722,7 @@
         }
         @include for-phone-only {
           width: 100%;
-          height: 480px;
+          height: 450px;
           bottom: 0;
           margin: 0;
         }
@@ -768,7 +779,7 @@
             @include for-phone-only {
               // margin: 0.1rem;
               width: 80%;
-              height: 5rem;
+              height: 4.5rem;
             }
             display: flex;
             justify-content: center;
