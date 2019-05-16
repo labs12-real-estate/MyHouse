@@ -751,6 +751,14 @@
               background: #d33200;
             }
           }
+          .skip_button {
+            background: #db7e62;
+            transition: 0.3s;
+
+            &:hover {
+              background: #d48f7a;
+            }
+          }
           .prev_button {
             @include for-phone-only {
               margin: 0 auto;
