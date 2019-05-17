@@ -9,6 +9,23 @@ export function useForm(initialState) {
   };
   const hasChanged = !isEqual(state, initialState);
   return [state, handleChange, hasChanged];
+  const clearForm = () => setState(initialState);
+  // Need to refactor this to an object
+  return [state, handleChange, hasChanged, clearForm];
+}
+
+export function diffObjects(obj1, obj2) {
+  return Object.entries(obj2).reduce(
+    (diff, [key, value]) => ({
+      ...diff,
+      ...(obj1[key] === value ? {} : { [key]: value })
+    }),
+    {}
+  );
+}
+
+export function validateLength({ min = 0, max = +Infinity }) {
+  return str => str.length >= min && str.length <= max;
 }
 
 export function useValidation(validators) {
