@@ -188,7 +188,7 @@ export const confirmForgotPassword = (e, { username, new_password, code }) => di
         type: FORGOT_PASSWORD_SUCCESS
       });
       toast.info('Success!', {
-        className: 'toastify_message'
+        className: 'toastify_success'
       });
     })
     .catch(error => {
