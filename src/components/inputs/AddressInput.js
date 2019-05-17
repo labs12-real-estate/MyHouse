@@ -32,15 +32,17 @@ function AddressInput({ history, getValuation, fetching, isLoggedIn }) {
   }, []);
 
   const handleClick = e => {
+    console.log(node.current.contains(e.target));
     if (node.current.contains(e.target)) {
       return null;
+    } else {
+      setPredictions([]);
     }
-    setPredictions([]);
   };
 
   const displaySuggestions = (predictions, status) => {
     if (status !== google.maps.places.PlacesServiceStatus.OK) {
-      alert('We were unable to find an address with you input, please try again.');
+      alert('We were unable to find an address with your input, please try again.');
       return;
     }
     setPredictions(predictions);
@@ -97,16 +99,15 @@ function AddressInput({ history, getValuation, fetching, isLoggedIn }) {
           )}
         </form>
         <div className="search_result_container">
-          <div ref={node} className="place_holder" />
-          {predictions.length > 2 && address ? (
-            <div className="search_result_dropdown">
-              {predictions.map((prediction, i) => (
-                <button key={prediction.id} className={cursor === i ? 'active' : null} onClick={e => fillAddress(prediction.description, e)}>
-                  {prediction.description}
-                </button>
-              ))}
-            </div>
-          ) : null}
+          <div ref={node} className="search_result_dropdown">
+            {predictions.length > 2 && address
+              ? predictions.map((prediction, i) => (
+                  <button key={prediction.id} className={cursor === i ? 'active' : null} onClick={e => fillAddress(prediction.description, e)}>
+                    {prediction.description}
+                  </button>
+                ))
+              : null}
+          </div>
         </div>
       </div>
     </div>
