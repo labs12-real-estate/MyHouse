@@ -8,7 +8,9 @@ export function useForm(initialState) {
     setState({ ...state, [name]: value });
   };
   const hasChanged = !isEqual(state, initialState);
-  return [state, handleChange, hasChanged];
+  const clearForm = () => setState(initialState);
+  // Need to refactor this to an object
+  return [state, handleChange, hasChanged, clearForm];
 }
 
 export function diffObjects(obj1, obj2) {
