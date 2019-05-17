@@ -16,6 +16,8 @@ function WizardFormInitialData({ step, handleNext }) {
       setAddress(initialData.address);
       setValuation({ high: initialData.high, low: initialData.low });
     }
+    // This is used to track if it's the users first time entering the Overview Page.
+    localStorage.setItem('registering', 'yes');
   }, []);
   return (
     <div className="wizard_form_initial_data">
@@ -57,7 +59,8 @@ function WizardFormInitialData({ step, handleNext }) {
               <p>
                 In order to get a more accurate valuation, just answer a few questions.
                 <br />
-                <br /> Click next to get started.
+                <br />
+                <br /> <span>Click next to get started.</span>
               </p>
               <Button clickEvent={handleNext} buttonStyle="next_button" buttonText="Next" />
             </div>
@@ -68,18 +71,17 @@ function WizardFormInitialData({ step, handleNext }) {
         <div className="questions_answers">
           <div className="left_panel" />
           <div className="left_panel_text">
-            <div className="logo_address">
-              <i className="fas fa-map-marker-alt" />
-              <div className="2_lines_address">
-                <h2>{street}</h2>
-                <h3>{restAddress}</h3>
-              </div>
-            </div>
             <h4>MyHouse</h4>
           </div>
           <div className="right_panel">
             <div className="initial_value_range">
-              <h4>Initial Value Range</h4>
+              <div className="logo_address">
+                <i className="fas fa-map-marker-alt" />
+                <div className="2_lines_address">
+                  <h2>{street}</h2>
+                  <h3>{restAddress}</h3>
+                </div>
+              </div>
               <div className="container">
                 <div>
                   <h3>LOW</h3>
@@ -99,25 +101,35 @@ function WizardFormInitialData({ step, handleNext }) {
         </div>
       )}
       {step === 5 && (
-        <div className="confirmation">
-          <div className="logo_address">
-            <i className="fas fa-map-marker-alt" />
-            <div className="lines_address">
-              <h2>{street}</h2>
-              <h3>{restAddress}</h3>
-            </div>
+        <div className="questions_answers">
+          <div className="left_panel" />
+          <div className="left_panel_text">
+            <h4>MyHouse</h4>
           </div>
-          <div className="container">
-            <div>
-              <h3>LOW</h3>
-              <div className="low">
-                <i className="fas fa-square orange" /> {commaSeparator(Math.round(valuation.low))}
+
+          <div className="right_panel">
+            <div className="initial_value_range">
+              <div className="logo_address">
+                <i className="fas fa-map-marker-alt" />
+                <div className="lines_address">
+                  <h2>{street}</h2>
+                  <h3>{restAddress}</h3>
+                </div>
               </div>
-            </div>
-            <div>
-              <h3>HIGH</h3>
-              <div className="high">
-                <i className="fas fa-square green" /> {commaSeparator(Math.round(valuation.high))}
+
+              <div className="container">
+                <div>
+                  <h3>LOW</h3>
+                  <div className="low">
+                    <i className="fas fa-square orange" /> {commaSeparator(Math.round(valuation.low))}
+                  </div>
+                </div>
+                <div>
+                  <h3>HIGH</h3>
+                  <div className="high">
+                    <i className="fas fa-square green" /> {commaSeparator(Math.round(valuation.high))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
