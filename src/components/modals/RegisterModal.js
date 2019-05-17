@@ -7,11 +7,11 @@ import Modal from 'react-responsive-modal';
 
 function RegisterModal({ getHouseInput, isOpen, closeModal }) {
   return (
-    <div>
+    <>
       <Modal open={isOpen} onClose={closeModal} closeIconSize={25} styles={registerModalStyle()}>
         <RegisterInput houseInput={getHouseInput()} />
       </Modal>
-    </div>
+    </>
   );
 }
 
