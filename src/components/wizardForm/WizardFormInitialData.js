@@ -16,6 +16,8 @@ function WizardFormInitialData({ step, handleNext }) {
       setAddress(initialData.address);
       setValuation({ high: initialData.high, low: initialData.low });
     }
+    // This is used to track if it's the users first time entering the Overview Page.
+    localStorage.setItem('registering', 'yes');
   }, []);
   return (
     <div className="wizard_form_initial_data">
