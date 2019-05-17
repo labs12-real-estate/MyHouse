@@ -9,16 +9,24 @@ import {
   IMAGE_DOWNLOAD_FAIL,
   LIST_GALLERY_FETCH,
   LIST_GALLERY_SUCCESS,
-  LIST_GALLERY_FAIL
+  LIST_GALLERY_FAIL,
+  GALLERY_UPLOAD_FETCH,
+  GALLERY_UPLOAD_SUCCESS,
+  GALLERY_UPLOAD_FAIL
 } from '.';
 
 const toUserKey = (username, key) => `${username}/${key}`;
 const makeUserGalleryKey = username => `${username}/gallery/${uuidv4()}`;
 const getUserGalleryPath = username => `${username}/gallery/`;
 
-export const downloadPhoto = key => (dispatch, getState) => {
+export const downloadPhoto = key => async (dispatch, getState) => {
   const { username } = getState().authReducer.user;
   const userKey = toUserKey(username, key);
+  const objects = await Storage.list('');
+  const keys = objects.map(({ key }) => key);
+  if (!keys.includes(userKey)) {
+    return;
+  }
   dispatch({
     type: IMAGE_DOWNLOAD_FETCH
   });
@@ -82,12 +90,12 @@ export const uploadToGallery = e => (dispatch, getState) => {
   const tempURL = URL.createObjectURL(file);
   if (file.size >= 3e6) {
     dispatch({
-      type: IMAGE_UPLOAD_FAIL,
+      type: GALLERY_UPLOAD_FAIL,
       payload: 'File size should be less than 3 MB'
     });
   } else {
     dispatch({
-      type: IMAGE_UPLOAD_FETCH,
+      type: GALLERY_UPLOAD_FETCH,
       payload: {
         photoURL: tempURL
       }
@@ -95,12 +103,12 @@ export const uploadToGallery = e => (dispatch, getState) => {
     Storage.put(userKey, file)
       .then(_response => {
         dispatch({
-          type: IMAGE_UPLOAD_SUCCESS
+          type: GALLERY_UPLOAD_SUCCESS
         });
       })
       .catch(error => {
         dispatch({
-          type: IMAGE_UPLOAD_FAIL,
+          type: GALLERY_UPLOAD_FAIL,
           payload: error
         });
       });

@@ -7,14 +7,18 @@ import {
   IMAGE_DOWNLOAD_FAIL,
   LIST_GALLERY_FETCH,
   LIST_GALLERY_FAIL,
-  LIST_GALLERY_SUCCESS
+  LIST_GALLERY_SUCCESS,
+  GALLERY_UPLOAD_FETCH,
+  GALLERY_UPLOAD_SUCCESS,
+  GALLERY_UPLOAD_FAIL,
+  SIGN_OUT_SUCCESS
 } from '../actions';
 
 const initialState = {
   photoURLs: {
     house: '',
     profile: '',
-    other: []
+    gallery: []
   },
   fetching: false,
   error: '',
@@ -30,7 +34,7 @@ const photoURLs = (state = initialState.photoURLs, action) => {
         [action.payload.key]: action.payload.photoURL
       };
     case LIST_GALLERY_SUCCESS:
-      return { ...state, other: [...state.other, ...action.payload] };
+      return { ...state, gallery: [...state.gallery, ...action.payload] };
     default:
       return state;
   }
@@ -51,7 +55,17 @@ export const storageReducer = (state = initialState, action) => {
     case IMAGE_DOWNLOAD_FAIL:
     case IMAGE_UPLOAD_FAIL:
     case LIST_GALLERY_FAIL:
+    case GALLERY_UPLOAD_FAIL:
       return { ...state, fetching: false, error: action.payload };
+    // Clear storage when a user signs out
+    case SIGN_OUT_SUCCESS:
+      return initialState;
+    // Not sure if we want to optimistically update the gallery here,
+    // it would mean finding and deleting that temporary image when
+    // we get a successfully uploaded image from S3.
+    // For now, just going to handle this with no UI update.
+    case GALLERY_UPLOAD_FETCH:
+    case GALLERY_UPLOAD_SUCCESS:
     default:
       return state;
   }
