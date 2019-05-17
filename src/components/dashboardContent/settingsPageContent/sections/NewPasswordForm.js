@@ -16,11 +16,11 @@ function NewPasswordForm({ changePassword, error }) {
   const handleSubmit = e => {
     e.preventDefault();
     const { oldPassword, newPassword } = formState;
-    changePassword(oldPassword, newPassword);
-    clearForm();
+    changePassword(oldPassword, newPassword).then(boolean => boolean && clearForm());
   };
   return (
     <form onSubmit={handleSubmit} className="password">
+      <ErrorContainer error={error && 'Incorrect password'} />
       <label className="inline-grid">
         <div>Old Password</div>
         <div>
@@ -48,7 +48,7 @@ function NewPasswordForm({ changePassword, error }) {
 
 export default connect(
   ({ authReducer }) => ({
-    user: authReducer.user
+    error: authReducer.error
   }),
   { changePassword }
 )(NewPasswordForm);
