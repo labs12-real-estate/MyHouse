@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { useForm, validateEmail } from 'helper-functions/form-logic-functions.js';
+import { useForm, validateEmail } from '../../../../helper-functions/form-logic-functions.js'
 import ErrorContainer from './ErrorContainer';
 
 function AttributesForm({ user }) {
