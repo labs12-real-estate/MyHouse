@@ -12,7 +12,7 @@ export default function LandingHero() {
         <p>
           We have the most precise home valuation techniques in the industry.
           <br />
-          Enter your Michigan address below to get started.
+          Enter your address below to get started.
         </p>
         <AddressInput />
       </div>

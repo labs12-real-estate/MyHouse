@@ -86,7 +86,7 @@
     }
 
     .dashboard_nav_button {
-      background: #e63700;
+      background: #e51f43;
       font-family: Roboto;
       font-style: normal;
       font-weight: 500;
@@ -104,10 +104,10 @@
         outline: none;
       }
       &:active {
-        background: #dc3300;
+        background: #e40b1d;
       }
       &:hover {
-        background: #f13800;
+        background: #e20f07;
       }
     }
   } // end of dashboard_nav_item_container

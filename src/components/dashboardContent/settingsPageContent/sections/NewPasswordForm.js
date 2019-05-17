@@ -5,6 +5,7 @@ import { useForm, useValidation, validatePassword } from 'helper-functions/form-
 import { changePassword } from 'actions/authActions';
 import ErrorContainer from './ErrorContainer';
 
+
 function NewPasswordForm({ changePassword, error }) {
   const initialState = { oldPassword: '', newPassword: '', confirmNewPassword: '' };
   const [formState, handleChange, hasChanged, clearForm] = useForm(initialState);
