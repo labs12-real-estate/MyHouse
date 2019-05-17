@@ -1,13 +1,13 @@
 [
   {
-    "questionContent": "What types of countertops do you have installed?",
+    "questionContent": "What types of countertops do you have?",
     "title": "Countertops",
     "options": ["Laminate", "Marble/Quartz", "Granite/Concrete", "Formica/Tile"],
     "key": "countertops",
     "selected": null
   },
   {
-    "questionContent": "What material is your kitchen flooring",
+    "questionContent": "What material is your kitchen flooring?",
     "title": "Kitchen flooring",
     "options": ["Hardwood", "Engineered/Laminate", "Ceramic Tile", "Porcelain Tile/Concrete"],
     "key": "flooring",
