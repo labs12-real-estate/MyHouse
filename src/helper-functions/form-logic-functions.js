@@ -1,14 +1,51 @@
 import { useState } from 'react';
+import isEqual from 'lodash/isEqual';
 
 export function useForm(initialState) {
   const [state, setState] = useState(initialState);
   const handleChange = e => {
-    const {
-      target: { name, value }
-    } = e;
+    const { name, value } = e.target;
     setState({ ...state, [name]: value });
   };
-  return [state, handleChange];
+  const hasChanged = !isEqual(state, initialState);
+  const clearForm = () => setState(initialState);
+  // Need to refactor this to an object
+  return [state, handleChange, hasChanged, clearForm];
+}
+
+export function diffObjects(obj1, obj2) {
+  return Object.entries(obj2).reduce(
+    (diff, [key, value]) => ({
+      ...diff,
+      ...(obj1[key] === value ? {} : { [key]: value })
+    }),
+    {}
+  );
+}
+
+export function validateLength({ min = 0, max = +Infinity }) {
+  return str => str.length >= min && str.length <= max;
+}
+
+export function useValidation(validators) {
+  const initialState = Object.keys(validators).reduce((obj, key) => ({ ...obj, [key]: '' }), {});
+  const [errorState, setErrorState] = useState(initialState);
+  const validate = state => _event => {
+    setErrorState(
+      Object.entries(validators).reduce(
+        // `validators` is a pair of a validation function and an error message
+        (acc, [key, [validatorFn, errorMessage]]) => ({
+          ...acc,
+          // For each validation, we are running the function on state value
+          // if it returns false (failure) we set the error message at that key
+          [key]: validatorFn(state[key]) ? '' : errorMessage
+        }),
+        {}
+      )
+    );
+  };
+  const hasErrors = !isEqual(errorState, initialState);
+  return [errorState, validate, hasErrors];
 }
 
 export function useInput(initialString = '') {

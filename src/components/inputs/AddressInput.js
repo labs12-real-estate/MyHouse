@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { getValuation } from '../../actions/landingpageActions';
@@ -10,6 +10,8 @@ function AddressInput({ history, getValuation, fetching, isLoggedIn }) {
   const [address, setAddress] = useState('');
   const [predictions, setPredictions] = useState([]);
   const [error, setError] = useState(['']);
+  const [cursor, setCursor] = useState(0);
+  let node = useRef(null);
 
   // Variables for Google Place API
   const google = window.google;
@@ -18,14 +20,29 @@ function AddressInput({ history, getValuation, fetching, isLoggedIn }) {
   // Get session token on first render
   /* eslint-disable */
   useEffect(() => {
-    setError("");
+    setError('');
     setSessionToken(new google.maps.places.AutocompleteSessionToken());
   }, []);
-  /* eslint-disable */
+  /* eslint-enable */
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClick, false);
+    return () => {
+      document.removeEventListener('mousedown', handleClick, false);
+    };
+  }, []);
+
+  const handleClick = e => {
+    console.log(node.current.contains(e.target));
+    if (node.current.contains(e.target)) {
+      return null;
+    } else {
+      setPredictions([]);
+    }
+  };
 
   const displaySuggestions = (predictions, status) => {
     if (status !== google.maps.places.PlacesServiceStatus.OK) {
-      alert(status);
+      alert('We were unable to find an address with your input, please try again.');
       return;
     }
     setPredictions(predictions);
@@ -40,24 +57,38 @@ function AddressInput({ history, getValuation, fetching, isLoggedIn }) {
     }
   };
 
+  const handleKeyDown = e => {
+    if (e.keyCode === 38 && cursor > 0) {
+      setCursor(cursor - 1);
+      setAddress(predictions[cursor].description);
+    } else if (e.keyCode === 40 && cursor < predictions.length - 1) {
+      setCursor(cursor + 1);
+      setAddress(predictions[cursor].description);
+    }
+  };
+
   const getValue = e => {
     e.preventDefault();
+    setPredictions([]);
     if (isLoggedIn) {
       setError('Please log out and try again.');
-    } else getValuation(address, history);
+    } else {
+      getValuation(address, history);
+    }
   };
 
   const fillAddress = (address, e) => {
     e.preventDefault();
     setAddress(address);
+    setPredictions([]);
   };
 
   return (
     <div>
       <div className="address_searchbar">
-        {error && isLoggedIn && <p>{error}</p>}
         <form onSubmit={getValue}>
-          <input onChange={handleInputChange} placeholder="Enter address..." value={address} name="address" autoComplete="off" />
+          {error && isLoggedIn && <div className="error_container">{error}</div>}
+          <input onKeyDown={handleKeyDown} onChange={handleInputChange} placeholder="Enter address..." value={address} name="address" autoComplete="off" />
           {useWindowWidth() >= 600 && (
             <button className="form-button">{fetching ? <Loader height={25} width={25} type="TailSpin" color="#FFF" /> : 'Get Started'}</button>
           )}
@@ -68,22 +99,22 @@ function AddressInput({ history, getValuation, fetching, isLoggedIn }) {
           )}
         </form>
         <div className="search_result_container">
-          {predictions.length > 2 && address ? (
-            <div className="search_result_dropdown">
-              {predictions.map(prediction => (
-                <button key={prediction.id} onClick={e => fillAddress(prediction.description, e)}>
-                  {prediction.description}
-                </button>
-              ))}
-            </div>
-          ) : null}
+          <div ref={node} className="search_result_dropdown">
+            {predictions.length > 2 && address
+              ? predictions.map((prediction, i) => (
+                  <button key={prediction.id} className={cursor === i ? 'active' : null} onClick={e => fillAddress(prediction.description, e)}>
+                    {prediction.description}
+                  </button>
+                ))
+              : null}
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-const mapStateToProps = ({landingpageReducer, authReducer}) => {
+const mapStateToProps = ({ landingpageReducer, authReducer }) => {
   return {
     fetching: landingpageReducer.fetching,
     isLoggedIn: authReducer.isLoggedIn
