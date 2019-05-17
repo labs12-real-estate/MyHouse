@@ -10,36 +10,42 @@ export const dashboardSidebarData = [
     navTitle: 'Overview',
     path: '/overview',
     icon: Overview,
-    id: Math.random()
+    id: Math.random(),
+    target: 'overview'
   },
   {
     navTitle: 'MyHouse Profile',
     path: '/myhouse',
     icon: myHouseProfile,
-    id: Math.random()
+    id: Math.random(),
+    target: 'myhouse'
   },
   {
     navTitle: 'Valuation Playground',
     path: '/valuation-playground',
     icon: valuationPlayground,
-    id: Math.random()
+    id: Math.random(),
+    target: 'valuationPlayground'
   },
   {
     navTitle: 'Mortgage Calculator',
     path: '/mortgage-calculator',
     icon: mortgageCalculator,
-    id: Math.random()
+    id: Math.random(),
+    target: 'mortgageCalculator'
   },
   {
     navTitle: 'Design Studio',
     path: '/design-studio',
     icon: DesignStudio,
-    id: Math.random()
+    id: Math.random(),
+    target: 'designStudio'
   },
   {
     navTitle: 'Settings',
     path: '/settings',
     icon: Settings,
-    id: Math.random()
+    id: Math.random(),
+    target: 'settings'
   }
 ];
