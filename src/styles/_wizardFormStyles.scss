@@ -480,8 +480,9 @@
                 justify-content: space-between;
                 display: flex;
                 @media (max-width: 800px) {
-                  width: 60%;
-                  justify-content: space-around;
+                  width: 40%;
+                  justify-content: space-between;
+                  min-width: 240px;
                 }
                 @include for-phone-only {
                   width: 100%;
@@ -500,9 +501,7 @@
                   font-weight: bold;
                   font-family: 'Montserrat', 'sans-serif';
                   margin-bottom: 0.5rem;
-                  @media (max-width: 800px) {
-                    font-size: 1.4rem;
-                  }
+
                   @include for-phone-only {
                     font-size: 1.2rem;
                   }
@@ -517,7 +516,7 @@
                     color: rgb(255, 128, 64);
                   }
                   @media (max-width: 800px) {
-                    font-size: 2rem;
+                    font-size: 1.8rem;
                   }
                   @include for-phone-only {
                     font-size: 2rem;
@@ -533,7 +532,7 @@
                     color: rgb(0, 128, 36);
                   }
                   @media (max-width: 800px) {
-                    font-size: 2rem;
+                    font-size: 1.8rem;
                   }
                   @include for-phone-only {
                     font-size: 2rem;
@@ -625,13 +624,16 @@
           font-size: 1.6rem;
           margin-top: 1.4rem;
           line-height: 18px;
+          font-weight: 300;
           @media (max-width: 800px) {
             width: 70%;
           }
           @include for-phone-only {
             width: 80%;
+            font-size: 1.2rem;
+            height: 45px;
             margin-top: 1rem;
-            font-size: 1.4rem;
+            font-weight: 400;
           }
         }
         progress {
@@ -859,6 +861,17 @@
       .confirmation_container {
         // height: 417px;
         position: relative;
+
+        @include for-phone-only {
+          // height: 300px;
+          // bottom: -60px;
+          .button_container {
+            // bottom: -14.1rem;
+            // background: #fff;
+            padding: 0 5%;
+            bottom: 20px;
+          }
+        }
         .left-panel {
           background-image: url('../assets/images/wizard-form.jpg');
           background-repeat: no-repeat;
@@ -950,7 +963,7 @@
           }
         }
         .review_container {
-          height: 34vh;
+          height: 36vh;
           position: absolute;
           right: 0;
           bottom: 0;
@@ -964,17 +977,11 @@
             width: 100%;
           }
           @include for-phone-only {
-            // height: 300px;
-            // bottom: -60px;
-            .button_container {
-              bottom: -14.1rem;
-              background: #fff;
-            }
+            height: 30vh;
           }
 
           .upgrade_summary {
-            width: 70%;
-            // margin
+            width: 65%;
             @include for-phone-only {
               width: 80%;
             }
@@ -991,8 +998,7 @@
               }
               @include for-phone-only {
                 flex-direction: column;
-                width: 90%;
-                height: 60px;
+                height: 55px;
                 border-bottom: 1px solid #e4e4e4;
               }
             }
@@ -1011,13 +1017,14 @@
 
             label {
               font-family: Montserrat;
-              font-size: 1.4rem;
+              font-size: 1.2rem;
               text-transform: uppercase;
               font-weight: 600;
               line-height: 2.2rem; /* identical to box height */
               color: #666;
               @include for-phone-only {
                 align-self: flex-start;
+                font-size: 1.2rem;
               }
             }
             select::-ms-expand {
@@ -1031,7 +1038,7 @@
               font-weight: 500;
               font-size: 1.6rem;
               line-height: 2.2rem;
-              width: 22rem;
+              width: 18rem;
               height: 3.5rem;
               display: block;
               @include for-phone-only {
@@ -1135,7 +1142,7 @@ progress[value] {
     opacity: 0.9;
     font-weight: 600;
     letter-spacing: 0;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-family: 'Fira Sans', 'sans-serif';
   }
   h3 {
@@ -1155,8 +1162,8 @@ progress[value] {
   bottom: 4rem;
   @include for-phone-only {
     width: 100%;
-    padding: 0 5% 18px;
-    bottom: -17rem;
+    padding: 0 5%;
+    bottom: 20px;
     right: auto;
     display: flex;
     flex-direction: row;
