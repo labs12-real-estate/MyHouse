@@ -25,7 +25,7 @@ export const forgotPasswordAttemptsExceeded = (error, className) => {
 
 export const incorrectForgotPasswordCreds = function(error, className) {
   if (error.message) {
-    return error.message.includes('Username/client id combination not found.') ? (
+    return error.message.includes('Username/client id combination not found.') || error.message.includes('Cannot reset password') ? (
       <span className={className}>Please enter a valid MyHouse username.</span>
     ) : null;
   }

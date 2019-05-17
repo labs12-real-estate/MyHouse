@@ -9,11 +9,16 @@ function HouseProfileForm(props) {
   useEffect(() => {
     setContent(props.content);
   }, [props.content, setContent]);
-  const handleEdit = () => props.isEditing(props.field);
+  const handleEdit = () => {props.isEditing(props.field); 
+  };
   const handleCancel = () => {
     props.cancelSaveHouseInfo(props.field);
   };
   const handleSave = () => props.saveHouseInfo({ changes: { [props.field]: normalizeContent(content) }, field: props.field, id: props.id });
+  const handleError = () => {
+   
+    return alert('too many chars')
+  }
   const isEditing = props.editingFields.includes(props.field);
   return (
     <div className="house_profile_form">
@@ -23,14 +28,17 @@ function HouseProfileForm(props) {
           <i className="fas fa-pen" onClick={handleEdit} title="Edit" />
         ) : (
           <span>
-            <i className="fas fa-times" onClick={handleCancel} />
+            
             <i className="fas fa-check" title="Save" onClick={handleSave} />
           </span>
         )}
       </div>
-      <div className="house_profile_form_content">
+      <div className="house_profile_form_content" onClick= {handleEdit} onBlur= {handleSave}>
         <div className='house_profile_form_content_gutter'>
-        {isEditing ? <textarea autoFocus value={content || ''} onChange={updateContent} /> : <pre>{content || props.defaultValue}</pre>}
+        {isEditing ? <textarea maxLength='450' autoFocus value={content || ''} onChange={updateContent} /> : <pre>{content || props.defaultValue}</pre>}
+           <div style={{textAlign:'right'}}>
+            {content ? content.length : 0} / 450
+          </div>
       </div>
       </div>
     </div>

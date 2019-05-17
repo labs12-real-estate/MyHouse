@@ -20,10 +20,14 @@ export function useInput(initialString = '') {
 }
 
 export function validateEmail(email) {
-  let re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
+
 export function validatePassword(password) {
-  let re = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})');
-  return re.test(String(password));
+  const isLongEnough = password.length >= 8;
+  const containsMixedCase = /[a-z]/.test(password) && /[A-Z]/.test(password);
+  const containsNumber = /[0-9]/.test(password);
+  const containsSpecialCharacter = /[^a-z|0-9]/i.test(password);
+  return [isLongEnough, containsMixedCase, containsNumber, containsSpecialCharacter].every(Boolean);
 }

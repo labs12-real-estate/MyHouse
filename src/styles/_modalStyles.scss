@@ -88,26 +88,26 @@
       color: #666;
       text-align: center;
       margin-bottom: 10px;
-      margin-top: 100px;
+      margin-top: 75px;
     }
 
     .modal_login_button {
-      background: #e63700;
+      background: #e51f43;
       border-radius: 4px;
       font-family: Roboto;
       font-style: normal;
       font-weight: normal;
       font-size: 1.8rem;
-      line-height: 3.1rem;
+      line-height: 2.1rem;
       text-align: center;
       height: 36px;
       color: #ffffff;
       border: none;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      margin-top: 25px;
+  
       cursor: pointer;
       &:hover {
-        background: #f13800;
+        background: #e20f07;
       }
       &:focus {
         outline: none;
@@ -117,7 +117,7 @@
       }
     }
     .modal_login_button_2 {
-      background: #e63700;
+      background: #e51f43;
       border-radius: 4px;
       font-family: Roboto;
       font-style: normal;
@@ -131,7 +131,7 @@
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       cursor: pointer;
       &:hover {
-        background: #f13800;
+        background: #e20f07;
       }
       &:focus {
         outline: none;
@@ -224,7 +224,7 @@
     }
 
     .modal_register_button {
-      background: #e63700;
+      background: #e51f43;
       border-radius: 4px;
       font-family: Roboto;
       font-style: normal;
@@ -238,7 +238,7 @@
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       cursor: pointer;
       &:hover {
-        background: #f13800;
+        background: #e20f07;
       }
       &:focus {
         outline: none;
