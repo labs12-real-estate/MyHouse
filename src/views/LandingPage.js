@@ -10,6 +10,8 @@ function LandingPage() {
   useEffect(() => {
     localStorage.removeItem('wizardForm');
     localStorage.removeItem('initialData');
+    // This is used to track if it's the users first time entering the Overview Page.
+    localStorage.removeItem('registering');
   }, []);
   return (
     <div className="landing_body">
