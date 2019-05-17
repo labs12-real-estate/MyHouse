@@ -35,12 +35,12 @@ function WizardFormConfirmation({ getHouseInput, questions, handleAnswer, handle
           ))}
         </div>
         {/* <div className="shadow" /> */}
-        <p>Please register to get a more accurate valuation.</p>
-      </div>
-      <div className="button_container">
-        <Button clickEvent={handlePrev} buttonStyle="prev_button" buttonText="Prev" />
-        <Button clickEvent={openModal} buttonStyle="register_button" buttonText="Register" />
-        <RegisterModal getHouseInput={getHouseInput} />
+        {/* <p>Please register to get a more accurate valuation.</p> */}
+        <div className="button_container">
+          <Button clickEvent={handlePrev} buttonStyle="prev_button" buttonText="Prev" />
+          <Button clickEvent={openModal} buttonStyle="register_button" buttonText="Register" />
+          <RegisterModal getHouseInput={getHouseInput} />
+        </div>
       </div>
       <div className="left-panel">{/* <RegisterInput handlePrev={handlePrev} houseInput={getHouseInput()} /> */}</div>
     </div>

@@ -54,16 +54,12 @@ function WizardFormInitialData({ step, handleNext }) {
               </div>
             </div>
             <div className="bottom_container">
-              <p>
-                In order to get a more accurate valuation, just answer a few questions.
-                <br />
-                <br />
-                <br /> <span>Click next to get started.</span>
-              </p>
+              <p>In order to get a more accurate valuation, just answer a few questions.</p>
+              <p>Click next to get started.</p>
             </div>
-          </div>
-          <div className="button_container">
-            <Button clickEvent={handleNext} buttonStyle="register_button" buttonText="Next" style={{ width: '100%' }} />
+            <div className="button_container">
+              <Button clickEvent={handleNext} buttonStyle="register_button" buttonText="Next" style={{ width: '100%' }} />
+            </div>
           </div>
         </div>
       )}
