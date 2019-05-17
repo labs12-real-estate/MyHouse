@@ -26,6 +26,9 @@ import {
   UPDATE_USER_ATTRIBUTES_FETCH,
   UPDATE_USER_ATTRIBUTES_SUCCESS,
   UPDATE_USER_ATTRIBUTES_FAIL,
+  CHANGE_PASSWORD_FETCH,
+  CHANGE_PASSWORD_SUCCESS,
+  CHANGE_PASSWORD_FAIL,
   SEND_REGISTER_ERROR
 } from './index';
 
@@ -185,7 +188,7 @@ export const confirmForgotPassword = (e, { username, new_password, code }) => di
         type: FORGOT_PASSWORD_SUCCESS
       });
       toast.info('Success!', {
-        className: 'toastify_message'
+        className: 'toastify_success'
       });
     })
     .catch(error => {
@@ -208,12 +211,45 @@ export const updateUserAttributes = attributes => async dispatch => {
         type: UPDATE_USER_ATTRIBUTES_SUCCESS,
         payload: attributes
       });
+      toast.info('Success!', {
+        className: 'toastify_success'
+      });
     })
     .catch(error => {
       dispatch({
         type: UPDATE_USER_ATTRIBUTES_FAIL,
         payload: error
       });
+      toast.error('Error!', {
+        className: 'toastify_error'
+      });
+    });
+};
+
+export const changePassword = (oldPassword, newPassword) => async dispatch => {
+  dispatch({
+    type: CHANGE_PASSWORD_FETCH
+  });
+  const user = await Auth.currentAuthenticatedUser();
+  return Auth.changePassword(user, oldPassword, newPassword)
+    .then(() => {
+      dispatch({
+        type: CHANGE_PASSWORD_SUCCESS
+      });
+      toast.info('Success!', {
+        className: 'toastify_success'
+      });
+      return true;
+    })
+    .catch(error => {
+      dispatch({
+        type: CHANGE_PASSWORD_FAIL,
+        payload: error
+      });
+      toast.error('Error!', {
+        className: 'toastify_error'
+      });
+      return false;
     });
 };
 

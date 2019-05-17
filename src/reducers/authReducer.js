@@ -26,7 +26,10 @@ import {
   SEND_REGISTER_ERROR,
   UPDATE_USER_ATTRIBUTES_FETCH,
   UPDATE_USER_ATTRIBUTES_SUCCESS,
-  UPDATE_USER_ATTRIBUTES_FAIL
+  UPDATE_USER_ATTRIBUTES_FAIL,
+  CHANGE_PASSWORD_FETCH,
+  CHANGE_PASSWORD_SUCCESS,
+  CHANGE_PASSWORD_FAIL
 } from '../actions/index';
 
 const initialState = {
@@ -67,6 +70,8 @@ export const authReducer = (state = initialState, action) => {
           ...action.payload
         }
       };
+    case CHANGE_PASSWORD_SUCCESS:
+      return { ...state, fetching: false, error: null };
     case SIGN_IN_FAIL:
     case SIGN_UP_FAIL:
       return { ...state, fetching: false, pendingConfirmation: false, isLoggedIn: false, error: action.payload };
@@ -74,6 +79,7 @@ export const authReducer = (state = initialState, action) => {
     case CONFIRM_FAIL:
     case FORGOT_PASSWORD_FAIL:
     case UPDATE_USER_ATTRIBUTES_FAIL:
+    case CHANGE_PASSWORD_FAIL:
       return { ...state, fetching: false, error: action.payload };
     case SIGN_UP_FETCH:
       return { ...state, fetching: true, pendingConfirmation: false, isLoggedIn: false };
@@ -84,6 +90,7 @@ export const authReducer = (state = initialState, action) => {
     case CONFIRM_FETCH:
     case GET_USER_SESSION_FETCH:
     case FORGOT_PASSWORD_FETCH:
+    case CHANGE_PASSWORD_FETCH:
     case UPDATE_USER_ATTRIBUTES_FETCH:
       return { ...state, fetching: true, submittedConfirmation: true };
     case SIGN_UP_PENDING:
