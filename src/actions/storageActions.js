@@ -1,11 +1,28 @@
 import { Storage } from 'aws-amplify';
-import { IMAGE_UPLOAD_FETCH, IMAGE_UPLOAD_SUCCESS, IMAGE_UPLOAD_FAIL, IMAGE_DOWNLOAD_FETCH, IMAGE_DOWNLOAD_SUCCESS, IMAGE_DOWNLOAD_FAIL } from '.';
+import uuidv4 from 'uuid/v4';
+import {
+  IMAGE_UPLOAD_FETCH,
+  IMAGE_UPLOAD_SUCCESS,
+  IMAGE_UPLOAD_FAIL,
+  IMAGE_DOWNLOAD_FETCH,
+  IMAGE_DOWNLOAD_SUCCESS,
+  IMAGE_DOWNLOAD_FAIL,
+  LIST_GALLERY_FETCH,
+  LIST_GALLERY_SUCCESS,
+  LIST_GALLERY_FAIL
+} from '.';
 
-export const downloadPhoto = key => dispatch => {
+const toUserKey = (username, key) => `${username}/${key}`;
+const makeUserGalleryKey = username => `${username}/gallery/${uuidv4()}`;
+const getUserGalleryPath = username => `${username}/gallery/`;
+
+export const downloadPhoto = key => (dispatch, getState) => {
+  const { username } = getState().authReducer.user;
+  const userKey = toUserKey(username, key);
   dispatch({
     type: IMAGE_DOWNLOAD_FETCH
   });
-  Storage.get(key)
+  Storage.get(userKey)
     .then(response => {
       dispatch({
         type: IMAGE_DOWNLOAD_SUCCESS,
@@ -23,14 +40,16 @@ export const downloadPhoto = key => dispatch => {
     });
 };
 
-export const uploadPhoto = e => dispatch => {
+export const uploadPhoto = e => (dispatch, getState) => {
   const [file] = e.target.files;
+  const { username } = getState().authReducer.user;
   const key = e.target.name;
+  const userKey = toUserKey(username, key);
   const tempURL = URL.createObjectURL(file);
-  if (file.size >= 2e6) {
+  if (file.size >= 3e6) {
     dispatch({
       type: IMAGE_UPLOAD_FAIL,
-      payload: 'File size should be less than 2 MB'
+      payload: 'File size should be less than 3 MB'
     });
   } else {
     dispatch({
@@ -40,12 +59,12 @@ export const uploadPhoto = e => dispatch => {
         key
       }
     });
-    Storage.put(key, file)
+    Storage.put(userKey, file)
       .then(_response => {
         dispatch({
           type: IMAGE_UPLOAD_SUCCESS
         });
-        downloadPhoto(key)(dispatch);
+        downloadPhoto(key)(dispatch, getState);
       })
       .catch(error => {
         dispatch({
@@ -56,7 +75,63 @@ export const uploadPhoto = e => dispatch => {
   }
 };
 
-export const getUserPhotos = () => dispatch => {
-  downloadPhoto('house')(dispatch);
-  // downloadPhoto('profile')(dispatch);
+export const uploadToGallery = e => (dispatch, getState) => {
+  const [file] = e.target.files;
+  const { username } = getState().authReducer.user;
+  const userKey = makeUserGalleryKey(username);
+  const tempURL = URL.createObjectURL(file);
+  if (file.size >= 3e6) {
+    dispatch({
+      type: IMAGE_UPLOAD_FAIL,
+      payload: 'File size should be less than 3 MB'
+    });
+  } else {
+    dispatch({
+      type: IMAGE_UPLOAD_FETCH,
+      payload: {
+        photoURL: tempURL
+      }
+    });
+    Storage.put(userKey, file)
+      .then(_response => {
+        dispatch({
+          type: IMAGE_UPLOAD_SUCCESS
+        });
+      })
+      .catch(error => {
+        dispatch({
+          type: IMAGE_UPLOAD_FAIL,
+          payload: error
+        });
+      });
+  }
+};
+
+export const listGallery = () => (dispatch, getState) => {
+  const { username } = getState().authReducer.user;
+  const gallery = getUserGalleryPath(username);
+  dispatch({
+    type: LIST_GALLERY_FETCH
+  });
+  Storage.list(gallery)
+    .then(async keys => {
+      console.log(keys);
+      const photoURLs = await Promise.all(keys.map(Storage.get));
+      dispatch({
+        type: LIST_GALLERY_SUCCESS,
+        payload: photoURLs
+      });
+    })
+    .catch(error => {
+      dispatch({
+        type: LIST_GALLERY_FAIL,
+        payload: error
+      });
+    });
+};
+
+export const getUserPhotos = () => (dispatch, getState) => {
+  downloadPhoto('house')(dispatch, getState);
+  downloadPhoto('profile')(dispatch, getState);
+  listGallery()(dispatch, getState);
 };

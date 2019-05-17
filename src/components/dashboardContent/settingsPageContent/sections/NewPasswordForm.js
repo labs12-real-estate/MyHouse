@@ -2,6 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import isEqual from 'lodash/fp/isEqual';
 import { useForm, useValidation, validatePassword } from 'helper-functions/form-logic-functions.js';
+import ErrorContainer from './ErrorContainer';
+
+function NewPasswordForm({ user }) {
+  const [formState, handleChange, hasChanged] = useForm({ oldPassword: '', newPassword: '', confirmNewPassword: '' });
 import { changePassword } from 'actions/authActions';
 import ErrorContainer from './ErrorContainer';
 
@@ -13,6 +17,8 @@ function NewPasswordForm({ changePassword, error }) {
     newPassword: [validatePassword, 'Password must be at least 8 characters long, contain upper and lowercase letters, a number and a special character'],
     confirmNewPassword: [isEqual(formState.newPassword), 'Passwords must match']
   });
+  return (
+    <form className="password">
   const noneEmpty = Object.values(formState).every(Boolean);
   const handleSubmit = e => {
     e.preventDefault();
@@ -39,6 +45,10 @@ function NewPasswordForm({ changePassword, error }) {
       <label className="inline-grid">
         <div>Confirm New Password</div>
         <div>
+          <input name="confirmNewPassword" type="password" value={formState.confirmNewPassword} onChange={handleChange} />
+        </div>
+      </label>
+      <button disabled={!hasChanged || hasErrors}>Submit</button>
           <input name="confirmNewPassword" type="password" value={formState.confirmNewPassword} onChange={handleChange} onBlur={validate(formState)} />
         </div>
       </label>
