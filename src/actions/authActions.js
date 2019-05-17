@@ -26,6 +26,9 @@ import {
   UPDATE_USER_ATTRIBUTES_FETCH,
   UPDATE_USER_ATTRIBUTES_SUCCESS,
   UPDATE_USER_ATTRIBUTES_FAIL,
+  CHANGE_PASSWORD_FETCH,
+  CHANGE_PASSWORD_SUCCESS,
+  CHANGE_PASSWORD_FAIL,
   SEND_REGISTER_ERROR
 } from './index';
 
@@ -208,10 +211,30 @@ export const updateUserAttributes = attributes => async dispatch => {
         type: UPDATE_USER_ATTRIBUTES_SUCCESS,
         payload: attributes
       });
+      toast.info('Success!');
     })
     .catch(error => {
       dispatch({
         type: UPDATE_USER_ATTRIBUTES_FAIL,
+        payload: error
+      });
+    });
+};
+
+export const changePassword = (oldPassword, newPassword) => async dispatch => {
+  dispatch({
+    type: CHANGE_PASSWORD_FETCH
+  });
+  const user = await Auth.currentAuthenticatedUser();
+  return Auth.changePassword(user, oldPassword, newPassword)
+    .then(() => {
+      dispatch({
+        type: CHANGE_PASSWORD_SUCCESS
+      });
+    })
+    .catch(error => {
+      dispatch({
+        type: CHANGE_PASSWORD_FAIL,
         payload: error
       });
     });
