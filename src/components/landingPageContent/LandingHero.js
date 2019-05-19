@@ -9,11 +9,8 @@ export default function LandingHero() {
       <div className="hero">
         <h1>{useWindowWidth() <= 600 ? 'MyHouse' : 'Discover your value'}</h1>
 
-        <p>
-          We have the most precise home valuation techniques in the industry.
-          <br />
-          Enter your address below to get started.
-        </p>
+        <p>We have the most precise home valuation techniques in the industry.</p>
+        <p>Enter your address below to get started.</p>
         <AddressInput />
       </div>
 
