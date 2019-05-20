@@ -1,27 +1,45 @@
-import React from 'react';
-import userProfilePic from '../../../assets/images/house-profile/tonystark.jpg';
+import React, { useRef } from 'react';
+import UserPlaceholder from 'assets/icons/UserPlaceholder';
 import { connect } from 'react-redux';
+import { uploadPhoto } from 'actions/storageActions';
 
-function UserProfileSection({ house, user }) {
+function UserProfileSection({ house, user, profilePhotoURL, uploadPhoto }) {
+  const ref = useRef();
+  const handleClick = _event => {
+    ref.current.click();
+  };
   return (
     <div className="house_profile_user_section_container">
       <div className="house_profile_name_and_address">
         <div className="house_profile_user_section_sub_container">
-          <img src={userProfilePic} alt="user" />
-          <div className='name_address'>
-          <h1>{user.name}</h1>
-          <h3>
-            <i className="fas fa-map-marker-alt" /> 
-            {house.address}
-          </h3>
+          <figure>
+            <div className="camera-overlay">
+              <button onClick={handleClick}>
+                <i class="fas fa-camera" />
+              </button>
+              <input hidden name="profile" type="file" accept="image/jpeg" ref={ref} onChange={uploadPhoto} />
+            </div>
+            {profilePhotoURL ? <img src={profilePhotoURL} alt="user" /> : <UserPlaceholder />}
+          </figure>
+          <div className="name_address">
+            <h1>{user.name}</h1>
+            <h3>
+              <i className="fas fa-map-marker-alt" />
+              {house.address}
+            </h3>
           </div>
         </div>
         <div className="house_profile_user_section_sub_container small_home_address">
           <h1>{user.name}</h1>
-          <img src={userProfilePic} alt="user" />
-          <h3>
-            {/* <i className="fas fa-map-marker-alt" />  */}{house.address} 
-          </h3>
+          <figure>
+            <div className="camera-overlay">
+              <button onClick={handleClick}>
+                <i class="fas fa-camera" />
+              </button>
+            </div>
+            {profilePhotoURL ? <img src={profilePhotoURL} alt="user" /> : <UserPlaceholder />}
+          </figure>
+          <h3>{house.address}</h3>
         </div>
       </div>
       <div className="house_profile_user_section_sub_container small_email_share">
@@ -50,14 +68,15 @@ function UserProfileSection({ house, user }) {
   );
 }
 
-const mapStateToProps = ({ houseReducer, authReducer }) => {
+const mapStateToProps = ({ houseReducer, authReducer, storageReducer }) => {
   return {
     user: authReducer.user,
-    house: houseReducer.house
+    house: houseReducer.house,
+    profilePhotoURL: storageReducer.photoURLs.profile
   };
 };
 
 export default connect(
   mapStateToProps,
-  {}
+  { uploadPhoto }
 )(UserProfileSection);

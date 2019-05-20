@@ -220,9 +220,6 @@ export const updateUserAttributes = attributes => async dispatch => {
         type: UPDATE_USER_ATTRIBUTES_FAIL,
         payload: error
       });
-      toast.error('Error!', {
-        className: 'toastify_error'
-      });
     });
 };
 
@@ -245,9 +242,6 @@ export const changePassword = (oldPassword, newPassword) => async dispatch => {
       dispatch({
         type: CHANGE_PASSWORD_FAIL,
         payload: error
-      });
-      toast.error('Error!', {
-        className: 'toastify_error'
       });
       return false;
     });

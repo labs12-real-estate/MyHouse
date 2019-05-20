@@ -10,7 +10,8 @@ function LandingPage() {
   useEffect(() => {
     localStorage.removeItem('wizardForm');
     localStorage.removeItem('initialData');
-    // This is used to track if it's the users first time entering the Overview Page.
+    // If user navigates back to LandingPage after entering register,
+    // and then attempts to log in, this will prevent guided demo from running.
     localStorage.removeItem('registering');
   }, []);
   return (

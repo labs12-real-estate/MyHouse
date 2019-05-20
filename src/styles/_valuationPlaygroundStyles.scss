@@ -16,7 +16,7 @@
 
   .valuation_playground_jumbo_container {
     background: #fff;
-    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+    @include material-card-low;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -172,7 +172,8 @@
       margin-bottom: 15px;
       margin-right: 15px;
       background: #ffffff;
-      box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
+      // box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
+      @include material-card-low;
       height: 71.6px;
       display: flex;
       justify-content: space-between;

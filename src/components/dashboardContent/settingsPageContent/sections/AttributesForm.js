@@ -21,14 +21,14 @@ function AttributesForm({ user, updateUserAttributes }) {
     <form className="attributes" onSubmit={handleSubmit}>
       <ErrorContainer error={errorState.name} />
       <label className="inline-grid">
-        <div>Full Name</div>
+        <h2>Full Name</h2>
         <div>
           <input name="name" type="text" value={formState.name} onChange={handleChange} onBlur={validate(formState)} />
         </div>
       </label>
       <ErrorContainer error={errorState.email} />
       <label className="inline-grid">
-        <div>Email</div>
+        <h2>Email</h2>
         <div>
           <input name="email" type="text" value={formState.email} onChange={handleChange} onBlur={validate(formState)} />
         </div>
