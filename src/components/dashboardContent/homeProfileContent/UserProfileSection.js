@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import UserPlaceholder from 'assets/icons/UserPlaceholder';
 import { connect } from 'react-redux';
+import { uploadPhoto } from 'actions/storageActions';
 
-function UserProfileSection({ house, user, profilePhotoURL }) {
+function UserProfileSection({ house, user, profilePhotoURL, uploadPhoto }) {
+  const ref = useRef();
+  const handleClick = _event => {
+    ref.current.click();
+  };
   return (
     <div className="house_profile_user_section_container">
       <div className="house_profile_name_and_address">
         <div className="house_profile_user_section_sub_container">
           <figure>
             <div className="camera-overlay">
-              <i class="fas fa-camera" />
+              <button onClick={handleClick}>
+                <i class="fas fa-camera" />
+              </button>
+              <input hidden name="profile" type="file" accept="image/jpeg" ref={ref} onChange={uploadPhoto} />
             </div>
-            {false ? <img src={profilePhotoURL} alt="user" /> : <UserPlaceholder />}
+            {profilePhotoURL ? <img src={profilePhotoURL} alt="user" /> : <UserPlaceholder />}
           </figure>
           <div className="name_address">
             <h1>{user.name}</h1>
@@ -23,7 +31,14 @@ function UserProfileSection({ house, user, profilePhotoURL }) {
         </div>
         <div className="house_profile_user_section_sub_container small_home_address">
           <h1>{user.name}</h1>
-          <figure>{false ? <img src={profilePhotoURL} alt="user" /> : <UserPlaceholder />}</figure>
+          <figure>
+            <div className="camera-overlay">
+              <button onClick={handleClick}>
+                <i class="fas fa-camera" />
+              </button>
+            </div>
+            {profilePhotoURL ? <img src={profilePhotoURL} alt="user" /> : <UserPlaceholder />}
+          </figure>
           <h3>{house.address}</h3>
         </div>
       </div>
@@ -63,5 +78,5 @@ const mapStateToProps = ({ houseReducer, authReducer, storageReducer }) => {
 
 export default connect(
   mapStateToProps,
-  {}
+  { uploadPhoto }
 )(UserProfileSection);
