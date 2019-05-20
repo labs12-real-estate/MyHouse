@@ -1,6 +1,4 @@
 .settings_container {
-  display: flex;
-  justify-content: center;
   max-width: 1000px;
   font-family: 'Roboto', 'sans-serif';
   font-size: 1.6rem;
@@ -23,11 +21,16 @@
 
   .settings_content {
     background: white;
-    width: 40vw;
+    width: 60%;
     min-width: 50rem;
     padding: 3rem;
     margin-bottom: 8vh;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    @include for-phone-only {
+      min-width: 0px;
+      width: 100%;
+    }
 
     h2 {
       font-family: 'Roboto', 'sans-serif';
@@ -38,14 +41,48 @@
     }
 
     .inline-grid {
-      width: 100%;
-      gap: 1rem;
-      display: inline-grid;
-      grid-template-columns: 1fr 3fr;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include for-phone-only {
+        align-items: center;
+        flex-direction: column;
+        align-content: center;
+        justify-content: initial;
+      }
+
+      h2 {
+        font-family: 'Roboto', 'sans-serif';
+        font-weight: 500;
+        font-size: 1.6rem;
+        width: 40%;
+        align-items: flex-end;
+        margin: 0px;
+        @include for-phone-only {
+          width: 100%;
+          text-align: left;
+          margin: 8px;
+        }
+      }
+      div {
+        width: 50%;
+        @include for-phone-only {
+          width: 100%;
+        }
+      }
+
+      input {
+        border-color: lightgray;
+        @include for-phone-only {
+          text-align: left;
+        }
+      }
     }
 
     .user-info {
       margin-bottom: 2rem;
+      display: flex;
       figure {
         display: flex;
         place-content: center;
@@ -53,6 +90,7 @@
         height: 8rem;
         border-radius: 8rem;
         overflow: hidden;
+        margin-right: 50px;
         img {
           width: 100%;
           object-fit: cover;
@@ -67,6 +105,7 @@
           border: none;
           width: max-content;
           padding: 0.5rem 0;
+          margin-top: 10px;
         }
       } // end div
     } // end .user-info
@@ -105,7 +144,7 @@
       } // end label
       button {
         align-self: flex-end;
-        background: #e63700;
+        background: #e51f43;
         border-radius: 4px;
         font-size: 1.4rem;
         height: 36px;
@@ -115,15 +154,19 @@
         padding: 0.5rem 2rem;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         cursor: pointer;
+        @include for-phone-only {
+          margin: 0 auto;
+          margin-top: 8px;
+        }
         &:hover {
-          background: #f13800;
+          background: #f83f61;
         }
         &:focus {
           outline: none;
           box-shadow: 0 0 0 3px rgba(94, 175, 255, 0.5);
         }
         &:active {
-          background: #d33200;
+          background: #ca1536;
         }
         &:disabled {
           background: gray;
