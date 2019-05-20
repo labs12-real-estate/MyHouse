@@ -16,6 +16,12 @@
     font-family: 'Montserrat', 'sans-serif';
     font-weight: 700;
     letter-spacing: -1px;
+
+    @include for-phone-only {
+      padding-top: 15px;
+      width: 90%;
+      margin: 0 auto;
+    }
   }
 
   p {
@@ -29,7 +35,7 @@
 
     @include for-phone-only {
       width: 90%;
-      font-size: 2.4rem;
+      font-size: 2rem;
     }
   }
 } // end of .landing_mid
@@ -95,6 +101,7 @@
 
     @include for-phone-only {
       flex-direction: column;
+      padding-bottom: 0;
     }
 
     @include for-tablet-portrait-up {
@@ -199,6 +206,7 @@
 
     @include for-phone-only {
       flex-direction: column;
+      margin-bottom: -150px;
     }
 
     @include for-tablet-portrait-up {
@@ -223,6 +231,7 @@
       @include for-phone-only {
         max-width: 100%;
         padding: 25px 8px;
+        margin: 0px auto 25px;
       }
       @include for-tablet-portrait-up {
         max-width: 100%;

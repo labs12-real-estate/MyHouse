@@ -43,7 +43,11 @@
 
   p:nth-of-type(2) {
     opacity: 0.6;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+
+    @include for-phone-only {
+      font-size: 1.6rem;
+    }
   }
 
   .address_searchbar {
@@ -233,7 +237,7 @@
   width: 100%;
   top: 12px;
   @include for-phone-only {
-    height: 400px;
+    height: 360px;
   }
 
   img {
@@ -244,12 +248,11 @@
     margin: 0 auto;
     position: relative;
     top: -20px;
-    transform: translateY(0px);
-    animation: float 6s ease-in-out infinite;
 
     @include for-phone-only {
       top: 20px;
       min-width: 350px;
+      max-width: 400px;
       width: 90%;
     }
     @include for-tablet-portrait-up {
@@ -268,15 +271,3 @@
     }
   }
 } // end cloud_top
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
