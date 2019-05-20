@@ -23,6 +23,12 @@
       margin: 0 auto;
       font-size: 3.6rem;
     }
+    @media (min-width: 650px) {
+      padding-top: 30px;
+    }
+    @include for-tablet-landscape-up {
+      padding-top: 60px;
+    }
   }
 
   p {
