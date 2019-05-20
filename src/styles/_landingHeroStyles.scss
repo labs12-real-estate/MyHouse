@@ -61,7 +61,7 @@
         position: absolute;
         margin-top: -50px;
         margin-left: 10px;
-        color:red;
+        color: red;
         @include for-tablet-landscape-up {
           width: 650px;
         }
@@ -143,10 +143,10 @@
         }
 
         &:hover {
-          background: #e20f07;
+          background: #f83f61;
         }
         &:active {
-          background: #d33200;
+          background: #ca1536;
         }
         &:focus {
           outline: none;
@@ -158,7 +158,7 @@
       width: 100%;
       display: flex;
       justify-content: center;
-      .place_holder{
+      .place_holder {
         position: absolute;
         height: 195px;
         width: 575px;
@@ -183,11 +183,11 @@
           width: 650px;
         }
 
-        button.active{
+        button.active {
           background: #e4e4e4;
-          color: #d33200;
+          color: #e51f43;
         }
-        
+
         button {
           background: #f4f4f4;
           border: none;
@@ -201,7 +201,7 @@
           width: 100%;
           &:hover {
             background: #e4e4e4;
-            color: #d33200;
+            color: #e51f43;
           }
           &:focus {
             outline: none;
