@@ -8,9 +8,22 @@ function Gallery({ gallery, uploadToGallery }) {
     ref.current.click();
   };
   return (
-    <div className="gallery-container">
-      <div className="gallery">{gallery.length === 0 ? 'Add images to your gallery' : gallery.map(imageURL => <img src={imageUrl} />)}</div>
-      <button onClick={handleClick} />
+    <div className="house_profile_gallery_container">
+      <h2>Gallery</h2>
+      <div className="gallery">
+        {gallery.length === 0
+          ? 'Add images to your gallery'
+          : gallery.map(imageURL => (
+              <figure>
+                <img alt="" src={imageURL} />
+              </figure>
+            ))}
+      </div>
+      <div className="button-container">
+        <button onClick={handleClick}>
+          <i className="fas fa-plus" /> Add an Image
+        </button>
+      </div>
       <input hidden name="" type="file" accept="image/jpeg" ref={ref} onChange={uploadToGallery} />
     </div>
   );
