@@ -17,7 +17,7 @@ import {
 const initialState = {
   photoURLs: {
     house: '',
-    profile: '',
+    profile: null,
     gallery: []
   },
   fetching: false,
