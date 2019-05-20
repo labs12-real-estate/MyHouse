@@ -24,6 +24,10 @@
       background-size: cover;
       position: fixed;
       bottom: 0;
+
+      @include for-phone-only {
+        display: none;
+      }
     }
 
     .wizard_form_card {
@@ -45,12 +49,11 @@
         width: 100%;
         max-width: 600px;
         min-width: 350px;
-        // max-height: 750px;
-        // min-height: 750px;
+        min-height: 100vh;
         height: 100%;
         margin-top: 0;
         margin-bottom: 0;
-        padding-top: 60px;
+        // padding-top: 60px;
         box-shadow: none;
       }
 
@@ -60,6 +63,15 @@
           display: flex;
           position: relative;
 
+          @include for-phone-only {
+            height: 100vh;
+            .button_container {
+              justify-content: flex-end;
+              bottom: 20px;
+              padding: 0 5%;
+              // height: 100vh;
+            }
+          }
           .left_panel {
             width: 35%;
             position: relative;
@@ -128,7 +140,7 @@
             flex-direction: column;
             @include for-phone-only {
               width: 100%;
-              padding: 50px 0px;
+              padding: 75px 0 0;
             }
 
             .address_container {
@@ -136,7 +148,15 @@
               width: 90%;
               margin: 0 0 0 8%;
               @include for-phone-only {
-                height: 40%;
+                height: 100px;
+                width: 100%;
+                margin: 0;
+                padding: 0 0 20px 8%;
+                border-bottom: 1px solid #ebebeb;
+
+                i {
+                  display: none;
+                }
               }
 
               h4 {
@@ -161,6 +181,10 @@
                   width: 100%;
                   z-index: -1;
                 }
+
+                @include for-phone-only {
+                  margin-bottom: 15px;
+                }
               }
               h2 {
                 font-weight: 600;
@@ -174,8 +198,8 @@
                 }
                 @include for-phone-only {
                   // text-align: center;
-                  font-size: 3rem;
-                  // margin-left: -10%;
+                  font-size: 2.8rem;
+                  margin-top: -0.5rem;
                 }
               }
               h3 {
@@ -192,17 +216,22 @@
                   font-size: 1.8rem;
                 }
                 @include for-phone-only {
-                  font-size: 2.6rem;
-                  margin-left: 9%;
+                  font-size: 2.4rem;
+                  margin-left: 0;
+                  margin-top: 0.8rem;
                 }
               }
             }
             .initial_value_range {
               height: 30%;
               width: 90%;
-              margin: 0 0 45px 8%;
+              margin: 0 0 15px 8%;
               @include for-phone-only {
-                margin-bottom: 20px;
+                padding: 0px 0 15px 8%;
+                margin: 15px 0;
+                border-bottom: 1px solid #ebebeb;
+                width: 100%;
+                height: 85px;
               }
               h4 {
                 font-weight: bold;
@@ -214,6 +243,10 @@
                 font-family: 'Montserrat', 'sans-serif';
                 text-align: left;
                 margin-bottom: 30px;
+
+                @include for-phone-only {
+                  margin-bottom: 15px;
+                }
 
                 &:before {
                   content: '';
@@ -267,54 +300,57 @@
                   // justify-content: center;
                   justify-content: space-between;
                   width: 90%;
+
+                  h3 {
+                    margin-bottom: 5px;
+                  }
                 }
               }
               .container > div {
                 margin-right: 4rem;
                 @include for-phone-only {
-                  margin: 0 1rem;
+                  margin: 0;
                 }
               }
             }
             .bottom_container {
-              height: 36%;
+              height: 50%;
               width: 90%;
               display: flex;
-              align-items: flex-end;
+              align-items: flex-start;
               justify-content: space-between;
+              flex-direction: column;
               @include for-phone-only {
                 flex-direction: column;
                 width: 100%;
-                height: 45%;
+                height: 150px;
                 align-items: center;
               }
 
               p {
                 font-family: 'Roboto', 'sans-serif';
-                font-weight: 400;
-                font-size: 1.6em;
-                line-height: 1.8rem;
-                color: #555;
+                font-weight: 300;
+                font-size: 2em;
+                line-height: 2.4rem;
+                color: #444;
                 margin-left: 8%;
-                width: 70%;
+                width: 80%;
 
-                span {
-                  font-weight: 600;
-                  padding-bottom: 12px;
-                  margin-top: 20px;
-                }
                 @include for-phone-only {
                   margin: 0;
-                  width: 90%;
+                  width: 87%;
                   text-align: center;
                   margin-bottom: 15px;
-                  font-size: 1.6rem;
+                  font-size: 2rem;
                   text-align: left;
-
-                  span {
-                    font-size: 2rem;
-                  }
+                  line-height: 2.8rem;
                 }
+              }
+
+              p:nth-of-type(2) {
+                font-size: 1.4rem;
+                color: #999;
+                font-weight: 400;
               }
 
               .next_button {
@@ -357,6 +393,10 @@
           height: $form_wizard_height;
           display: flex;
           position: relative;
+
+          @include for-phone-only {
+            height: 75vh;
+          }
           .left_panel {
             width: 35%;
             position: relative;
@@ -403,6 +443,7 @@
             }
             @include for-phone-only {
               width: 100%;
+              padding-top: 60px;
             }
             .initial_value_range {
               padding: 0 5%;
@@ -441,8 +482,9 @@
                 justify-content: space-between;
                 display: flex;
                 @media (max-width: 800px) {
-                  width: 60%;
-                  justify-content: space-around;
+                  width: 40%;
+                  justify-content: space-between;
+                  min-width: 240px;
                 }
                 @include for-phone-only {
                   width: 100%;
@@ -461,9 +503,7 @@
                   font-weight: bold;
                   font-family: 'Montserrat', 'sans-serif';
                   margin-bottom: 0.5rem;
-                  @media (max-width: 800px) {
-                    font-size: 1.4rem;
-                  }
+
                   @include for-phone-only {
                     font-size: 1.2rem;
                   }
@@ -478,7 +518,7 @@
                     color: rgb(255, 128, 64);
                   }
                   @media (max-width: 800px) {
-                    font-size: 2rem;
+                    font-size: 1.8rem;
                   }
                   @include for-phone-only {
                     font-size: 2rem;
@@ -494,7 +534,7 @@
                     color: rgb(0, 128, 36);
                   }
                   @media (max-width: 800px) {
-                    font-size: 2rem;
+                    font-size: 1.8rem;
                   }
                   @include for-phone-only {
                     font-size: 2rem;
@@ -586,13 +626,16 @@
           font-size: 1.6rem;
           margin-top: 1.4rem;
           line-height: 18px;
+          font-weight: 300;
           @media (max-width: 800px) {
             width: 70%;
           }
           @include for-phone-only {
             width: 80%;
+            font-size: 1.2rem;
+            height: 45px;
             margin-top: 1rem;
-            font-size: 1.4rem;
+            font-weight: 400;
           }
         }
         progress {
@@ -618,7 +661,8 @@
         }
         @include for-phone-only {
           width: 100%;
-          height: 415px;
+          height: 100%;
+          max-height: 56vh;
           bottom: 0;
           margin: 0;
         }
@@ -632,7 +676,7 @@
 
           @include for-phone-only {
             width: 80%;
-            margin: 3rem auto 0;
+            margin: 2rem auto 0;
             text-align: left;
             font-size: 2rem;
             height: 45px;
@@ -689,7 +733,7 @@
             align-items: center;
             text-align: center;
             position: relative;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             width: 47%;
             min-width: 220px;
             height: 7rem;
@@ -740,6 +784,7 @@
             }
             // margin-right: 2rem;
             margin-right: 2rem;
+            background: #e63700;
             background: #e51f43;
             font-family: Roboto;
             font-style: normal;
@@ -820,6 +865,17 @@
       .confirmation_container {
         // height: 417px;
         position: relative;
+
+        @include for-phone-only {
+          // height: 300px;
+          // bottom: -60px;
+          .button_container {
+            // bottom: -14.1rem;
+            // background: #fff;
+            padding: 0 5%;
+            bottom: 20px;
+          }
+        }
         .left-panel {
           background-image: url('../assets/images/wizard-form.jpg');
           background-repeat: no-repeat;
@@ -911,27 +967,25 @@
           }
         }
         .review_container {
-          height: 260px;
+          height: 320px;
           position: absolute;
           right: 0;
-          bottom: 80px;
+          bottom: 0;
           width: 65%;
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: space-around;
+          justify-content: space-between;
           background: white;
           @media (max-width: 800px) {
             width: 100%;
           }
           @include for-phone-only {
-            height: 300px;
-            bottom: -30px;
+            height: 30vh;
           }
 
           .upgrade_summary {
-            width: 70%;
-            // margin
+            width: 65%;
             @include for-phone-only {
               width: 80%;
             }
@@ -944,12 +998,11 @@
               align-items: center;
               margin-bottom: 15px;
               @media (max-width: 800px) {
-                width: 70%;
+                width: 100%;
               }
               @include for-phone-only {
                 flex-direction: column;
-                width: 90%;
-                height: 60px;
+                height: 55px;
                 border-bottom: 1px solid #e4e4e4;
               }
             }
@@ -968,13 +1021,14 @@
 
             label {
               font-family: Montserrat;
-              font-size: 1.4rem;
+              font-size: 1.2rem;
               text-transform: uppercase;
               font-weight: 600;
               line-height: 2.2rem; /* identical to box height */
               color: #666;
               @include for-phone-only {
                 align-self: flex-start;
+                font-size: 1.2rem;
               }
             }
             select::-ms-expand {
@@ -988,7 +1042,7 @@
               font-weight: 500;
               font-size: 1.6rem;
               line-height: 2.2rem;
-              width: 22rem;
+              width: 18rem;
               height: 3.5rem;
               display: block;
               @include for-phone-only {
@@ -1155,7 +1209,7 @@ progress[value] {
     opacity: 0.9;
     font-weight: 600;
     letter-spacing: 0;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-family: 'Fira Sans', 'sans-serif';
   }
   h3 {
@@ -1175,8 +1229,8 @@ progress[value] {
   bottom: 4rem;
   @include for-phone-only {
     width: 100%;
-    padding: 0 5% 18px;
-    bottom: -17rem;
+    padding: 0 5%;
+    bottom: 20px;
     right: auto;
     display: flex;
     flex-direction: row;
