@@ -24,12 +24,19 @@ export const downloadPhoto = key => async (dispatch, getState) => {
   const userKey = toUserKey(username, key);
   const objects = await Storage.list('');
   const keys = objects.map(({ key }) => key);
-  if (!keys.includes(userKey)) {
-    return;
-  }
   dispatch({
     type: IMAGE_DOWNLOAD_FETCH
   });
+  if (!keys.includes(userKey)) {
+    dispatch({
+      type: IMAGE_DOWNLOAD_SUCCESS,
+      payload: {
+        key,
+        photoURL: ''
+      }
+    });
+    return;
+  }
   Storage.get(userKey)
     .then(response => {
       dispatch({

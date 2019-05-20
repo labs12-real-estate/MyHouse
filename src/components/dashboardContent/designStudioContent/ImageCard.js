@@ -5,7 +5,7 @@ function ImageCard({ result, searchTerm }) {
   const [spans, setSpans] = useState(0);
   const calculateSpans = () => {
     const { current } = imgRef;
-    const height = current.clientHeight;
+    const height = current && current.clientHeight;
     const span = Math.ceil(height / 12);
     setSpans(span > 30 && span % 2 === 1 ? span - 2 : span);
   };
