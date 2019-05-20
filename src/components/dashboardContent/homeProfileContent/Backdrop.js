@@ -14,7 +14,12 @@ function Backdrop({ uploadPhoto, housePhotoURL }) {
           <img alt="" src={housePhotoURL} className="backdrop_img" />
         </figure>
       )}
-      <button onClick={handleClick}>Upload Image</button>
+      {/* <button onClick={handleClick}>Upload Image</button> */}
+      <div className="camera-overlay">
+        <button onClick={handleClick}>
+          <i class="fas fa-camera" />
+        </button>
+      </div>
       <input hidden name="house" type="file" accept="image/jpeg" ref={ref} onChange={uploadPhoto} />
     </div>
   );
