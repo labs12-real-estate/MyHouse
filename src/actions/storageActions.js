@@ -1,4 +1,5 @@
 import { Storage } from 'aws-amplify';
+import { toast } from 'react-toastify';
 import uuidv4 from 'uuid/v4';
 import {
   IMAGE_UPLOAD_FETCH,
@@ -65,6 +66,9 @@ export const uploadPhoto = e => (dispatch, getState) => {
     dispatch({
       type: IMAGE_UPLOAD_FAIL,
       payload: 'File size should be less than 3 MB'
+    });
+    toast.error('File size should be less than 3 MB', {
+      className: 'toastify_success'
     });
   } else {
     dispatch({
