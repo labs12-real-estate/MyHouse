@@ -1,6 +1,6 @@
 .dashboard_jumbo {
   background-color: white;
-  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+  @include material-card-low;
   margin-left: 70px;
   width: 90%;
   max-width: 1400px;
@@ -92,15 +92,16 @@
   flex-wrap: wrap;
   width: 90%;
   margin-left: 59px;
+  margin-bottom: 80px;
   max-width: 1400px;
   @include for-phone-only {
-    margin: 0 auto;
+    margin: 0 auto 80px;
   }
   @include for-tablet-portrait-up {
-    margin: 0 auto;
+    margin: 0 auto 80px;
   }
   @include for-tablet-landscape-up {
-    margin-left: 59px;
+    margin-left: 59px 80px;
   }
 
   .feature_card {
@@ -110,7 +111,7 @@
     width: 400px;
     height: 170px;
     background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.09);
+    @include material-card-low;
     @include for-phone-only {
       width: 100%;
       margin: 1rem 0 1rem 0;

@@ -3,6 +3,10 @@
   background: radial-gradient(circle at 50% 48%, $one 0%, $two 21.66%, $three 65%, $four 85.5%, $five 100%);
 }
 
+@mixin material-card-low {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
 @mixin for-phone-only {
   @media (max-width: 599px) {
     @content;
