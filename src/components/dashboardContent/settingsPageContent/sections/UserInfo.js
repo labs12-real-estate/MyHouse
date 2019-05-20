@@ -11,7 +11,7 @@ function UserInfo({ user, profilePhotoURL, uploadPhoto, fetching }) {
   };
   return (
     <div className="user-info">
-      <figure>{fetching ? <Skeleton height={100} width={100} /> : <img src={!profilePhotoURL ? profilePhoto : profilePhotoURL} alt="user" />}</figure>
+      <figure>{profilePhotoURL === null ? <Skeleton height={100} width={100} /> : <img src={profilePhotoURL || profilePhoto} alt="user" />}</figure>
       <div>
         <h4>{user.username}</h4>
         <button onClick={handleClick}>Change user profile photo</button>
