@@ -21,6 +21,7 @@
       padding-top: 15px;
       width: 90%;
       margin: 0 auto;
+      font-size: 3.6rem;
     }
   }
 
@@ -35,7 +36,7 @@
 
     @include for-phone-only {
       width: 90%;
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
   }
 } // end of .landing_mid
@@ -165,7 +166,7 @@
         font-weight: 300;
         line-height: 2.4rem;
         @include for-phone-only {
-          font-size: 2rem;
+          font-size: 1.8rem;
         }
       }
     } // end of .marketing_card

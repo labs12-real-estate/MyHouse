@@ -9,7 +9,7 @@
     font-weight: 700;
     letter-spacing: 2px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin: 140px 0 40px;
+    margin: 140px 0 20px;
     @include for-phone-only {
       margin: 60px auto 30px;
       font-size: 4.2rem;
@@ -55,7 +55,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 120px;
+    margin-bottom: 100px;
 
     @include for-phone-only {
       margin-bottom: 60px;
@@ -67,6 +67,7 @@
       display: flex;
       flex-direction: row;
       justify-content: center;
+      height: 40px;
 
       .error_container {
         width: 575px;
@@ -113,10 +114,11 @@
         width: 500px;
         box-shadow: 4px 5px 1px -1px RGBA(0, 0, 0, 0.1);
         border-radius: 0px;
+        height: 100%;
 
         @include for-phone-only {
           margin-top: 15px;
-          width: 255px;
+          width: 80%;
         }
         @include for-tablet-portrait-up {
           margin-top: 15px;
@@ -140,16 +142,15 @@
         font-family: 'Roboto', 'serif';
         font-size: 1.8rem;
         font-weight: 300;
-        height: 40.8px;
+        // height: 40.8px;
         width: 150px;
         box-shadow: 4px 5px 1px -1px RGBA(0, 0, 0, 0.1);
         padding: 0;
         margin: 0;
+        height: 100%;
 
         @include for-phone-only {
-          width: 110px;
-          height: 41.8px;
-          margin-bottom: 1.5px;
+          width: 20%;
         }
         @include for-tablet-portrait-up {
           width: 125px;
