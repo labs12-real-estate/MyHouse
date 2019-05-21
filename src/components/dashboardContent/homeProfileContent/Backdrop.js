@@ -12,7 +12,7 @@ function Backdrop({ uploadPhoto, housePhotoURL }) {
   return (
     <div className="house_profile_backdrop_image">
       {housePhotoURL === null ? (
-        <Loader height={50} width={50} type="TailSpin" color="#22ab00" />
+        <Loader height={100} width={100} type="TailSpin" color="#22ab00" />
       ) : (
         <figure className="backdrop_figure">
           <img alt="" src={housePhotoURL || placeholderBackdrop} className="backdrop_img" />

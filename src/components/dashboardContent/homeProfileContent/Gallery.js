@@ -11,13 +11,15 @@ function Gallery({ gallery, uploadToGallery }) {
     <div className="house_profile_gallery_container">
       <h2>Gallery</h2>
       <div className="gallery">
-        {gallery.length === 0
-          ? 'Add images to your gallery'
-          : gallery.map(imageURL => (
-              <figure>
-                <img alt="" src={imageURL} />
-              </figure>
-            ))}
+        {gallery.length === 0 ? (
+          <h3>Add images to your gallery</h3>
+        ) : (
+          gallery.map(imageURL => (
+            <figure>
+              <img alt="" src={imageURL} />
+            </figure>
+          ))
+        )}
       </div>
       <div className="button-container">
         <button onClick={handleClick}>
