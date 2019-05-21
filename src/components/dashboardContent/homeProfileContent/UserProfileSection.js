@@ -15,7 +15,7 @@ function UserProfileSection({ house, user, profilePhotoURL, uploadPhoto }) {
           <figure onClick={handleClick}>
             <div className="camera-overlay">
               <button>
-                <i class="fas fa-camera" />
+                <i className="fas fa-camera" />
               </button>
               <input hidden name="profile" type="file" accept="image/jpeg" ref={ref} onChange={uploadPhoto} />
             </div>
