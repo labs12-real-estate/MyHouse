@@ -38,28 +38,33 @@
 
   .dashboard_nav_home_icon {
     display: flex;
-    opacity: 0.75;
+    opacity: 1;
     &:hover {
-      opacity: 0.8;
+      opacity: 0.9;
     }
     a {
       cursor: pointer;
       text-decoration: none;
       color: inherit;
       display: flex;
-      align-items: center;
+      align-items: baseline;
     }
+  }
+
+  img {
+    width: 24px;
   }
 
   h1 {
     font-family: 'Montserrat', 'sans-serif';
     font-style: normal;
     font-weight: 900;
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     line-height: 4.2rem;
     margin-left: 5%;
     display: block;
     letter-spacing: 0;
+    margin-top: 5px;
 
     @include for-tablet-portrait-up {
       // margin-left: 25%;
