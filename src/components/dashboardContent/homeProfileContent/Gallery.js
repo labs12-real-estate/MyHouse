@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
 import { connect } from 'react-redux';
-import { uploadToGallery } from 'actions/storageActions';
+import Loader from 'react-loader-spinner';
+import { uploadToGallery, deleteFromGallery } from 'actions/storageActions';
 
-function Gallery({ gallery, uploadToGallery }) {
+function Gallery({ gallery, uploadToGallery, deleteFromGallery }) {
   const ref = useRef();
   const handleClick = _event => {
     ref.current.click();
@@ -14,9 +15,18 @@ function Gallery({ gallery, uploadToGallery }) {
         {gallery.length === 0 ? (
           <h3>Add images to your gallery</h3>
         ) : (
-          gallery.map(imageURL => (
-            <figure>
-              <img alt="" src={imageURL} />
+          gallery.map(({ photoURL, key, isSpinner }) => (
+            <figure className="gallery-figure" key={key}>
+              {isSpinner ? (
+                <Loader height={25} width={25} type="TailSpin" color="black" />
+              ) : (
+                <>
+                  <button className="red-x" onClick={() => deleteFromGallery(key)}>
+                    <i className="fas fa-times-circle" />
+                  </button>
+                  <img alt="" src={photoURL} />
+                </>
+              )}
             </figure>
           ))
         )}
@@ -35,5 +45,5 @@ export default connect(
   ({ storageReducer }) => ({
     gallery: storageReducer.photoURLs.gallery
   }),
-  { uploadToGallery }
+  { uploadToGallery, deleteFromGallery }
 )(Gallery);
