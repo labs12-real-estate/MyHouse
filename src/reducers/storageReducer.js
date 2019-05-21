@@ -16,7 +16,7 @@ import {
 
 const initialState = {
   photoURLs: {
-    house: '',
+    house: null,
     profile: null,
     gallery: []
   },

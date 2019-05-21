@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
+import Loader from 'react-loader-spinner';
 import { connect } from 'react-redux';
-import { uploadPhoto } from '../../../actions/storageActions';
+import { uploadPhoto } from 'actions/storageActions';
+import placeholderBackdrop from 'assets/illustrations/default-cover-photo.png';
 
 function Backdrop({ uploadPhoto, housePhotoURL }) {
   const ref = useRef();
@@ -9,9 +11,11 @@ function Backdrop({ uploadPhoto, housePhotoURL }) {
   };
   return (
     <div className="house_profile_backdrop_image">
-      {housePhotoURL && (
+      {housePhotoURL === null ? (
+        <Loader height={50} width={50} type="TailSpin" color="#22ab00" />
+      ) : (
         <figure className="backdrop_figure">
-          <img alt="" src={housePhotoURL} className="backdrop_img" />
+          <img alt="" src={housePhotoURL || placeholderBackdrop} className="backdrop_img" />
         </figure>
       )}
       <div className="camera-overlay">
