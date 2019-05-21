@@ -29,7 +29,7 @@ function HouseProfileForm(props) {
       <div className="house_profile_form_content" onClick={handleEdit} onBlur={handleSave}>
         <div className="house_profile_form_content_gutter">
           {isEditing ? <textarea maxLength="450" autoFocus value={content || ''} onChange={updateContent} /> : <pre>{content || props.defaultValue}</pre>}
-          <div style={{ textAlign: 'right' }}>{content ? content.length : 0} / 450</div>
+          <div style={{ textAlign: 'right', fontFamily: 'Roboto, sans-serif', fontWeight: '600' }}>{content ? content.length : 0} / 450</div>
         </div>
       </div>
     </div>
