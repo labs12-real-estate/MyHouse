@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import isEqual from 'lodash/fp/isEqual';
-import { useForm, useValidation, validatePassword } from 'helper-functions/form-logic-functions.js';
+import { useForm, useValidation, validatePassword } from '../../../../helper-functions/form-logic-functions.js';
 import ErrorContainer from './ErrorContainer';
-import { changePassword } from 'actions/authActions';
+import { changePassword } from '../../../../actions/authActions';
 
 function NewPasswordForm({ changePassword, error }) {
   const initialState = { oldPassword: '', newPassword: '', confirmNewPassword: '' };

@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 import { connect } from 'react-redux';
+import profilePhoto from '../../../../assets/images/house-profile/tonystark.jpg';
+import { uploadPhoto } from '../../../../actions/storageActions';
 import profilePhoto from 'assets/images/house-profile/tonystark.jpg';
 import { uploadPhoto } from 'actions/storageActions';
 import Skeleton from 'react-loading-skeleton';

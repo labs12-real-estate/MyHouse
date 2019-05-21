@@ -129,9 +129,8 @@ export const listGallery = () => (dispatch, getState) => {
     type: LIST_GALLERY_FETCH
   });
   Storage.list(gallery)
-    .then(async keys => {
-      console.log(keys);
-      const photoURLs = await Promise.all(keys.map(Storage.get));
+    .then(async objects => {
+      const photoURLs = await Promise.all(objects.map(o => Storage.get(o.key)));
       dispatch({
         type: LIST_GALLERY_SUCCESS,
         payload: photoURLs
