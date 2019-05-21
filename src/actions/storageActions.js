@@ -24,12 +24,19 @@ export const downloadPhoto = key => async (dispatch, getState) => {
   const userKey = toUserKey(username, key);
   const objects = await Storage.list('');
   const keys = objects.map(({ key }) => key);
-  if (!keys.includes(userKey)) {
-    return;
-  }
   dispatch({
     type: IMAGE_DOWNLOAD_FETCH
   });
+  if (!keys.includes(userKey)) {
+    dispatch({
+      type: IMAGE_DOWNLOAD_SUCCESS,
+      payload: {
+        key,
+        photoURL: ''
+      }
+    });
+    return;
+  }
   Storage.get(userKey)
     .then(response => {
       dispatch({
@@ -122,9 +129,8 @@ export const listGallery = () => (dispatch, getState) => {
     type: LIST_GALLERY_FETCH
   });
   Storage.list(gallery)
-    .then(async keys => {
-      console.log(keys);
-      const photoURLs = await Promise.all(keys.map(Storage.get));
+    .then(async objects => {
+      const photoURLs = await Promise.all(objects.map(o => Storage.get(o.key)));
       dispatch({
         type: LIST_GALLERY_SUCCESS,
         payload: photoURLs
