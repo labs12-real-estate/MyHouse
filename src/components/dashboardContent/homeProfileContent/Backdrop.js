@@ -14,7 +14,6 @@ function Backdrop({ uploadPhoto, housePhotoURL }) {
           <img alt="" src={housePhotoURL} className="backdrop_img" />
         </figure>
       )}
-      {/* <button onClick={handleClick}>Upload Image</button> */}
       <div className="camera-overlay">
         <button>
           <i className="fas fa-camera" />

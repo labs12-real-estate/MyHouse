@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { useForm, useValidation, validateEmail, validateLength, diffObjects } from 'helper-functions/form-logic-functions.js';
-import { updateUserAttributes } from 'actions/authActions';
+import { useForm, useValidation, validateEmail, validateLength, diffObjects } from '../../../../helper-functions/form-logic-functions';
+import { updateUserAttributes } from '../../../../actions/authActions';
 
 import ErrorContainer from './ErrorContainer';
 
