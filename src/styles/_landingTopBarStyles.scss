@@ -17,7 +17,7 @@
 
   .landing_nav_home_icon {
     color: white;
-    opacity: 0.75;
+    opacity: 1;
     cursor: pointer;
     display: flex;
     align-items: flex-end;
@@ -34,8 +34,11 @@
         display: none;
       }
     }
-    .fa-2x {
-      font-size: 2.5rem;
+    img {
+      width: 24px;
+      &:hover {
+        opacity: 1;
+      }
     }
     p {
       color: #fff;
@@ -64,7 +67,7 @@
       color: inherit;
       opacity: inherit;
       display: flex;
-      align-items: center;
+      align-items: baseline;
       &:hover {
         opacity: 1;
       }
