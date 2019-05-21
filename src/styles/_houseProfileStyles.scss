@@ -1,21 +1,54 @@
+$overlay-bg: hsla(0, 0, 0, 0.5);
+$overlay-camera: hsla(100, 100, 100, 0.5);
+
 .house_profile_backdrop_image {
   background: linear-gradient(dodgerblue, lightgray);
   width: 100%;
-  height: 350px;
-  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 350px;
+  overflow: hidden;
 
   .backdrop_figure {
+    grid-column-start: 1;
+    grid-row-start: 1;
+
     display: flex;
     place-content: center;
     height: 100%;
-    max-width: 100%;
     overflow: hidden;
+    max-width: 100%;
 
     .backdrop_img {
       min-width: 100%;
       min-height: 100%;
       object-fit: cover;
     }
+  }
+
+  .camera-overlay {
+    grid-column-start: 1;
+    grid-row-start: 1;
+
+    opacity: 0;
+    background: $overlay-bg;
+    padding: 2rem 4rem;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    grid-template-rows: 1fr min-content;
+    button {
+      display: contents;
+      i {
+        grid-column-start: -2;
+        grid-row-start: -2;
+        color: $overlay-camera;
+        font-size: 5rem;
+      }
+    }
+  }
+  &:hover .camera-overlay {
+    opacity: 1;
   }
 
   button {
@@ -222,11 +255,19 @@
       }
     }
 
-    img {
+    figure {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      place-content: center;
+      place-items: center;
+      overflow: hidden;
+      background: lightgray;
       position: absolute;
-      border-radius: 100%;
+      border-radius: 15rem;
       top: -35%;
-      width: 150px;
+      width: 15rem;
+      height: 15rem;
 
       @include for-phone-only {
         margin: 0px;
@@ -239,6 +280,45 @@
 
       @include for-desktop-up {
         position: absolute;
+      }
+      .camera-overlay {
+        opacity: 0;
+        height: 100%;
+        display: flex;
+        place-content: center;
+        place-items: center;
+        grid-row-start: 1;
+        grid-column-start: 1;
+        background: $overlay-bg;
+        position: relative;
+        width: 100%;
+        button {
+          display: contents;
+          i {
+            color: $overlay-camera;
+            font-size: 5rem;
+          }
+        }
+      }
+
+      &:hover .camera-overlay {
+        opacity: 1;
+      }
+
+      svg {
+        grid-row-start: 1;
+        grid-column-start: 1;
+        width: 80%;
+      }
+      svg path {
+        fill: gray;
+      }
+      img {
+        grid-row-start: 1;
+        grid-column-start: 1;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
       }
     }
 
@@ -303,6 +383,98 @@
     @include for-desktop-up {
       display: none;
     }
+  }
+}
+
+.house_profile_gallery_container {
+  h2 {
+    font-family: 'Roboto', 'sans-serif';
+    font-weight: 600;
+    font-size: 2.4rem;
+    margin-left: 30px;
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-bottom: 1rem;
+
+    @include for-phone-only {
+      margin-left: 30px;
+    }
+
+    @include for-tablet-portrait-up {
+      margin-left: 30px;
+    }
+
+    @include for-desktop-up {
+      margin-left: 30px;
+    }
+  }
+
+  background: #fff;
+  padding: 1rem 0;
+  width: 96%;
+  border-radius: 4px;
+
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+
+  margin: 30px auto;
+  .gallery {
+    border-top: 1px solid lightgray;
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    grid-auto-rows: 16rem;
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  }
+  .button-container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row-reverse;
+
+    button {
+      background: #e51f43;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 1.6rem;
+      border: none;
+      color: white;
+      box-shadow: 4px 5px 1px -1px RGBA(0, 0, 0, 0.1);
+      border-radius: 4px;
+      padding: 1rem;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+      &:active {
+        background: #ca1536;
+      }
+      &:hover {
+        background: #f83f61;
+      }
+    }
+  }
+  @include for-phone-only {
+    margin-right: 0px;
+    flex-direction: column;
+  }
+
+  @include for-tablet-portrait-up {
+    margin-right: 20px;
+    flex-direction: column;
+  }
+
+  @include for-desktop-up {
+    margin-right: 40px;
+    margin-left: 20px;
+    width: 96%;
   }
 }
 
@@ -379,7 +551,6 @@
   .house_profile_form {
     background: #fff;
     // width: 49%;
-    height: 310px;
     margin-bottom: 20px;
     @include material-card-low;
 
@@ -394,12 +565,16 @@
     }
 
     .house_profile_form_content {
-      height: 250px;
+      min-height: 238px;
       width: 100%;
 
+      @include for-phone-only {
+        
+      }
+
       .house_profile_form_content_gutter {
+        min-height: 228px;
         margin: 10px 13px 13px 12px;
-        height: 225px;
         background-color: rgb(248, 248, 248);
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
         border-radius: 2px;
@@ -407,30 +582,41 @@
 
       textarea,
       pre {
+        min-height: 228px;
         border-radius: 2px;
         font-family: $sans_serif;
         font-size: 2rem;
         border: none;
-        height: 232px;
         padding: 2.9rem;
         width: 100%;
         resize: none;
         color: rgb(124, 120, 120);
         background-color: rgb(248, 248, 248);
+        white-space: pre-line; 
         white-space: pre-line;
         word-wrap: break-word;
         line-height: 2.5rem;
-        overflow: scroll;
-        height: 217px;
+        overflow-x: hidden;
 
         @include for-phone-only {
-          font-size: 1.6rem;
+          line-height: 1.3rem;
+          font-size: 1.3rem;
+          height: inherit;
         }
+
+        @include for-tablet-portrait-up {
+          line-height: 1.6rem;
+          font-size: 1.6rem;
+          overflow: visible;
+        }
+
       }
 
       textarea {
-        overflow: scroll;
-        height: 217px;
+        
+        height: 100%;
+
+        
       }
     }
 
@@ -497,26 +683,35 @@
 
     span {
       font-weight: 600;
+      display: flex;
+      align-items: center;
+      text-align:center;
 
+      @include for-phone-only {
+        display: block;
+      }
+      
       span {
         font-weight: 600;
+        text-align:center;
       }
     }
 
-    .width {
+   
+  }
+  .width {
+    width: 100%;
+
+    @include for-phone-only {
+      width: 100%;
+    }
+
+    @include for-tablet-portrait-up {
       width: 49%;
+    }
 
-      @include for-phone-only {
-        width: 100%;
-      }
-
-      @include for-tablet-portrait-up {
-        width: 49%;
-      }
-
-      @include for-desktop-up {
-        width: 88%;
-      }
+    @include for-desktop-up {
+      width: 100%;
     }
   }
 
@@ -630,14 +825,15 @@
       font-weight: 500;
       font-size: 1.6rem;
       line-height: 2.2rem;
-      width: 50%;
+      width: 40%;
       max-width: 250px;
       height: 3.5rem;
       display: block;
+      margin-left: 110px;
 
       @include for-phone-only {
-        width: 100%;
-        max-width: 100%;
+        width: 40%;
+        max-width: 40%;
       }
 
       &:focus {
@@ -654,7 +850,7 @@
     font-weight: 500;
     font-size: 1.6rem;
     line-height: 2.2rem;
-    width: 50%;
+    width: 40%;
     max-width: 250px;
     height: 3.5rem;
     display: block;
@@ -669,6 +865,7 @@
     &:focus {
       outline: none;
     }
+    
   }
 
   .house_finishes_select_border {

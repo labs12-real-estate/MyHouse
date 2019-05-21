@@ -162,10 +162,10 @@
         }
 
         &:hover {
-          background: #e20f07;
+          background: #f83f61;
         }
         &:active {
-          background: #d33200;
+          background: #ca1536;
         }
         &:focus {
           outline: none;
@@ -204,7 +204,7 @@
 
         button.active {
           background: #e4e4e4;
-          color: #d33200;
+          color: #e51f43;
         }
 
         button {
@@ -220,7 +220,7 @@
           width: 100%;
           &:hover {
             background: #e4e4e4;
-            color: #d33200;
+            color: #e51f43;
           }
           &:focus {
             outline: none;

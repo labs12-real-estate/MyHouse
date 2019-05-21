@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import isEqual from 'lodash/fp/isEqual';
-import { useForm, useValidation, validatePassword } from 'helper-functions/form-logic-functions.js';
+import { useForm, useValidation, validatePassword } from '../../../../helper-functions/form-logic-functions.js';
 import ErrorContainer from './ErrorContainer';
-import { changePassword } from 'actions/authActions';
+import { changePassword } from '../../../../actions/authActions';
 
 function NewPasswordForm({ changePassword, error }) {
   const initialState = { oldPassword: '', newPassword: '', confirmNewPassword: '' };
@@ -22,21 +22,21 @@ function NewPasswordForm({ changePassword, error }) {
     <form onSubmit={handleSubmit} className="password">
       <ErrorContainer error={error && 'Incorrect password'} />
       <label className="inline-grid">
-        <div>Old Password</div>
+        <h2>Old Password</h2>
         <div>
           <input name="oldPassword" type="password" value={formState.oldPassword} onChange={handleChange} />
         </div>
       </label>
       <ErrorContainer error={errorState.newPassword} />
       <label className="inline-grid">
-        <div>New Password</div>
+        <h2>New Password</h2>
         <div>
           <input name="newPassword" type="password" value={formState.newPassword} onChange={handleChange} onBlur={validate(formState)} />
         </div>
       </label>
       <ErrorContainer error={errorState.confirmNewPassword} />
       <label className="inline-grid">
-        <div>Confirm New Password</div>
+        <h2>Confirm New Password</h2>
         <div>
           <input name="confirmNewPassword" type="password" value={formState.confirmNewPassword} onChange={handleChange} />
         </div>

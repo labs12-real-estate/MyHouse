@@ -376,13 +376,13 @@
                 }
                 cursor: pointer;
                 &:hover {
-                  background: #e20f07;
+                  background: #f83f61;
                 }
                 &:focus {
                   outline: none;
                 }
                 &:active {
-                  background: #d33200;
+                  background: #ca1536;
                 }
               }
             }
@@ -782,6 +782,8 @@
               width: 47%;
               height: 4rem;
             }
+            // margin-right: 2rem;
+            margin-right: 2rem;
             background: #e63700;
             background: #e51f43;
             font-family: Roboto;
@@ -798,22 +800,22 @@
             padding: none;
             cursor: pointer;
             &:hover {
-              background: #e20f07;
+              background: #f83f61;
             }
             &:focus {
               outline: none;
             }
             &:active {
-              background: #d33200;
+              background: #ca1536;
             }
           }
           .skip_button {
             background: #f4f4f4;
-            border: 1px solid #e63700;
-            color: #e63700;
+            border: 1px solid #e51f43;
+            color: #e51f43;
 
             &:hover {
-              background: #e63700;
+              background: #f83f61;
               color: #fff;
               border: none;
             }
@@ -1125,13 +1127,13 @@
               padding: none;
               cursor: pointer;
               &:hover {
-                background: #e20f07;
+                background: #f83f61;
               }
               &:focus {
                 outline: none;
               }
               &:active {
-                background: #d33200;
+                background: #ca1536;
               }
             }
           }
@@ -1291,13 +1293,13 @@ progress[value] {
     padding: none;
     cursor: pointer;
     &:hover {
-      background: #f13800;
+      background: #f83f61;
     }
     &:focus {
       outline: none;
     }
     &:active {
-      background: #d33200;
+      background: #ca1536;
     }
   }
 }
