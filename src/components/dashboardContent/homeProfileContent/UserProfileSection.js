@@ -15,7 +15,7 @@ function UserProfileSection({ house, user, profilePhotoURL, uploadPhoto }) {
           <figure>
             <div className="camera-overlay">
               <button onClick={handleClick}>
-                <i class="fas fa-camera" />
+                <i className="fas fa-camera" />
               </button>
               <input hidden name="profile" type="file" accept="image/jpeg" ref={ref} onChange={uploadPhoto} />
             </div>
@@ -34,7 +34,7 @@ function UserProfileSection({ house, user, profilePhotoURL, uploadPhoto }) {
           <figure>
             <div className="camera-overlay">
               <button onClick={handleClick}>
-                <i class="fas fa-camera" />
+                <i className="fas fa-camera" />
               </button>
             </div>
             {profilePhotoURL ? <img src={profilePhotoURL} alt="user" /> : <UserPlaceholder />}
