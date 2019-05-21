@@ -21,11 +21,11 @@ function HouseProfileParcel({ saveHouseInfo, id, parcelData }) {
       saveHouseInfo({ changes: { parcelData: newParcelData }, id });
       setSelectedInput(null);
     } else {
-      toast.error(`Parcel data cannot be a negative number.`, { className: 'toastify_success' });
+      toast.error(`Parcel data cannot be a negative number.`, { className: 'toastify_error' });
     }
   };
 
-  function inputBlur(e) {
+  const inputBlur = e => {
     if (e.target.value > -1) {
       const value = e.target.name === 'lotSquareFootage' ? acreToSqFtConversion(e.target.value) : e.target.value;
       const newParcelData = {
@@ -35,9 +35,9 @@ function HouseProfileParcel({ saveHouseInfo, id, parcelData }) {
       saveHouseInfo({ changes: { parcelData: newParcelData }, id });
       setSelectedInput(null);
     } else {
-      toast.error(`Parcel data cannot be a negative number.`, { className: 'toastify_success' });
+      toast.error(`Parcel data cannot be a negative number.`, { className: 'toastify_error' });
     }
-  }
+  };
 
   const handleSelect = key => _e => {
     setSelectedInput(key);

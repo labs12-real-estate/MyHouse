@@ -1,4 +1,5 @@
 import { Storage } from 'aws-amplify';
+import { toast } from 'react-toastify';
 import uuidv4 from 'uuid/v4';
 import {
   IMAGE_UPLOAD_FETCH,
@@ -66,6 +67,9 @@ export const uploadPhoto = e => (dispatch, getState) => {
       type: IMAGE_UPLOAD_FAIL,
       payload: 'File size should be less than 3 MB'
     });
+    toast.error('File size should be less than 3 MB', {
+      className: 'toastify_success'
+    });
   } else {
     dispatch({
       type: IMAGE_UPLOAD_FETCH,
@@ -129,9 +133,8 @@ export const listGallery = () => (dispatch, getState) => {
     type: LIST_GALLERY_FETCH
   });
   Storage.list(gallery)
-    .then(async keys => {
-      console.log(keys);
-      const photoURLs = await Promise.all(keys.map(Storage.get));
+    .then(async objects => {
+      const photoURLs = await Promise.all(objects.map(o => Storage.get(o.key)));
       dispatch({
         type: LIST_GALLERY_SUCCESS,
         payload: photoURLs
