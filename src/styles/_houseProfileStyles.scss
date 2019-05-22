@@ -2,8 +2,9 @@ $overlay-bg: hsla(0, 0, 0, 0.5);
 $overlay-camera: hsla(100, 100, 100, 0.5);
 
 .house_profile_backdrop_image {
-  background: linear-gradient(dodgerblue, lightgray);
+  background: url('../assets/images/house-profile/default-cover-photo.png');
   width: 100%;
+  background-position: center;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 350px;
@@ -29,6 +30,7 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
   .camera-overlay {
     grid-column-start: 1;
     grid-row-start: 1;
+    transition: 0.3s;
     opacity: 0;
     background: $overlay-bg;
     padding: 2rem 4rem;
