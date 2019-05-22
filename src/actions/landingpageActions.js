@@ -12,8 +12,10 @@ export const getValuationv2 = (address, history) => dispatch => {
       complete_address = complete_address.slice(0, -5); // remove 5 characters ", USA" at the end
       axios
         .post(
+          // https://labs12-real-estate.herokuapp.com/api/houses/getvalue
           // 'http://testing1-env.q5yaggzwbs.us-east-2.elasticbeanstalk.com/api',
-          'http://valuate.us-east-1.elasticbeanstalk.com',
+          //http://valuate.us-east-1.elasticbeanstalk.com
+          'https://labs12-real-estate.herokuapp.com/api/houses/getvalue',
           { address: complete_address }
         )
         .then(data => {
@@ -44,7 +46,9 @@ export const getValuation = (address, history) => dispatch => {
       let complete_address = data.data.results[0].formatted_address;
       complete_address = complete_address.slice(0, -5); // remove 5 characters ", USA" at the end
       axios
-        .post('https://myhouse-be.herokuapp.com/api/houses/getvalue', {
+      // https://labs12-real-estate.herokuapp.com/api/houses/getvalue
+      // https://myhouse-be.herokuapp.com/api/houses/getvalue
+        .post('https://labs12-real-estate.herokuapp.com/api/houses/getvalue', {
           complete_address
         })
         .then(data => {
