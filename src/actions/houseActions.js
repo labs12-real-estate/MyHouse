@@ -41,7 +41,7 @@ export const saveHouseInfo = ({ field, changes, id }) => dispatch => {
     })
     .catch(error => {
       dispatch({ type: SAVE_HOUSE_INFO_FAIL, payload: error });
-      toast.error('Something went wrong.', { className: 'toast_error' });
+      toast.error('Something went wrong. You may have entered an invalid value.', { className: 'toastify_error', autoClose: 3000 });
     });
 };
 
