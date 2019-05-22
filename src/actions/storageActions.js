@@ -53,7 +53,6 @@ export const downloadPhoto = key => async (dispatch, getState) => {
         type: IMAGE_DOWNLOAD_FAIL,
         payload: error
       });
-      toast.error('Something went wrong.', { className: 'toast_error' });
     });
 };
 
@@ -91,7 +90,6 @@ export const uploadPhoto = e => (dispatch, getState) => {
           type: IMAGE_UPLOAD_FAIL,
           payload: error
         });
-        toast.error('Something went wrong.', { className: 'toast_error' });
       });
   }
 };
@@ -124,7 +122,6 @@ export const uploadToGallery = e => (dispatch, getState) => {
           type: GALLERY_UPLOAD_FAIL,
           payload: error
         });
-        toast.error('Something went wrong.', { className: 'toast_error' });
       });
   }
 };
@@ -148,7 +145,6 @@ export const listGallery = () => (dispatch, getState) => {
         type: LIST_GALLERY_FAIL,
         payload: error
       });
-      toast.error('Something went wrong.', { className: 'toast_error' });
     });
 };
 
