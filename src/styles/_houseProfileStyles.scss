@@ -281,7 +281,8 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
       @include for-phone-only {
         margin: 0px;
         position: relative;
-        outline: 1px solid red;
+        top: 0%;
+        left: calc(50% - 7.5rem);
       }
 
       @include for-tablet-portrait-up {
