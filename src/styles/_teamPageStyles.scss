@@ -1,5 +1,5 @@
 // This fix iphone scrolling issue
-// html {  
+// html {
 //   -webkit-overflow-scrolling: touch;
 // }
 
@@ -119,11 +119,14 @@
         text-align: center;
       }
       img {
-        width: 20rem;
-        height: 20rem;
+        width: 21rem;
+        height: 21rem;
         border-radius: 100%;
         object-fit: cover;
         margin-right: 10rem;
+        padding: 7px;
+        border: 0px solid transparent;
+        background: linear-gradient(180deg, #0061f1 0%, #33aeff 100%);
         @media (max-width: 800px) {
           width: 16rem;
           height: 16rem;
@@ -183,7 +186,6 @@
           font-size: 1.5rem;
         }
       }
-      
 
       .social {
         display: flex;
@@ -196,7 +198,6 @@
           width: 75%;
         }
 
-          
         .fab {
           color: #0068ff;
           font-size: 2.1rem;

@@ -1,6 +1,6 @@
 import React from 'react';
 import AddressInput from '../inputs/AddressInput';
-import housePng from '../../assets/images/isometric-house.png';
+import housePng from '../../assets/images/isometric-house-new.png';
 import { useWindowWidth } from '../../helper-functions/display-functions';
 
 export default function LandingHero() {
