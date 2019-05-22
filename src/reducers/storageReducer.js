@@ -40,9 +40,7 @@ const photoURLs = (state = initialState.photoURLs, action) => {
     case LIST_GALLERY_SUCCESS:
       return { ...state, gallery: sortBy(['lastModified'], action.payload) };
     case GALLERY_UPLOAD_FETCH:
-      return { ...state, gallery: [...state.gallery, { ...action.payload, isSpinner: true }] };
-    case GALLERY_UPLOAD_SUCCESS:
-      return { ...state, gallery: state.gallery.map(object => (object.key === action.payload.key ? action.payload : object)) };
+      return { ...state, gallery: [...state.gallery, { ...action.payload }] };
     case GALLERY_IMAGE_DELETE_FETCH:
       return { ...state, gallery: state.gallery.filter(object => object.key !== action.payload) };
     default:

@@ -108,13 +108,15 @@ export const uploadToGallery = e => (dispatch, getState) => {
     dispatch({
       type: GALLERY_UPLOAD_FETCH,
       payload: {
-        photoURL: tempURL
+        photoURL: tempURL,
+        key: userKey
       }
     });
     Storage.put(userKey, file)
       .then(_response => {
         dispatch({
-          type: GALLERY_UPLOAD_SUCCESS
+          type: GALLERY_UPLOAD_SUCCESS,
+          payload: { key: userKey }
         });
       })
       .catch(error => {

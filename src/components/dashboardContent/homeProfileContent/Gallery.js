@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { connect } from 'react-redux';
-import Loader from 'react-loader-spinner';
 import { uploadToGallery, deleteFromGallery } from 'actions/storageActions';
 import { openGalleryModal } from 'actions/displayActions';
 
@@ -9,6 +8,10 @@ function Gallery({ gallery, uploadToGallery, openGalleryModal, deleteFromGallery
   const handleClick = _event => {
     ref.current.click();
   };
+  const handleDeleteFromGallery = key => e => {
+    e.stopPropagation();
+    deleteFromGallery(key);
+  };
   return (
     <div className="house_profile_gallery_container">
       <h2>Gallery</h2>
@@ -16,18 +19,12 @@ function Gallery({ gallery, uploadToGallery, openGalleryModal, deleteFromGallery
         {gallery.length === 0 ? (
           <h3>Add images to your gallery</h3>
         ) : (
-          gallery.map(({ photoURL, key, isSpinner }) => (
+          gallery.map(({ photoURL, key }) => (
             <figure className="gallery-figure" key={key} onClick={() => openGalleryModal(photoURL)}>
-              {isSpinner ? (
-                <Loader height={25} width={25} type="TailSpin" color="black" />
-              ) : (
-                <>
-                  <button className="trash" onClick={() => deleteFromGallery(key)}>
-                    <i className="fas fa-trash" />
-                  </button>
-                  <img alt="" src={photoURL} />
-                </>
-              )}
+              <button className="trash" onClick={handleDeleteFromGallery(key)}>
+                <i className="fas fa-trash" />
+              </button>
+              <img alt="" src={photoURL} />
             </figure>
           ))
         )}
