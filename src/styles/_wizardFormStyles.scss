@@ -75,9 +75,7 @@
           .left_panel {
             width: 35%;
             position: relative;
-            background-image: url('../assets/images/welcome.jpg');
-            background-position: center;
-            background-size: cover;
+            object-fit: cover;
             @include for-phone-only {
               display: none;
             }
@@ -107,7 +105,7 @@
 
             h1 {
               color: white;
-              margin-top: 100px;
+              margin-top: 60px;
               margin-left: 30px;
               font-family: 'Montserrat', 'sans-serf';
               font-weight: 700;
@@ -355,7 +353,6 @@
 
               .next_button {
                 // margin-right: 2rem;
-                background: #e63700;
                 margin-right: 2rem;
                 background: #e51f43;
                 font-family: Roboto;
@@ -400,9 +397,7 @@
           .left_panel {
             width: 35%;
             position: relative;
-            background-image: url('../assets/images/wizard-form.jpg');
-            background-position: center;
-            background-size: cover;
+            object-fit: cover;
             @media (max-width: 800px) {
               display: none;
             }
@@ -784,7 +779,6 @@
             }
             // margin-right: 2rem;
             margin-right: 2rem;
-            background: #e63700;
             background: #e51f43;
             font-family: Roboto;
             font-style: normal;
@@ -1278,7 +1272,7 @@ progress[value] {
       height: 4rem;
     }
     // margin-right: 2rem;
-    background: #e63700;
+    background: #e51f43;
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;

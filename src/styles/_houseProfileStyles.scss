@@ -13,12 +13,12 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
   .backdrop_figure {
     grid-column-start: 1;
     grid-row-start: 1;
-
     display: flex;
     place-content: center;
     height: 100%;
     overflow: hidden;
     max-width: 100%;
+    cursor: pointer;
 
     .backdrop_img {
       min-width: 100%;
@@ -31,7 +31,6 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
     grid-column-start: 1;
     grid-row-start: 1;
     transition: 0.3s;
-
     opacity: 0;
     background: $overlay-bg;
     padding: 2rem 4rem;
@@ -39,6 +38,7 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
     display: grid;
     grid-template-columns: 1fr min-content;
     grid-template-rows: 1fr min-content;
+    cursor: pointer;
     button {
       display: contents;
       i {
@@ -270,6 +270,7 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
       top: -35%;
       width: 15rem;
       height: 15rem;
+      cursor: pointer;
 
       @include for-phone-only {
         margin: 0px;
@@ -299,6 +300,7 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
           i {
             color: $overlay-camera;
             font-size: 5rem;
+            cursor: pointer;
           }
         }
       }
@@ -788,7 +790,6 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
   // box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
   height: 62px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 0 4.2%;
   font-family: 'Montserrat', 'sans-serif';
@@ -811,7 +812,38 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
     margin-right: 0px;
   }
 
+  pre {
+    width: 40%;
+    @include for-phone-only {
+      width: 100%;
+      text-align: center;
+    }
+    @include for-tablet-portrait-up {
+      width: 55%;
+    }
+    @include for-tablet-landscape-up {
+      width: 40%;
+    }
+  }
+
+  span {
+    width: 60%;
+    @include for-tablet-portrait-up {
+      width: 45%;
+    }
+    @include for-tablet-landscape-up {
+      width: 60%;
+    }
+  }
+
   form {
+    width: 60%;
+    @include for-tablet-portrait-up {
+      width: 45%;
+    }
+    @include for-tablet-landscape-up {
+      width: 60%;
+    }
     input {
       border: none;
       cursor: pointer;
@@ -820,15 +852,13 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
       font-weight: 500;
       font-size: 1.6rem;
       line-height: 2.2rem;
-      width: 40%;
-      max-width: 250px;
+      width: 100%;
       height: 3.5rem;
       display: block;
-      margin-left: 110px;
 
       @include for-phone-only {
-        width: 40%;
-        max-width: 40%;
+        text-align: center;
+        border: 0.5px solid lightgray;
       }
 
       &:focus {
@@ -850,11 +880,15 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
     height: 3.5rem;
     display: block;
     color: black;
+    text-transform: none;
 
     @include for-phone-only {
-      width: 100%;
+      width: 60%;
       max-width: 100%;
       text-align: center;
+      border: 0.5px solid lightgray;
+      display: flex !important;
+      justify-content: center;
     }
 
     &:focus {
