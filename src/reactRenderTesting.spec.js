@@ -128,8 +128,6 @@ beforeAll(() => {
 });
 
 afterEach(cleanup);
-
-
  
 describe('Render Suite', () => {
   it('should render App', () => {
