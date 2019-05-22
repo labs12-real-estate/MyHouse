@@ -54,10 +54,11 @@ function WizardFormPage() {
     const serialized = questions.reduce(
       (obj, { key, selected, options }) => ({
         ...obj,
-        [key]: selected ? options[selected] : null
+        [key]: selected !== null ? options[selected] : null
       }),
       {}
     );
+    console.log(serialized);
     const { data } = JSON.parse(localStorage.getItem('initialData'));
     return toHouseInput(data, serialized);
   };
