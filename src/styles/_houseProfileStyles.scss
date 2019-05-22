@@ -515,6 +515,14 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
   }
 }
 
+.modal-figure {
+  img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: cover;
+  }
+}
+
 // HouseProfileForms styles
 .house_profile_forms_container {
   // border: 1px solid red;
