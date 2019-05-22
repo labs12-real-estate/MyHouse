@@ -1,4 +1,4 @@
-import { GET_VALUATION_FETCH, GET_VALUATION_SUCCESS, GET_VALUATION_FAIL } from '../actions';
+import { GET_VALUATION_FETCH, GET_VALUATION_SUCCESS, GET_VALUATION_FAIL, CLEAR_ERROR } from '../actions';
 
 const initialState = {
   error: null,
@@ -13,6 +13,8 @@ export const landingpageReducer = (state = initialState, action) => {
       return { ...state, fetching: false };
     case GET_VALUATION_FAIL:
       return { ...state, fetching: false, error: action.payload };
+    case CLEAR_ERROR:
+      return { ...state, fetching: false, error: '' };
     default:
       return state;
   }

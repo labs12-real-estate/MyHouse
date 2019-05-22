@@ -1,12 +1,13 @@
 import { GET_DESIGNS_FETCH, GET_DESIGNS_SUCCESS, GET_DESIGNS_FAIL, NEXT_PAGE_FETCH, NEXT_PAGE_SUCCESS, NEXT_PAGE_FAIL } from './index';
 import axios from 'axios';
 
+const key = '5e2bb786c9c1fb26d4745702a96291fc60621889e9afa7e6df595b272849375e';
 const unsplash = axios.create({
   baseURL: 'https://api.unsplash.com',
   headers: {
     // Authorization: 'Client-ID 532bf8ff02ed4d168a1cf59ae2511c9bdad059f443da2dcfc265dcc43210e122'
     // Authorization: 'Client-ID 5e2bb786c9c1fb26d4745702a96291fc60621889e9afa7e6df595b272849375e'
-    Authorization: `Client-ID ${process.env.REACT_APP_UNSPLASH_CLIENT_ID}`
+    Authorization: `Client-ID ${process.env.REACT_APP_UNSPLASH_CLIENT_ID || key}`
   }
 });
 
