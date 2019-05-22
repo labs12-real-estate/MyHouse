@@ -122,6 +122,10 @@ There is very detailed documentation available for each. There also widespread c
 * Allows for very easy deployment
 * Has a great community around it and is future proof / very independent of new trends
 
+### Amazon S3
+
+Amazon S3 stores static files for our app. These files include the property photos and user profile images that users will upload themselves. Their cloud storage services are secure and reliable, so our users can be assured that their data will be available when and where they need it to be. Amazon S3 is also easily scalable should the app demand higher request rates. For more information, see the [Amazon S3 Documentation](https://docs.aws.amazon.com/s3/#lang/en_us).
+
 
 <br/>
 <br/>
