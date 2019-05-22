@@ -10,12 +10,20 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
   grid-template-rows: 350px;
   overflow: hidden;
 
-  .backdrop_figure {
-    grid-column-start: 1;
-    grid-row-start: 1;
+  div,
+  .backdrop_figure,
+  .camera-overlay {
     display: flex;
     place-content: center;
+    place-items: center;
+    grid-column-start: 1;
+    grid-row-start: 1;
     height: 100%;
+  }
+
+  .backdrop_figure {
+    display: flex;
+    place-content: center;
     overflow: hidden;
     max-width: 100%;
     cursor: pointer;
@@ -34,7 +42,6 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
     opacity: 0;
     background: $overlay-bg;
     padding: 2rem 4rem;
-    height: 100%;
     display: grid;
     grid-template-columns: 1fr min-content;
     grid-template-rows: 1fr min-content;
@@ -391,15 +398,25 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
 }
 
 .house_profile_gallery_container {
+  h2,
+  h3 {
+    margin: 0.5rem 0;
+  }
+  h3 {
+    font-family: 'Roboto', 'sans-serif';
+    font-weight: 600;
+    font-size: 2rem;
+    margin-left: 30px;
+    display: block;
+  }
+
   h2 {
     font-family: 'Roboto', 'sans-serif';
     font-weight: 600;
     font-size: 2.4rem;
     margin-left: 30px;
-    width: 100%;
     text-align: center;
     display: block;
-    margin-bottom: 1rem;
 
     @include for-phone-only {
       margin-left: 30px;
@@ -410,7 +427,6 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
     }
 
     @include for-desktop-up {
-      margin-left: 30px;
     }
   }
 
@@ -427,13 +443,37 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
     padding: 1rem;
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
     grid-auto-rows: 16rem;
-    img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
+    h3 {
+      grid-column: 1 / -1;
+    }
+    .gallery-figure {
+      position: relative;
+      .trash {
+        display: contents;
+        font-size: 2rem;
+        color: red;
+        i {
+          position: absolute;
+          top: 0;
+          right: 0;
+          opacity: 0;
+        }
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: contain;
+        transition: 300ms;
+      }
+      &:hover {
+        box-shadow: 0 0 3px 3px whitesmoke;
+        & .trash i {
+          opacity: 1;
+        }
+      }
     }
   }
   .button-container {
@@ -451,7 +491,7 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
       border: none;
       color: white;
       box-shadow: 4px 5px 1px -1px RGBA(0, 0, 0, 0.1);
-      border-radius: 4px;
+      border-radius: 3px;
       padding: 1rem;
       cursor: pointer;
       &:focus {
@@ -471,14 +511,24 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
   }
 
   @include for-tablet-portrait-up {
-    margin-right: 20px;
+    margin-right: auto;
+    margin-left: auto;
     flex-direction: column;
+    width: calc(96% * 0.94);
   }
 
   @include for-desktop-up {
     margin-right: 40px;
-    margin-left: 20px;
-    width: 96%;
+    margin-left: 40px;
+    width: calc(96% - 30px);
+  }
+}
+
+.modal-figure {
+  img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: cover;
   }
 }
 

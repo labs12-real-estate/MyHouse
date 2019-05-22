@@ -1,6 +1,7 @@
 import { Storage } from 'aws-amplify';
 import { toast } from 'react-toastify';
 import uuidv4 from 'uuid/v4';
+import zipWith from 'lodash/fp/zipWith';
 import {
   IMAGE_UPLOAD_FETCH,
   IMAGE_UPLOAD_SUCCESS,
@@ -13,7 +14,10 @@ import {
   LIST_GALLERY_FAIL,
   GALLERY_UPLOAD_FETCH,
   GALLERY_UPLOAD_SUCCESS,
-  GALLERY_UPLOAD_FAIL
+  GALLERY_UPLOAD_FAIL,
+  GALLERY_IMAGE_DELETE_FETCH,
+  GALLERY_IMAGE_DELETE_SUCCESS,
+  GALLERY_IMAGE_DELETE_FAIL
 } from '.';
 
 const toUserKey = (username, key) => `${username}/${key}`;
@@ -99,22 +103,24 @@ export const uploadToGallery = e => (dispatch, getState) => {
   const { username } = getState().authReducer.user;
   const userKey = makeUserGalleryKey(username);
   const tempURL = URL.createObjectURL(file);
-  if (file.size >= 3e6) {
+  if (file.size >= 15e5) {
     dispatch({
       type: GALLERY_UPLOAD_FAIL,
-      payload: 'File size should be less than 3 MB'
+      payload: 'File size should be less than 1.5 MB'
     });
   } else {
     dispatch({
       type: GALLERY_UPLOAD_FETCH,
       payload: {
-        photoURL: tempURL
+        photoURL: tempURL,
+        key: userKey
       }
     });
     Storage.put(userKey, file)
       .then(_response => {
         dispatch({
-          type: GALLERY_UPLOAD_SUCCESS
+          type: GALLERY_UPLOAD_SUCCESS,
+          payload: { key: userKey }
         });
       })
       .catch(error => {
@@ -126,6 +132,25 @@ export const uploadToGallery = e => (dispatch, getState) => {
   }
 };
 
+export const deleteFromGallery = key => dispatch => {
+  dispatch({
+    type: GALLERY_IMAGE_DELETE_FETCH,
+    payload: key
+  });
+  Storage.remove(key)
+    .then(_response => {
+      dispatch({
+        type: GALLERY_IMAGE_DELETE_SUCCESS
+      });
+    })
+    .catch(error => {
+      dispatch({
+        type: GALLERY_IMAGE_DELETE_FAIL,
+        payload: error
+      });
+    });
+};
+
 export const listGallery = () => (dispatch, getState) => {
   const { username } = getState().authReducer.user;
   const gallery = getUserGalleryPath(username);
@@ -134,10 +159,13 @@ export const listGallery = () => (dispatch, getState) => {
   });
   Storage.list(gallery)
     .then(async objects => {
-      const photoURLs = await Promise.all(objects.map(o => Storage.get(o.key)));
+      const photoURLs = await Promise.all(objects.map(({ key }) => Storage.get(key)));
+      // This pairs each URL with its key, which we'll need for deleting the image
+      // Also get `lastModified` field for sorting
+      const objectsWithURLs = zipWith((object, photoURL) => ({ ...object, photoURL }), objects, photoURLs);
       dispatch({
         type: LIST_GALLERY_SUCCESS,
-        payload: photoURLs
+        payload: objectsWithURLs
       });
     })
     .catch(error => {
