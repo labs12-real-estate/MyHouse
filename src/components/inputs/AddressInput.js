@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { getValuationv2, clearError } from '../../actions/landingpageActions';
+import { getValuation, clearError } from '../../actions/landingpageActions';
 import { useWindowWidth } from '../../helper-functions/display-functions';
 import Loader from 'react-loader-spinner';
 
-function AddressInput({ history, getValuationv2, fetching, isLoggedIn, zillow_error, clearError }) {
+function AddressInput({ history, getValuation, fetching, isLoggedIn, zillow_error, clearError }) {
   const [sessionToken, setSessionToken] = useState('');
   const [address, setAddress] = useState('');
   const [predictions, setPredictions] = useState([]);
@@ -75,7 +75,7 @@ function AddressInput({ history, getValuationv2, fetching, isLoggedIn, zillow_er
     if (isLoggedIn) {
       setError('Please log out and try again.');
     } else {
-      getValuationv2(address, history);
+      getValuation(address, history);
     }
   };
 
@@ -129,7 +129,7 @@ export default withRouter(
   connect(
     mapStateToProps,
     {
-      getValuationv2,
+      getValuation,
       clearError
     }
   )(AddressInput)
