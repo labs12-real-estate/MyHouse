@@ -38,34 +38,22 @@ export const getValuationv2 = (address, history) => dispatch => {
 
 export const getValuation = (address, history) => dispatch => {
   dispatch({ type: GET_VALUATION_FETCH });
-  const key = 'AIzaSyBQG-Y3BtowkEvTBq3dPPROa-GuMm1Rfpk';
-  const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${key}`;
   return axios
-    .get(url)
+    .post('https://labs12-real-estate.herokuapp.com/api/houses/getvalue', {
+      address
+    })
     .then(data => {
-      let complete_address = data.data.results[0].formatted_address;
-      complete_address = complete_address.slice(0, -5); // remove 5 characters ", USA" at the end
-      axios
-      // https://labs12-real-estate.herokuapp.com/api/houses/getvalue
-      // https://myhouse-be.herokuapp.com/api/houses/getvalue
-        .post('https://labs12-real-estate.herokuapp.com/api/houses/getvalue', {
-          complete_address
-        })
-        .then(data => {
-          if (!data.address) {
-            dispatch({ type: GET_VALUATION_FAIL, payload: "This address isn't in our database, please try another one." });
-          } else {
-            dispatch({ type: GET_VALUATION_SUCCESS });
-            localStorage.setItem('initialData', JSON.stringify(data));
-            history.push('/wizard-form');
-          }
-        })
-        .catch(error => {
-          dispatch({ type: GET_VALUATION_FAIL, payload: "This address isn't in our database, please try another one." });
-        });
+      console.log(data);
+      if (!data.data.address) {
+        dispatch({ type: GET_VALUATION_FAIL, payload: "This address isn't in our database, please try another one." });
+      } else {
+        dispatch({ type: GET_VALUATION_SUCCESS });
+        localStorage.setItem('initialData', JSON.stringify(data));
+        history.push('/wizard-form');
+      }
     })
     .catch(error => {
-      dispatch({ type: GET_VALUATION_FAIL, payload: error });
+      dispatch({ type: GET_VALUATION_FAIL, payload: "This address isn't in our database, please try another one." });
     });
 };
 
