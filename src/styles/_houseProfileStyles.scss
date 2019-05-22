@@ -30,6 +30,7 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
   .camera-overlay {
     grid-column-start: 1;
     grid-row-start: 1;
+    transition: 0.3s;
 
     opacity: 0;
     background: $overlay-bg;
