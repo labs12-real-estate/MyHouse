@@ -26,8 +26,7 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
     max-width: 100%;
 
     .backdrop_img {
-      min-width: 100%;
-      min-height: 100%;
+      max-width: 100%;
       object-fit: cover;
     }
   }
@@ -274,6 +273,7 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
       @include for-phone-only {
         margin: 0px;
         position: relative;
+        outline: 1px solid red;
       }
 
       @include for-tablet-portrait-up {
@@ -388,7 +388,44 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
   }
 }
 
+.house_profile_gallery_wrapper {
+  margin: 30px auto 0;
+  display: flex;
+  width: 96%;
+
+  @include for-phone-only {
+    margin-right: 0px;
+    // margin-left: 30px;
+  }
+
+  @include for-tablet-portrait-up {
+    margin-right: 20px;
+  }
+
+  @include for-desktop-up {
+    width: 96%;
+    padding-right: 30px;
+    margin-left: 40px;
+  }
+}
+
 .house_profile_gallery_container {
+  @include for-phone-only {
+    flex-direction: column;
+    width: 95%;
+    margin: 0 auto 0 0;
+    // margin-left: 0px;
+  }
+
+  @include for-tablet-portrait-up {
+    width: 94%;
+    margin-left: 20px;
+  }
+
+  @include for-desktop-up {
+    margin-left: 0;
+    width: 100%;
+  }
   h2,
   h3 {
     margin: 0.5rem 0;
@@ -424,9 +461,8 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
   background: #fff;
   padding: 1rem 0;
   width: 96%;
-  border-radius: 4px;
 
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+  @include material-card-low;
 
   margin: 30px auto;
   .gallery {
@@ -435,16 +471,20 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-    grid-auto-rows: 16rem;
     h3 {
       grid-column: 1 / -1;
     }
     .gallery-figure {
+      cursor: pointer;
       position: relative;
       .trash {
+        cursor: pointer;
         display: contents;
         font-size: 2rem;
-        color: red;
+        color: #e51f43;
+        &:hover {
+          color: #f83f61;
+        }
         i {
           position: absolute;
           top: 0;
@@ -454,7 +494,6 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
       }
       img {
         width: 100%;
-        height: 100%;
         display: block;
         object-fit: contain;
         transition: 300ms;
@@ -495,23 +534,6 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
         background: #f83f61;
       }
     }
-  }
-  @include for-phone-only {
-    margin-right: 0px;
-    flex-direction: column;
-  }
-
-  @include for-tablet-portrait-up {
-    margin-right: auto;
-    margin-left: auto;
-    flex-direction: column;
-    width: calc(96% * 0.94);
-  }
-
-  @include for-desktop-up {
-    margin-right: 40px;
-    margin-left: 40px;
-    width: calc(96% - 30px);
   }
 }
 
@@ -614,7 +636,6 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
       width: 100%;
 
       @include for-phone-only {
-        
       }
 
       .house_profile_form_content_gutter {
@@ -637,7 +658,7 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
         resize: none;
         color: rgb(124, 120, 120);
         background-color: rgb(248, 248, 248);
-        white-space: pre-line; 
+        white-space: pre-line;
         white-space: pre-line;
         word-wrap: break-word;
         line-height: 2.5rem;
@@ -654,14 +675,10 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
           font-size: 1.6rem;
           overflow: visible;
         }
-
       }
 
       textarea {
-        
         height: 100%;
-
-        
       }
     }
 
@@ -730,19 +747,17 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
       font-weight: 600;
       display: flex;
       align-items: center;
-      text-align:center;
+      text-align: center;
 
       @include for-phone-only {
         display: block;
       }
-      
+
       span {
         font-weight: 600;
-        text-align:center;
+        text-align: center;
       }
     }
-
-   
   }
   .width {
     width: 100%;
@@ -910,7 +925,6 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
     &:focus {
       outline: none;
     }
-    
   }
 
   .house_finishes_select_border {
