@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { getValuation } from '../../actions/landingpageActions';
+import { getValuation, clearError } from '../../actions/landingpageActions';
 import { useWindowWidth } from '../../helper-functions/display-functions';
 import Loader from 'react-loader-spinner';
 
-function AddressInput({ history, getValuation, fetching, isLoggedIn }) {
+function AddressInput({ history, getValuation, fetching, isLoggedIn, zillow_error, clearError }) {
   const [sessionToken, setSessionToken] = useState('');
   const [address, setAddress] = useState('');
   const [predictions, setPredictions] = useState([]);
@@ -15,11 +15,11 @@ function AddressInput({ history, getValuation, fetching, isLoggedIn }) {
 
   // Variables for Google Place API
   const google = window.google;
-  const location = new google.maps.LatLng(43.3148, -85.6024); // Latitude, longtitude of Michigan
-
+  // const location = new google.maps.LatLng(43.3148, -85.6024); // Latitude, longtitude of Michigan
   // Get session token on first render
   /* eslint-disable */
   useEffect(() => {
+    clearError();
     setError('');
     setSessionToken(new google.maps.places.AutocompleteSessionToken());
   }, []);
@@ -32,7 +32,6 @@ function AddressInput({ history, getValuation, fetching, isLoggedIn }) {
   }, []);
 
   const handleClick = e => {
-    console.log(node.current.contains(e.target));
     if (node.current.contains(e.target)) {
       return null;
     } else {
@@ -53,17 +52,20 @@ function AddressInput({ history, getValuation, fetching, isLoggedIn }) {
     setAddress(string);
     var service = new google.maps.places.AutocompleteService();
     if ([3, 6, 10, 15].includes(string.length)) {
-      service.getQueryPredictions({ input: string, sessionToken: sessionToken, location: location, radius: 500, types: ['address'] }, displaySuggestions);
+      service.getPlacePredictions(
+        { input: string, sessionToken: sessionToken, componentRestrictions: { country: 'us' }, types: ['address'] },
+        displaySuggestions
+      );
     }
   };
 
   const handleKeyDown = e => {
     if (e.keyCode === 38 && cursor > 0) {
       setCursor(cursor - 1);
-      setAddress(predictions[cursor].description);
+      setAddress(predictions[cursor - 1].description);
     } else if (e.keyCode === 40 && cursor < predictions.length - 1) {
       setCursor(cursor + 1);
-      setAddress(predictions[cursor].description);
+      setAddress(predictions[cursor + 1].description);
     }
   };
 
@@ -87,6 +89,7 @@ function AddressInput({ history, getValuation, fetching, isLoggedIn }) {
     <div>
       <div className="address_searchbar">
         <form onSubmit={getValue}>
+          {zillow_error && <div className="error_container">{zillow_error}</div>}
           {error && isLoggedIn && <div className="error_container">{error}</div>}
           <input onKeyDown={handleKeyDown} onChange={handleInputChange} placeholder="Enter address..." value={address} name="address" autoComplete="off" />
           {useWindowWidth() >= 600 && (
@@ -117,7 +120,8 @@ function AddressInput({ history, getValuation, fetching, isLoggedIn }) {
 const mapStateToProps = ({ landingpageReducer, authReducer }) => {
   return {
     fetching: landingpageReducer.fetching,
-    isLoggedIn: authReducer.isLoggedIn
+    isLoggedIn: authReducer.isLoggedIn,
+    zillow_error: landingpageReducer.error
   };
 };
 
@@ -125,7 +129,8 @@ export default withRouter(
   connect(
     mapStateToProps,
     {
-      getValuation
+      getValuation,
+      clearError
     }
   )(AddressInput)
 );
