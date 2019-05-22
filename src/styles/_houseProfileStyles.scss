@@ -1,6 +1,14 @@
 $overlay-bg: hsla(0, 0, 0, 0.5);
 $overlay-camera: hsla(100, 100, 100, 0.5);
 
+.container-spinner {
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  place-content: center;
+  place-items: center;
+}
+
 .house_profile_backdrop_image {
   background: url('../assets/images/house-profile/default-cover-photo.png');
   width: 100%;
@@ -22,7 +30,6 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
   }
 
   .backdrop_figure {
-    display: flex;
     place-content: center;
     overflow: hidden;
     max-width: 100%;
@@ -263,7 +270,7 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
       }
     }
 
-    figure {
+    .user-info-figure {
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
