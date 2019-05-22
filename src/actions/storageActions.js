@@ -72,7 +72,7 @@ export const uploadPhoto = e => (dispatch, getState) => {
       payload: 'File size should be less than 3 MB'
     });
     toast.error('File size should be less than 3 MB', {
-      className: 'toast_error'
+      className: 'toastify_error'
     });
   } else {
     dispatch({
@@ -95,7 +95,7 @@ export const uploadPhoto = e => (dispatch, getState) => {
           payload: error
         });
         toast.error('Image failed to upload', {
-          className: 'toast_error'
+          className: 'toastify_error'
         });
       });
   }
@@ -111,7 +111,7 @@ export const uploadToGallery = e => (dispatch, getState) => {
       type: GALLERY_UPLOAD_FAIL,
       payload: 'File size should be less than 1.5 MB'
     });
-    toast.error('File size should be less than 1.5 MB', { className: 'toast_error' });
+    toast.error('File size should be less than 1.5 MB', { className: 'toastify_error' });
   } else {
     dispatch({
       type: GALLERY_UPLOAD_FETCH,
@@ -133,7 +133,7 @@ export const uploadToGallery = e => (dispatch, getState) => {
           payload: error
         });
         toast.error('Image failed to upload', {
-          className: 'toast_error'
+          className: 'toastify_error'
         });
       });
   }
