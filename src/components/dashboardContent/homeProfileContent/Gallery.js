@@ -22,8 +22,8 @@ function Gallery({ gallery, uploadToGallery, openGalleryModal, deleteFromGallery
                 <Loader height={25} width={25} type="TailSpin" color="black" />
               ) : (
                 <>
-                  <button className="red-x" onClick={() => deleteFromGallery(key)}>
-                    <i className="fas fa-times-circle" />
+                  <button className="trash" onClick={() => deleteFromGallery(key)}>
+                    <i className="fas fa-trash" />
                   </button>
                   <img alt="" src={photoURL} />
                 </>

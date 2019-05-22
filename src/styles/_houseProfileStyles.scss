@@ -442,7 +442,7 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
     }
     .gallery-figure {
       position: relative;
-      .red-x {
+      .trash {
         display: contents;
         font-size: 2rem;
         color: red;
@@ -462,7 +462,7 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
       }
       &:hover {
         box-shadow: 0 0 3px 3px whitesmoke;
-        & .red-x i {
+        & .trash i {
           opacity: 1;
         }
       }
