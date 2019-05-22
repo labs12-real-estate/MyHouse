@@ -34,7 +34,7 @@ function UserProfileSection({ house, user, profilePhotoURL, uploadPhoto }) {
           <figure className="user-info-figure" onClick={handleClick}>
             <div className="camera-overlay">
               <button>
-                <i class="fas fa-camera" />
+                <i className="fas fa-camera" />
               </button>
             </div>
             {profilePhotoURL ? <img src={profilePhotoURL} alt="user" /> : <UserPlaceholder />}
