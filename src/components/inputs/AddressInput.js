@@ -32,7 +32,6 @@ function AddressInput({ history, getValuationv2, fetching, isLoggedIn, zillow_er
   }, []);
 
   const handleClick = e => {
-    console.log(node.current.contains(e.target));
     if (node.current.contains(e.target)) {
       return null;
     } else {
@@ -63,10 +62,10 @@ function AddressInput({ history, getValuationv2, fetching, isLoggedIn, zillow_er
   const handleKeyDown = e => {
     if (e.keyCode === 38 && cursor > 0) {
       setCursor(cursor - 1);
-      setAddress(predictions[cursor].description);
+      setAddress(predictions[cursor - 1].description);
     } else if (e.keyCode === 40 && cursor < predictions.length - 1) {
       setCursor(cursor + 1);
-      setAddress(predictions[cursor].description);
+      setAddress(predictions[cursor + 1].description);
     }
   };
 
