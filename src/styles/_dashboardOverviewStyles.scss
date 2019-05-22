@@ -101,7 +101,7 @@
     margin: 0 auto 80px;
   }
   @include for-tablet-landscape-up {
-    margin-left: 59px 80px;
+    margin: 0 3% 70px 59px;
   }
 
   .feature_card {
@@ -119,10 +119,10 @@
     }
     @include for-tablet-portrait-up {
       width: 100%;
-      margin: 1rem 0 1rem 0;
+      margin: 2rem 0 0 0;
     }
     @include for-tablet-landscape-up {
-      margin: 1rem 0 1rem 1%;
+      margin: 2rem 0 0 1%;
       width: 49%;
     }
     @include for-overview-page {
