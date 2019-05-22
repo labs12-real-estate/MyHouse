@@ -3,11 +3,8 @@ import { connect } from 'react-redux';
 import { uploadPhoto } from 'actions/storageActions';
 import profilePhoto from '../../../../assets/images/house-profile/tonystark.jpg';
 import { uploadPhoto } from '../../../../actions/storageActions';
-<<<<<<< HEAD
-=======
 // import profilePhoto from 'assets/images/house-profile/tonystark.jpg';
 // import { uploadPhoto } from 'actions/storageActions';
->>>>>>> 7090cc65989fc2449b4899d609688fc4c524023b
 import Skeleton from 'react-loading-skeleton';
 import UserPlaceholder from 'assets/icons/UserPlaceholder';
 
