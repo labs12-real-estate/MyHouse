@@ -1,7 +1,7 @@
 {
   "build": {
     "env": {
-      "REACT_APP_UNSPLASH_CLIENT_ID": "@unsplash-client-id"
+      "REACT_APP_UNSPLASH_CLIENT_ID": ""
     }
   },
   "version": 2,
