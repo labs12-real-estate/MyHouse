@@ -15,7 +15,7 @@ function AddressInput({ history, getValuation, fetching, isLoggedIn }) {
 
   // Variables for Google Place API
   const google = window.google;
-  const location = new google.maps.LatLng(43.3148, -85.6024); // Latitude, longtitude of Michigan
+  // const location = new google.maps.LatLng(43.3148, -85.6024); // Latitude, longtitude of Michigan
 
   // Get session token on first render
   /* eslint-disable */
@@ -53,7 +53,7 @@ function AddressInput({ history, getValuation, fetching, isLoggedIn }) {
     setAddress(string);
     var service = new google.maps.places.AutocompleteService();
     if ([3, 6, 10, 15].includes(string.length)) {
-      service.getQueryPredictions({ input: string, sessionToken: sessionToken, location: location, radius: 500, types: ['address'] }, displaySuggestions);
+      service.getQueryPredictions({ input: string, sessionToken: sessionToken, radius: 500, types: ['address'] }, displaySuggestions);
     }
   };
 
