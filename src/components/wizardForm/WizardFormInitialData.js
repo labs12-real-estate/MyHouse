@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Button from '../../components/buttons/Button';
 import { commaSeparator } from '../../helper-functions/display-functions';
+import { LazyImage } from 'react-lazy-images';
+import welcome from '../../assets/images/welcome.jpg';
+import lazyWelcome from '../../assets/images/welcome-lazy.jpg';
+import wizardFormImg from '../../assets/images/wizard-form.jpg';
+import lazyWizardFormImg from '../../assets/images/wizard-form-lazy.jpg';
 
 function WizardFormInitialData({ step, handleNext }) {
   const [address, setAddress] = useState('');
@@ -23,7 +28,12 @@ function WizardFormInitialData({ step, handleNext }) {
     <div className="wizard_form_initial_data">
       {step === 0 && (
         <div className="welcome">
-          <div className="left_panel" />
+          <LazyImage
+            src={welcome}
+            alt="home feature"
+            placeholder={({ imageProps, ref }) => <img className="left_panel" ref={ref} src={lazyWelcome} alt="placeholder" />}
+            actual={({ imageProps }) => <img className="left_panel" src={welcome} alt="welcome" />}
+          />
           <div className="left_panel_text">
             <h1>Welcome</h1>
             <h2>MyHouse</h2>
@@ -67,7 +77,12 @@ function WizardFormInitialData({ step, handleNext }) {
       )}
       {step > 0 && step < 5 && (
         <div className="questions_answers">
-          <div className="left_panel" />
+          <LazyImage
+            src={welcome}
+            alt="home feature"
+            placeholder={({ imageProps, ref }) => <img className="left_panel" ref={ref} src={lazyWizardFormImg} alt="placeholder" />}
+            actual={({ imageProps }) => <img className="left_panel" src={wizardFormImg} alt="welcome" />}
+          />
           <div className="left_panel_text">
             <h4>MyHouse</h4>
           </div>
@@ -100,7 +115,12 @@ function WizardFormInitialData({ step, handleNext }) {
       )}
       {step === 5 && (
         <div className="questions_answers">
-          <div className="left_panel" />
+          <LazyImage
+            src={welcome}
+            alt="home feature"
+            placeholder={({ imageProps, ref }) => <img className="left_panel" ref={ref} src={lazyWizardFormImg} alt="placeholder" />}
+            actual={({ imageProps }) => <img className="left_panel" src={wizardFormImg} alt="welcome" />}
+          />
           <div className="left_panel_text">
             <h4>MyHouse</h4>
           </div>
