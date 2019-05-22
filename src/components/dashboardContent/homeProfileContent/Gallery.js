@@ -10,7 +10,6 @@ function Gallery({ gallery, uploadToGallery, openGalleryModal, deleteFromGallery
     ref.current.click();
   };
   const handleDeleteFromGallery = key => e => {
-    console.log('click');
     e.stopPropagation();
     deleteFromGallery(key);
   };
