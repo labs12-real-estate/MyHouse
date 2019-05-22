@@ -1,6 +1,7 @@
 import QuinnJpg from '../assets/images/members/Quinn.jpg';
 import PeytonJpg from '../assets/images/members/Peyton.jpg';
 import GabeJpg from '../assets/images/members/Gabe.jpg';
+import DavidJpg from '../assets/images/members/David.jpg';
 
 export const teamInfo = [
   {
@@ -21,14 +22,14 @@ export const teamInfo = [
     name: 'David Lam',
     team: 'Web Team',
     intro:
-      'Lorem ipsum dolor sit amet, sumo idque deserunt usu an, vix graeco alterum te. Aperiri saperet te per. Nec utamur impedit at. Vim et nisl nemore mediocrem. Sea partem verterem eu, eros argumentum in cum. Iudico civibus eleifend pro eu.',
+      'David is a Full Stack Web Developer with a background in Mechanical Engineering. He joined Lambda School since early 2019 and has decided to make web development his lifelong career.',
     url: {
-      picture: 'https://picsum.photos/640/480',
+      picture: DavidJpg,
       twitter: '',
-      instagram: 'https://google.com',
-      github: '',
+      instagram: '',
+      github: 'https://github.com/DavidLam89',
       facebook: '',
-      linkedin: ''
+      linkedin: 'https://www.linkedin.com/in/david-lam-462149183/'
     }
   },
   {
