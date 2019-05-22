@@ -418,7 +418,6 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
     }
 
     @include for-desktop-up {
-      margin-left: 30px;
     }
   }
 
@@ -483,7 +482,7 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
       border: none;
       color: white;
       box-shadow: 4px 5px 1px -1px RGBA(0, 0, 0, 0.1);
-      border-radius: 4px;
+      border-radius: 3px;
       padding: 1rem;
       cursor: pointer;
       &:focus {
@@ -503,14 +502,16 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
   }
 
   @include for-tablet-portrait-up {
-    margin-right: 20px;
+    margin-right: auto;
+    margin-left: auto;
     flex-direction: column;
+    width: calc(96% * 0.94);
   }
 
   @include for-desktop-up {
     margin-right: 40px;
-    margin-left: 20px;
-    width: 96%;
+    margin-left: 40px;
+    width: calc(96% - 30px);
   }
 }
 
