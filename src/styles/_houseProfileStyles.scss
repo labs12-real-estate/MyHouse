@@ -1,6 +1,14 @@
 $overlay-bg: hsla(0, 0, 0, 0.5);
 $overlay-camera: hsla(100, 100, 100, 0.5);
 
+.container-spinner {
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  place-content: center;
+  place-items: center;
+}
+
 .house_profile_backdrop_image {
   background: url('../assets/images/house-profile/default-cover-photo.png');
   width: 100%;
@@ -22,15 +30,13 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
   }
 
   .backdrop_figure {
-    display: flex;
     place-content: center;
     overflow: hidden;
     max-width: 100%;
     cursor: pointer;
 
     .backdrop_img {
-      min-width: 100%;
-      min-height: 100%;
+      max-width: 100%;
       object-fit: cover;
     }
   }
@@ -264,7 +270,7 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
       }
     }
 
-    figure {
+    .user-info-figure {
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
@@ -282,6 +288,8 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
       @include for-phone-only {
         margin: 0px;
         position: relative;
+        top: 0%;
+        left: calc(50% - 7.5rem);
       }
 
       @include for-tablet-portrait-up {
@@ -397,7 +405,44 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
   }
 }
 
+.house_profile_gallery_wrapper {
+  margin: 30px auto 0;
+  display: flex;
+  width: 96%;
+
+  @include for-phone-only {
+    margin-right: 0px;
+    // margin-left: 30px;
+  }
+
+  @include for-tablet-portrait-up {
+    margin-right: 20px;
+  }
+
+  @include for-desktop-up {
+    width: 96%;
+    padding-right: 30px;
+    margin-left: 40px;
+  }
+}
+
 .house_profile_gallery_container {
+  @include for-phone-only {
+    flex-direction: column;
+    width: 95%;
+    margin: 0 auto 0 0;
+    // margin-left: 0px;
+  }
+
+  @include for-tablet-portrait-up {
+    width: 94%;
+    margin-left: 20px;
+  }
+
+  @include for-desktop-up {
+    margin-left: 0;
+    width: 100%;
+  }
   h2,
   h3 {
     margin: 0.5rem 0;
@@ -433,9 +478,8 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
   background: #fff;
   padding: 1rem 0;
   width: 96%;
-  border-radius: 4px;
 
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+  @include material-card-low;
 
   margin: 30px auto;
   .gallery {
@@ -444,16 +488,20 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-    grid-auto-rows: 16rem;
     h3 {
       grid-column: 1 / -1;
     }
     .gallery-figure {
+      cursor: pointer;
       position: relative;
       .trash {
+        cursor: pointer;
         display: contents;
         font-size: 2rem;
-        color: red;
+        color: #e51f43;
+        &:hover {
+          color: #f83f61;
+        }
         i {
           position: absolute;
           top: 0;
@@ -463,7 +511,6 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
       }
       img {
         width: 100%;
-        height: 100%;
         display: block;
         object-fit: contain;
         transition: 300ms;
@@ -504,23 +551,6 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
         background: #f83f61;
       }
     }
-  }
-  @include for-phone-only {
-    margin-right: 0px;
-    flex-direction: column;
-  }
-
-  @include for-tablet-portrait-up {
-    margin-right: auto;
-    margin-left: auto;
-    flex-direction: column;
-    width: calc(96% * 0.94);
-  }
-
-  @include for-desktop-up {
-    margin-right: 40px;
-    margin-left: 40px;
-    width: calc(96% - 30px);
   }
 }
 

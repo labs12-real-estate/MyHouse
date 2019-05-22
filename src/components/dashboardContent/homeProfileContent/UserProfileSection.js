@@ -12,7 +12,7 @@ function UserProfileSection({ house, user, profilePhotoURL, uploadPhoto }) {
     <div className="house_profile_user_section_container">
       <div className="house_profile_name_and_address">
         <div className="house_profile_user_section_sub_container">
-          <figure onClick={handleClick}>
+          <figure className="user-info-figure" onClick={handleClick}>
             <div className="camera-overlay">
               <button>
                 <i className="fas fa-camera" />
@@ -31,7 +31,7 @@ function UserProfileSection({ house, user, profilePhotoURL, uploadPhoto }) {
         </div>
         <div className="house_profile_user_section_sub_container small_home_address">
           <h1>{user.name}</h1>
-          <figure>
+          <figure className="user-info-figure" onClick={handleClick}>
             <div className="camera-overlay">
               <button>
                 <i class="fas fa-camera" />
