@@ -3,6 +3,7 @@ import Backdrop from './Backdrop';
 import UserProfileSection from './UserProfileSection';
 import HouseProfileForms from './HouseProfileForms';
 import Gallery from './Gallery';
+import GalleryModal from './GalleryModal';
 
 function MyHouseContent() {
   return (
@@ -10,6 +11,7 @@ function MyHouseContent() {
       <Backdrop />
       <UserProfileSection />
       <Gallery />
+      <GalleryModal />
       <HouseProfileForms />
     </div>
   );

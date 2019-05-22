@@ -91,9 +91,16 @@
         border-radius: 8rem;
         overflow: hidden;
         margin-right: 50px;
-        img {
+        img,
+        svg {
           width: 100%;
           object-fit: cover;
+        }
+        svg {
+          background: lightgray;
+          path {
+            fill: gray;
+          }
         }
       }
       div {
@@ -106,6 +113,7 @@
           width: max-content;
           padding: 0.5rem 0;
           margin-top: 10px;
+          cursor: pointer;
         }
       } // end div
     } // end .user-info

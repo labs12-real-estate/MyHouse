@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
+import Loader from 'react-loader-spinner';
 import { connect } from 'react-redux';
-import { uploadPhoto } from '../../../actions/storageActions';
+import { uploadPhoto } from 'actions/storageActions';
+import placeholderBackdrop from 'assets/illustrations/default-cover-photo.png';
 
 function Backdrop({ uploadPhoto, housePhotoURL }) {
   const ref = useRef();
@@ -9,13 +11,17 @@ function Backdrop({ uploadPhoto, housePhotoURL }) {
   };
   return (
     <div className="house_profile_backdrop_image">
+      {housePhotoURL === null ? (
+        <Loader height={100} width={100} type="TailSpin" color="#22ab00" />
+      ) : (
+    <div className="house_profile_backdrop_image" onClick={handleClick}>
       {housePhotoURL && (
         <figure className="backdrop_figure">
-          <img alt="" src={housePhotoURL} className="backdrop_img" />
+          <img alt="" src={housePhotoURL || placeholderBackdrop} className="backdrop_img" />
         </figure>
       )}
       <div className="camera-overlay">
-        <button onClick={handleClick}>
+        <button>
           <i className="fas fa-camera" />
         </button>
       </div>

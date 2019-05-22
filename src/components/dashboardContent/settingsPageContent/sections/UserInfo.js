@@ -1,8 +1,12 @@
 import React, { useRef } from 'react';
 import { connect } from 'react-redux';
-import profilePhoto from '../../../../assets/images/house-profile/tonystark.jpg';
-import { uploadPhoto } from '../../../../actions/storageActions';
+import { uploadPhoto } from 'actions/storageActions';
+//import profilePhoto from '../../../../assets/images/house-profile/tonystark.jpg';
+//import { uploadPhoto } from '../../../../actions/storageActions';
+// import profilePhoto from 'assets/images/house-profile/tonystark.jpg';
+// import { uploadPhoto } from 'actions/storageActions';
 import Skeleton from 'react-loading-skeleton';
+import UserPlaceholder from 'assets/icons/UserPlaceholder';
 
 function UserInfo({ user, profilePhotoURL, uploadPhoto, fetching }) {
   const ref = useRef();
@@ -11,7 +15,15 @@ function UserInfo({ user, profilePhotoURL, uploadPhoto, fetching }) {
   };
   return (
     <div className="user-info">
-      <figure>{profilePhotoURL === null ? <Skeleton height={100} width={100} /> : <img src={profilePhotoURL || profilePhoto} alt="user" />}</figure>
+      <figure>
+        {profilePhotoURL === null ? (
+          <Skeleton height={100} width={100} />
+        ) : profilePhotoURL.length ? (
+          <img src={profilePhotoURL} alt="user" />
+        ) : (
+          <UserPlaceholder />
+        )}
+      </figure>
       <div>
         <h4>{user.username}</h4>
         <button onClick={handleClick}>Change user profile photo</button>

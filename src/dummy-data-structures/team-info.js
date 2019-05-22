@@ -1,5 +1,6 @@
 import QuinnJpg from '../assets/images/members/Quinn.jpg';
 import PeytonJpg from '../assets/images/members/Peyton.jpg';
+import GabeJpg from '../assets/images/members/Gabe.jpg';
 
 export const teamInfo = [
   {
@@ -64,12 +65,12 @@ export const teamInfo = [
     intro:
       'Lorem ipsum dolor sit amet, sumo idque deserunt usu an, vix graeco alterum te. Aperiri saperet te per. Nec utamur impedit at. Vim et nisl nemore mediocrem. Sea partem verterem eu, eros argumentum in cum. Iudico civibus eleifend pro eu.',
     url: {
-      picture: 'https://picsum.photos/640/480',
-      twitter: '',
-      instagram: '',
-      github: '',
+      picture: GabeJpg,
+      twitter: 'https://twitter.com/gsamaniego41',
+      instagram: 'https://www.instagram.com/g.samaniego/',
+      github: 'https://github.com/gsamaniego41',
       facebook: '',
-      linkedin: 'https://google.com'
+      linkedin: 'https://www.linkedin.com/in/gabriel-samaniego/'
     }
   },
   {
