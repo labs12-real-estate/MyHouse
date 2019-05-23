@@ -8,7 +8,7 @@ import { uploadPhoto } from 'actions/storageActions';
 import Skeleton from 'react-loading-skeleton';
 import UserPlaceholder from 'assets/icons/UserPlaceholder';
 
-function UserInfo({ user, profilePhotoURL, uploadPhoto, fetching }) {
+function UserInfo({ user, profilePhotoURL, uploadPhoto }) {
   const ref = useRef();
   const handleClick = _event => {
     ref.current.click();

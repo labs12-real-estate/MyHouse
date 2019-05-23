@@ -65,14 +65,14 @@ export const uploadPhoto = e => (dispatch, getState) => {
   const { username } = getState().authReducer.user;
   const key = e.target.name;
   const userKey = toUserKey(username, key);
-  const tempURL = URL.createObjectURL(file);
+  const tempURL = URL && URL.createObjectURL && URL.createObjectURL(file);
   if (file.size >= 3e6) {
     dispatch({
       type: IMAGE_UPLOAD_FAIL,
       payload: 'File size should be less than 3 MB'
     });
     toast.error('File size should be less than 3 MB', {
-      className: 'toastify_success'
+      className: 'toastify_error'
     });
   } else {
     dispatch({
@@ -94,6 +94,9 @@ export const uploadPhoto = e => (dispatch, getState) => {
           type: IMAGE_UPLOAD_FAIL,
           payload: error
         });
+        toast.error('Image failed to upload', {
+          className: 'toastify_error'
+        });
       });
   }
 };
@@ -102,12 +105,13 @@ export const uploadToGallery = e => (dispatch, getState) => {
   const [file] = e.target.files;
   const { username } = getState().authReducer.user;
   const userKey = makeUserGalleryKey(username);
-  const tempURL = URL.createObjectURL(file);
+  const tempURL = URL && URL.createObjectURL && URL.createObjectURL(file);
   if (file.size >= 15e5) {
     dispatch({
       type: GALLERY_UPLOAD_FAIL,
       payload: 'File size should be less than 1.5 MB'
     });
+    toast.error('File size should be less than 1.5 MB', { className: 'toastify_error' });
   } else {
     dispatch({
       type: GALLERY_UPLOAD_FETCH,
@@ -127,6 +131,9 @@ export const uploadToGallery = e => (dispatch, getState) => {
         dispatch({
           type: GALLERY_UPLOAD_FAIL,
           payload: error
+        });
+        toast.error('Image failed to upload', {
+          className: 'toastify_error'
         });
       });
   }

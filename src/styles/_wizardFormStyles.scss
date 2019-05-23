@@ -1253,7 +1253,7 @@ progress[value] {
     @include for-phone-only {
       width: 47%;
       height: 4rem;
-      margin: 0;
+      margin-right: 2rem;
     }
     &:hover {
       background: rgb(26, 114, 254);
@@ -1267,7 +1267,7 @@ progress[value] {
   }
   .register_button {
     @include for-phone-only {
-      margin: 0;
+      margin-right: 2rem;
       width: 47%;
       height: 4rem;
     }
