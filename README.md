@@ -11,8 +11,9 @@
 - [Security](#Security)
 - [Testing](#Testing)
 - [API](#API)
+- [Planning](#Planning)
 - [Contributing](#Contributing)
-- [Product Canvas]()
+
 
 <br/>
 <br/>
@@ -94,6 +95,10 @@ Minimize friction. Maximize security. Speed up our cloud.
 
 Each incoming request yields a unique thread of computation in the cloud. When our deployment is not actively receiving traffic, our server stays quiet. Instead of worrying about servers uptime, tedious CPU and memory allocations and scaling algorithms, we just think about our code. Scaling doesn’t need to be complicated or expensive.
 
+### Various Third Party Packages
+
+For a full list of all the third-party npm packages we used in the build of the app please visit [this file](https://github.com/labs12-real-estate/labs12-real-estate-FE/blob/master/AppNotes/thirdPartyTools.md)
+
 ## Backend built using: 
 
 ### Amazon Web Services: Amplify + Cognito
@@ -151,7 +156,9 @@ fill in later
 
 This library uses [Jest](https://jestjs.io/) for testing. For the server side, we make use of Supertest, and for the client side, we make use of the [React-Testing-Library](https://testing-library.com/react).
 
-Tests can be run by moving into `/src` and running `yarn test`.
+Front end tests can be run by moving into `/src` and running `yarn test`.
+<br />
+Back end tests can be run by cloning [this repo](https://github.com/labs12-real-estate/labs12-real-estate-BE) moving into the root folder and running `yarn test`.
 
 <br/>
 <br/>
@@ -162,6 +169,21 @@ Tests can be run by moving into `/src` and running `yarn test`.
 You can learn more about our GraphQL API [here](https://github.com/labs12-real-estate/labs12-real-estate-FE/blob/master/AppNotes/GraphQL_API_Documentation.md). 
 <br />You can learn more about our data model [here](https://github.com/labs12-real-estate/labs12-real-estate-FE/blob/master/AppNotes/data_model.md).
 <br /> You can read our Express/Postgres server documenation [here](https://github.com/labs12-real-estate/labs12-real-estate-BE)
+
+<br/>
+<br/>
+
+# Planning
+So often with software development we think that coding is the more useful exercise when it comes to building an application. For our MyHouse app we took a different approach. It was our closely held philosophy that if we made a major commitment and investment in planning that it would result in a far more cohesive and organized iteration cycle. This proved to be true.
+
+We spent 48 hours at the beginning of this project doing nothing but coming up with a long-range plan for how we would build the app, broken down by one week sprints prior to ever writing a line of code.
+
+Due to our extensive planning and organized development strategy we actually completed what we anticipated would take 5 weeks in 3 short weeks. Due to this we had to have a Stage 2 planning session where we spent the majority of a day planning what features we could implement with our remaining 2 weeks before project deadline.
+
+Our Technical Design Document AKA Product Canvas is 30 pages long and goes into excruciating detail upon the execution of features, challenges we would potentially encounter, the stories of how our users would interact with the features, the competitive marketplace and much more.
+
+You can view the planning document [here](https://github.com/labs12-real-estate/labs12-real-estate-FE/blob/master/AppNotes/Product_Canvas.md).
+
 
 <br/>
 <br/>
