@@ -2,6 +2,7 @@ import QuinnJpg from '../assets/images/members/Quinn.jpg';
 import PeytonJpg from '../assets/images/members/Peyton.jpg';
 import GabeJpg from '../assets/images/members/Gabe.jpg';
 import DavidJpg from '../assets/images/members/David.jpg';
+import MarsawJpg from '../assets/images/members/Marsaw.jpg';
 
 export const teamInfo = [
   {
@@ -36,12 +37,12 @@ export const teamInfo = [
     name: 'Jordan Marsaw',
     team: 'Project Manager',
     intro:
-      'Lorem ipsum dolor sit amet, sumo idque deserunt usu an, vix graeco alterum te. Aperiri saperet te per. Nec utamur impedit at. Vim et nisl nemore mediocrem. Sea partem verterem eu, eros argumentum in cum. Iudico civibus eleifend pro eu.',
+      'Jordan Marsaw is a full stack developer and project manager with a background in mathematics & economics. Current interests include distributed systems, cryptography, and computational geometry.',
     url: {
-      picture: 'https://picsum.photos/640/480',
+      picture: MarsawJpg,
       twitter: '',
       instagram: '',
-      github: 'https://google.com',
+      github: 'https://github.com/blokboy',
       facebook: '',
       linkedin: ''
     }
@@ -96,9 +97,9 @@ export const teamInfo = [
       picture: PeytonJpg,
       twitter: '',
       instagram: '',
-      github: '',
+      github: 'https://github.com/peytonrunyan',
       facebook: '',
-      linkedin: ''
+      linkedin: 'https://www.linkedin.com/in/peyton-runyan/'
     }
   },
   {
@@ -110,9 +111,9 @@ export const teamInfo = [
       picture: QuinnJpg,
       twitter: '',
       instagram: '',
-      github: '',
+      github: 'https://github.com/quinn-dougherty',
       facebook: '',
-      linkedin: ''
+      linkedin: 'https://www.linkedin.com/in/quinn-dougherty-581868180/'
     }
   }
 ];
