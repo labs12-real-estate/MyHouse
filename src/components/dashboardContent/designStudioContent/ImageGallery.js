@@ -24,7 +24,7 @@ function ImageGallery({ searchResults, getNextPage, currentSearch, currentPage, 
 
   return (
     <>
-      {currentSearch === '' && <img src={decorateSvg} alt="" className="decorate_svg" />}
+      {fetching || searchResults.length > 0 ? null : <img src={decorateSvg} alt="" className="decorate_svg" />}
       <div className="design_studio_img_container">
         {searchResults &&
           filteredImgs.map(result => {
