@@ -88,17 +88,17 @@ We chose SASS as a methodology for our styling in order to be able to keep styli
 
 ### Zeit
 
-Our front end was deployed using Zeit. Zeit is a serverless cloud deployment server which makes Continuous Deployment a breeze by connecting to our github repository. Some of the great features we took advantage of: Zeit only re-builds the parts of your application that have changed. No matter how large your repository. Zeit makes our code blazing fast: cold, hot and in-between. Our deployment is decomposed into small units of execution, all built, deployed and executed independently. Instead of deploying a large server, we deploy lots of small functions that look and act as one.
+Our front end was deployed using Zeit. Zeit is a serverless cloud deployment experience which makes Continuous Deployment a breeze by connecting to our github repository. Some of the great features we took advantage of: Zeit only re-builds the parts of your application that have changed. No matter how large your repository. Zeit makes our code blazing fast: cold, hot and in-between. Our deployment is decomposed into small units of execution, all built, deployed and executed independently. Instead of deploying a large server, we deploy lots of small functions that look and act as one.
 
 Minimize friction. Maximize security. Speed up our cloud.
 
-Each incoming request yields a unique thread of computation in the cloud. When our deployment is not actively receiving traffic. Instead of worrying about servers uptime, tedious CPU and memory allocations and scaling algorithms, we just think about our code. Scaling doesn’t need to be complicated or expensive.
+Each incoming request yields a unique thread of computation in the cloud. When our deployment is not actively receiving traffic, our server stays quiet. Instead of worrying about servers uptime, tedious CPU and memory allocations and scaling algorithms, we just think about our code. Scaling doesn’t need to be complicated or expensive.
 
 ## Backend built using: 
 
 ### Amazon Web Services: Amplify + Cognito
 
-AWS Amplify + Cognito allows us to manage and control our user pool along with federated ID's for full authentication, security and polish on for the end user.
+AWS Amplify + Cognito allows us to manage and control our user pool along with federated ID's for full authentication, security and polish for the end user.
 It also gives us scalability as our AWS API can handle 1000 calls per second.
 
 ### GraphQL
@@ -159,21 +159,22 @@ Tests can be run by moving into `/src` and running `yarn test`.
 
 # API
 
-You can learn more about our API [here](https://github.com/Lambda-School-Labs/labs9-employee-scheduler/blob/master/docs/API.md). 
-<br />You can learn more about our data model [here](https://github.com/Lambda-School-Labs/labs9-employee-scheduler/blob/master/docs/data_model.md).
+You can learn more about our GraphQL API [here](https://github.com/labs12-real-estate/labs12-real-estate-FE/blob/master/AppNotes/GraphQL_API_Documentation.md). 
+<br />You can learn more about our data model [here](https://github.com/labs12-real-estate/labs12-real-estate-FE/blob/master/AppNotes/data_model.md).
+<br /> You can read our Express/Postgres server documenation [here](https://github.com/labs12-real-estate/labs12-real-estate-BE)
 
 <br/>
 <br/>
 
 
 # Contributing
-Contributions are welcome. If you choose to contribute to this project, you agree to abide by our [Code of Conduct](./AppNotes/CODE_OF_CONDUCT.md). Please create an Issue if there is a bug or feature request you are interested in adding to the project. If you would like to implement the pull request for this Issue yourself, please request permission in the Issue commentary and affirm from a Maintainer that you can proceed. Once confirmed, assign yourself the Issue in Github.
+Contributions are welcome. If you choose to contribute to this project, you agree to abide by our [Code of Conduct](https://github.com/labs12-real-estate/labs12-real-estate-FE/blob/master/AppNotes/CODE_OF_CONDUCT.md). Please create an Issue if there is a bug or feature request you are interested in adding to the project. If you would like to implement the pull request for this Issue yourself, please request permission in the Issue commentary and affirm from a Maintainer that you can proceed. Once confirmed, assign yourself the Issue in Github.
 
 Pull requests are made via the git feature branch workflow described [here](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow). Once you are assigned the Issue, you can clone the repo locally, and begin working on the feature branch.
 
-As you implement tests, please ensure you are running tests in both the server and client as described in the testing section. If you are implementing new features, please introduce well thought-out unit/integration tests as needed to ensure the feature works properly. Please also ensure you are running eslint using [our config](https://github.com/Lambda-School-Labs/labs9-employee-scheduler/blob/master/.eslintrc.js), and eliminating any linting errors before attempting to create a pull request. Please also run Prettier using [our config](https://github.com/Lambda-School-Labs/labs9-employee-scheduler/blob/master/.prettierrc), to ensure you are meeting the formatting standards for this project.
+As you implement tests, please ensure you are running tests in both the server and client as described in the testing section. If you are implementing new features, please introduce well thought-out unit/integration tests as needed to ensure the feature works properly. Please also ensure you are running eslint using [our config](https://github.com/labs12-real-estate/labs12-real-estate-FE/blob/master/.eslintrc.json), and eliminating any linting errors before attempting to create a pull request. Please also run Prettier using [our config](https://github.com/labs12-real-estate/labs12-real-estate-FE/blob/master/.prettierrc.json), to ensure you are meeting the formatting standards for this project.
 
-Once your feature has been finished, please use `git push -u origin *feature-name*` to create the branch on the remote repository, then create the pull request in github. As part of the pull request, please fill out the [pull request template](pull_request_template.md). Once completed, you may create your pull request. A review from a contributor and ultimate merge approval by an admin will be required. If there are requests raised in the review, please address them.
+Once your feature has been finished, please use `git push -u origin *feature-name*` to create the branch on the remote repository, then create the pull request in github. As part of the pull request, please fill out the [pull request template](https://github.com/labs12-real-estate/labs12-real-estate-FE/blob/master/AppNotes/pull_request_template.md). Once completed, you may create your pull request. A review from a contributor and ultimate merge approval by an admin will be required. If there are requests raised in the review, please address them.
 
 Thanks for your interest in MyHouse; we look forward to your feedback & participation! <br/>
 —Anthony, David, Jordan, Gabe, Peter, Quinn & Peyton
