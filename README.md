@@ -11,8 +11,9 @@
 - [Security](#Security)
 - [Testing](#Testing)
 - [API](#API)
+- [Planning](#Planning)
 - [Contributing](#Contributing)
-- [Product Canvas]()
+
 
 <br/>
 <br/>
@@ -58,7 +59,7 @@ Wireframe: https://balsamiq.cloud/snv27r3/put06ds/r2278 </strong>
 
 |                                                [Peyton Runyan](https://github.com/peytonrunyan)                                                 |                                       [Quinn Dougherty](https://github.com/quinn-dougherty)                                        |
 | :---------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: |
-|                                [<img src="https://avatars0.githubusercontent.com/u/44583861?s=400&v=4" width = "100" />](https://github.com/peytonrunyan)                                |                        [<img src="https://avatars1.githubusercontent.com/u/39039420?s=400&v=4g" width = "100" />](https://github.com/quinn-dougherty)                        | [<img src="https://avatars1.githubusercontent.com/u/39039420?s=400&v=4" width = "250" />](https://github.com/Mister-Corn) | [<img src="https://avatars1.githubusercontent.com/u/37676385" width = "250" />](https://github.com/NandoTheessen) | [<img src="./assets/william.jpg" width = "250" />](https://github.com/ptrfrncsmrph) |
+|                                [<img src="https://avatars0.githubusercontent.com/u/44583861?s=400&v=4" width = "200" />](https://github.com/peytonrunyan)                                |                        [<img src="https://avatars1.githubusercontent.com/u/39039420?s=400&v=4g" width = "200" />](https://github.com/quinn-dougherty)                        | [<img src="https://avatars1.githubusercontent.com/u/39039420?s=400&v=4" width = "250" />](https://github.com/Mister-Corn) | [<img src="https://avatars1.githubusercontent.com/u/37676385" width = "250" />](https://github.com/NandoTheessen) | [<img src="./assets/william.jpg" width = "250" />](https://github.com/ptrfrncsmrph) |
 |                            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/peytonrunyan)                            |                    [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/quinn-dougherty)                    | [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn) | [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen) | [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/ptrfrncsmrph) |
 | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/peyton-runyan/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/quinn-dougherty-581868180/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jordan-stoddard-aa928167/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/nandotheessen/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/william-vandolah-89717477/) |
 
@@ -88,17 +89,21 @@ We chose SASS as a methodology for our styling in order to be able to keep styli
 
 ### Zeit
 
-Our front end was deployed using Zeit. Zeit is a serverless cloud deployment server which makes Continuous Deployment a breeze by connecting to our github repository. Some of the great features we took advantage of: Zeit only re-builds the parts of your application that have changed. No matter how large your repository. Zeit makes our code blazing fast: cold, hot and in-between. Our deployment is decomposed into small units of execution, all built, deployed and executed independently. Instead of deploying a large server, we deploy lots of small functions that look and act as one.
+Our front end was deployed using Zeit. Zeit is a serverless cloud deployment experience which makes Continuous Deployment a breeze by connecting to our github repository. Some of the great features we took advantage of: Zeit only re-builds the parts of your application that have changed. No matter how large your repository. Zeit makes our code blazing fast: cold, hot and in-between. Our deployment is decomposed into small units of execution, all built, deployed and executed independently. Instead of deploying a large server, we deploy lots of small functions that look and act as one.
 
 Minimize friction. Maximize security. Speed up our cloud.
 
-Each incoming request yields a unique thread of computation in the cloud. When our deployment is not actively receiving traffic. Instead of worrying about servers uptime, tedious CPU and memory allocations and scaling algorithms, we just think about our code. Scaling doesn’t need to be complicated or expensive.
+Each incoming request yields a unique thread of computation in the cloud. When our deployment is not actively receiving traffic, our server stays quiet. Instead of worrying about servers uptime, tedious CPU and memory allocations and scaling algorithms, we just think about our code. Scaling doesn’t need to be complicated or expensive.
+
+### Various Third Party Packages
+
+For a full list of all the third-party npm packages we used in the build of the app please visit [this file](https://github.com/labs12-real-estate/labs12-real-estate-FE/blob/master/AppNotes/thirdPartyTools.md)
 
 ## Backend built using: 
 
 ### Amazon Web Services: Amplify + Cognito
 
-AWS Amplify + Cognito allows us to manage and control our user pool along with federated ID's for full authentication, security and polish on for the end user.
+AWS Amplify + Cognito allows us to manage and control our user pool along with federated ID's for full authentication, security and polish for the end user.
 It also gives us scalability as our AWS API can handle 1000 calls per second.
 
 ### GraphQL
@@ -132,17 +137,37 @@ Amazon S3 stores static files for our app. These files include the property phot
 
 # Security
 
-In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file in the frontend folder containing the following:
+ ### For Frontend:
+You will need to create an environment variable to make Unsplash API calls. 
+<br />Steps to create secret and env variable:
 
+- add now dependency, in CLI: yarn add now
+
+- choose the now user or team that secrets will be created under, in CLI: now switch
+
+- create now secret, in CLI: now secret add my-secret-name my-secret-value
+**run "now secrets ls" in CLI to list all secrets 
+
+- create env variable and assign secret value to env variable, in now.json:
 ```
-Fill in later
+"build":{
+      "env":{
+        "REACT_APP_UNSPLASH_CLIENT_ID": "@my-secret-name"
+      }
+    },
 ```
+`**REACT_APP_` in front of env variable name is required 
+
+- access env variable: `process.env.REACT_APP_UNSPLASH_CLIENT_ID`
+
+### For Backend:
 
 In your backend, create a .env file that includes the following:
 
 ```
-fill in later
+GOOGLE_API_KEY
 ```
+- Access env variable: `process.env.GOOGLE_API_KEY`
 
 <br/>
 <br/>
@@ -151,7 +176,9 @@ fill in later
 
 This library uses [Jest](https://jestjs.io/) for testing. For the server side, we make use of Supertest, and for the client side, we make use of the [React-Testing-Library](https://testing-library.com/react).
 
-Tests can be run by moving into `/src` and running `yarn test`.
+Front end tests can be run by moving into `/src` and running `yarn test`.
+<br />
+Back end tests can be run by cloning [this repo](https://github.com/labs12-real-estate/labs12-real-estate-BE) moving into the root folder and running `yarn test`.
 
 <br/>
 <br/>
@@ -159,21 +186,37 @@ Tests can be run by moving into `/src` and running `yarn test`.
 
 # API
 
-You can learn more about our API [here](https://github.com/Lambda-School-Labs/labs9-employee-scheduler/blob/master/docs/API.md). 
-<br />You can learn more about our data model [here](https://github.com/Lambda-School-Labs/labs9-employee-scheduler/blob/master/docs/data_model.md).
+You can learn more about our GraphQL API [here](https://github.com/labs12-real-estate/labs12-real-estate-FE/blob/master/AppNotes/GraphQL_API_Documentation.md). 
+<br />You can learn more about our data model [here](https://github.com/labs12-real-estate/labs12-real-estate-FE/blob/master/AppNotes/data_model.md).
+<br /> You can read our Express/Postgres server documenation [here](https://github.com/labs12-real-estate/labs12-real-estate-BE)
+
+<br/>
+<br/>
+
+# Planning
+So often with software development we think that coding is the more useful exercise when it comes to building an application. For our MyHouse app we took a different approach. It was our closely held philosophy that if we made a major commitment and investment in planning that it would result in a far more cohesive and organized iteration cycle. This proved to be true.
+
+We spent 48 hours at the beginning of this project doing nothing but coming up with a long-range plan for how we would build the app, broken down by one week sprints prior to ever writing a line of code.
+
+Due to our extensive planning and organized development strategy we actually completed what we anticipated would take 5 weeks in 3 short weeks. Due to this we had to have a Stage 2 planning session where we spent the majority of a day planning what features we could implement with our remaining 2 weeks before project deadline.
+
+Our Technical Design Document AKA Product Canvas is 30 pages long and goes into excruciating detail upon the execution of features, challenges we would potentially encounter, the stories of how our users would interact with the features, the competitive marketplace and much more.
+
+You can view the planning document [here](https://github.com/labs12-real-estate/labs12-real-estate-FE/blob/master/AppNotes/Product_Canvas.md).
+
 
 <br/>
 <br/>
 
 
 # Contributing
-Contributions are welcome. If you choose to contribute to this project, you agree to abide by our [Code of Conduct](./AppNotes/CODE_OF_CONDUCT.md). Please create an Issue if there is a bug or feature request you are interested in adding to the project. If you would like to implement the pull request for this Issue yourself, please request permission in the Issue commentary and affirm from a Maintainer that you can proceed. Once confirmed, assign yourself the Issue in Github.
+Contributions are welcome. If you choose to contribute to this project, you agree to abide by our [Code of Conduct](https://github.com/labs12-real-estate/labs12-real-estate-FE/blob/master/AppNotes/CODE_OF_CONDUCT.md). Please create an Issue if there is a bug or feature request you are interested in adding to the project. If you would like to implement the pull request for this Issue yourself, please request permission in the Issue commentary and affirm from a Maintainer that you can proceed. Once confirmed, assign yourself the Issue in Github.
 
 Pull requests are made via the git feature branch workflow described [here](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow). Once you are assigned the Issue, you can clone the repo locally, and begin working on the feature branch.
 
-As you implement tests, please ensure you are running tests in both the server and client as described in the testing section. If you are implementing new features, please introduce well thought-out unit/integration tests as needed to ensure the feature works properly. Please also ensure you are running eslint using [our config](https://github.com/Lambda-School-Labs/labs9-employee-scheduler/blob/master/.eslintrc.js), and eliminating any linting errors before attempting to create a pull request. Please also run Prettier using [our config](https://github.com/Lambda-School-Labs/labs9-employee-scheduler/blob/master/.prettierrc), to ensure you are meeting the formatting standards for this project.
+As you implement tests, please ensure you are running tests in both the server and client as described in the testing section. If you are implementing new features, please introduce well thought-out unit/integration tests as needed to ensure the feature works properly. Please also ensure you are running eslint using [our config](https://github.com/labs12-real-estate/labs12-real-estate-FE/blob/master/.eslintrc.json), and eliminating any linting errors before attempting to create a pull request. Please also run Prettier using [our config](https://github.com/labs12-real-estate/labs12-real-estate-FE/blob/master/.prettierrc.json), to ensure you are meeting the formatting standards for this project.
 
-Once your feature has been finished, please use `git push -u origin *feature-name*` to create the branch on the remote repository, then create the pull request in github. As part of the pull request, please fill out the [pull request template](pull_request_template.md). Once completed, you may create your pull request. A review from a contributor and ultimate merge approval by an admin will be required. If there are requests raised in the review, please address them.
+Once your feature has been finished, please use `git push -u origin *feature-name*` to create the branch on the remote repository, then create the pull request in github. As part of the pull request, please fill out the [pull request template](https://github.com/labs12-real-estate/labs12-real-estate-FE/blob/master/AppNotes/pull_request_template.md). Once completed, you may create your pull request. A review from a contributor and ultimate merge approval by an admin will be required. If there are requests raised in the review, please address them.
 
 Thanks for your interest in MyHouse; we look forward to your feedback & participation! <br/>
 —Anthony, David, Jordan, Gabe, Peter, Quinn & Peyton
