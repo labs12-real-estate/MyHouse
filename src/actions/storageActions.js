@@ -106,12 +106,13 @@ export const uploadToGallery = e => (dispatch, getState) => {
   const { username } = getState().authReducer.user;
   const userKey = makeUserGalleryKey(username);
   const tempURL = URL && URL.createObjectURL && URL.createObjectURL(file);
-  if (file.size >= 15e5) {
+
+  if (file.size >= 2.5e6) {
     dispatch({
       type: GALLERY_UPLOAD_FAIL,
-      payload: 'File size should be less than 1.5 MB'
+      payload: 'File size should be less than 2.5 MB'
     });
-    toast.error('File size should be less than 1.5 MB', { className: 'toastify_error' });
+    toast.error('File size should be less than 2.5 MB', { className: 'toastify_error' });
   } else {
     dispatch({
       type: GALLERY_UPLOAD_FETCH,
