@@ -1,7 +1,8 @@
 {
   "build": {
     "env": {
-      "REACT_APP_UNSPLASH_CLIENT_ID": "@unsplash-client-id"
+      "REACT_APP_UNSPLASH_CLIENT_ID": "@unsplash-client-id",
+      "REACT_APP_GOOGLE_API_KEY": "@google-api-key"
     }
   },
   "version": 2,

@@ -11,14 +11,29 @@ import {
 import { API, graphqlOperation } from 'aws-amplify';
 import { makeUser } from './usersActions';
 import { createHouse, updateHouse } from '../graphql/mutations';
+import axios from 'axios';
 
 export const makeHouse = ({ id, houseInput }, history) => dispatch => {
-  dispatch({ type: MAKE_HOUSE_FETCH, payload: houseInput });
-  return API.graphql(graphqlOperation(createHouse, { input: houseInput }))
-    .then(({ data }) => {
-      const house = data.createHouse;
-      dispatch({ type: MAKE_HOUSE_SUCCESS, payload: house });
-      makeUser(id, history)(dispatch);
+  return axios
+    .post('https://labs12-real-estate.herokuapp.com/api/houses/getprecisevalue', {
+      address: houseInput.address,
+      countertops: houseInput.countertops,
+      flooring: houseInput.flooring,
+      roofAge: houseInput.roofAge,
+      furnaceAge: houseInput.furnaceAge
+    })
+    .then(data => {
+      houseInput.valuation = Math.round(data.data.value);
+      dispatch({ type: MAKE_HOUSE_FETCH, payload: houseInput });
+      return API.graphql(graphqlOperation(createHouse, { input: houseInput }))
+        .then(({ data }) => {
+          const house = data.createHouse;
+          dispatch({ type: MAKE_HOUSE_SUCCESS, payload: house });
+          makeUser(id, history)(dispatch);
+        })
+        .catch(error => {
+          dispatch({ type: MAKE_HOUSE_FAIL, payload: error });
+        });
     })
     .catch(error => {
       dispatch({ type: MAKE_HOUSE_FAIL, payload: error });
