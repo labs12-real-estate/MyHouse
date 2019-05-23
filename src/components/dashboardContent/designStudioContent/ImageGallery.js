@@ -5,6 +5,7 @@ import { getNextPage } from '../../../actions/designStudioActions';
 import { useInfiniteScroll } from '../../../helper-functions/display-functions';
 import decorateSvg from '../../../assets/icons/decorating.svg';
 import Loader from 'react-loader-spinner';
+import Button from '../../buttons/Button';
 
 function ImageGallery({ searchResults, getNextPage, currentSearch, currentPage, fetching }) {
   const getNext = () => {
@@ -33,6 +34,7 @@ function ImageGallery({ searchResults, getNextPage, currentSearch, currentPage, 
       <div style={{ margin: '0 auto', width: '80px', paddingBottom: '40px' }}>
         {fetching ? <Loader height={80} width={80} type="TailSpin" color="#2868d9" /> : null}
       </div>
+      {searchResults.length > 0 && <Button buttonText="Load More" buttonStyle="pagination_btn" clickEvent={getNext} />}
     </>
   );
 }
