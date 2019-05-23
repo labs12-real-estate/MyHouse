@@ -59,7 +59,7 @@ Wireframe: https://balsamiq.cloud/snv27r3/put06ds/r2278 </strong>
 
 |                                                [Peyton Runyan](https://github.com/peytonrunyan)                                                 |                                       [Quinn Dougherty](https://github.com/quinn-dougherty)                                        |
 | :---------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: |
-|                                [<img src="https://avatars0.githubusercontent.com/u/44583861?s=400&v=4" width = "100" />](https://github.com/peytonrunyan)                                |                        [<img src="https://avatars1.githubusercontent.com/u/39039420?s=400&v=4g" width = "100" />](https://github.com/quinn-dougherty)                        | [<img src="https://avatars1.githubusercontent.com/u/39039420?s=400&v=4" width = "250" />](https://github.com/Mister-Corn) | [<img src="https://avatars1.githubusercontent.com/u/37676385" width = "250" />](https://github.com/NandoTheessen) | [<img src="./assets/william.jpg" width = "250" />](https://github.com/ptrfrncsmrph) |
+|                                [<img src="https://avatars0.githubusercontent.com/u/44583861?s=400&v=4" width = "200" />](https://github.com/peytonrunyan)                                |                        [<img src="https://avatars1.githubusercontent.com/u/39039420?s=400&v=4g" width = "200" />](https://github.com/quinn-dougherty)                        | [<img src="https://avatars1.githubusercontent.com/u/39039420?s=400&v=4" width = "250" />](https://github.com/Mister-Corn) | [<img src="https://avatars1.githubusercontent.com/u/37676385" width = "250" />](https://github.com/NandoTheessen) | [<img src="./assets/william.jpg" width = "250" />](https://github.com/ptrfrncsmrph) |
 |                            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/peytonrunyan)                            |                    [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/quinn-dougherty)                    | [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn) | [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen) | [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/ptrfrncsmrph) |
 | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/peyton-runyan/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/quinn-dougherty-581868180/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jordan-stoddard-aa928167/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/nandotheessen/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/william-vandolah-89717477/) |
 
@@ -137,17 +137,37 @@ Amazon S3 stores static files for our app. These files include the property phot
 
 # Security
 
-In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file in the frontend folder containing the following:
+ ### For Frontend:
+You will need to create an environment variable to make Unsplash API calls. 
+<br />Steps to create secret and env variable:
 
+- add now dependency, in CLI: yarn add now
+
+- choose the now user or team that secrets will be created under, in CLI: now switch
+
+- create now secret, in CLI: now secret add my-secret-name my-secret-value
+**run "now secrets ls" in CLI to list all secrets 
+
+- create env variable and assign secret value to env variable, in now.json:
 ```
-Fill in later
+"build":{
+      "env":{
+        "REACT_APP_UNSPLASH_CLIENT_ID": "@my-secret-name"
+      }
+    },
 ```
+`**REACT_APP_` in front of env variable name is required 
+
+- access env variable: `process.env.REACT_APP_UNSPLASH_CLIENT_ID`
+
+### For Backend:
 
 In your backend, create a .env file that includes the following:
 
 ```
-fill in later
+GOOGLE_API_KEY
 ```
+- Access env variable: `process.env.GOOGLE_API_KEY`
 
 <br/>
 <br/>
