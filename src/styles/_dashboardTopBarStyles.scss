@@ -48,6 +48,11 @@
       color: inherit;
       display: flex;
       align-items: baseline;
+      margin-left: 25%;
+
+      @include for-phone-only {
+        margin-left: 0;
+      }
     }
   }
 

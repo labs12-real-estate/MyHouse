@@ -103,6 +103,7 @@
     grid-auto-rows: 13px;
     max-width: 1100px;
     margin: 0 auto;
+    padding-bottom: 40px;
 
     @include for-phone-only {
       justify-items: center;
