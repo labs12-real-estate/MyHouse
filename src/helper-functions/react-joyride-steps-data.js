@@ -16,7 +16,7 @@ export const steps = [
       </div>
     ),
     locale: { skip: 'Click to skip guide.' },
-    title: <h2 className="step_title">Hello!</h2>,
+    title: <span className="step_title">Hello!</span>,
     disableBeacon: true
   },
   {
@@ -29,7 +29,7 @@ export const steps = [
         </h1>
       </div>
     ),
-    title: <h2 className="step_title">Overview</h2>,
+    title: <span className="step_title">Overview</span>,
     placement: 'right',
     locale: { skip: 'Click to skip guide.' },
     disableBeacon: true
@@ -44,7 +44,7 @@ export const steps = [
         </h1>
       </div>
     ),
-    title: <h2 className="step_title">MyHouse Profile</h2>,
+    title: <span className="step_title">MyHouse Profile</span>,
     placement: 'right',
     locale: { skip: 'Click to skip guide.' },
     disableBeacon: true
@@ -56,7 +56,7 @@ export const steps = [
         <h1>Use the Valuation Playground to see how various types of upgrades might increase your home's value.</h1>
       </div>
     ),
-    title: <h2 className="step_title">Valuation Playground</h2>,
+    title: <span className="step_title">Valuation Playground</span>,
     placement: 'right',
     locale: { skip: 'Click to skip guide.' },
     disableBeacon: true
@@ -68,7 +68,7 @@ export const steps = [
         <h1>The Mortgage Calculator is a simple but powerful tool. Use it to calculate your mortgage payments based on input you provide.</h1>
       </div>
     ),
-    title: <h2 className="step_title">Mortgage Calculator</h2>,
+    title: <span className="step_title">Mortgage Calculator</span>,
     placement: 'right',
     locale: { skip: 'Click to skip guide.' },
     disableBeacon: true
@@ -83,7 +83,7 @@ export const steps = [
         </h1>
       </div>
     ),
-    title: <h2 className="step_title">Design Studio</h2>,
+    title: <span className="step_title">Design Studio</span>,
     placement: 'right',
     locale: { skip: 'Click to skip guide.' },
     disableBeacon: true
@@ -95,7 +95,7 @@ export const steps = [
         <h1>The settings page is utilitarian, but head over here if you ever need to change some of your basic account information.</h1>
       </div>
     ),
-    title: <h2 className="step_title">Settings</h2>,
+    title: <span className="step_title">Settings</span>,
     placement: 'right',
     locale: { skip: 'Click to skip guide.' },
     disableBeacon: true
@@ -109,7 +109,7 @@ export const steps = [
         </h1>
       </div>
     ),
-    title: <h2 className="step_title">Farewell</h2>,
+    title: <span className="step_title">Farewell</span>,
     placement: 'center',
     disableBeacon: true,
     locale: { last: 'Done' }
