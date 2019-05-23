@@ -11,6 +11,7 @@ import {
 import { API, graphqlOperation } from 'aws-amplify';
 import { makeUser } from './usersActions';
 import { createHouse, updateHouse } from '../graphql/mutations';
+import { toast } from 'react-toastify';
 
 export const makeHouse = ({ id, houseInput }, history) => dispatch => {
   dispatch({ type: MAKE_HOUSE_FETCH, payload: houseInput });
@@ -40,6 +41,7 @@ export const saveHouseInfo = ({ field, changes, id }) => dispatch => {
     })
     .catch(error => {
       dispatch({ type: SAVE_HOUSE_INFO_FAIL, payload: error });
+      toast.error('Something went wrong. You may have entered an invalid value.', { className: 'toastify_error', autoClose: 3000 });
     });
 };
 
