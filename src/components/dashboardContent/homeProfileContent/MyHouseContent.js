@@ -12,14 +12,16 @@ function MyHouseContent({ housePhotoURL }) {
   const handleLoad = _e => {
     setLoaded(true);
   };
+  // If the housePhotoURL (coming from redux store) does have a value and it hasn't loaded yet, show spinner.
+  const showSpinner = housePhotoURL !== '' && !loaded;
   return (
     <>
-      {!loaded ? (
+      {showSpinner ? (
         <div className="container-spinner">
           <Loader height={100} width={100} type="TailSpin" color="#2868d9" />
         </div>
       ) : null}
-      <div style={!loaded ? { visibility: 'hidden' } : {}} className="dashboard_content_container">
+      <div style={showSpinner ? { visibility: 'hidden' } : {}} className="dashboard_content_container">
         <Backdrop handleLoad={handleLoad} />
         <UserProfileSection />
         <Gallery />
