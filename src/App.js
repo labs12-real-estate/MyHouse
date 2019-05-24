@@ -14,7 +14,7 @@ import DesignStudioPage from './views/DesignStudioPage';
 import TeamPage from './views/TeamPage';
 import SettingsPage from './views/SettingsPage';
 
-// Note: onUpdate on Routes sends the user back to the top of the page on route switch.
+// Note: onEnter on Routes sends the user back to the top of the page on route switch.
 function App({ isLoggedInAction }) {
   useEffect(() => {
     isLoggedInAction();
@@ -22,15 +22,15 @@ function App({ isLoggedInAction }) {
   return (
     <div>
       <Switch>
-        <Route onUpdate={window.scrollTo(0, 0)} path="/" exact component={LandingPage} />
-        <Route onUpdate={window.scrollTo(0, 0)} path="/ourteam" exact component={TeamPage} />
-        <PrivateRouteWF onUpdate={window.scrollTo(0, 0)} path="/wizard-form" component={WizardFormPage} />
-        <PrivateRoute onUpdate={window.scrollTo(0, 0)} path="/overview" component={OverviewPage} />
-        <PrivateRoute onUpdate={window.scrollTo(0, 0)} path="/myhouse" component={MyHousePage} />
-        <PrivateRoute onUpdate={window.scrollTo(0, 0)} path="/valuation-playground" component={ValuationPlaygroundPage} />
-        <PrivateRoute onUpdate={window.scrollTo(0, 0)} path="/mortgage-calculator" component={MortgageCalculatorPage} />
-        <PrivateRoute onUpdate={window.scrollTo(0, 0)} path="/design-studio" component={DesignStudioPage} />
-        <PrivateRoute onUpdate={window.scrollTo(0, 0)} path="/settings" component={SettingsPage} />
+        <Route path="/" exact component={LandingPage} />
+        <Route path="/ourteam" exact component={TeamPage} />
+        <PrivateRouteWF path="/wizard-form" component={WizardFormPage} />
+        <PrivateRoute path="/overview" component={OverviewPage} />
+        <PrivateRoute path="/myhouse" component={MyHousePage} />
+        <PrivateRoute path="/valuation-playground" component={ValuationPlaygroundPage} />
+        <PrivateRoute path="/mortgage-calculator" component={MortgageCalculatorPage} />
+        <PrivateRoute path="/design-studio" component={DesignStudioPage} />
+        <PrivateRoute path="/settings" component={SettingsPage} />
       </Switch>
     </div>
   );

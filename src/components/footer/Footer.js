@@ -22,6 +22,19 @@ function Footer() {
         <div>
           <span>Connect</span>
           <a href="https://twitter.com/_My_House__" target="blank">
+            <i className="fab fa-twitter" />
+          </a>
+          <a href="https://www.instagram.com/myhouseofficial/" target="blank">
+            <i className="fab fa-instagram" />
+          </a>
+          <a href="https://github.com/labs12-real-estate/labs12-real-estate-FE" target="blank">
+            <i className="fab fa-github" />
+          </a>
+          <a href="https://www.facebook.com/MyHouse-338353660197554/" target="blank">
+            <i className="fab fa-facebook" />
+          </a>
+          <a href="https://www.linkedin.com/company/36011646/admin/" target="blank">
+            <i className="fab fa-linkedin" />
           <i className="fab fa-twitter" />
           </a>
           <a href="https://www.instagram.com/myhouseofficial/" target="blank">
