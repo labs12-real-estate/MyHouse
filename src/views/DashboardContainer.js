@@ -11,6 +11,7 @@ function DashboardContainer({ isOpen, toggleSideBar, closeSideBar, getUserHouse,
     if (username !== '') {
       getUserHouse(username);
       getUserPhotos();
+      window.scrollTo(0, 0);
     }
   }, [getUserHouse, getUserPhotos, username]); // get house data from AWS server on first render
   useEffect(() => {
