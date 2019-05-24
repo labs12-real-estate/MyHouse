@@ -11,11 +11,14 @@ function Backdrop({ uploadPhoto, housePhotoURL, handleLoad }) {
   return (
     <>
       <div className="house_profile_backdrop_image" onClick={handleClick}>
-        {housePhotoURL && (
-          <figure className="backdrop_figure">
-            <img onLoad={handleLoad} alt="" src={housePhotoURL || placeholderBackdrop} className="backdrop_img" />
-          </figure>
-        )}
+        <figure className="backdrop_figure">
+          <img
+            onLoad={housePhotoURL !== '' && housePhotoURL !== null ? handleLoad : null}
+            alt="backdrop"
+            src={housePhotoURL || placeholderBackdrop}
+            className="backdrop_img"
+          />
+        </figure>
         <div className="camera-overlay">
           <button>
             <i className="fas fa-camera" />
