@@ -21,6 +21,12 @@
       margin-top: 22px;
       margin-bottom: 2.6rem;
       color: #666;
+
+      @include for-phone-only {
+        margin-top: 13px;
+        margin-bottom: 13px;
+        font-size: 2.6rem;
+      }
     }
   }
 }
