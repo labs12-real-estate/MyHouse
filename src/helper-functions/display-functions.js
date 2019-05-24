@@ -94,3 +94,9 @@ export const useWindowScrollY = () => {
   };
   return yPosition;
 };
+
+export const useScrollToTop = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+};

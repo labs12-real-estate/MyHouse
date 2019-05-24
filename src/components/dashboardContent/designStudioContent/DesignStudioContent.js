@@ -9,7 +9,7 @@ function DesignStudioContent() {
         Design Studio
       </h1>
       <div className="design_studio_container">
-        <p>Looking for inspiration? Click a one of these options to view examples.</p>
+        <p>Looking for inspiration? Click one of these options to view examples.</p>
         <SearchButtons />
         <ImageGallery />
       </div>

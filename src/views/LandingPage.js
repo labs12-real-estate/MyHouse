@@ -13,6 +13,7 @@ function LandingPage() {
     // If user navigates back to LandingPage after entering register,
     // and then attempts to log in, this will prevent guided demo from running.
     localStorage.removeItem('registering');
+    window.scrollTo(0, 0);
   }, []);
   return (
     <div className="landing_body">

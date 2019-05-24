@@ -1,21 +1,23 @@
 import QuinnJpg from '../assets/images/members/Quinn.jpg';
 import PeytonJpg from '../assets/images/members/Peyton.jpg';
 import GabeJpg from '../assets/images/members/Gabe.jpg';
+import Anthony from '../assets/images/members/Anthony.png';
 import DavidJpg from '../assets/images/members/David.jpg';
+import MarsawJpg from '../assets/images/members/Marsaw.jpg';
 
 export const teamInfo = [
   {
-    name: 'Antony Venturini',
+    name: 'Anthony Venturini',
     team: 'Web Team',
     intro:
-      'Lorem ipsum dolor sit amet, sumo idque deserunt usu an, vix graeco alterum te. Aperiri saperet te per. Nec utamur impedit at. Vim et nisl nemore mediocrem. Sea partem verterem eu, eros argumentum in cum. Iudico civibus eleifend pro eu.',
+      'Anthony is a full stack developer with a background in product management & real estate. He served as the Subject Matter Expert for MyHouse, creating wireframes & design mockups, as well as sourcing relevant industry information.',
     url: {
-      picture: 'https://picsum.photos/640/480',
-      twitter: 'https://google.com',
-      instagram: '',
-      github: '',
-      facebook: '',
-      linkedin: ''
+      picture: Anthony,
+      twitter: 'https://twitter.com/adventurini',
+      instagram: 'https://instagram.com/ad.venturini',
+      github: 'https://github.com/',
+      facebook: 'https://www.facebook.com/anthony.venturini.311',
+      linkedin: 'https://www.linkedin.com/in/adventurini/'
     }
   },
   {
@@ -36,12 +38,12 @@ export const teamInfo = [
     name: 'Jordan Marsaw',
     team: 'Project Manager',
     intro:
-      'Lorem ipsum dolor sit amet, sumo idque deserunt usu an, vix graeco alterum te. Aperiri saperet te per. Nec utamur impedit at. Vim et nisl nemore mediocrem. Sea partem verterem eu, eros argumentum in cum. Iudico civibus eleifend pro eu.',
+      'Jordan Marsaw is a full stack developer and project manager with a background in mathematics & economics. Current interests include distributed systems, cryptography, and computational geometry.',
     url: {
-      picture: 'https://picsum.photos/640/480',
+      picture: MarsawJpg,
       twitter: '',
       instagram: '',
-      github: 'https://google.com',
+      github: 'https://github.com/blokboy',
       facebook: '',
       linkedin: ''
     }
@@ -96,9 +98,9 @@ export const teamInfo = [
       picture: PeytonJpg,
       twitter: '',
       instagram: '',
-      github: '',
+      github: 'https://github.com/peytonrunyan',
       facebook: '',
-      linkedin: ''
+      linkedin: 'https://www.linkedin.com/in/peyton-runyan/'
     }
   },
   {
@@ -110,9 +112,9 @@ export const teamInfo = [
       picture: QuinnJpg,
       twitter: '',
       instagram: '',
-      github: '',
+      github: 'https://github.com/quinn-dougherty',
       facebook: '',
-      linkedin: ''
+      linkedin: 'https://www.linkedin.com/in/quinn-dougherty-581868180/'
     }
   }
 ];
