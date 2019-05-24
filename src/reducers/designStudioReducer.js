@@ -10,8 +10,9 @@ const initialState = {
 export const designStudioReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_DESIGNS_SUCCESS:
-      return { ...state, searchResults: action.payload.data, currentSearch: action.payload.term, currentPage: 1 };
+      return { ...state, searchResults: action.payload.data, currentSearch: action.payload.term, currentPage: 1, fetching: false };
     case NEXT_PAGE_FETCH:
+      return { ...state, fetching: true };
     case GET_DESIGNS_FETCH:
       return { ...state, fetching: true };
     case NEXT_PAGE_SUCCESS:

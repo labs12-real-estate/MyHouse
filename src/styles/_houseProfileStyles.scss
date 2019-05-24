@@ -14,6 +14,7 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
 
 .house_profile_backdrop_image {
   width: 100%;
+  // background: url('../assets/images/house-profile/default-cover-photo.png');
   background-position: center;
   display: grid;
   grid-template-columns: 1fr;
@@ -433,7 +434,6 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
     flex-direction: column;
     width: 95%;
     margin: 0 auto 0 0;
-    // margin-left: 0px;
   }
 
   @include for-tablet-portrait-up {
@@ -461,20 +461,9 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
     font-family: 'Roboto', 'sans-serif';
     font-weight: 600;
     font-size: 2.4rem;
-    margin-left: 30px;
     text-align: center;
     display: block;
-
-    @include for-phone-only {
-      margin-left: 30px;
-    }
-
-    @include for-tablet-portrait-up {
-      margin-left: 30px;
-    }
-
-    @include for-desktop-up {
-    }
+    padding: 5px 0 14px;
   }
 
   background: #fff;
@@ -493,6 +482,10 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
     min-height: 238px;
     h3 {
       grid-column: 1 / -1;
+      font-size: 1.6rem;
+      color: #7c7878;
+      font-weight: 400;
+      padding-top: 20px;
     }
     .gallery-figure {
       cursor: pointer;
@@ -660,9 +653,13 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
       .house_profile_form_content_gutter {
         min-height: 228px;
         margin: 10px 13px 13px 12px;
-        background-color: rgb(248, 248, 248);
+        // background-color: rgb(248, 248, 248);
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
         border-radius: 2px;
+
+        div {
+          padding: 10px 0;
+        }
       }
 
       textarea,

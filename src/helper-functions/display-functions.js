@@ -48,7 +48,8 @@ export const useInfiniteScroll = callback => {
 
   useEffect(() => {
     function handleScroll() {
-      if (Math.ceil(window.innerHeight + document.documentElement.scrollTop) !== Math.ceil(document.documentElement.offsetHeight) || isFetching) {
+      // user doesn't have to scroll to the bottom of the window to trigger infiniteScroll
+      if (Math.ceil(document.documentElement.offsetHeight) - Math.ceil(window.innerHeight + document.documentElement.scrollTop) > 100 || isFetching) {
         return;
       }
       setIsFetching(true);

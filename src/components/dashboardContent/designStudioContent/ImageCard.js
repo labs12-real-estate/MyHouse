@@ -7,12 +7,13 @@ function ImageCard({ result, searchTerm }) {
     const { current } = imgRef;
     const height = current && current.clientHeight;
     const span = Math.ceil(height / 12);
-    setSpans(span > 30 && span % 2 === 1 ? span - 2 : span);
+    const adjustedSpan = (span > 30 && span % 2 === 1) || span === 42 ? span - 2 : span;
+    setSpans(adjustedSpan);
   };
 
   useLayoutEffect(() => {
     imgRef.current.addEventListener('load', calculateSpans);
-  }, []);
+  }, [spans]);
 
   return (
     <div style={{ gridRowEnd: `span ${spans}` }} className="design_studio_img_div">

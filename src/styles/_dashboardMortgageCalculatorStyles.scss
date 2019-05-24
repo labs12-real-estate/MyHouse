@@ -37,7 +37,7 @@
       text-transform: uppercase;
       color: #888;
       @include for-phone-only {
-        font-size: 2.6rem;
+        font-size: 1.6rem;
       }
     }
 
@@ -95,7 +95,7 @@
         width: 90%;
         margin: 0 auto;
         @include for-phone-only {
-          font-size: 2.6rem;
+          font-size: 1.6rem;
         }
       }
 

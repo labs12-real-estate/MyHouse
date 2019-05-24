@@ -66,7 +66,7 @@ export const teamInfo = [
     name: 'Gabe Samaniego',
     team: 'Web Team',
     intro:
-      'Lorem ipsum dolor sit amet, sumo idque deserunt usu an, vix graeco alterum te. Aperiri saperet te per. Nec utamur impedit at. Vim et nisl nemore mediocrem. Sea partem verterem eu, eros argumentum in cum. Iudico civibus eleifend pro eu.',
+      "Gabe is a creative full-stack web developer from Long Beach, CA who is also passionate about UI/UX design. He enjoys being a team player and bringing people's ideas into reality. When away from the computer, you can find him at the gym or at the beach surfing.",
     url: {
       picture: GabeJpg,
       twitter: 'https://twitter.com/gsamaniego41',

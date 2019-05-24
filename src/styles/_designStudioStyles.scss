@@ -12,6 +12,8 @@
 
     @include for-phone-only {
       width: 90%;
+      margin-bottom: 30px;
+      margin-top: 10px;
     }
   }
 
@@ -28,7 +30,9 @@
     }
     @include for-phone-only {
       margin-top: 50px;
-      left: 25px;
+      left: 0;
+      width: 160px;
+      padding-bottom: 60px;
     }
     @include for-desktop-up {
       left: 100px;
@@ -96,6 +100,23 @@
     }
   } // end of design_studio_btn_container
 
+  .pagination_btn {
+    background: #fff;
+    border: 1px solid #e51f43;
+    border-radius: 2px;
+    cursor: pointer;
+    font-family: 'Roboto', 'sans-serif';
+    font-size: 1.6rem;
+    padding: 0.7rem 2.2rem;
+    margin: -30px auto 20px;
+    display: block;
+    color: #e51f43;
+
+    @include for-tablet-portrait-up {
+      display: none;
+    }
+  }
+
   .design_studio_img_container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -103,17 +124,10 @@
     grid-auto-rows: 13px;
     max-width: 1100px;
     margin: 0 auto;
+    padding-bottom: 40px;
 
     @include for-phone-only {
       justify-items: center;
-    }
-
-    .pagination_btn {
-      border: none;
-      cursor: pointer;
-      font-family: 'Roboto', 'sans-serif';
-      font-size: 1.6rem;
-      padding: 0.7rem 2.2rem;
     }
 
     .design_studio_img_div {

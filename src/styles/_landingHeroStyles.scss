@@ -195,7 +195,7 @@
         z-index: 1000;
 
         @include for-phone-only {
-          width: 365px;
+          width: 100%;
         }
 
         @include for-tablet-portrait-up {

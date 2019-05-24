@@ -19,6 +19,10 @@
     }
   }
 
+  @include for-phone-only {
+    width: 110px;
+  }
+
   a {
     text-decoration: none;
   }
@@ -34,9 +38,8 @@
     border-bottom: 0.5px solid rgba(194, 194, 194, 0.4%);
     opacity: 0.9;
     @include for-phone-only {
-      height: 82px;
+      height: 88px;
     }
-
 
     &:hover {
       opacity: 1;
@@ -49,11 +52,16 @@
       font-size: 1.2rem;
       line-height: 16px;
       color: #94aacd;
+      width: 70%;
     }
 
     .dashboard_sidebar_icon {
       opacity: 1;
       margin-bottom: 10px;
+
+      @include for-phone-only {
+        margin-bottom: 5px;
+      }
       img {
         height: 30px;
         fill: #94aacd;
@@ -69,10 +77,14 @@
     align-items: center;
     text-align: center;
     height: 100px;
-    background: linear-gradient(0deg, #2d3950, #2d3950);
+    background: #212b3f;
     border-left: 5px solid #e51f43;
     border-bottom: 0.5px solid rgba(194, 194, 194, 0.2%);
     opacity: 1;
+
+    @include for-phone-only {
+      height: 88px;
+    }
 
     .dashboard_sidebar_title {
       font-family: Roboto;
@@ -81,6 +93,7 @@
       font-size: 1.2rem;
       line-height: 16px;
       color: #94aacd;
+      width: 70%;
     }
 
     .dashboard_sidebar_icon {
