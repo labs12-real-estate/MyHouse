@@ -22,7 +22,7 @@
 
 This is a Lambda Labs Capstone Project designed for homeowners. It allows a homeowner to enter their address and then answer some key valuation indicators and receive a more accurate valuation for their home than they can get from standard Parcel Data algorithms. This project also provides a dashboard with several useful tools for homeowners to utilize.
 
-<strong>Front-end Deployment: https://fill-in-later/<br>
+<strong>Front-end Deployment: https://myhouse-app.now.sh/<br>
 Back-end Deployment: https://labs12-real-estate.herokuapp.com/<br>
 Wireframe: https://balsamiq.cloud/snv27r3/put06ds/r2278 </strong>
 
