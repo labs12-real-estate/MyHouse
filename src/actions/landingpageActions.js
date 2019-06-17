@@ -44,7 +44,7 @@ export const getValuation = (address, history) => dispatch => {
     })
     .then(data => {
       if (!data) {
-        dispatch({ type: GET_VALUATION_FAIL, payload: "This address isn't in our database, please try another one." });
+        dispatch({ type: GET_VALUATION_FAIL, payload: "This address is not in our database, please try another one." });
       } else {
         dispatch({ type: GET_VALUATION_SUCCESS });
         localStorage.setItem('initialData', JSON.stringify(data));
