@@ -7,17 +7,17 @@ export const upgradeList = {
     },
     {
       name: 'Laminate',
-      upgrade_cost: 1200,
+      upgrade_cost: 4200,
       ROI_percentage: 1.2
     },
     {
       name: 'Granite/Concrete',
-      upgrade_cost: 3250,
+      upgrade_cost: 7250,
       ROI_percentage: 1.35
     },
     {
       name: 'Marble/Quartz',
-      upgrade_cost: 3830,
+      upgrade_cost: 12830,
       ROI_percentage: 1.5
     }
   ],
@@ -29,12 +29,12 @@ export const upgradeList = {
     },
     {
       name: 'Asphalt/Composite',
-      upgrade_cost: 5500,
+      upgrade_cost: 13500,
       ROI_percentage: 1.1
     },
     {
       name: 'Metal',
-      upgrade_cost: 6700,
+      upgrade_cost: 16700,
       ROI_percentage: 1.1
     },
     {
@@ -44,8 +44,8 @@ export const upgradeList = {
     },
     {
       name: 'Concrete/Clay',
-      upgrade_cost: 20000,
-      ROI_percentage: 1.1
+      upgrade_cost: 40000,
+      ROI_percentage: 0.9
     },
     {
       name: 'Cedar/Shake (Roof)',
@@ -66,27 +66,27 @@ export const upgradeList = {
     },
     {
       name: 'Cedar/Shake (Siding)',
-      upgrade_cost: 12000,
+      upgrade_cost: 18000,
       ROI_percentage: 1.0
     },
     {
       name: 'Vinyl',
-      upgrade_cost: 8500,
+      upgrade_cost: 11500,
       ROI_percentage: 1.1
     },
     {
       name: 'Brick',
-      upgrade_cost: 22500,
-      ROI_percentage: 1.0
+      upgrade_cost: 26500,
+      ROI_percentage: 0.8
     },
     {
       name: 'Wood Siding',
-      upgrade_cost: 6000,
+      upgrade_cost: 9000,
       ROI_percentage: 1.0
     },
     {
       name: 'Fiber Cement',
-      upgrade_cost: 9000,
+      upgrade_cost: 12000,
       ROI_percentage: 1.1
     }
   ],
@@ -103,7 +103,7 @@ export const upgradeList = {
     },
     {
       name: 'Ductless AC',
-      upgrade_cost: 2500,
+      upgrade_cost: 4500,
       ROI_percentage: 1.25
     },
     {
@@ -120,7 +120,7 @@ export const upgradeList = {
     },
     {
       name: 'Electric Furnace',
-      upgrade_cost: 3000,
+      upgrade_cost: 6000,
       ROI_percentage: 1.0
     },
     {
@@ -135,7 +135,7 @@ export const upgradeList = {
     },
     {
       name: 'Natural Gas Furnace',
-      upgrade_cost: 6000,
+      upgrade_cost: 9000,
       ROI_percentage: 1.25
     }
   ],
@@ -147,28 +147,28 @@ export const upgradeList = {
     },
     {
       name: 'Carpet',
-      upgrade_cost: 2500,
+      upgrade_cost: 3500,
       ROI_percentage: 1.1
     },
     {
       name: 'Tile',
-      upgrade_cost: 2000,
-      ROI_percentage: 1.5
+      upgrade_cost: 6000,
+      ROI_percentage: 1.3
     },
     {
       name: 'Engineered Wood/Laminate',
-      upgrade_cost: 3500,
-      ROI_percentage: 1.5
+      upgrade_cost: 6500,
+      ROI_percentage: 1.3
     },
     {
       name: 'Hardwood',
-      upgrade_cost: 5000,
+      upgrade_cost: 10000,
       ROI_percentage: 1.5
     },
     {
       name: 'Concrete',
       upgrade_cost: 5000,
-      ROI_percentage: 1.6
+      ROI_percentage: 1.4
     }
   ],
   addingSqFt: [
@@ -184,7 +184,7 @@ export const upgradeList = {
     },
     {
       name: 'Furnished Basement',
-      upgrade_cost: 10800,
+      upgrade_cost: 19800,
       ROI_percentage: 1.25
     },
     {
@@ -206,12 +206,12 @@ export const upgradeList = {
     },
     {
       name: 'Full Exterior Paint',
-      upgrade_cost: 3500,
+      upgrade_cost: 4500,
       ROI_percentage: 2.5
     },
     {
       name: 'Full Interior Paint',
-      upgrade_cost: 3000,
+      upgrade_cost: 4000,
       ROI_percentage: 1.5
     },
     {
