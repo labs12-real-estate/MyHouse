@@ -2,27 +2,27 @@ export const masterUpgradeList = [
   { name: 'Select', upgrade_cost: null, ROI_percentage: null },
   {
     name: 'Install Laminate Countertops',
-    upgrade_cost: 1200,
+    upgrade_cost: 4200,
     ROI_percentage: 1.2
   },
   {
     name: 'Install Granite Countertops',
-    upgrade_cost: 3250,
+    upgrade_cost: 7250,
     ROI_percentage: 1.35
   },
   {
     name: 'Install Marble Countertops',
-    upgrade_cost: 3830,
+    upgrade_cost: 9830,
     ROI_percentage: 1.5
   },
   {
     name: 'Install Composite Roof',
-    upgrade_cost: 5500,
+    upgrade_cost: 14500,
     ROI_percentage: 1.1
   },
   {
     name: 'Install Metal Roof',
-    upgrade_cost: 6700,
+    upgrade_cost: 19700,
     ROI_percentage: 1.1
   },
   {
@@ -32,42 +32,42 @@ export const masterUpgradeList = [
   },
   {
     name: 'Install Clay Tile Roof',
-    upgrade_cost: 20000,
-    ROI_percentage: 1.1
+    upgrade_cost: 40000,
+    ROI_percentage: 0.85
   },
   {
     name: 'Install Cedar/Shake Roof',
-    upgrade_cost: 12700,
+    upgrade_cost: 16700,
     ROI_percentage: 1.1
   },
   {
     name: 'Install Stucco Siding',
-    upgrade_cost: 14000,
+    upgrade_cost: 18000,
     ROI_percentage: 1.0
   },
   {
     name: 'Install Cedar/Shake Siding',
-    upgrade_cost: 12000,
+    upgrade_cost: 13000,
     ROI_percentage: 1.0
   },
   {
     name: 'Install Vinyl Siding',
-    upgrade_cost: 8500,
+    upgrade_cost: 11500,
     ROI_percentage: 1.1
   },
   {
     name: 'Install Brick Siding',
-    upgrade_cost: 22500,
+    upgrade_cost: 26500,
     ROI_percentage: 1.0
   },
   {
     name: 'Install Wood Siding',
-    upgrade_cost: 6000,
+    upgrade_cost: 9000,
     ROI_percentage: 1.0
   },
   {
     name: 'Install Fiber Cement Siding',
-    upgrade_cost: 9000,
+    upgrade_cost: 14000,
     ROI_percentage: 1.1
   },
   {
@@ -77,7 +77,7 @@ export const masterUpgradeList = [
   },
   {
     name: 'Install Ductless AC',
-    upgrade_cost: 2500,
+    upgrade_cost: 4500,
     ROI_percentage: 1.25
   },
   {
@@ -87,7 +87,7 @@ export const masterUpgradeList = [
   },
   {
     name: 'Install Electric Furnace',
-    upgrade_cost: 3000,
+    upgrade_cost: 6000,
     ROI_percentage: 1.0
   },
   {
@@ -102,7 +102,7 @@ export const masterUpgradeList = [
   },
   {
     name: 'Install Natural Gas Furnace',
-    upgrade_cost: 6000,
+    upgrade_cost: 7000,
     ROI_percentage: 1.25
   },
   {
@@ -112,22 +112,22 @@ export const masterUpgradeList = [
   },
   {
     name: 'Install Tile Flooring',
-    upgrade_cost: 2000,
+    upgrade_cost: 6000,
     ROI_percentage: 1.5
   },
   {
     name: 'Install Laminate Flooring',
-    upgrade_cost: 3500,
+    upgrade_cost: 7500,
     ROI_percentage: 1.5
   },
   {
     name: 'Install Hardwood Flooring',
-    upgrade_cost: 5000,
+    upgrade_cost: 10000,
     ROI_percentage: 1.5
   },
   {
     name: 'Install Concrete Flooring',
-    upgrade_cost: 5000,
+    upgrade_cost: 7000,
     ROI_percentage: 1.6
   },
   {
@@ -137,7 +137,7 @@ export const masterUpgradeList = [
   },
   {
     name: 'Add a Furnished Basement',
-    upgrade_cost: 10800,
+    upgrade_cost: 15800,
     ROI_percentage: 1.25
   },
   {
@@ -152,12 +152,12 @@ export const masterUpgradeList = [
   },
   {
     name: 'Full Exterior Paint',
-    upgrade_cost: 3500,
+    upgrade_cost: 4500,
     ROI_percentage: 2.5
   },
   {
     name: 'Full Interior Paint',
-    upgrade_cost: 3000,
+    upgrade_cost: 5000,
     ROI_percentage: 1.5
   },
   {
