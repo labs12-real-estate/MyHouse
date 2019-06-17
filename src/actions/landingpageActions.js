@@ -43,7 +43,7 @@ export const getValuation = (address, history) => dispatch => {
       address
     })
     .then(data => {
-      if (!data.data.parcel) {
+      if (!data) {
         dispatch({ type: GET_VALUATION_FAIL, payload: "This address isn't in our database, please try another one." });
       } else {
         dispatch({ type: GET_VALUATION_SUCCESS });
