@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import Button from '../buttons/Button';
 import { signOut, closeModal } from '../../actions/authActions';
 import { handleSignOut } from '../../helper-functions/onClick-logic';
-import logo from '../../assets/icons/logo-solid-white.png';
 
 function DashboardTopBar({ toggleSideBar, signOut, history, closeModal }) {
   const path = history.location.pathname;

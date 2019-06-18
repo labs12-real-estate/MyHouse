@@ -6,7 +6,6 @@ import { useWindowScrollY } from '../../helper-functions/display-functions';
 import { stickyStyle } from '../../styles/inlineStyles/navStickyStyles';
 import Button from '../buttons/Button';
 import LoginModal from '../modals/LoginModal';
-import logo from '../../assets/icons/logo-solid-white.png';
 
 function LandingTopBar({ isLoggedIn, signOut, openModal }) {
   return (
