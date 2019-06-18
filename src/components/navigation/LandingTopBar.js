@@ -13,8 +13,6 @@ function LandingTopBar({ isLoggedIn, signOut, openModal }) {
     <div style={useWindowScrollY() > 0 ? stickyStyle : {}} className="landing_nav_container">
       <div className="landing_nav_home_icon">
         <Link to="/">
-          {/* <i className="fas fa-home fa-2x" /> */}
-          <img src={logo} alt="MyHouse logo" />
           <h1>MyHouse</h1>
         </Link>
       </div>
