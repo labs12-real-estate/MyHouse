@@ -15,7 +15,7 @@ import awsConfig from './aws-exports';
 // Base configure of toasts.
 toast.configure({ autoClose: 2200, pauseOnHover: false });
 
-// This configures Amplify module, makes it available globally throughout app
+// This configures Amplify module, makes it available globally throughout app.
 Amplify.configure(awsConfig);
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
