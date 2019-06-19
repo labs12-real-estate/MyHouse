@@ -667,7 +667,7 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
         min-height: 228px;
         border-radius: 2px;
         font-family: $sans_serif;
-        font-size: 2rem;
+        font-size: 1.8rem;
         border: none;
         padding: 2.9rem;
         width: 100%;
@@ -677,18 +677,18 @@ $overlay-camera: hsla(100, 100, 100, 0.5);
         white-space: pre-line;
         white-space: pre-line;
         word-wrap: break-word;
-        line-height: 2.5rem;
+        line-height: 2.0rem;
         overflow-x: hidden;
 
         @include for-phone-only {
-          line-height: 1.3rem;
-          font-size: 1.3rem;
+          line-height: 2.0rem;
+          font-size: 1.8rem;
           height: inherit;
         }
 
         @include for-tablet-portrait-up {
-          line-height: 1.6rem;
-          font-size: 1.6rem;
+          line-height: 2.0rem;
+          font-size: 1.8rem;
           overflow: visible;
         }
       }
