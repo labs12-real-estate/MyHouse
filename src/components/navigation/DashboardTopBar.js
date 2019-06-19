@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Button from '../buttons/Button';
 import { signOut, closeModal } from '../../actions/authActions';
 import { handleSignOut } from '../../helper-functions/onClick-logic';
+import logo from '../../assets/icons/myhouse-logo.svg';
 
 function DashboardTopBar({ toggleSideBar, signOut, history, closeModal }) {
   const path = history.location.pathname;
@@ -12,6 +13,7 @@ function DashboardTopBar({ toggleSideBar, signOut, history, closeModal }) {
       {path !== '/wizard-form' && <i onClick={toggleSideBar} className="sidebar_toggle fas fa-bars fa-3x phone_only" />}
       <div className="dashboard_nav_home_icon">
         <Link to="/">
+          <img src={logo} alt="MyHouse logo" />
           <h1>MyHouse</h1>
         </Link>
       </div>

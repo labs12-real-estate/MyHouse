@@ -6,12 +6,14 @@ import { useWindowScrollY } from '../../helper-functions/display-functions';
 import { stickyStyle } from '../../styles/inlineStyles/navStickyStyles';
 import Button from '../buttons/Button';
 import LoginModal from '../modals/LoginModal';
+import logo from '../../assets/icons/myhouse-logo.svg';
 
 function LandingTopBar({ isLoggedIn, signOut, openModal }) {
   return (
     <div style={useWindowScrollY() > 0 ? stickyStyle : {}} className="landing_nav_container">
       <div className="landing_nav_home_icon">
         <Link to="/">
+          <img src={logo} alt="MyHouse logo" />
           <h1>MyHouse</h1>
         </Link>
       </div>
