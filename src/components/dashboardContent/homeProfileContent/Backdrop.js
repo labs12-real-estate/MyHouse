@@ -11,7 +11,7 @@ function Backdrop({ uploadPhoto, housePhotoURL, handleLoad }) {
   return (
     <>
       <div className="house_profile_backdrop_image" onClick={handleClick}>
-        <figure className="backdrop_figure">
+        <figure className="backdrop_figure" style={{ backgroundImage: `url('${housePhotoURL || placeholderBackdrop}')` }}>
           <img
             onLoad={housePhotoURL !== '' && housePhotoURL !== null ? handleLoad : null}
             alt="backdrop"
