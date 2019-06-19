@@ -6,7 +6,6 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { toast } from 'react-toastify';
 import thunk from 'redux-thunk';
-import logger from 'redux-logger';
 import rootReducer from './reducers';
 import App from './App';
 import './styles/index.scss';
