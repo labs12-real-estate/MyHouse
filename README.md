@@ -141,7 +141,7 @@ Amazon S3 stores static files for our app. These files include the property phot
 You will need to create an environment variable to make Unsplash API calls. 
 <br />Steps to create secret and env variable:
 
-- add now dependency, in CLI: yarn add now
+- add now dependency, in CLI: yarn add now.
 
 - choose the now user or team that secrets will be created under, in CLI: now switch
 
