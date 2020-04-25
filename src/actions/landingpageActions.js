@@ -39,7 +39,7 @@ import axios from 'axios';
 export const getValuation = (address, history) => dispatch => {
   dispatch({ type: GET_VALUATION_FETCH });
   return axios
-    .post('https://labs12-real-estate.herokuapp.com/api/houses/getvalue', {
+    .post('https://myhouse-app.herokuapp.com/api/houses/getvalue', {
       address
     })
     .then(data => {
